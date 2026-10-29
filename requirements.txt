@@ -1,0 +1,9 @@
+# Direct simulation versions used in the validated Python 3.9.6 environment.
+mujoco==3.3.7
+numpy==2.0.2
+matplotlib==3.9.4
+imageio==2.37.2
+ipykernel
+nbclient
+nbformat
+notebook

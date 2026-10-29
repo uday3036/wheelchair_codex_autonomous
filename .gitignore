@@ -1,0 +1,49 @@
+# Machine-local environments, credentials, caches and editor state.
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.matplotlib/
+.cache/
+.DS_Store
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.log
+MUJOCO_LOG.TXT
+
+# Keep reproducible current evidence. Other generated/development runs stay local.
+/results/*
+!/results/.gitkeep
+!/results/autonomous_validation/
+!/results/full_task_variations/
+!/results/robustness_validation/
+!/results/live_validation/
+!/results/display_validation/
+!/results/design_validation/
+!/results/side_mount_validation/
+!/results/project_validation/
+!/results/delivery_validation/
+!/results/grasp_validation/
+!/results/transfer_validation/
+!/results/asset_validation/
+!/results/current/
+!/results/README.md
+!/results/project_validation/tests.log
+!/results/display_validation/tests.log
+
+# Original controller notebook is required by the equivalence regression.
+/references/*.zip
+!/references/history.zip
+
+# Regenerate full animations with the documented --render commands.
+*.gif
+*.mp4
+*.mov
+*.avi

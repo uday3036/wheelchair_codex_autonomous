@@ -1,0 +1,32 @@
+{
+  "source_sha256": "c9583205340fae2a88adb3bfe8daacbea54ff4f263a0eb3d9857b83a019874ba",
+  "full_live_task_passed": true,
+  "regression_status": "passed",
+  "source_report": "results/live_validation/metrics.json",
+  "folded_storage": {
+    "ready": true,
+    "case_margins_m": {
+      "main": 0.006999999999998452,
+      "aux": 0.009999999999999412
+    },
+    "fold_error_rad": 0.0003602206657159888,
+    "arm_speed_rad_s": 4.561399044297175e-06,
+    "covers_closed": true
+  },
+  "peak_recipient_normal_N": 3.2328438604418674,
+  "minimum_passenger_clearance_m": 0.03819622927018405,
+  "final_position_error_m": 0.0035412757564031367,
+  "parking": {
+    "maximum_base_drift_m": 0.0006204280284279731,
+    "maximum_chassis_tilt_deg": 2.598728073928508,
+    "base_is_free": true
+  },
+  "recording_max_gap_s": 0.102,
+  "passed": true,
+  "regression_tests": 107,
+  "regression_duration_seconds": 608.46,
+  "baseline_expected_outcomes": 7,
+  "variation_expected_outcomes": 7,
+  "integration_checks": 21,
+  "development_archive": "references/side_case_development_20261022.zip"
+}

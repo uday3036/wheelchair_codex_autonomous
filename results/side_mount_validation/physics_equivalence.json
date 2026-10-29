@@ -1,0 +1,31 @@
+{
+  "source_sha256": "c9583205340fae2a88adb3bfe8daacbea54ff4f263a0eb3d9857b83a019874ba",
+  "checks": {
+    "nominal_navigation.csv": {
+      "shape_matches": true,
+      "max_abs_difference": 0.0,
+      "equal_within_1e_10": true
+    },
+    "nominal_delivery.csv": {
+      "shape_matches": true,
+      "max_abs_difference": 0.0,
+      "equal_within_1e_10": true
+    },
+    "nominal_idle_stow.csv": {
+      "shape_matches": true,
+      "max_abs_difference": 0.0,
+      "equal_within_1e_10": true
+    },
+    "nominal_parking.csv": {
+      "shape_matches": true,
+      "max_abs_difference": 0.0,
+      "equal_within_1e_10": true
+    },
+    "native_and_headless_recordings_identical": {
+      "qpos": true,
+      "frame_times_s": true,
+      "mocap_pos": true
+    }
+  },
+  "scope": "Recording-timestamp correction preserves quantitative physical traces; independent fresh native/headless nominal runs agree."
+}

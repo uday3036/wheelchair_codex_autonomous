@@ -1,0 +1,10 @@
+{
+  "source_sha256": "c9583205340fae2a88adb3bfe8daacbea54ff4f263a0eb3d9857b83a019874ba",
+  "rendered_from": "results/live_validation",
+  "recordings_identical": true,
+  "files_sha256": {
+    "nominal.gif": "54f2fa8ee0ebbebfb0cad0584fad933dd68a5afa4a27d99485a77128a84cc351",
+    "arm_storage.png": "1ed86cb6693c083f8002a4d2b5272e22a1fafc3c205c3f76ba0c970a1dfc84c9",
+    "autonomous_stages.png": "10de4d545023bd921178a29de91fd6f5e2a679153f6caff248a0f1e9d892c583"
+  }
+}

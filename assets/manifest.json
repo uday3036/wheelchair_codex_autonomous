@@ -1,0 +1,4040 @@
+{
+  "schema": 1,
+  "units": "metre, kilogram, second, radian",
+  "purpose": "simulation-derived reference, not fabrication CAD",
+  "sources": {
+    "models/wheelchair_m1e_rocker.xml": "439b5c32393ba5bb97ecca903fbb47a91205256270ad039ff61d019870355653",
+    "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/arm_appearance.py": "c510932239066db400c770a48d4df9fbaecd20894d7730636b0101c39b1fc356",
+    "src/assistive_task.py": "1e39e17c6902987110b03bb79a42ac4608dd8f18ae17d3ec22b0d123061d8be7",
+    "src/control.py": "e3f2856e2ba075a24bd66af88180611293060b4b4ba6c9183de1fdc4ad5767f9",
+    "src/design.py": "d56790bae229cc0f7e19c245f00be2c2f8015345a22bc4925733a3b32933ad59",
+    "src/geometry_audit.py": "db8f1bd674226f50ac9ca602a80a39620bcc5ab62fd1cfd399513d29ed251dca",
+    "src/grasp_scene.py": "4b0d3b4700463c48a889c166e2f8014706cdc82ccf0b83c7ce1a01f5d05e1578",
+    "src/live_view.py": "8390037cb9976975601909d1a2d11cb290d2b5fae028808b3161cede9e2c7d07",
+    "src/manipulation.py": "ef1f74a7779c4f5329e098603f63c3540ddff75b80d6fe442fa785029d881a21",
+    "src/mobility_metrics.py": "f01441548a76a02a4d0b8da58b76538b9079ac9ea5c279bab57748a5e5f596f3",
+    "src/model.py": "17af29cba70386331587bd26b560b7152eb791bc404f29086eda7779a98d4bc9",
+    "src/navigation.py": "ff276095f79624500947b7191d2d7c1864eaaab27d359e43ec56f2a298db01ce",
+    "src/preview_arm.py": "b8572d0b576499034b67d970468f7d9f9cdbbf4ac8752b6908ad9a166c61b833",
+    "src/robustness.py": "88182aa002ea7822aa8c366348528b06403843cc25b91263cbf3d6e6bb93b891",
+    "src/run_autonomous.py": "d19f36dd9726f0ff53bdcb08848ac9ee48a614fa4da0fbbead6ccc5da1b355ef",
+    "src/run_delivery.py": "82905104e268e9b4b679c31060454dd233a06922b3033f3e5eee9649a9ac8814",
+    "src/run_experiments.py": "7772d906eda43b95454f5bd2782cd45f53045427b2538d4c1ecbf45a3937d86b",
+    "src/run_grasp.py": "0f504de8f763c28e91f854e0a0c48baf519b728f712fecff310c85601051610a",
+    "src/run_transfer.py": "1ce1e828ab63b5b0ea23bdbb65a121f6b19c28705a493094985583cac2fc3bd9",
+    "src/runtime.py": "ccfe9420d859659856d56fa8134b9d248f6e7277d33afdc12244a9b0c6a67561",
+    "src/simulation.py": "2e6f1ff773b233ab85ae87a073415c97a6f14a72a88d91d72b0b8f170acfe97b",
+    "src/stowage.py": "236714e3ae33210521b1abfe057d27e05c1fd7112927bb1de963c13b5db15037",
+    "src/task_scene.py": "ccc6f3a4987b70dc92a69c43d79aac6ed6efc103ac4dae961467fb7cc423ea31",
+    "src/transfer.py": "dcca25e9a1b63016758ee8f6a8406cc83c856b32599ac641a32ba987cb911790",
+    "scripts/export_robot_assets.py": "c6add66b79ad401ec704ca82bd0ea52e7778433644f467a2918e6f80531a4579"
+  },
+  "robot_links": 48,
+  "robot_mass_kg": 84.28,
+  "primary_arm_dof": 6,
+  "auxiliary_arm_dof": 3,
+  "joints": [
+    {
+      "name": "rocker_pivot_left",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limited": true,
+      "range": [
+        -0.5,
+        0.5
+      ],
+      "effort_simulation": 0.0,
+      "velocity_interchange": 100.0,
+      "q_reference": 0.0
+    },
+    {
+      "name": "bogie_pivot_left",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limited": true,
+      "range": [
+        -0.5,
+        0.5
+      ],
+      "effort_simulation": 0.0,
+      "velocity_interchange": 100.0,
+      "q_reference": 0.0
+    },
+    {
+      "name": "front_left_steer_joint",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limited": true,
+      "range": [
+        -0.7,
+        0.7
+      ],
+      "effort_simulation": 25.0,
+      "velocity_interchange": 100.0,
+      "q_reference": 0.0
+    },
+    {
+      "name": "wheel_front_left_joint",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limited": false,
+      "range": [
+        0.0,
+        0.0
+      ],
+      "effort_simulation": 0.0,
+      "velocity_interchange": 100.0,
+      "q_reference": 0.0
+    },
+    {
+      "name": "mid_left_caster_yaw",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limited": false,
+      "range": [
+        0.0,
+        0.0
+      ],
+      "effort_simulation": 0.0,
+      "velocity_interchange": 100.0,
+      "q_reference": 0.0
+    },
+    {
+      "name": "wheel_mid_left_joint",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limited": false,
+      "range": [
+        0.0,
+        0.0
+      ],
+      "effort_simulation": 0.0,
+      "velocity_interchange": 100.0,
+      "q_reference": 0.0
+    },
+    {
+      "name": "wheel_rear_left_joint",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limited": false,
+      "range": [
+        0.0,
+        0.0
+      ],
+      "effort_simulation": 35.0,
+      "velocity_interchange": 100.0,
+      "q_reference": 0.0
+    },
+    {
+      "name": "rocker_pivot_right",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limited": true,
+      "range": [
+        -0.5,
+        0.5
+      ],
+      "effort_simulation": 0.0,
+      "velocity_interchange": 100.0,
+      "q_reference": 0.0
+    },
+    {
+      "name": "bogie_pivot_right",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limited": true,
+      "range": [
+        -0.5,
+        0.5
+      ],
+      "effort_simulation": 0.0,
+      "velocity_interchange": 100.0,
+      "q_reference": 0.0
+    },
+    {
+      "name": "front_right_steer_joint",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limited": true,
+      "range": [
+        -0.7,
+        0.7
+      ],
+      "effort_simulation": 25.0,
+      "velocity_interchange": 100.0,
+      "q_reference": 0.0
+    },
+    {
+      "name": "wheel_front_right_joint",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limited": false,
+      "range": [
+        0.0,
+        0.0
+      ],
+      "effort_simulation": 0.0,
+      "velocity_interchange": 100.0,
+      "q_reference": 0.0
+    },
+    {
+      "name": "mid_right_caster_yaw",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limited": false,
+      "range": [
+        0.0,
+        0.0
+      ],
+      "effort_simulation": 0.0,
+      "velocity_interchange": 100.0,
+      "q_reference": 0.0
+    },
+    {
+      "name": "wheel_mid_right_joint",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limited": false,
+      "range": [
+        0.0,
+        0.0
+      ],
+      "effort_simulation": 0.0,
+      "velocity_interchange": 100.0,
+      "q_reference": 0.0
+    },
+    {
+      "name": "wheel_rear_right_joint",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limited": false,
+      "range": [
+        0.0,
+        0.0
+      ],
+      "effort_simulation": 35.0,
+      "velocity_interchange": 100.0,
+      "q_reference": 0.0
+    },
+    {
+      "name": "waist",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limited": true,
+      "range": [
+        -0.6,
+        2.6
+      ],
+      "effort_simulation": 20.0,
+      "velocity_interchange": 0.8,
+      "q_reference": 0.0
+    },
+    {
+      "name": "shoulder",
+      "axis": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "limited": true,
+      "range": [
+        -1.5,
+        2.5
+      ],
+      "effort_simulation": 20.0,
+      "velocity_interchange": 0.8,
+      "q_reference": 0.0
+    },
+    {
+      "name": "elbow",
+      "axis": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "limited": true,
+      "range": [
+        0.0,
+        3.0
+      ],
+      "effort_simulation": 15.0,
+      "velocity_interchange": 0.8,
+      "q_reference": 0.0
+    },
+    {
+      "name": "wrist1",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limited": true,
+      "range": [
+        -2.9,
+        2.9
+      ],
+      "effort_simulation": 5.0,
+      "velocity_interchange": 0.8,
+      "q_reference": 0.0
+    },
+    {
+      "name": "wrist2",
+      "axis": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "limited": true,
+      "range": [
+        -2.0,
+        2.0
+      ],
+      "effort_simulation": 5.0,
+      "velocity_interchange": 0.8,
+      "q_reference": 0.0
+    },
+    {
+      "name": "wrist3",
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limited": true,
+      "range": [
+        -3.1416,
+        3.1416
+      ],
+      "effort_simulation": 5.0,
+      "velocity_interchange": 0.8,
+      "q_reference": 0.0
+    },
+    {
+      "name": "grasp_left_slide",
+      "axis": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "limited": true,
+      "range": [
+        0.0,
+        0.035
+      ],
+      "effort_simulation": 8.0,
+      "velocity_interchange": 0.04,
+      "q_reference": 0.0
+    },
+    {
+      "name": "grasp_right_slide",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limited": true,
+      "range": [
+        0.0,
+        0.035
+      ],
+      "effort_simulation": 8.0,
+      "velocity_interchange": 0.04,
+      "q_reference": 0.0
+    },
+    {
+      "name": "secondary_shoulder",
+      "axis": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "limited": true,
+      "range": [
+        -1.3,
+        1.3
+      ],
+      "effort_simulation": 10.0,
+      "velocity_interchange": 0.8,
+      "q_reference": 0.0
+    },
+    {
+      "name": "secondary_elbow",
+      "axis": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "limited": true,
+      "range": [
+        -2.2,
+        2.2
+      ],
+      "effort_simulation": 8.0,
+      "velocity_interchange": 0.8,
+      "q_reference": 0.0
+    },
+    {
+      "name": "secondary_wrist",
+      "axis": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "limited": true,
+      "range": [
+        -1.8,
+        1.8
+      ],
+      "effort_simulation": 4.0,
+      "velocity_interchange": 0.8,
+      "q_reference": 0.0
+    },
+    {
+      "name": "aux_left_slide",
+      "axis": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "limited": true,
+      "range": [
+        0.0,
+        0.035
+      ],
+      "effort_simulation": 8.0,
+      "velocity_interchange": 0.04,
+      "q_reference": 0.0
+    },
+    {
+      "name": "aux_right_slide",
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limited": true,
+      "range": [
+        0.0,
+        0.035
+      ],
+      "effort_simulation": 8.0,
+      "velocity_interchange": 0.04,
+      "q_reference": 0.0
+    },
+    {
+      "name": "main_case_slide",
+      "axis": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "limited": true,
+      "range": [
+        0.0,
+        0.39
+      ],
+      "effort_simulation": 10.0,
+      "velocity_interchange": 0.1,
+      "q_reference": 0.0
+    },
+    {
+      "name": "aux_case_slide",
+      "axis": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "limited": true,
+      "range": [
+        0.0,
+        0.32
+      ],
+      "effort_simulation": 10.0,
+      "velocity_interchange": 0.1,
+      "q_reference": 0.0
+    }
+  ],
+  "meshes": [
+    {
+      "name": "base_visual_0",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.105,
+          -0.19,
+          -0.07
+        ],
+        [
+          0.105,
+          0.19,
+          0.07
+        ]
+      ],
+      "obj": "meshes/obj/base_visual_0.obj",
+      "stl": "meshes/stl/base_visual_0.stl"
+    },
+    {
+      "name": "base_collision_0",
+      "link": "base_link",
+      "visual": false,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.105,
+          -0.19,
+          -0.07
+        ],
+        [
+          0.105,
+          0.19,
+          0.07
+        ]
+      ],
+      "obj": "meshes/obj/base_collision_0.obj",
+      "stl": "meshes/stl/base_collision_0.stl"
+    },
+    {
+      "name": "base_visual_1",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.13,
+          -0.19,
+          -0.035
+        ],
+        [
+          0.13,
+          0.19,
+          0.035
+        ]
+      ],
+      "obj": "meshes/obj/base_visual_1.obj",
+      "stl": "meshes/stl/base_visual_1.stl"
+    },
+    {
+      "name": "base_collision_1",
+      "link": "base_link",
+      "visual": false,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.13,
+          -0.19,
+          -0.035
+        ],
+        [
+          0.13,
+          0.19,
+          0.035
+        ]
+      ],
+      "obj": "meshes/obj/base_collision_1.obj",
+      "stl": "meshes/stl/base_collision_1.stl"
+    },
+    {
+      "name": "base_visual_2",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.12,
+          -0.19,
+          -0.04
+        ],
+        [
+          0.12,
+          0.19,
+          0.04
+        ]
+      ],
+      "obj": "meshes/obj/base_visual_2.obj",
+      "stl": "meshes/stl/base_visual_2.stl"
+    },
+    {
+      "name": "base_collision_2",
+      "link": "base_link",
+      "visual": false,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.12,
+          -0.19,
+          -0.04
+        ],
+        [
+          0.12,
+          0.19,
+          0.04
+        ]
+      ],
+      "obj": "meshes/obj/base_collision_2.obj",
+      "stl": "meshes/stl/base_collision_2.stl"
+    },
+    {
+      "name": "base_visual_3",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.03,
+          -0.17,
+          -0.215
+        ],
+        [
+          0.03,
+          0.17,
+          0.215
+        ]
+      ],
+      "obj": "meshes/obj/base_visual_3.obj",
+      "stl": "meshes/stl/base_visual_3.stl"
+    },
+    {
+      "name": "base_collision_3",
+      "link": "base_link",
+      "visual": false,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.03,
+          -0.17,
+          -0.215
+        ],
+        [
+          0.03,
+          0.17,
+          0.215
+        ]
+      ],
+      "obj": "meshes/obj/base_collision_3.obj",
+      "stl": "meshes/stl/base_collision_3.stl"
+    },
+    {
+      "name": "base_visual_4",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.008,
+          -0.008,
+          -0.02
+        ],
+        [
+          0.008,
+          0.008,
+          0.02
+        ]
+      ],
+      "obj": "meshes/obj/base_visual_4.obj",
+      "stl": "meshes/stl/base_visual_4.stl"
+    },
+    {
+      "name": "base_visual_5",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.025,
+          -0.07,
+          -0.025
+        ],
+        [
+          0.025,
+          0.07,
+          0.025
+        ]
+      ],
+      "obj": "meshes/obj/base_visual_5.obj",
+      "stl": "meshes/stl/base_visual_5.stl"
+    },
+    {
+      "name": "base_visual_6",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.011,
+          -0.011,
+          -0.04
+        ],
+        [
+          0.011,
+          0.011,
+          0.04
+        ]
+      ],
+      "obj": "meshes/obj/base_visual_6.obj",
+      "stl": "meshes/stl/base_visual_6.stl"
+    },
+    {
+      "name": "base_visual_7",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.045,
+          -0.03,
+          -0.015
+        ],
+        [
+          0.045,
+          0.03,
+          0.015
+        ]
+      ],
+      "obj": "meshes/obj/base_visual_7.obj",
+      "stl": "meshes/stl/base_visual_7.stl"
+    },
+    {
+      "name": "base_visual_8",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.012,
+          -0.012,
+          -0.03
+        ],
+        [
+          0.012,
+          0.012,
+          0.03
+        ]
+      ],
+      "obj": "meshes/obj/base_visual_8.obj",
+      "stl": "meshes/stl/base_visual_8.stl"
+    },
+    {
+      "name": "base_visual_9",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 482,
+      "triangles": 960,
+      "local_bounds_m": [
+        [
+          -0.016,
+          -0.016,
+          -0.016
+        ],
+        [
+          0.016,
+          0.016,
+          0.016
+        ]
+      ],
+      "obj": "meshes/obj/base_visual_9.obj",
+      "stl": "meshes/stl/base_visual_9.stl"
+    },
+    {
+      "name": "base_visual_10",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.11,
+          -0.005,
+          -0.075
+        ],
+        [
+          0.11,
+          0.005,
+          0.075
+        ]
+      ],
+      "obj": "meshes/obj/base_visual_10.obj",
+      "stl": "meshes/stl/base_visual_10.stl"
+    },
+    {
+      "name": "base_visual_11",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.1,
+          -0.17,
+          -0.006
+        ],
+        [
+          0.1,
+          0.17,
+          0.006
+        ]
+      ],
+      "obj": "meshes/obj/base_visual_11.obj",
+      "stl": "meshes/stl/base_visual_11.stl"
+    },
+    {
+      "name": "base_visual_12",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.03,
+          -0.006,
+          -0.23
+        ],
+        [
+          0.03,
+          0.006,
+          0.23
+        ]
+      ],
+      "obj": "meshes/obj/base_visual_12.obj",
+      "stl": "meshes/stl/base_visual_12.stl"
+    },
+    {
+      "name": "base_visual_13",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.085,
+          -0.006,
+          -0.07
+        ],
+        [
+          0.085,
+          0.006,
+          0.07
+        ]
+      ],
+      "obj": "meshes/obj/base_visual_13.obj",
+      "stl": "meshes/stl/base_visual_13.stl"
+    },
+    {
+      "name": "base_visual_14",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.011,
+          -0.011,
+          -0.15
+        ],
+        [
+          0.011,
+          0.011,
+          0.15
+        ]
+      ],
+      "obj": "meshes/obj/base_visual_14.obj",
+      "stl": "meshes/stl/base_visual_14.stl"
+    },
+    {
+      "name": "base_visual_15",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.006,
+          -0.006,
+          -0.177
+        ],
+        [
+          0.006,
+          0.006,
+          0.177
+        ]
+      ],
+      "obj": "meshes/obj/base_visual_15.obj",
+      "stl": "meshes/stl/base_visual_15.stl"
+    },
+    {
+      "name": "base_visual_16",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.03,
+          -0.006,
+          -0.23
+        ],
+        [
+          0.03,
+          0.006,
+          0.23
+        ]
+      ],
+      "obj": "meshes/obj/base_visual_16.obj",
+      "stl": "meshes/stl/base_visual_16.stl"
+    },
+    {
+      "name": "base_visual_17",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.085,
+          -0.006,
+          -0.07
+        ],
+        [
+          0.085,
+          0.006,
+          0.07
+        ]
+      ],
+      "obj": "meshes/obj/base_visual_17.obj",
+      "stl": "meshes/stl/base_visual_17.stl"
+    },
+    {
+      "name": "base_visual_18",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.011,
+          -0.011,
+          -0.15
+        ],
+        [
+          0.011,
+          0.011,
+          0.15
+        ]
+      ],
+      "obj": "meshes/obj/base_visual_18.obj",
+      "stl": "meshes/stl/base_visual_18.stl"
+    },
+    {
+      "name": "base_visual_19",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.006,
+          -0.006,
+          -0.177
+        ],
+        [
+          0.006,
+          0.006,
+          0.177
+        ]
+      ],
+      "obj": "meshes/obj/base_visual_19.obj",
+      "stl": "meshes/stl/base_visual_19.stl"
+    },
+    {
+      "name": "controller_box_visual",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.12,
+          -0.04,
+          -0.1
+        ],
+        [
+          0.12,
+          0.04,
+          0.1
+        ]
+      ],
+      "obj": "meshes/obj/controller_box_visual.obj",
+      "stl": "meshes/stl/controller_box_visual.stl"
+    },
+    {
+      "name": "controller_box_collision",
+      "link": "base_link",
+      "visual": false,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.12,
+          -0.04,
+          -0.1
+        ],
+        [
+          0.12,
+          0.04,
+          0.1
+        ]
+      ],
+      "obj": "meshes/obj/controller_box_collision.obj",
+      "stl": "meshes/stl/controller_box_collision.stl"
+    },
+    {
+      "name": "controller_box_panel",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.08,
+          -0.003,
+          -0.065
+        ],
+        [
+          0.08,
+          0.003,
+          0.065
+        ]
+      ],
+      "obj": "meshes/obj/controller_box_panel.obj",
+      "stl": "meshes/stl/controller_box_panel.stl"
+    },
+    {
+      "name": "rocker_left_visual_0",
+      "link": "rocker_left",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.14,
+          -0.025,
+          -0.02
+        ],
+        [
+          0.14,
+          0.025,
+          0.02
+        ]
+      ],
+      "obj": "meshes/obj/rocker_left_visual_0.obj",
+      "stl": "meshes/stl/rocker_left_visual_0.stl"
+    },
+    {
+      "name": "rocker_left_collision_0",
+      "link": "rocker_left",
+      "visual": false,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.14,
+          -0.025,
+          -0.02
+        ],
+        [
+          0.14,
+          0.025,
+          0.02
+        ]
+      ],
+      "obj": "meshes/obj/rocker_left_collision_0.obj",
+      "stl": "meshes/stl/rocker_left_collision_0.stl"
+    },
+    {
+      "name": "rocker_left_visual_1",
+      "link": "rocker_left",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.18775,
+          -0.025,
+          -0.025
+        ],
+        [
+          0.18775,
+          0.025,
+          0.025
+        ]
+      ],
+      "obj": "meshes/obj/rocker_left_visual_1.obj",
+      "stl": "meshes/stl/rocker_left_visual_1.stl"
+    },
+    {
+      "name": "rocker_left_collision_1",
+      "link": "rocker_left",
+      "visual": false,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.18775,
+          -0.025,
+          -0.025
+        ],
+        [
+          0.18775,
+          0.025,
+          0.025
+        ]
+      ],
+      "obj": "meshes/obj/rocker_left_collision_1.obj",
+      "stl": "meshes/stl/rocker_left_collision_1.stl"
+    },
+    {
+      "name": "rocker_left_visual_2",
+      "link": "rocker_left",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.0635,
+          -0.025,
+          -0.025
+        ],
+        [
+          0.0635,
+          0.025,
+          0.025
+        ]
+      ],
+      "obj": "meshes/obj/rocker_left_visual_2.obj",
+      "stl": "meshes/stl/rocker_left_visual_2.stl"
+    },
+    {
+      "name": "rocker_left_collision_2",
+      "link": "rocker_left",
+      "visual": false,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.0635,
+          -0.025,
+          -0.025
+        ],
+        [
+          0.0635,
+          0.025,
+          0.025
+        ]
+      ],
+      "obj": "meshes/obj/rocker_left_collision_2.obj",
+      "stl": "meshes/stl/rocker_left_collision_2.stl"
+    },
+    {
+      "name": "bogie_left_visual_0",
+      "link": "bogie_left",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.14915,
+          -0.025,
+          -0.025
+        ],
+        [
+          0.14915,
+          0.025,
+          0.025
+        ]
+      ],
+      "obj": "meshes/obj/bogie_left_visual_0.obj",
+      "stl": "meshes/stl/bogie_left_visual_0.stl"
+    },
+    {
+      "name": "bogie_left_collision_0",
+      "link": "bogie_left",
+      "visual": false,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.14915,
+          -0.025,
+          -0.025
+        ],
+        [
+          0.14915,
+          0.025,
+          0.025
+        ]
+      ],
+      "obj": "meshes/obj/bogie_left_collision_0.obj",
+      "stl": "meshes/stl/bogie_left_collision_0.stl"
+    },
+    {
+      "name": "bogie_left_visual_1",
+      "link": "bogie_left",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.13795,
+          -0.025,
+          -0.025
+        ],
+        [
+          0.13795,
+          0.025,
+          0.025
+        ]
+      ],
+      "obj": "meshes/obj/bogie_left_visual_1.obj",
+      "stl": "meshes/stl/bogie_left_visual_1.stl"
+    },
+    {
+      "name": "bogie_left_collision_1",
+      "link": "bogie_left",
+      "visual": false,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.13795,
+          -0.025,
+          -0.025
+        ],
+        [
+          0.13795,
+          0.025,
+          0.025
+        ]
+      ],
+      "obj": "meshes/obj/bogie_left_collision_1.obj",
+      "stl": "meshes/stl/bogie_left_collision_1.stl"
+    },
+    {
+      "name": "motor_mid_left_visual_0",
+      "link": "motor_mid_left",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.035,
+          -0.0225,
+          -0.035
+        ],
+        [
+          0.035,
+          0.0225,
+          0.035
+        ]
+      ],
+      "obj": "meshes/obj/motor_mid_left_visual_0.obj",
+      "stl": "meshes/stl/motor_mid_left_visual_0.stl"
+    },
+    {
+      "name": "front_left_knuckle_visual",
+      "link": "front_left_knuckle",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.03,
+          -0.02,
+          -0.03
+        ],
+        [
+          0.03,
+          0.02,
+          0.03
+        ]
+      ],
+      "obj": "meshes/obj/front_left_knuckle_visual.obj",
+      "stl": "meshes/stl/front_left_knuckle_visual.stl"
+    },
+    {
+      "name": "front_left_fork_-1",
+      "link": "front_left_knuckle",
+      "visual": true,
+      "collision": true,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.008,
+          -0.008,
+          -0.07550000000000001
+        ],
+        [
+          0.008,
+          0.008,
+          0.07550000000000001
+        ]
+      ],
+      "obj": "meshes/obj/front_left_fork_-1.obj",
+      "stl": "meshes/stl/front_left_fork_-1.stl"
+    },
+    {
+      "name": "front_left_fork_1",
+      "link": "front_left_knuckle",
+      "visual": true,
+      "collision": true,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.008,
+          -0.008,
+          -0.07550000000000001
+        ],
+        [
+          0.008,
+          0.008,
+          0.07550000000000001
+        ]
+      ],
+      "obj": "meshes/obj/front_left_fork_1.obj",
+      "stl": "meshes/stl/front_left_fork_1.stl"
+    },
+    {
+      "name": "front_left_fork_top",
+      "link": "front_left_knuckle",
+      "visual": true,
+      "collision": true,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.008,
+          -0.008,
+          -0.07300000000000001
+        ],
+        [
+          0.008,
+          0.008,
+          0.07300000000000001
+        ]
+      ],
+      "obj": "meshes/obj/front_left_fork_top.obj",
+      "stl": "meshes/stl/front_left_fork_top.stl"
+    },
+    {
+      "name": "wheel_front_left_visual_0",
+      "link": "wheel_front_left",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.12,
+          -0.12,
+          -0.05
+        ],
+        [
+          0.12,
+          0.12,
+          0.05
+        ]
+      ],
+      "obj": "meshes/obj/wheel_front_left_visual_0.obj",
+      "stl": "meshes/stl/wheel_front_left_visual_0.stl"
+    },
+    {
+      "name": "wheel_front_left_collision_0",
+      "link": "wheel_front_left",
+      "visual": false,
+      "collision": true,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.12,
+          -0.12,
+          -0.05
+        ],
+        [
+          0.12,
+          0.12,
+          0.05
+        ]
+      ],
+      "obj": "meshes/obj/wheel_front_left_collision_0.obj",
+      "stl": "meshes/stl/wheel_front_left_collision_0.stl"
+    },
+    {
+      "name": "wheel_front_left_visual_1",
+      "link": "wheel_front_left",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.075,
+          -0.075,
+          -0.052
+        ],
+        [
+          0.075,
+          0.075,
+          0.052
+        ]
+      ],
+      "obj": "meshes/obj/wheel_front_left_visual_1.obj",
+      "stl": "meshes/stl/wheel_front_left_visual_1.stl"
+    },
+    {
+      "name": "motor_front_left_visual_0",
+      "link": "motor_front_left",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.035,
+          -0.0225,
+          -0.035
+        ],
+        [
+          0.035,
+          0.0225,
+          0.035
+        ]
+      ],
+      "obj": "meshes/obj/motor_front_left_visual_0.obj",
+      "stl": "meshes/stl/motor_front_left_visual_0.stl"
+    },
+    {
+      "name": "mid_left_caster_housing",
+      "link": "mid_left_caster_swivel",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.024,
+          -0.022,
+          -0.028
+        ],
+        [
+          0.024,
+          0.022,
+          0.028
+        ]
+      ],
+      "obj": "meshes/obj/mid_left_caster_housing.obj",
+      "stl": "meshes/stl/mid_left_caster_housing.stl"
+    },
+    {
+      "name": "middle_left_fork_-1",
+      "link": "mid_left_caster_swivel",
+      "visual": true,
+      "collision": true,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.008,
+          -0.008,
+          -0.07915124735378853
+        ],
+        [
+          0.008,
+          0.008,
+          0.07915124735378853
+        ]
+      ],
+      "obj": "meshes/obj/middle_left_fork_-1.obj",
+      "stl": "meshes/stl/middle_left_fork_-1.stl"
+    },
+    {
+      "name": "middle_left_fork_1",
+      "link": "mid_left_caster_swivel",
+      "visual": true,
+      "collision": true,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.008,
+          -0.008,
+          -0.07915124735378853
+        ],
+        [
+          0.008,
+          0.008,
+          0.07915124735378853
+        ]
+      ],
+      "obj": "meshes/obj/middle_left_fork_1.obj",
+      "stl": "meshes/stl/middle_left_fork_1.stl"
+    },
+    {
+      "name": "middle_left_fork_top",
+      "link": "mid_left_caster_swivel",
+      "visual": true,
+      "collision": true,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.008,
+          -0.008,
+          -0.07300000000000001
+        ],
+        [
+          0.008,
+          0.008,
+          0.07300000000000001
+        ]
+      ],
+      "obj": "meshes/obj/middle_left_fork_top.obj",
+      "stl": "meshes/stl/middle_left_fork_top.stl"
+    },
+    {
+      "name": "wheel_mid_left_visual_0",
+      "link": "wheel_mid_left",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.12,
+          -0.12,
+          -0.02
+        ],
+        [
+          0.12,
+          0.12,
+          0.02
+        ]
+      ],
+      "obj": "meshes/obj/wheel_mid_left_visual_0.obj",
+      "stl": "meshes/stl/wheel_mid_left_visual_0.stl"
+    },
+    {
+      "name": "wheel_mid_left_collision_0",
+      "link": "wheel_mid_left",
+      "visual": false,
+      "collision": true,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.12,
+          -0.12,
+          -0.02
+        ],
+        [
+          0.12,
+          0.12,
+          0.02
+        ]
+      ],
+      "obj": "meshes/obj/wheel_mid_left_collision_0.obj",
+      "stl": "meshes/stl/wheel_mid_left_collision_0.stl"
+    },
+    {
+      "name": "wheel_mid_left_visual_1",
+      "link": "wheel_mid_left",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.075,
+          -0.075,
+          -0.022
+        ],
+        [
+          0.075,
+          0.075,
+          0.022
+        ]
+      ],
+      "obj": "meshes/obj/wheel_mid_left_visual_1.obj",
+      "stl": "meshes/stl/wheel_mid_left_visual_1.stl"
+    },
+    {
+      "name": "middle_left_support_collision",
+      "link": "middle_left_support",
+      "visual": true,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.02,
+          -0.105,
+          -0.0125
+        ],
+        [
+          0.02,
+          0.105,
+          0.0125
+        ]
+      ],
+      "obj": "meshes/obj/middle_left_support_collision.obj",
+      "stl": "meshes/stl/middle_left_support_collision.stl"
+    },
+    {
+      "name": "front_left_support_collision",
+      "link": "front_left_support",
+      "visual": true,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.02,
+          -0.08499999999999999,
+          -0.0125
+        ],
+        [
+          0.02,
+          0.08499999999999999,
+          0.0125
+        ]
+      ],
+      "obj": "meshes/obj/front_left_support_collision.obj",
+      "stl": "meshes/stl/front_left_support_collision.stl"
+    },
+    {
+      "name": "wheel_rear_left_visual_0",
+      "link": "wheel_rear_left",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.12,
+          -0.12,
+          -0.05
+        ],
+        [
+          0.12,
+          0.12,
+          0.05
+        ]
+      ],
+      "obj": "meshes/obj/wheel_rear_left_visual_0.obj",
+      "stl": "meshes/stl/wheel_rear_left_visual_0.stl"
+    },
+    {
+      "name": "wheel_rear_left_collision_0",
+      "link": "wheel_rear_left",
+      "visual": false,
+      "collision": true,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.12,
+          -0.12,
+          -0.05
+        ],
+        [
+          0.12,
+          0.12,
+          0.05
+        ]
+      ],
+      "obj": "meshes/obj/wheel_rear_left_collision_0.obj",
+      "stl": "meshes/stl/wheel_rear_left_collision_0.stl"
+    },
+    {
+      "name": "wheel_rear_left_visual_1",
+      "link": "wheel_rear_left",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.075,
+          -0.075,
+          -0.052
+        ],
+        [
+          0.075,
+          0.075,
+          0.052
+        ]
+      ],
+      "obj": "meshes/obj/wheel_rear_left_visual_1.obj",
+      "stl": "meshes/stl/wheel_rear_left_visual_1.stl"
+    },
+    {
+      "name": "motor_rear_left_visual_0",
+      "link": "motor_rear_left",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.035,
+          -0.0225,
+          -0.035
+        ],
+        [
+          0.035,
+          0.0225,
+          0.035
+        ]
+      ],
+      "obj": "meshes/obj/motor_rear_left_visual_0.obj",
+      "stl": "meshes/stl/motor_rear_left_visual_0.stl"
+    },
+    {
+      "name": "rocker_right_visual_0",
+      "link": "rocker_right",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.14,
+          -0.025,
+          -0.02
+        ],
+        [
+          0.14,
+          0.025,
+          0.02
+        ]
+      ],
+      "obj": "meshes/obj/rocker_right_visual_0.obj",
+      "stl": "meshes/stl/rocker_right_visual_0.stl"
+    },
+    {
+      "name": "rocker_right_collision_0",
+      "link": "rocker_right",
+      "visual": false,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.14,
+          -0.025,
+          -0.02
+        ],
+        [
+          0.14,
+          0.025,
+          0.02
+        ]
+      ],
+      "obj": "meshes/obj/rocker_right_collision_0.obj",
+      "stl": "meshes/stl/rocker_right_collision_0.stl"
+    },
+    {
+      "name": "rocker_right_visual_1",
+      "link": "rocker_right",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.18775,
+          -0.025,
+          -0.025
+        ],
+        [
+          0.18775,
+          0.025,
+          0.025
+        ]
+      ],
+      "obj": "meshes/obj/rocker_right_visual_1.obj",
+      "stl": "meshes/stl/rocker_right_visual_1.stl"
+    },
+    {
+      "name": "rocker_right_collision_1",
+      "link": "rocker_right",
+      "visual": false,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.18775,
+          -0.025,
+          -0.025
+        ],
+        [
+          0.18775,
+          0.025,
+          0.025
+        ]
+      ],
+      "obj": "meshes/obj/rocker_right_collision_1.obj",
+      "stl": "meshes/stl/rocker_right_collision_1.stl"
+    },
+    {
+      "name": "rocker_right_visual_2",
+      "link": "rocker_right",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.0635,
+          -0.025,
+          -0.025
+        ],
+        [
+          0.0635,
+          0.025,
+          0.025
+        ]
+      ],
+      "obj": "meshes/obj/rocker_right_visual_2.obj",
+      "stl": "meshes/stl/rocker_right_visual_2.stl"
+    },
+    {
+      "name": "rocker_right_collision_2",
+      "link": "rocker_right",
+      "visual": false,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.0635,
+          -0.025,
+          -0.025
+        ],
+        [
+          0.0635,
+          0.025,
+          0.025
+        ]
+      ],
+      "obj": "meshes/obj/rocker_right_collision_2.obj",
+      "stl": "meshes/stl/rocker_right_collision_2.stl"
+    },
+    {
+      "name": "bogie_right_visual_0",
+      "link": "bogie_right",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.14915,
+          -0.025,
+          -0.025
+        ],
+        [
+          0.14915,
+          0.025,
+          0.025
+        ]
+      ],
+      "obj": "meshes/obj/bogie_right_visual_0.obj",
+      "stl": "meshes/stl/bogie_right_visual_0.stl"
+    },
+    {
+      "name": "bogie_right_collision_0",
+      "link": "bogie_right",
+      "visual": false,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.14915,
+          -0.025,
+          -0.025
+        ],
+        [
+          0.14915,
+          0.025,
+          0.025
+        ]
+      ],
+      "obj": "meshes/obj/bogie_right_collision_0.obj",
+      "stl": "meshes/stl/bogie_right_collision_0.stl"
+    },
+    {
+      "name": "bogie_right_visual_1",
+      "link": "bogie_right",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.13795,
+          -0.025,
+          -0.025
+        ],
+        [
+          0.13795,
+          0.025,
+          0.025
+        ]
+      ],
+      "obj": "meshes/obj/bogie_right_visual_1.obj",
+      "stl": "meshes/stl/bogie_right_visual_1.stl"
+    },
+    {
+      "name": "bogie_right_collision_1",
+      "link": "bogie_right",
+      "visual": false,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.13795,
+          -0.025,
+          -0.025
+        ],
+        [
+          0.13795,
+          0.025,
+          0.025
+        ]
+      ],
+      "obj": "meshes/obj/bogie_right_collision_1.obj",
+      "stl": "meshes/stl/bogie_right_collision_1.stl"
+    },
+    {
+      "name": "motor_mid_right_visual_0",
+      "link": "motor_mid_right",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.035,
+          -0.0225,
+          -0.035
+        ],
+        [
+          0.035,
+          0.0225,
+          0.035
+        ]
+      ],
+      "obj": "meshes/obj/motor_mid_right_visual_0.obj",
+      "stl": "meshes/stl/motor_mid_right_visual_0.stl"
+    },
+    {
+      "name": "front_right_knuckle_visual",
+      "link": "front_right_knuckle",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.03,
+          -0.02,
+          -0.03
+        ],
+        [
+          0.03,
+          0.02,
+          0.03
+        ]
+      ],
+      "obj": "meshes/obj/front_right_knuckle_visual.obj",
+      "stl": "meshes/stl/front_right_knuckle_visual.stl"
+    },
+    {
+      "name": "front_right_fork_-1",
+      "link": "front_right_knuckle",
+      "visual": true,
+      "collision": true,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.008,
+          -0.008,
+          -0.07550000000000001
+        ],
+        [
+          0.008,
+          0.008,
+          0.07550000000000001
+        ]
+      ],
+      "obj": "meshes/obj/front_right_fork_-1.obj",
+      "stl": "meshes/stl/front_right_fork_-1.stl"
+    },
+    {
+      "name": "front_right_fork_1",
+      "link": "front_right_knuckle",
+      "visual": true,
+      "collision": true,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.008,
+          -0.008,
+          -0.07550000000000001
+        ],
+        [
+          0.008,
+          0.008,
+          0.07550000000000001
+        ]
+      ],
+      "obj": "meshes/obj/front_right_fork_1.obj",
+      "stl": "meshes/stl/front_right_fork_1.stl"
+    },
+    {
+      "name": "front_right_fork_top",
+      "link": "front_right_knuckle",
+      "visual": true,
+      "collision": true,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.008,
+          -0.008,
+          -0.07300000000000001
+        ],
+        [
+          0.008,
+          0.008,
+          0.07300000000000001
+        ]
+      ],
+      "obj": "meshes/obj/front_right_fork_top.obj",
+      "stl": "meshes/stl/front_right_fork_top.stl"
+    },
+    {
+      "name": "wheel_front_right_visual_0",
+      "link": "wheel_front_right",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.12,
+          -0.12,
+          -0.05
+        ],
+        [
+          0.12,
+          0.12,
+          0.05
+        ]
+      ],
+      "obj": "meshes/obj/wheel_front_right_visual_0.obj",
+      "stl": "meshes/stl/wheel_front_right_visual_0.stl"
+    },
+    {
+      "name": "wheel_front_right_collision_0",
+      "link": "wheel_front_right",
+      "visual": false,
+      "collision": true,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.12,
+          -0.12,
+          -0.05
+        ],
+        [
+          0.12,
+          0.12,
+          0.05
+        ]
+      ],
+      "obj": "meshes/obj/wheel_front_right_collision_0.obj",
+      "stl": "meshes/stl/wheel_front_right_collision_0.stl"
+    },
+    {
+      "name": "wheel_front_right_visual_1",
+      "link": "wheel_front_right",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.075,
+          -0.075,
+          -0.052
+        ],
+        [
+          0.075,
+          0.075,
+          0.052
+        ]
+      ],
+      "obj": "meshes/obj/wheel_front_right_visual_1.obj",
+      "stl": "meshes/stl/wheel_front_right_visual_1.stl"
+    },
+    {
+      "name": "motor_front_right_visual_0",
+      "link": "motor_front_right",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.035,
+          -0.0225,
+          -0.035
+        ],
+        [
+          0.035,
+          0.0225,
+          0.035
+        ]
+      ],
+      "obj": "meshes/obj/motor_front_right_visual_0.obj",
+      "stl": "meshes/stl/motor_front_right_visual_0.stl"
+    },
+    {
+      "name": "mid_right_caster_housing",
+      "link": "mid_right_caster_swivel",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.024,
+          -0.022,
+          -0.028
+        ],
+        [
+          0.024,
+          0.022,
+          0.028
+        ]
+      ],
+      "obj": "meshes/obj/mid_right_caster_housing.obj",
+      "stl": "meshes/stl/mid_right_caster_housing.stl"
+    },
+    {
+      "name": "middle_right_fork_-1",
+      "link": "mid_right_caster_swivel",
+      "visual": true,
+      "collision": true,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.008,
+          -0.008,
+          -0.07915124735378853
+        ],
+        [
+          0.008,
+          0.008,
+          0.07915124735378853
+        ]
+      ],
+      "obj": "meshes/obj/middle_right_fork_-1.obj",
+      "stl": "meshes/stl/middle_right_fork_-1.stl"
+    },
+    {
+      "name": "middle_right_fork_1",
+      "link": "mid_right_caster_swivel",
+      "visual": true,
+      "collision": true,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.008,
+          -0.008,
+          -0.07915124735378853
+        ],
+        [
+          0.008,
+          0.008,
+          0.07915124735378853
+        ]
+      ],
+      "obj": "meshes/obj/middle_right_fork_1.obj",
+      "stl": "meshes/stl/middle_right_fork_1.stl"
+    },
+    {
+      "name": "middle_right_fork_top",
+      "link": "mid_right_caster_swivel",
+      "visual": true,
+      "collision": true,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.008,
+          -0.008,
+          -0.07300000000000001
+        ],
+        [
+          0.008,
+          0.008,
+          0.07300000000000001
+        ]
+      ],
+      "obj": "meshes/obj/middle_right_fork_top.obj",
+      "stl": "meshes/stl/middle_right_fork_top.stl"
+    },
+    {
+      "name": "wheel_mid_right_visual_0",
+      "link": "wheel_mid_right",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.12,
+          -0.12,
+          -0.02
+        ],
+        [
+          0.12,
+          0.12,
+          0.02
+        ]
+      ],
+      "obj": "meshes/obj/wheel_mid_right_visual_0.obj",
+      "stl": "meshes/stl/wheel_mid_right_visual_0.stl"
+    },
+    {
+      "name": "wheel_mid_right_collision_0",
+      "link": "wheel_mid_right",
+      "visual": false,
+      "collision": true,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.12,
+          -0.12,
+          -0.02
+        ],
+        [
+          0.12,
+          0.12,
+          0.02
+        ]
+      ],
+      "obj": "meshes/obj/wheel_mid_right_collision_0.obj",
+      "stl": "meshes/stl/wheel_mid_right_collision_0.stl"
+    },
+    {
+      "name": "wheel_mid_right_visual_1",
+      "link": "wheel_mid_right",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.075,
+          -0.075,
+          -0.022
+        ],
+        [
+          0.075,
+          0.075,
+          0.022
+        ]
+      ],
+      "obj": "meshes/obj/wheel_mid_right_visual_1.obj",
+      "stl": "meshes/stl/wheel_mid_right_visual_1.stl"
+    },
+    {
+      "name": "middle_right_support_collision",
+      "link": "middle_right_support",
+      "visual": true,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.02,
+          -0.105,
+          -0.0125
+        ],
+        [
+          0.02,
+          0.105,
+          0.0125
+        ]
+      ],
+      "obj": "meshes/obj/middle_right_support_collision.obj",
+      "stl": "meshes/stl/middle_right_support_collision.stl"
+    },
+    {
+      "name": "front_right_support_collision",
+      "link": "front_right_support",
+      "visual": true,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.02,
+          -0.08499999999999999,
+          -0.0125
+        ],
+        [
+          0.02,
+          0.08499999999999999,
+          0.0125
+        ]
+      ],
+      "obj": "meshes/obj/front_right_support_collision.obj",
+      "stl": "meshes/stl/front_right_support_collision.stl"
+    },
+    {
+      "name": "wheel_rear_right_visual_0",
+      "link": "wheel_rear_right",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.12,
+          -0.12,
+          -0.05
+        ],
+        [
+          0.12,
+          0.12,
+          0.05
+        ]
+      ],
+      "obj": "meshes/obj/wheel_rear_right_visual_0.obj",
+      "stl": "meshes/stl/wheel_rear_right_visual_0.stl"
+    },
+    {
+      "name": "wheel_rear_right_collision_0",
+      "link": "wheel_rear_right",
+      "visual": false,
+      "collision": true,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.12,
+          -0.12,
+          -0.05
+        ],
+        [
+          0.12,
+          0.12,
+          0.05
+        ]
+      ],
+      "obj": "meshes/obj/wheel_rear_right_collision_0.obj",
+      "stl": "meshes/stl/wheel_rear_right_collision_0.stl"
+    },
+    {
+      "name": "wheel_rear_right_visual_1",
+      "link": "wheel_rear_right",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.075,
+          -0.075,
+          -0.052
+        ],
+        [
+          0.075,
+          0.075,
+          0.052
+        ]
+      ],
+      "obj": "meshes/obj/wheel_rear_right_visual_1.obj",
+      "stl": "meshes/stl/wheel_rear_right_visual_1.stl"
+    },
+    {
+      "name": "motor_rear_right_visual_0",
+      "link": "motor_rear_right",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.035,
+          -0.0225,
+          -0.035
+        ],
+        [
+          0.035,
+          0.0225,
+          0.035
+        ]
+      ],
+      "obj": "meshes/obj/motor_rear_right_visual_0.obj",
+      "stl": "meshes/stl/motor_rear_right_visual_0.stl"
+    },
+    {
+      "name": "arm_base_visual_0",
+      "link": "arm_base",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.034,
+          -0.034,
+          -0.02
+        ],
+        [
+          0.034,
+          0.034,
+          0.02
+        ]
+      ],
+      "obj": "meshes/obj/arm_base_visual_0.obj",
+      "stl": "meshes/stl/arm_base_visual_0.stl"
+    },
+    {
+      "name": "arm_base_collision_0",
+      "link": "arm_base",
+      "visual": false,
+      "collision": true,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.05,
+          -0.05,
+          -0.02
+        ],
+        [
+          0.05,
+          0.05,
+          0.02
+        ]
+      ],
+      "obj": "meshes/obj/arm_base_collision_0.obj",
+      "stl": "meshes/stl/arm_base_collision_0.stl"
+    },
+    {
+      "name": "link1_visual_0",
+      "link": "link1",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.024,
+          -0.024,
+          -0.06
+        ],
+        [
+          0.024,
+          0.024,
+          0.06
+        ]
+      ],
+      "obj": "meshes/obj/link1_visual_0.obj",
+      "stl": "meshes/stl/link1_visual_0.stl"
+    },
+    {
+      "name": "link1_collision_0",
+      "link": "link1",
+      "visual": false,
+      "collision": true,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.035,
+          -0.035,
+          -0.06
+        ],
+        [
+          0.035,
+          0.035,
+          0.06
+        ]
+      ],
+      "obj": "meshes/obj/link1_collision_0.obj",
+      "stl": "meshes/stl/link1_collision_0.stl"
+    },
+    {
+      "name": "link1_visual_1",
+      "link": "link1",
+      "visual": true,
+      "collision": false,
+      "vertices": 482,
+      "triangles": 960,
+      "local_bounds_m": [
+        [
+          -0.05,
+          -0.05,
+          -0.05
+        ],
+        [
+          0.05,
+          0.05,
+          0.05
+        ]
+      ],
+      "obj": "meshes/obj/link1_visual_1.obj",
+      "stl": "meshes/stl/link1_visual_1.stl"
+    },
+    {
+      "name": "link1_collision_1",
+      "link": "link1",
+      "visual": false,
+      "collision": true,
+      "vertices": 482,
+      "triangles": 960,
+      "local_bounds_m": [
+        [
+          -0.05,
+          -0.05,
+          -0.05
+        ],
+        [
+          0.05,
+          0.05,
+          0.05
+        ]
+      ],
+      "obj": "meshes/obj/link1_collision_1.obj",
+      "stl": "meshes/stl/link1_collision_1.stl"
+    },
+    {
+      "name": "reference_link1_joint_cover",
+      "link": "link1",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.035,
+          -0.035,
+          -0.033
+        ],
+        [
+          0.035,
+          0.035,
+          0.033
+        ]
+      ],
+      "obj": "meshes/obj/reference_link1_joint_cover.obj",
+      "stl": "meshes/stl/reference_link1_joint_cover.stl"
+    },
+    {
+      "name": "link2_collision_0",
+      "link": "link2",
+      "visual": false,
+      "collision": true,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.035,
+          -0.035,
+          -0.15
+        ],
+        [
+          0.035,
+          0.035,
+          0.15
+        ]
+      ],
+      "obj": "meshes/obj/link2_collision_0.obj",
+      "stl": "meshes/stl/link2_collision_0.stl"
+    },
+    {
+      "name": "link2_collision_1",
+      "link": "link2",
+      "visual": false,
+      "collision": true,
+      "vertices": 482,
+      "triangles": 960,
+      "local_bounds_m": [
+        [
+          -0.042,
+          -0.042,
+          -0.042
+        ],
+        [
+          0.042,
+          0.042,
+          0.042
+        ]
+      ],
+      "obj": "meshes/obj/link2_collision_1.obj",
+      "stl": "meshes/stl/link2_collision_1.stl"
+    },
+    {
+      "name": "reference_link2_outer",
+      "link": "link2",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.018,
+          -0.018,
+          -0.148
+        ],
+        [
+          0.018,
+          0.018,
+          0.148
+        ]
+      ],
+      "obj": "meshes/obj/reference_link2_outer.obj",
+      "stl": "meshes/stl/reference_link2_outer.stl"
+    },
+    {
+      "name": "reference_link2_joint_cover",
+      "link": "link2",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.03,
+          -0.03,
+          -0.027
+        ],
+        [
+          0.03,
+          0.03,
+          0.027
+        ]
+      ],
+      "obj": "meshes/obj/reference_link2_joint_cover.obj",
+      "stl": "meshes/stl/reference_link2_joint_cover.stl"
+    },
+    {
+      "name": "link3_collision_0",
+      "link": "link3",
+      "visual": false,
+      "collision": true,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.027,
+          -0.027,
+          -0.125
+        ],
+        [
+          0.027,
+          0.027,
+          0.125
+        ]
+      ],
+      "obj": "meshes/obj/link3_collision_0.obj",
+      "stl": "meshes/stl/link3_collision_0.stl"
+    },
+    {
+      "name": "reference_link3_outer",
+      "link": "link3",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.014,
+          -0.014,
+          -0.119
+        ],
+        [
+          0.014,
+          0.014,
+          0.119
+        ]
+      ],
+      "obj": "meshes/obj/reference_link3_outer.obj",
+      "stl": "meshes/stl/reference_link3_outer.stl"
+    },
+    {
+      "name": "wrist1_link_visual_0",
+      "link": "wrist1_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.03,
+          -0.03,
+          -0.015
+        ],
+        [
+          0.03,
+          0.03,
+          0.015
+        ]
+      ],
+      "obj": "meshes/obj/wrist1_link_visual_0.obj",
+      "stl": "meshes/stl/wrist1_link_visual_0.stl"
+    },
+    {
+      "name": "wrist1_link_collision_0",
+      "link": "wrist1_link",
+      "visual": false,
+      "collision": true,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.03,
+          -0.03,
+          -0.015
+        ],
+        [
+          0.03,
+          0.03,
+          0.015
+        ]
+      ],
+      "obj": "meshes/obj/wrist1_link_collision_0.obj",
+      "stl": "meshes/stl/wrist1_link_collision_0.stl"
+    },
+    {
+      "name": "wrist2_link_visual_0",
+      "link": "wrist2_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.026,
+          -0.026,
+          -0.03
+        ],
+        [
+          0.026,
+          0.026,
+          0.03
+        ]
+      ],
+      "obj": "meshes/obj/wrist2_link_visual_0.obj",
+      "stl": "meshes/stl/wrist2_link_visual_0.stl"
+    },
+    {
+      "name": "wrist2_link_collision_0",
+      "link": "wrist2_link",
+      "visual": false,
+      "collision": true,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.026,
+          -0.026,
+          -0.03
+        ],
+        [
+          0.026,
+          0.026,
+          0.03
+        ]
+      ],
+      "obj": "meshes/obj/wrist2_link_collision_0.obj",
+      "stl": "meshes/stl/wrist2_link_collision_0.stl"
+    },
+    {
+      "name": "wrist3_link_visual_0",
+      "link": "wrist3_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.025,
+          -0.025,
+          -0.015
+        ],
+        [
+          0.025,
+          0.025,
+          0.015
+        ]
+      ],
+      "obj": "meshes/obj/wrist3_link_visual_0.obj",
+      "stl": "meshes/stl/wrist3_link_visual_0.stl"
+    },
+    {
+      "name": "wrist3_link_collision_0",
+      "link": "wrist3_link",
+      "visual": false,
+      "collision": true,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.025,
+          -0.025,
+          -0.015
+        ],
+        [
+          0.025,
+          0.025,
+          0.015
+        ]
+      ],
+      "obj": "meshes/obj/wrist3_link_collision_0.obj",
+      "stl": "meshes/stl/wrist3_link_collision_0.stl"
+    },
+    {
+      "name": "flange_link_visual_0",
+      "link": "flange_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.033,
+          -0.033,
+          -0.01
+        ],
+        [
+          0.033,
+          0.033,
+          0.01
+        ]
+      ],
+      "obj": "meshes/obj/flange_link_visual_0.obj",
+      "stl": "meshes/stl/flange_link_visual_0.stl"
+    },
+    {
+      "name": "flange_link_collision_0",
+      "link": "flange_link",
+      "visual": false,
+      "collision": true,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.033,
+          -0.033,
+          -0.01
+        ],
+        [
+          0.033,
+          0.033,
+          0.01
+        ]
+      ],
+      "obj": "meshes/obj/flange_link_collision_0.obj",
+      "stl": "meshes/stl/flange_link_collision_0.stl"
+    },
+    {
+      "name": "flange_link_visual_1",
+      "link": "flange_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.007,
+          -0.007,
+          -0.035
+        ],
+        [
+          0.007,
+          0.007,
+          0.035
+        ]
+      ],
+      "obj": "meshes/obj/flange_link_visual_1.obj",
+      "stl": "meshes/stl/flange_link_visual_1.stl"
+    },
+    {
+      "name": "flange_link_collision_1",
+      "link": "flange_link",
+      "visual": false,
+      "collision": true,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.01,
+          -0.01,
+          -0.035
+        ],
+        [
+          0.01,
+          0.01,
+          0.035
+        ]
+      ],
+      "obj": "meshes/obj/flange_link_collision_1.obj",
+      "stl": "meshes/stl/flange_link_collision_1.stl"
+    },
+    {
+      "name": "end_link_visual_0",
+      "link": "end_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 482,
+      "triangles": 960,
+      "local_bounds_m": [
+        [
+          -0.01,
+          -0.01,
+          -0.01
+        ],
+        [
+          0.01,
+          0.01,
+          0.01
+        ]
+      ],
+      "obj": "meshes/obj/end_link_visual_0.obj",
+      "stl": "meshes/stl/end_link_visual_0.stl"
+    },
+    {
+      "name": "end_link_collision_0",
+      "link": "end_link",
+      "visual": false,
+      "collision": true,
+      "vertices": 482,
+      "triangles": 960,
+      "local_bounds_m": [
+        [
+          -0.01,
+          -0.01,
+          -0.01
+        ],
+        [
+          0.01,
+          0.01,
+          0.01
+        ]
+      ],
+      "obj": "meshes/obj/end_link_collision_0.obj",
+      "stl": "meshes/stl/end_link_collision_0.stl"
+    },
+    {
+      "name": "end_link_gripper_palm_visual",
+      "link": "end_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.025,
+          -0.028,
+          -0.018
+        ],
+        [
+          0.025,
+          0.028,
+          0.018
+        ]
+      ],
+      "obj": "meshes/obj/end_link_gripper_palm_visual.obj",
+      "stl": "meshes/stl/end_link_gripper_palm_visual.stl"
+    },
+    {
+      "name": "end_link_collision_gripper_palm",
+      "link": "end_link",
+      "visual": false,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.025,
+          -0.028,
+          -0.018
+        ],
+        [
+          0.025,
+          0.028,
+          0.018
+        ]
+      ],
+      "obj": "meshes/obj/end_link_collision_gripper_palm.obj",
+      "stl": "meshes/stl/end_link_collision_gripper_palm.stl"
+    },
+    {
+      "name": "grasp_left_pad",
+      "link": "grasp_left_jaw",
+      "visual": true,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.04,
+          -0.005,
+          -0.025
+        ],
+        [
+          0.04,
+          0.005,
+          0.025
+        ]
+      ],
+      "obj": "meshes/obj/grasp_left_pad.obj",
+      "stl": "meshes/stl/grasp_left_pad.stl"
+    },
+    {
+      "name": "grasp_right_pad",
+      "link": "grasp_right_jaw",
+      "visual": true,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.04,
+          -0.005,
+          -0.025
+        ],
+        [
+          0.04,
+          0.005,
+          0.025
+        ]
+      ],
+      "obj": "meshes/obj/grasp_right_pad.obj",
+      "stl": "meshes/stl/grasp_right_pad.stl"
+    },
+    {
+      "name": "secondary_arm_base_visual",
+      "link": "secondary_arm_base",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.04,
+          -0.04,
+          -0.025
+        ],
+        [
+          0.04,
+          0.04,
+          0.025
+        ]
+      ],
+      "obj": "meshes/obj/secondary_arm_base_visual.obj",
+      "stl": "meshes/stl/secondary_arm_base_visual.stl"
+    },
+    {
+      "name": "secondary_arm_base_collision",
+      "link": "secondary_arm_base",
+      "visual": false,
+      "collision": true,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.04,
+          -0.04,
+          -0.025
+        ],
+        [
+          0.04,
+          0.04,
+          0.025
+        ]
+      ],
+      "obj": "meshes/obj/secondary_arm_base_collision.obj",
+      "stl": "meshes/stl/secondary_arm_base_collision.stl"
+    },
+    {
+      "name": "secondary_link1_visual",
+      "link": "secondary_link1",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.025,
+          -0.025,
+          -0.1
+        ],
+        [
+          0.025,
+          0.025,
+          0.1
+        ]
+      ],
+      "obj": "meshes/obj/secondary_link1_visual.obj",
+      "stl": "meshes/stl/secondary_link1_visual.stl"
+    },
+    {
+      "name": "secondary_link1_collision",
+      "link": "secondary_link1",
+      "visual": false,
+      "collision": true,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.025,
+          -0.025,
+          -0.1
+        ],
+        [
+          0.025,
+          0.025,
+          0.1
+        ]
+      ],
+      "obj": "meshes/obj/secondary_link1_collision.obj",
+      "stl": "meshes/stl/secondary_link1_collision.stl"
+    },
+    {
+      "name": "secondary_shoulder_joint_visual",
+      "link": "secondary_link1",
+      "visual": true,
+      "collision": false,
+      "vertices": 482,
+      "triangles": 960,
+      "local_bounds_m": [
+        [
+          -0.032,
+          -0.032,
+          -0.032
+        ],
+        [
+          0.032,
+          0.032,
+          0.032
+        ]
+      ],
+      "obj": "meshes/obj/secondary_shoulder_joint_visual.obj",
+      "stl": "meshes/stl/secondary_shoulder_joint_visual.stl"
+    },
+    {
+      "name": "secondary_link2_visual",
+      "link": "secondary_link2",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.022,
+          -0.022,
+          -0.085
+        ],
+        [
+          0.022,
+          0.022,
+          0.085
+        ]
+      ],
+      "obj": "meshes/obj/secondary_link2_visual.obj",
+      "stl": "meshes/stl/secondary_link2_visual.stl"
+    },
+    {
+      "name": "secondary_link2_collision",
+      "link": "secondary_link2",
+      "visual": false,
+      "collision": true,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.022,
+          -0.022,
+          -0.085
+        ],
+        [
+          0.022,
+          0.022,
+          0.085
+        ]
+      ],
+      "obj": "meshes/obj/secondary_link2_collision.obj",
+      "stl": "meshes/stl/secondary_link2_collision.stl"
+    },
+    {
+      "name": "secondary_elbow_joint_visual",
+      "link": "secondary_link2",
+      "visual": true,
+      "collision": false,
+      "vertices": 482,
+      "triangles": 960,
+      "local_bounds_m": [
+        [
+          -0.028,
+          -0.028,
+          -0.028
+        ],
+        [
+          0.028,
+          0.028,
+          0.028
+        ]
+      ],
+      "obj": "meshes/obj/secondary_elbow_joint_visual.obj",
+      "stl": "meshes/stl/secondary_elbow_joint_visual.stl"
+    },
+    {
+      "name": "secondary_link3_visual",
+      "link": "secondary_link3",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.018,
+          -0.018,
+          -0.045
+        ],
+        [
+          0.018,
+          0.018,
+          0.045
+        ]
+      ],
+      "obj": "meshes/obj/secondary_link3_visual.obj",
+      "stl": "meshes/stl/secondary_link3_visual.stl"
+    },
+    {
+      "name": "secondary_link3_collision",
+      "link": "secondary_link3",
+      "visual": false,
+      "collision": true,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.018,
+          -0.018,
+          -0.045
+        ],
+        [
+          0.018,
+          0.018,
+          0.045
+        ]
+      ],
+      "obj": "meshes/obj/secondary_link3_collision.obj",
+      "stl": "meshes/stl/secondary_link3_collision.stl"
+    },
+    {
+      "name": "secondary_gripper_palm_visual",
+      "link": "secondary_gripper",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.02,
+          -0.025,
+          -0.0125
+        ],
+        [
+          0.02,
+          0.025,
+          0.0125
+        ]
+      ],
+      "obj": "meshes/obj/secondary_gripper_palm_visual.obj",
+      "stl": "meshes/stl/secondary_gripper_palm_visual.stl"
+    },
+    {
+      "name": "secondary_gripper_palm_collision",
+      "link": "secondary_gripper",
+      "visual": false,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.02,
+          -0.025,
+          -0.0125
+        ],
+        [
+          0.02,
+          0.025,
+          0.0125
+        ]
+      ],
+      "obj": "meshes/obj/secondary_gripper_palm_collision.obj",
+      "stl": "meshes/stl/secondary_gripper_palm_collision.stl"
+    },
+    {
+      "name": "aux_left_pad",
+      "link": "aux_left_jaw",
+      "visual": true,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.04,
+          -0.005,
+          -0.02
+        ],
+        [
+          0.04,
+          0.005,
+          0.02
+        ]
+      ],
+      "obj": "meshes/obj/aux_left_pad.obj",
+      "stl": "meshes/stl/aux_left_pad.stl"
+    },
+    {
+      "name": "aux_right_pad",
+      "link": "aux_right_jaw",
+      "visual": true,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.04,
+          -0.005,
+          -0.02
+        ],
+        [
+          0.04,
+          0.005,
+          0.02
+        ]
+      ],
+      "obj": "meshes/obj/aux_right_pad.obj",
+      "stl": "meshes/stl/aux_right_pad.stl"
+    },
+    {
+      "name": "main_frame_outrigger",
+      "link": "main_frame_bracket",
+      "visual": true,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.025,
+          -0.105,
+          -0.015
+        ],
+        [
+          0.025,
+          0.105,
+          0.015
+        ]
+      ],
+      "obj": "meshes/obj/main_frame_outrigger.obj",
+      "stl": "meshes/stl/main_frame_outrigger.stl"
+    },
+    {
+      "name": "main_case_pedestal",
+      "link": "main_frame_bracket",
+      "visual": true,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.025,
+          -0.025,
+          -0.05
+        ],
+        [
+          0.025,
+          0.025,
+          0.05
+        ]
+      ],
+      "obj": "meshes/obj/main_case_pedestal.obj",
+      "stl": "meshes/stl/main_case_pedestal.stl"
+    },
+    {
+      "name": "main_case_floor_front",
+      "link": "main_storage_case",
+      "visual": true,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.18,
+          -0.06,
+          -0.0030000000000000027
+        ],
+        [
+          0.18,
+          0.06,
+          0.0030000000000000027
+        ]
+      ],
+      "obj": "meshes/obj/main_case_floor_front.obj",
+      "stl": "meshes/stl/main_case_floor_front.stl"
+    },
+    {
+      "name": "main_case_back",
+      "link": "main_case_lid",
+      "visual": true,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.002999999999999999,
+          -0.063,
+          -0.17300000000000001
+        ],
+        [
+          0.002999999999999999,
+          0.063,
+          0.17300000000000001
+        ]
+      ],
+      "obj": "meshes/obj/main_case_back.obj",
+      "stl": "meshes/stl/main_case_back.stl"
+    },
+    {
+      "name": "main_case_outer",
+      "link": "main_case_lid",
+      "visual": true,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.18,
+          -0.0030000000000000027,
+          -0.17300000000000001
+        ],
+        [
+          0.18,
+          0.0030000000000000027,
+          0.17300000000000001
+        ]
+      ],
+      "obj": "meshes/obj/main_case_outer.obj",
+      "stl": "meshes/stl/main_case_outer.stl"
+    },
+    {
+      "name": "main_case_inner_front",
+      "link": "main_case_lid",
+      "visual": true,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.18,
+          -0.0030000000000000027,
+          -0.17
+        ],
+        [
+          0.18,
+          0.0030000000000000027,
+          0.17
+        ]
+      ],
+      "obj": "meshes/obj/main_case_inner_front.obj",
+      "stl": "meshes/stl/main_case_inner_front.stl"
+    },
+    {
+      "name": "main_case_cover",
+      "link": "main_case_lid",
+      "visual": true,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.186,
+          -0.063,
+          -0.0030000000000000027
+        ],
+        [
+          0.186,
+          0.063,
+          0.0030000000000000027
+        ]
+      ],
+      "obj": "meshes/obj/main_case_cover.obj",
+      "stl": "meshes/stl/main_case_cover.stl"
+    },
+    {
+      "name": "aux_case_back",
+      "link": "aux_storage_case",
+      "visual": true,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.0030000000000000027,
+          -0.066,
+          -0.152
+        ],
+        [
+          0.0030000000000000027,
+          0.066,
+          0.152
+        ]
+      ],
+      "obj": "meshes/obj/aux_case_back.obj",
+      "stl": "meshes/stl/aux_case_back.stl"
+    },
+    {
+      "name": "aux_case_outer",
+      "link": "aux_storage_case",
+      "visual": true,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.14500000000000002,
+          -0.0030000000000000027,
+          -0.152
+        ],
+        [
+          0.14500000000000002,
+          0.0030000000000000027,
+          0.152
+        ]
+      ],
+      "obj": "meshes/obj/aux_case_outer.obj",
+      "stl": "meshes/stl/aux_case_outer.stl"
+    },
+    {
+      "name": "aux_case_inner",
+      "link": "aux_storage_case",
+      "visual": true,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.14500000000000002,
+          -0.0030000000000000027,
+          -0.152
+        ],
+        [
+          0.14500000000000002,
+          0.0030000000000000027,
+          0.152
+        ]
+      ],
+      "obj": "meshes/obj/aux_case_inner.obj",
+      "stl": "meshes/stl/aux_case_inner.stl"
+    },
+    {
+      "name": "aux_case_floor",
+      "link": "aux_storage_case",
+      "visual": true,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.14500000000000002,
+          -0.06,
+          -0.002999999999999999
+        ],
+        [
+          0.14500000000000002,
+          0.06,
+          0.002999999999999999
+        ]
+      ],
+      "obj": "meshes/obj/aux_case_floor.obj",
+      "stl": "meshes/stl/aux_case_floor.stl"
+    },
+    {
+      "name": "aux_case_cover",
+      "link": "aux_case_lid",
+      "visual": true,
+      "collision": true,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.15100000000000002,
+          -0.066,
+          -0.0030000000000000027
+        ],
+        [
+          0.15100000000000002,
+          0.066,
+          0.0030000000000000027
+        ]
+      ],
+      "obj": "meshes/obj/aux_case_cover.obj",
+      "stl": "meshes/stl/aux_case_cover.stl"
+    }
+  ],
+  "assembly": {
+    "frame": "base_link",
+    "pose": "folded; jaws .03 m; covers closed",
+    "bounds_m": [
+      [
+        -0.5099999999999999,
+        -0.563,
+        -0.4000001836594457
+      ],
+      [
+        0.5499999999999999,
+        0.563,
+        0.5746622703642562
+      ]
+    ]
+  },
+  "omissions": [
+    "URDF has no floating world joint; base_link is root",
+    "Passenger keepout proxies, table, bottle, cap and hand excluded from robot assets",
+    "URDF omits MuJoCo actuators, contact exclusions, friction models, springs, armature and task controller",
+    "Curved mesh surfaces are tessellated; use MJCF analytic contacts for validated physics",
+    "Velocity values are interchange limits/placeholders, not motor specifications"
+  ],
+  "files_sha256": {
+    "meshes/assemblies/wheelchair_folded.mtl": "76ef5887abc80f98a544d0a331f7f055355462168a100cb0c871586837ed849c",
+    "meshes/assemblies/wheelchair_folded.obj": "0be490b7a815c1f5be265271f9964fb6a52ccd5c3de6b907ecc78abfa64ff61d",
+    "meshes/assemblies/wheelchair_folded.stl": "99cc320bccbdcbc0258fc95935c5be33f0e036c2fa0c419bb791d5f7092a6b9d",
+    "meshes/obj/arm_base_collision_0.obj": "7dd25229836c950f019a8bcdbb386516cb1396e335cd271b096c57858f27753b",
+    "meshes/obj/arm_base_visual_0.obj": "897c0d8bcd35cdf34e172d4f9a1348063d54d4d60408c8923833a8f43bacaabe",
+    "meshes/obj/aux_case_back.obj": "a519136113f7fc73299cc450117560eb3a49528cc0c7abcc3f69c9b399702626",
+    "meshes/obj/aux_case_cover.obj": "da5db7d6376cf3a9be3373c83b9297e9ce716bc5f65901129febae7f1eb85d90",
+    "meshes/obj/aux_case_floor.obj": "265307f6a028404eab049955f41064271e28d5a7b1cf93e055eb6a687dbfe94d",
+    "meshes/obj/aux_case_inner.obj": "60a73bba3763ffdc4cab735940ee340ae750216b1196362f6e8b291f75822122",
+    "meshes/obj/aux_case_outer.obj": "60a73bba3763ffdc4cab735940ee340ae750216b1196362f6e8b291f75822122",
+    "meshes/obj/aux_left_pad.obj": "9c61775989ce78b9aee927714dd620ec014ab407ccc04226e75d7adcf0206c40",
+    "meshes/obj/aux_right_pad.obj": "9c61775989ce78b9aee927714dd620ec014ab407ccc04226e75d7adcf0206c40",
+    "meshes/obj/base_collision_0.obj": "46787c97506d8b57fbce7815b9cfcf5c835579721ade2491f299075ac691ed30",
+    "meshes/obj/base_collision_1.obj": "d4a36eb383009c19576be72497f77b306e57cc4f0a42a3a5a1418f8cc83dff2c",
+    "meshes/obj/base_collision_2.obj": "48a0f1e79039ef2c5ebce12e740c48ba70f0aca87a576b6848e1736992fb0bf4",
+    "meshes/obj/base_collision_3.obj": "cc6849183d90d4aeb1f278d77e7b9e325fe0c64d12747bd87ebde69efd797813",
+    "meshes/obj/base_visual_0.obj": "46787c97506d8b57fbce7815b9cfcf5c835579721ade2491f299075ac691ed30",
+    "meshes/obj/base_visual_1.obj": "d4a36eb383009c19576be72497f77b306e57cc4f0a42a3a5a1418f8cc83dff2c",
+    "meshes/obj/base_visual_10.obj": "bfdddd24e83ad1de6a300764797e87018f9315c808b946907ecca36b101a365c",
+    "meshes/obj/base_visual_11.obj": "44f1e6c29cd2e3b96b49dbb30e41bd5e4ab65d7439e1645c3e4f327b31067a85",
+    "meshes/obj/base_visual_12.obj": "433e4652d0de5e7d67c9d60693f11f0013c815005d6efd8a02224182765f79f4",
+    "meshes/obj/base_visual_13.obj": "15d6dca82ccedfc330689269579bb6f8da11a0de954306c431f7305d512b6ba5",
+    "meshes/obj/base_visual_14.obj": "4f5aaec3f5985b655a786e28ed33364f27f59b45e8e46f8c566f14735b68a0a9",
+    "meshes/obj/base_visual_15.obj": "f40db10efa13a28fdf83c2074b7bca3ca7b25c882dde040c69cb4dcff98fb07c",
+    "meshes/obj/base_visual_16.obj": "433e4652d0de5e7d67c9d60693f11f0013c815005d6efd8a02224182765f79f4",
+    "meshes/obj/base_visual_17.obj": "15d6dca82ccedfc330689269579bb6f8da11a0de954306c431f7305d512b6ba5",
+    "meshes/obj/base_visual_18.obj": "4f5aaec3f5985b655a786e28ed33364f27f59b45e8e46f8c566f14735b68a0a9",
+    "meshes/obj/base_visual_19.obj": "f40db10efa13a28fdf83c2074b7bca3ca7b25c882dde040c69cb4dcff98fb07c",
+    "meshes/obj/base_visual_2.obj": "48a0f1e79039ef2c5ebce12e740c48ba70f0aca87a576b6848e1736992fb0bf4",
+    "meshes/obj/base_visual_3.obj": "cc6849183d90d4aeb1f278d77e7b9e325fe0c64d12747bd87ebde69efd797813",
+    "meshes/obj/base_visual_4.obj": "afaf1dd055e4599e1d1019a1f09ee6eabb2106709f1bee48b1551027d2b8649e",
+    "meshes/obj/base_visual_5.obj": "84b969c3dd279772fce9ba01f65a0e7064b21a4ec5e25f5b17f85604933235c9",
+    "meshes/obj/base_visual_6.obj": "176cae27c041d679c4c91e73458ef3e41ca3bebc2a056586599d44a39e8ac5fd",
+    "meshes/obj/base_visual_7.obj": "1056e522ae9a024ed341c5627a3012bc8e73e29d43b949d05b9024a8023484cb",
+    "meshes/obj/base_visual_8.obj": "0b9bcf2cc7847609eeb3e12687a3a6e7d95e1e252893e88d3faf7b3abf3d3ebf",
+    "meshes/obj/base_visual_9.obj": "8413ba1cc70a8e4853e5dca04030384b393240c0fe07d93d4e8481048a1cf8b2",
+    "meshes/obj/bogie_left_collision_0.obj": "647ba05f14e39bfdcd9a1d29e1a9a32855e604947110439ba28204b2efd21fa2",
+    "meshes/obj/bogie_left_collision_1.obj": "b0ae531a972ce6ebef46c828375211f9451eefa7982817ff11cd3f1e22906a7a",
+    "meshes/obj/bogie_left_visual_0.obj": "647ba05f14e39bfdcd9a1d29e1a9a32855e604947110439ba28204b2efd21fa2",
+    "meshes/obj/bogie_left_visual_1.obj": "b0ae531a972ce6ebef46c828375211f9451eefa7982817ff11cd3f1e22906a7a",
+    "meshes/obj/bogie_right_collision_0.obj": "647ba05f14e39bfdcd9a1d29e1a9a32855e604947110439ba28204b2efd21fa2",
+    "meshes/obj/bogie_right_collision_1.obj": "b0ae531a972ce6ebef46c828375211f9451eefa7982817ff11cd3f1e22906a7a",
+    "meshes/obj/bogie_right_visual_0.obj": "647ba05f14e39bfdcd9a1d29e1a9a32855e604947110439ba28204b2efd21fa2",
+    "meshes/obj/bogie_right_visual_1.obj": "b0ae531a972ce6ebef46c828375211f9451eefa7982817ff11cd3f1e22906a7a",
+    "meshes/obj/controller_box_collision.obj": "ac54216a072a5e1cccc2580036763929ee294ef8303043119c83c79cf0e06a75",
+    "meshes/obj/controller_box_panel.obj": "b6598ca358795fa6fc46d639f1f9bf20036df2e11b0e6dc97297881ded9a9fb9",
+    "meshes/obj/controller_box_visual.obj": "ac54216a072a5e1cccc2580036763929ee294ef8303043119c83c79cf0e06a75",
+    "meshes/obj/end_link_collision_0.obj": "b7db4127e3d3925542a0765e0e6c880bd0bf6aa07d03bdcd4753eae082b69d6d",
+    "meshes/obj/end_link_collision_gripper_palm.obj": "1a6f3794d82bd871eae20516874594c14b7d30507014de5c39777b27487d5db7",
+    "meshes/obj/end_link_gripper_palm_visual.obj": "1a6f3794d82bd871eae20516874594c14b7d30507014de5c39777b27487d5db7",
+    "meshes/obj/end_link_visual_0.obj": "b7db4127e3d3925542a0765e0e6c880bd0bf6aa07d03bdcd4753eae082b69d6d",
+    "meshes/obj/flange_link_collision_0.obj": "68f1d0d6bd91edce391a9b15ba56e62b7084075c49a6a9ee59a74b7c5a0ee542",
+    "meshes/obj/flange_link_collision_1.obj": "593e40344d51a7af9e52f21bc3efbb138e7f39f4825781262aceb51d7097f78c",
+    "meshes/obj/flange_link_visual_0.obj": "68f1d0d6bd91edce391a9b15ba56e62b7084075c49a6a9ee59a74b7c5a0ee542",
+    "meshes/obj/flange_link_visual_1.obj": "680473a0b8c72748236b291aa2ae30a46be63ef06cb1e44a6aea78e8784efa48",
+    "meshes/obj/front_left_fork_-1.obj": "244d431be33b99eb428746905754f50bda338a58d37d02cb213cc289320c26a8",
+    "meshes/obj/front_left_fork_1.obj": "244d431be33b99eb428746905754f50bda338a58d37d02cb213cc289320c26a8",
+    "meshes/obj/front_left_fork_top.obj": "071ebcc3b55f892775c0150605a97ae9965d946f16fdd7e26174e4fbeb86db97",
+    "meshes/obj/front_left_knuckle_visual.obj": "55e8958ca130a4930e0c5a12fbc652463da3a91dceb0f57b44394fa5356e9392",
+    "meshes/obj/front_left_support_collision.obj": "308c00381efe1173eb8aad8269ba68f1ceb3647e78fbc0db839993c5402d4b0a",
+    "meshes/obj/front_right_fork_-1.obj": "244d431be33b99eb428746905754f50bda338a58d37d02cb213cc289320c26a8",
+    "meshes/obj/front_right_fork_1.obj": "244d431be33b99eb428746905754f50bda338a58d37d02cb213cc289320c26a8",
+    "meshes/obj/front_right_fork_top.obj": "071ebcc3b55f892775c0150605a97ae9965d946f16fdd7e26174e4fbeb86db97",
+    "meshes/obj/front_right_knuckle_visual.obj": "55e8958ca130a4930e0c5a12fbc652463da3a91dceb0f57b44394fa5356e9392",
+    "meshes/obj/front_right_support_collision.obj": "308c00381efe1173eb8aad8269ba68f1ceb3647e78fbc0db839993c5402d4b0a",
+    "meshes/obj/grasp_left_pad.obj": "5737371d8480376e0280462ec1e12b49d53c8c6c3b7bd5fef90f6781cb5c0bca",
+    "meshes/obj/grasp_right_pad.obj": "5737371d8480376e0280462ec1e12b49d53c8c6c3b7bd5fef90f6781cb5c0bca",
+    "meshes/obj/link1_collision_0.obj": "c5dfbbcf12f579d2cc0bda9c521d64e4eaa212d1216a832794b2f0cbb2dc132d",
+    "meshes/obj/link1_collision_1.obj": "3b1c5dfb58b3f18e85ef5797e5bc667a53ad332c4dafe6b68647ac3eeecec2a1",
+    "meshes/obj/link1_visual_0.obj": "36a0c2c8a662395c7c7c5a9710053ebe568529629da832ef4a9580a1aeb2182e",
+    "meshes/obj/link1_visual_1.obj": "3b1c5dfb58b3f18e85ef5797e5bc667a53ad332c4dafe6b68647ac3eeecec2a1",
+    "meshes/obj/link2_collision_0.obj": "5bcd9451b2ba03ffca84edfea65e89e0885366f1e523f54a97d438103dad4ac2",
+    "meshes/obj/link2_collision_1.obj": "52ae378ef7b0c4651b1c8015db0c2ba75638418d42d78dee2a1cef82948e8ab7",
+    "meshes/obj/link3_collision_0.obj": "d345297106dd9d9e500eab987d7eae9f10f0d7a1cb65c5cc94021fcfbeb6ee5c",
+    "meshes/obj/main_case_back.obj": "1c80d2e52ccd6ae7b2808d40626e167fe9981344f07e827dd897f31efe275974",
+    "meshes/obj/main_case_cover.obj": "342400bc7267535f1249557d5e198595223b0ab8a6d371e682daeb5fc20596e0",
+    "meshes/obj/main_case_floor_front.obj": "deb4ff0e93d4b8abf0be4cfd85374822efdcdf8e26451cd5e32ffaed91efd70a",
+    "meshes/obj/main_case_inner_front.obj": "e0f479dcc422d551045a17017f5edec36d83c8b0be3358728608bf2b24de67d1",
+    "meshes/obj/main_case_outer.obj": "2e318147ebedc0d62fa8d0e7aecb89c6a48b3176576ea54944b5dc66f322ae1b",
+    "meshes/obj/main_case_pedestal.obj": "3de57b998926cc70b19167c3465dfa900d332869c3a54397ddde0aa327a7f9b2",
+    "meshes/obj/main_frame_outrigger.obj": "d904e28cd4f310303e72c389086cf98b4f7f8a5862ad91fe78b9ba15e4cdb869",
+    "meshes/obj/mid_left_caster_housing.obj": "4677972b966fb60c80b1377e3818b4bf4f7dbce12bb09bd5bf242488a3d9a37b",
+    "meshes/obj/mid_right_caster_housing.obj": "4677972b966fb60c80b1377e3818b4bf4f7dbce12bb09bd5bf242488a3d9a37b",
+    "meshes/obj/middle_left_fork_-1.obj": "328fed2c5937e32dd5ee413b54605fefb5f750a3d399ef9b6e122ef7de3cfd81",
+    "meshes/obj/middle_left_fork_1.obj": "328fed2c5937e32dd5ee413b54605fefb5f750a3d399ef9b6e122ef7de3cfd81",
+    "meshes/obj/middle_left_fork_top.obj": "071ebcc3b55f892775c0150605a97ae9965d946f16fdd7e26174e4fbeb86db97",
+    "meshes/obj/middle_left_support_collision.obj": "cab9a8027af3aac274b7eba04c0ed989927bc99a5faae95c3705e69dec40d473",
+    "meshes/obj/middle_right_fork_-1.obj": "328fed2c5937e32dd5ee413b54605fefb5f750a3d399ef9b6e122ef7de3cfd81",
+    "meshes/obj/middle_right_fork_1.obj": "328fed2c5937e32dd5ee413b54605fefb5f750a3d399ef9b6e122ef7de3cfd81",
+    "meshes/obj/middle_right_fork_top.obj": "071ebcc3b55f892775c0150605a97ae9965d946f16fdd7e26174e4fbeb86db97",
+    "meshes/obj/middle_right_support_collision.obj": "cab9a8027af3aac274b7eba04c0ed989927bc99a5faae95c3705e69dec40d473",
+    "meshes/obj/motor_front_left_visual_0.obj": "bd1a659e21bf0084c42ca00c9fb11e102df19ab6b992a8cb126d458c5b572e2e",
+    "meshes/obj/motor_front_right_visual_0.obj": "bd1a659e21bf0084c42ca00c9fb11e102df19ab6b992a8cb126d458c5b572e2e",
+    "meshes/obj/motor_mid_left_visual_0.obj": "bd1a659e21bf0084c42ca00c9fb11e102df19ab6b992a8cb126d458c5b572e2e",
+    "meshes/obj/motor_mid_right_visual_0.obj": "bd1a659e21bf0084c42ca00c9fb11e102df19ab6b992a8cb126d458c5b572e2e",
+    "meshes/obj/motor_rear_left_visual_0.obj": "bd1a659e21bf0084c42ca00c9fb11e102df19ab6b992a8cb126d458c5b572e2e",
+    "meshes/obj/motor_rear_right_visual_0.obj": "bd1a659e21bf0084c42ca00c9fb11e102df19ab6b992a8cb126d458c5b572e2e",
+    "meshes/obj/reference_link1_joint_cover.obj": "8eae7e8f56a4feb9505fa7ce05238c6a97a9c2d33ff8e148dfc0ac6fb49f18d4",
+    "meshes/obj/reference_link2_joint_cover.obj": "090977a4c89321fbd1270b6b881a9956a379a56098e80695790345ae08f512be",
+    "meshes/obj/reference_link2_outer.obj": "b1fa2051a65482b52478b988ee4770ec19ade36142da7157c325119cb364cc7a",
+    "meshes/obj/reference_link3_outer.obj": "2873910df50ab436dc6f0bdc40f859f0661e00639941b7a3c5396d461690db3b",
+    "meshes/obj/rocker_left_collision_0.obj": "70fe6b0a957193f88a8d6d2151768fde8ebcf9c3cc2dcfce4ae2a330a0649670",
+    "meshes/obj/rocker_left_collision_1.obj": "f86af8fe64334427d7a08a387a862a1fd0f72d4c7ddc08ac5fa30f5ba04dcb70",
+    "meshes/obj/rocker_left_collision_2.obj": "a02fbb4c0d8aea183d7e1861452997effb5f52404692875c052c18d651f374bd",
+    "meshes/obj/rocker_left_visual_0.obj": "70fe6b0a957193f88a8d6d2151768fde8ebcf9c3cc2dcfce4ae2a330a0649670",
+    "meshes/obj/rocker_left_visual_1.obj": "f86af8fe64334427d7a08a387a862a1fd0f72d4c7ddc08ac5fa30f5ba04dcb70",
+    "meshes/obj/rocker_left_visual_2.obj": "a02fbb4c0d8aea183d7e1861452997effb5f52404692875c052c18d651f374bd",
+    "meshes/obj/rocker_right_collision_0.obj": "70fe6b0a957193f88a8d6d2151768fde8ebcf9c3cc2dcfce4ae2a330a0649670",
+    "meshes/obj/rocker_right_collision_1.obj": "f86af8fe64334427d7a08a387a862a1fd0f72d4c7ddc08ac5fa30f5ba04dcb70",
+    "meshes/obj/rocker_right_collision_2.obj": "a02fbb4c0d8aea183d7e1861452997effb5f52404692875c052c18d651f374bd",
+    "meshes/obj/rocker_right_visual_0.obj": "70fe6b0a957193f88a8d6d2151768fde8ebcf9c3cc2dcfce4ae2a330a0649670",
+    "meshes/obj/rocker_right_visual_1.obj": "f86af8fe64334427d7a08a387a862a1fd0f72d4c7ddc08ac5fa30f5ba04dcb70",
+    "meshes/obj/rocker_right_visual_2.obj": "a02fbb4c0d8aea183d7e1861452997effb5f52404692875c052c18d651f374bd",
+    "meshes/obj/secondary_arm_base_collision.obj": "aa7ef47ff28d08d20c85f9a0930bcbd26bb71cfa72d69b5bbd7b380535737752",
+    "meshes/obj/secondary_arm_base_visual.obj": "aa7ef47ff28d08d20c85f9a0930bcbd26bb71cfa72d69b5bbd7b380535737752",
+    "meshes/obj/secondary_elbow_joint_visual.obj": "225f24f9ed2356dacfec2e76374ca148cdea9f6c6aecd7eadc8e9943fcf19ed5",
+    "meshes/obj/secondary_gripper_palm_collision.obj": "c23d36e5066418ee2bf80963bcb315803559a6014fb6853beb362f2bbfec4680",
+    "meshes/obj/secondary_gripper_palm_visual.obj": "c23d36e5066418ee2bf80963bcb315803559a6014fb6853beb362f2bbfec4680",
+    "meshes/obj/secondary_link1_collision.obj": "b7945407af0e63d0bec1d253d9b4c3a7191550a81bd9e4786a03831986febcaa",
+    "meshes/obj/secondary_link1_visual.obj": "b7945407af0e63d0bec1d253d9b4c3a7191550a81bd9e4786a03831986febcaa",
+    "meshes/obj/secondary_link2_collision.obj": "d88d3359e8699d2a1b493389ff039178ed2a3ee0faae78aeeb3e6e7f424ab6cd",
+    "meshes/obj/secondary_link2_visual.obj": "d88d3359e8699d2a1b493389ff039178ed2a3ee0faae78aeeb3e6e7f424ab6cd",
+    "meshes/obj/secondary_link3_collision.obj": "d565e7c5e389d17e9aef32144009053f9ba207c2e9ce91f617e09adca5d7d5cb",
+    "meshes/obj/secondary_link3_visual.obj": "d565e7c5e389d17e9aef32144009053f9ba207c2e9ce91f617e09adca5d7d5cb",
+    "meshes/obj/secondary_shoulder_joint_visual.obj": "88c72cb6209ddcabc4735d828626cf50e18498ff4507c40df4e88b38717d2323",
+    "meshes/obj/wheel_front_left_collision_0.obj": "b07c293702562fe4763636a73e7d8199f7dfa29a6190daa89f2c0e00aeb183e4",
+    "meshes/obj/wheel_front_left_visual_0.obj": "b07c293702562fe4763636a73e7d8199f7dfa29a6190daa89f2c0e00aeb183e4",
+    "meshes/obj/wheel_front_left_visual_1.obj": "f987543d7b719707720819fb362e7468d23017f68091647a81fc3faecfa2dc35",
+    "meshes/obj/wheel_front_right_collision_0.obj": "b07c293702562fe4763636a73e7d8199f7dfa29a6190daa89f2c0e00aeb183e4",
+    "meshes/obj/wheel_front_right_visual_0.obj": "b07c293702562fe4763636a73e7d8199f7dfa29a6190daa89f2c0e00aeb183e4",
+    "meshes/obj/wheel_front_right_visual_1.obj": "f987543d7b719707720819fb362e7468d23017f68091647a81fc3faecfa2dc35",
+    "meshes/obj/wheel_mid_left_collision_0.obj": "a95ae9a62d240835c89179542b1649dd0e8ce5eb99e391dee8aa67b9c0301461",
+    "meshes/obj/wheel_mid_left_visual_0.obj": "a95ae9a62d240835c89179542b1649dd0e8ce5eb99e391dee8aa67b9c0301461",
+    "meshes/obj/wheel_mid_left_visual_1.obj": "acd9fd837690f7c3bee8593d1debb60c7935a2a97fb466546f6b5121ace4ca5c",
+    "meshes/obj/wheel_mid_right_collision_0.obj": "a95ae9a62d240835c89179542b1649dd0e8ce5eb99e391dee8aa67b9c0301461",
+    "meshes/obj/wheel_mid_right_visual_0.obj": "a95ae9a62d240835c89179542b1649dd0e8ce5eb99e391dee8aa67b9c0301461",
+    "meshes/obj/wheel_mid_right_visual_1.obj": "acd9fd837690f7c3bee8593d1debb60c7935a2a97fb466546f6b5121ace4ca5c",
+    "meshes/obj/wheel_rear_left_collision_0.obj": "b07c293702562fe4763636a73e7d8199f7dfa29a6190daa89f2c0e00aeb183e4",
+    "meshes/obj/wheel_rear_left_visual_0.obj": "b07c293702562fe4763636a73e7d8199f7dfa29a6190daa89f2c0e00aeb183e4",
+    "meshes/obj/wheel_rear_left_visual_1.obj": "f987543d7b719707720819fb362e7468d23017f68091647a81fc3faecfa2dc35",
+    "meshes/obj/wheel_rear_right_collision_0.obj": "b07c293702562fe4763636a73e7d8199f7dfa29a6190daa89f2c0e00aeb183e4",
+    "meshes/obj/wheel_rear_right_visual_0.obj": "b07c293702562fe4763636a73e7d8199f7dfa29a6190daa89f2c0e00aeb183e4",
+    "meshes/obj/wheel_rear_right_visual_1.obj": "f987543d7b719707720819fb362e7468d23017f68091647a81fc3faecfa2dc35",
+    "meshes/obj/wrist1_link_collision_0.obj": "bda9bc7adec8f62d5a2c23c4bacc6b5e55342827665f69174488ecb09a35c6ae",
+    "meshes/obj/wrist1_link_visual_0.obj": "bda9bc7adec8f62d5a2c23c4bacc6b5e55342827665f69174488ecb09a35c6ae",
+    "meshes/obj/wrist2_link_collision_0.obj": "7cad7ba98713b02e64914935204e92616b488bb04b7fc44b5cca470495d34c01",
+    "meshes/obj/wrist2_link_visual_0.obj": "7cad7ba98713b02e64914935204e92616b488bb04b7fc44b5cca470495d34c01",
+    "meshes/obj/wrist3_link_collision_0.obj": "ad44110e3ad8251186673dde59c26d827d9c37b4be0477ca951c2089d75ef5b1",
+    "meshes/obj/wrist3_link_visual_0.obj": "ad44110e3ad8251186673dde59c26d827d9c37b4be0477ca951c2089d75ef5b1",
+    "meshes/stl/arm_base_collision_0.stl": "33530f9e606e736ed3755b8419586d98fc13cd61fa0a9a7894d6aadc2455d18b",
+    "meshes/stl/arm_base_visual_0.stl": "4709d62c424f572b45276379d06afacd617738a4be825000ee89c05e9fa0d8e8",
+    "meshes/stl/aux_case_back.stl": "49fe734b37ad332d756cc6323ae42b4745ffaeadd2ba9a67ff527b549a328a7d",
+    "meshes/stl/aux_case_cover.stl": "fe1db0b78bceb8ae4548afe03a920e204b479afb71ce0c87449e849d821d345c",
+    "meshes/stl/aux_case_floor.stl": "a9ca7c3d349f02eebb48f1f190a7e253fa77650b7af396e125dd64bee5f67c2b",
+    "meshes/stl/aux_case_inner.stl": "1a4f17dd23a60f646d86acb955164d65eafee6cc1617e06c473d0cb0c1b80234",
+    "meshes/stl/aux_case_outer.stl": "1a4f17dd23a60f646d86acb955164d65eafee6cc1617e06c473d0cb0c1b80234",
+    "meshes/stl/aux_left_pad.stl": "98f22ec2108e3547b1abc6933f9937aae68c6c06679a3f5a3e19ed2f23d68e08",
+    "meshes/stl/aux_right_pad.stl": "98f22ec2108e3547b1abc6933f9937aae68c6c06679a3f5a3e19ed2f23d68e08",
+    "meshes/stl/base_collision_0.stl": "011cd330a2982fb76707e76de0fb4f437ae7fb213974e30ac660525980a945c6",
+    "meshes/stl/base_collision_1.stl": "3ec058749d6cfdb5b7a5331bde3cf7ceca3527a15ab14eb530c573e0eb182831",
+    "meshes/stl/base_collision_2.stl": "57f6d56fc71ab5a7a5c67c9df1aba2191ac95306e0c91f427bf11157e871e6fe",
+    "meshes/stl/base_collision_3.stl": "5adc7286586bdaced158c845bd339d7fdf9e425017034dfc89593f9058384295",
+    "meshes/stl/base_visual_0.stl": "011cd330a2982fb76707e76de0fb4f437ae7fb213974e30ac660525980a945c6",
+    "meshes/stl/base_visual_1.stl": "3ec058749d6cfdb5b7a5331bde3cf7ceca3527a15ab14eb530c573e0eb182831",
+    "meshes/stl/base_visual_10.stl": "be7bc19cd1f5a35e84de33f92234493e3c526354069d1d0115c35b61e8f266d5",
+    "meshes/stl/base_visual_11.stl": "29bcf106b89012473b0301e011ada76bd659a7fa2c6c9dee7780935c44df4f19",
+    "meshes/stl/base_visual_12.stl": "19ece46e777443f98df70e4b1c19e59448e8cb0a27c2ef5a73cef2cc8bcd31e9",
+    "meshes/stl/base_visual_13.stl": "a0a7e29169ed98135ba41a8d9d152e62efbbef89de9bdccb3a3f300f389b1fe5",
+    "meshes/stl/base_visual_14.stl": "ba970838ebee1e50fe3ba2401a8ae9a8af7631e5f8af1ba10ad8cd04f2f9770e",
+    "meshes/stl/base_visual_15.stl": "9f16c6e0e11e30e1a5764227fde75a50f3f5f8a2b32fbe08a7834e1fbbcf9a84",
+    "meshes/stl/base_visual_16.stl": "19ece46e777443f98df70e4b1c19e59448e8cb0a27c2ef5a73cef2cc8bcd31e9",
+    "meshes/stl/base_visual_17.stl": "a0a7e29169ed98135ba41a8d9d152e62efbbef89de9bdccb3a3f300f389b1fe5",
+    "meshes/stl/base_visual_18.stl": "ba970838ebee1e50fe3ba2401a8ae9a8af7631e5f8af1ba10ad8cd04f2f9770e",
+    "meshes/stl/base_visual_19.stl": "9f16c6e0e11e30e1a5764227fde75a50f3f5f8a2b32fbe08a7834e1fbbcf9a84",
+    "meshes/stl/base_visual_2.stl": "57f6d56fc71ab5a7a5c67c9df1aba2191ac95306e0c91f427bf11157e871e6fe",
+    "meshes/stl/base_visual_3.stl": "5adc7286586bdaced158c845bd339d7fdf9e425017034dfc89593f9058384295",
+    "meshes/stl/base_visual_4.stl": "902dda8a06478847a913d8caaf2122381c4e1ae708052804920f2df29e16f3ec",
+    "meshes/stl/base_visual_5.stl": "4513b8d39c9fe4da7985fdb68161e1e8f506e3103815e997ff58a4de1f5fcef1",
+    "meshes/stl/base_visual_6.stl": "68ff41d73ab716b1f63ba55efed06e1b8ea1f58b8e10c28ba81f670278023aba",
+    "meshes/stl/base_visual_7.stl": "20195713dede8b380784fbe196399c9805373ddd4bc5efa6764585ab3a1b9388",
+    "meshes/stl/base_visual_8.stl": "ef829495dfdbbb4c4189552e812b60daa02a3e075dcfdf2d91d6c15a8b6b42ab",
+    "meshes/stl/base_visual_9.stl": "9ce778a931811634a35fff6c75eb599cc0194f2fe9aa84f88fc8e4bc72da21e5",
+    "meshes/stl/bogie_left_collision_0.stl": "1c984f0b6edd9d3b84d05e936457af19723d017aa14b7fb83efd55d7b068a7d9",
+    "meshes/stl/bogie_left_collision_1.stl": "bef7c572dbecfd5539b191c5335cf6f06fb5ae1448e8820383a6737848a7c470",
+    "meshes/stl/bogie_left_visual_0.stl": "1c984f0b6edd9d3b84d05e936457af19723d017aa14b7fb83efd55d7b068a7d9",
+    "meshes/stl/bogie_left_visual_1.stl": "bef7c572dbecfd5539b191c5335cf6f06fb5ae1448e8820383a6737848a7c470",
+    "meshes/stl/bogie_right_collision_0.stl": "1c984f0b6edd9d3b84d05e936457af19723d017aa14b7fb83efd55d7b068a7d9",
+    "meshes/stl/bogie_right_collision_1.stl": "bef7c572dbecfd5539b191c5335cf6f06fb5ae1448e8820383a6737848a7c470",
+    "meshes/stl/bogie_right_visual_0.stl": "1c984f0b6edd9d3b84d05e936457af19723d017aa14b7fb83efd55d7b068a7d9",
+    "meshes/stl/bogie_right_visual_1.stl": "bef7c572dbecfd5539b191c5335cf6f06fb5ae1448e8820383a6737848a7c470",
+    "meshes/stl/controller_box_collision.stl": "e8fa289f48caea48a8ec160fa17cda6844adc73e7f1edf52d22f3461760755a6",
+    "meshes/stl/controller_box_panel.stl": "9b586d0601c897daea7cf8981264fc3664aa6dd54f8334d3f026b4196db3121e",
+    "meshes/stl/controller_box_visual.stl": "e8fa289f48caea48a8ec160fa17cda6844adc73e7f1edf52d22f3461760755a6",
+    "meshes/stl/end_link_collision_0.stl": "379f42dd21d4a192c853d9d197688725b8516e994b068e039ced829f6305dfff",
+    "meshes/stl/end_link_collision_gripper_palm.stl": "fa6e4b8b8e40d0a84a555a5874692bb4dae0f48bd1aab29f03a846108643bf16",
+    "meshes/stl/end_link_gripper_palm_visual.stl": "fa6e4b8b8e40d0a84a555a5874692bb4dae0f48bd1aab29f03a846108643bf16",
+    "meshes/stl/end_link_visual_0.stl": "379f42dd21d4a192c853d9d197688725b8516e994b068e039ced829f6305dfff",
+    "meshes/stl/flange_link_collision_0.stl": "8b7bcc3d36eb4114d43b3ba34fb4cab2e155f296ddcac437c901aa8375015797",
+    "meshes/stl/flange_link_collision_1.stl": "81e1624ae2a5df17af2c6d5070c6b497d03a23e9b6e7335e05eca1216ce9cf0a",
+    "meshes/stl/flange_link_visual_0.stl": "8b7bcc3d36eb4114d43b3ba34fb4cab2e155f296ddcac437c901aa8375015797",
+    "meshes/stl/flange_link_visual_1.stl": "66fe6a1f338077fd51115e2dacac3eccd0ab4aeeea44a0d4c6e4757f1eb0b8c5",
+    "meshes/stl/front_left_fork_-1.stl": "024f82ff85781bc7e0b30ea9d124c3cd39703138d1c6cba7231cbdafb856d5aa",
+    "meshes/stl/front_left_fork_1.stl": "024f82ff85781bc7e0b30ea9d124c3cd39703138d1c6cba7231cbdafb856d5aa",
+    "meshes/stl/front_left_fork_top.stl": "41092e09545db62b1920d29e58caa4075b1f1e504d92f8afcbb44532b8d705e8",
+    "meshes/stl/front_left_knuckle_visual.stl": "ba42791dfdd5471b1c18d286e3eea7ab14549946a655cadfb396486c11e838d4",
+    "meshes/stl/front_left_support_collision.stl": "f120966d1aab06c863ee9d3c14a9e194ee1fa7863b606f66a4108acc3e388aab",
+    "meshes/stl/front_right_fork_-1.stl": "024f82ff85781bc7e0b30ea9d124c3cd39703138d1c6cba7231cbdafb856d5aa",
+    "meshes/stl/front_right_fork_1.stl": "024f82ff85781bc7e0b30ea9d124c3cd39703138d1c6cba7231cbdafb856d5aa",
+    "meshes/stl/front_right_fork_top.stl": "41092e09545db62b1920d29e58caa4075b1f1e504d92f8afcbb44532b8d705e8",
+    "meshes/stl/front_right_knuckle_visual.stl": "ba42791dfdd5471b1c18d286e3eea7ab14549946a655cadfb396486c11e838d4",
+    "meshes/stl/front_right_support_collision.stl": "f120966d1aab06c863ee9d3c14a9e194ee1fa7863b606f66a4108acc3e388aab",
+    "meshes/stl/grasp_left_pad.stl": "c6c8c392cbed8fc406d47862fcbfeb0d52c0208872c2c312ac16abb7bf87191d",
+    "meshes/stl/grasp_right_pad.stl": "c6c8c392cbed8fc406d47862fcbfeb0d52c0208872c2c312ac16abb7bf87191d",
+    "meshes/stl/link1_collision_0.stl": "d36c8d1c6d8e2aebd73918d72c5188e0aacd9c300e1c030bb88696d8e9f993e0",
+    "meshes/stl/link1_collision_1.stl": "fa7c0d5d75e2fd9e7bc4dfa0b50d924f67fafef993d61f038c00235ad72b544c",
+    "meshes/stl/link1_visual_0.stl": "695f27ed4feac5beb6ef4d0ba07a67b55ad968a9cfe24833b35d20130d5b30b8",
+    "meshes/stl/link1_visual_1.stl": "fa7c0d5d75e2fd9e7bc4dfa0b50d924f67fafef993d61f038c00235ad72b544c",
+    "meshes/stl/link2_collision_0.stl": "943054d8d4cf382756da98b56087a8b73fddc49239adeddef58aec2f1e023f34",
+    "meshes/stl/link2_collision_1.stl": "fb424ab81b2526fe605d99984d1fa45eabb9e1fbf6d6c94b0509f3752a27ea3d",
+    "meshes/stl/link3_collision_0.stl": "1b2e5372dbee81fc608a0a96fa37a5b7cdfa0c73c5a8cb0abbd38577873f99b8",
+    "meshes/stl/main_case_back.stl": "e16795cb1b78d40e1a4c5397ec9ee66e38e20e4dd3fa1e2e87a29efd9c1dca68",
+    "meshes/stl/main_case_cover.stl": "18da1e16271757cc566422bcb84f5510f61a22fbc1ab1216281539b24823536a",
+    "meshes/stl/main_case_floor_front.stl": "e667258bd54b012144fa2fc6c2fcb755ba8c858a2973cbcb9858e4216c18e3c1",
+    "meshes/stl/main_case_inner_front.stl": "342aba5a9f7d5271546aed3eec03a4d9a1e28659f0971fc5bc029d54f6e9f6e9",
+    "meshes/stl/main_case_outer.stl": "556c1ac8fc81034613de4d7837c84406a5a5dc3f51519a2e1280fd503ba68a58",
+    "meshes/stl/main_case_pedestal.stl": "93dd3d84c62c5e85a5ce2b5288b5f75c8a2b9ec6609fcd1a926217225486185a",
+    "meshes/stl/main_frame_outrigger.stl": "fd5a7ba735495a28aa57673ce5ddae700dacf841ce4f0e070cd65031037e61ad",
+    "meshes/stl/mid_left_caster_housing.stl": "6a3a0e96f6ef3421f7591b9f37614f7d4cc80714abd342d8be86eed3d5619114",
+    "meshes/stl/mid_right_caster_housing.stl": "6a3a0e96f6ef3421f7591b9f37614f7d4cc80714abd342d8be86eed3d5619114",
+    "meshes/stl/middle_left_fork_-1.stl": "555a6554f72b23c4bd8a90d74d123ffe48ee1798ae5139fa759cb4331411d40b",
+    "meshes/stl/middle_left_fork_1.stl": "555a6554f72b23c4bd8a90d74d123ffe48ee1798ae5139fa759cb4331411d40b",
+    "meshes/stl/middle_left_fork_top.stl": "41092e09545db62b1920d29e58caa4075b1f1e504d92f8afcbb44532b8d705e8",
+    "meshes/stl/middle_left_support_collision.stl": "e76ee61110e6e1c5f4dddcce8bdde659733e3c9d1a560bd3039bebd857116460",
+    "meshes/stl/middle_right_fork_-1.stl": "555a6554f72b23c4bd8a90d74d123ffe48ee1798ae5139fa759cb4331411d40b",
+    "meshes/stl/middle_right_fork_1.stl": "555a6554f72b23c4bd8a90d74d123ffe48ee1798ae5139fa759cb4331411d40b",
+    "meshes/stl/middle_right_fork_top.stl": "41092e09545db62b1920d29e58caa4075b1f1e504d92f8afcbb44532b8d705e8",
+    "meshes/stl/middle_right_support_collision.stl": "e76ee61110e6e1c5f4dddcce8bdde659733e3c9d1a560bd3039bebd857116460",
+    "meshes/stl/motor_front_left_visual_0.stl": "555a6232c42d12df900a404fb0fd780f8de13f8919866862d755b3f18071d30a",
+    "meshes/stl/motor_front_right_visual_0.stl": "555a6232c42d12df900a404fb0fd780f8de13f8919866862d755b3f18071d30a",
+    "meshes/stl/motor_mid_left_visual_0.stl": "555a6232c42d12df900a404fb0fd780f8de13f8919866862d755b3f18071d30a",
+    "meshes/stl/motor_mid_right_visual_0.stl": "555a6232c42d12df900a404fb0fd780f8de13f8919866862d755b3f18071d30a",
+    "meshes/stl/motor_rear_left_visual_0.stl": "555a6232c42d12df900a404fb0fd780f8de13f8919866862d755b3f18071d30a",
+    "meshes/stl/motor_rear_right_visual_0.stl": "555a6232c42d12df900a404fb0fd780f8de13f8919866862d755b3f18071d30a",
+    "meshes/stl/reference_link1_joint_cover.stl": "8174f1ec3a377216c1a8948e037ff3aa7862661945c7f7a3fe25f55a1f675da1",
+    "meshes/stl/reference_link2_joint_cover.stl": "1ac63318d93b56477db1fb166651b22cb2b15746c8557f7127ee5279e1d28ca4",
+    "meshes/stl/reference_link2_outer.stl": "e95dd44275b26e3b65e7630395aa14c06405bd6070eabcf792e9054455309706",
+    "meshes/stl/reference_link3_outer.stl": "f318c45bb8410732bfd0f7cd04b8404660c9eb46ad92391c9eb021966f9c598a",
+    "meshes/stl/rocker_left_collision_0.stl": "12fef39aaa8735889d60bb31291afb88bb117d952d436a770b50467ff4f6ea16",
+    "meshes/stl/rocker_left_collision_1.stl": "cc4ad751cd5b4fcd2fca88fd99e31d3b11ab17636f90e0a2e8c6ac1f5e043338",
+    "meshes/stl/rocker_left_collision_2.stl": "b6233df44386efbfc74e9be3f60c0175c509b7692cae39db505f35ea1d044503",
+    "meshes/stl/rocker_left_visual_0.stl": "12fef39aaa8735889d60bb31291afb88bb117d952d436a770b50467ff4f6ea16",
+    "meshes/stl/rocker_left_visual_1.stl": "cc4ad751cd5b4fcd2fca88fd99e31d3b11ab17636f90e0a2e8c6ac1f5e043338",
+    "meshes/stl/rocker_left_visual_2.stl": "b6233df44386efbfc74e9be3f60c0175c509b7692cae39db505f35ea1d044503",
+    "meshes/stl/rocker_right_collision_0.stl": "12fef39aaa8735889d60bb31291afb88bb117d952d436a770b50467ff4f6ea16",
+    "meshes/stl/rocker_right_collision_1.stl": "cc4ad751cd5b4fcd2fca88fd99e31d3b11ab17636f90e0a2e8c6ac1f5e043338",
+    "meshes/stl/rocker_right_collision_2.stl": "b6233df44386efbfc74e9be3f60c0175c509b7692cae39db505f35ea1d044503",
+    "meshes/stl/rocker_right_visual_0.stl": "12fef39aaa8735889d60bb31291afb88bb117d952d436a770b50467ff4f6ea16",
+    "meshes/stl/rocker_right_visual_1.stl": "cc4ad751cd5b4fcd2fca88fd99e31d3b11ab17636f90e0a2e8c6ac1f5e043338",
+    "meshes/stl/rocker_right_visual_2.stl": "b6233df44386efbfc74e9be3f60c0175c509b7692cae39db505f35ea1d044503",
+    "meshes/stl/secondary_arm_base_collision.stl": "42cfc0a7fb934c8f68e17fe386087be816358aea94364a6fadb24d47599c1b16",
+    "meshes/stl/secondary_arm_base_visual.stl": "42cfc0a7fb934c8f68e17fe386087be816358aea94364a6fadb24d47599c1b16",
+    "meshes/stl/secondary_elbow_joint_visual.stl": "556490d28c7f684325189cd5f44be908fcf2c3d803d7e802c68e6f8c9add8793",
+    "meshes/stl/secondary_gripper_palm_collision.stl": "8f78427e2f58c7aa911a015c886952f6803609b0e484871317491d89d1adc7cb",
+    "meshes/stl/secondary_gripper_palm_visual.stl": "8f78427e2f58c7aa911a015c886952f6803609b0e484871317491d89d1adc7cb",
+    "meshes/stl/secondary_link1_collision.stl": "df4be209b8c061c7daae3379ab41badcf36cee9ff0316554dc265ccd3fcd6a66",
+    "meshes/stl/secondary_link1_visual.stl": "df4be209b8c061c7daae3379ab41badcf36cee9ff0316554dc265ccd3fcd6a66",
+    "meshes/stl/secondary_link2_collision.stl": "66e64d40b4661e1f505a506d17ef143f89a173bd2bafa057667c1fad9f25c952",
+    "meshes/stl/secondary_link2_visual.stl": "66e64d40b4661e1f505a506d17ef143f89a173bd2bafa057667c1fad9f25c952",
+    "meshes/stl/secondary_link3_collision.stl": "c4a1dd195dc6fbd5064e7ce47ba9408e0856a17085af4440db2567fe3e528ace",
+    "meshes/stl/secondary_link3_visual.stl": "c4a1dd195dc6fbd5064e7ce47ba9408e0856a17085af4440db2567fe3e528ace",
+    "meshes/stl/secondary_shoulder_joint_visual.stl": "00b561e380a4799c77bc68cf4e05a85a77a45fff95a09dbb725f4d12faa36a0a",
+    "meshes/stl/wheel_front_left_collision_0.stl": "8f9fda125083c2fec66f5252955d705745754b2c2d597021d9e67394e44cb732",
+    "meshes/stl/wheel_front_left_visual_0.stl": "8f9fda125083c2fec66f5252955d705745754b2c2d597021d9e67394e44cb732",
+    "meshes/stl/wheel_front_left_visual_1.stl": "57b09dacb732bb1bedb91f2077dda341a8888eaace73271c790504b5c4bea4db",
+    "meshes/stl/wheel_front_right_collision_0.stl": "8f9fda125083c2fec66f5252955d705745754b2c2d597021d9e67394e44cb732",
+    "meshes/stl/wheel_front_right_visual_0.stl": "8f9fda125083c2fec66f5252955d705745754b2c2d597021d9e67394e44cb732",
+    "meshes/stl/wheel_front_right_visual_1.stl": "57b09dacb732bb1bedb91f2077dda341a8888eaace73271c790504b5c4bea4db",
+    "meshes/stl/wheel_mid_left_collision_0.stl": "84d8aa1dfcf097e2e5f7faa52b115a9c39552bd72edacd93680c0900682c9422",
+    "meshes/stl/wheel_mid_left_visual_0.stl": "84d8aa1dfcf097e2e5f7faa52b115a9c39552bd72edacd93680c0900682c9422",
+    "meshes/stl/wheel_mid_left_visual_1.stl": "b2b89f09a4a8afae6775fe8fd2da51d029acea0cc50daaae045adb0ada7d38ed",
+    "meshes/stl/wheel_mid_right_collision_0.stl": "84d8aa1dfcf097e2e5f7faa52b115a9c39552bd72edacd93680c0900682c9422",
+    "meshes/stl/wheel_mid_right_visual_0.stl": "84d8aa1dfcf097e2e5f7faa52b115a9c39552bd72edacd93680c0900682c9422",
+    "meshes/stl/wheel_mid_right_visual_1.stl": "b2b89f09a4a8afae6775fe8fd2da51d029acea0cc50daaae045adb0ada7d38ed",
+    "meshes/stl/wheel_rear_left_collision_0.stl": "8f9fda125083c2fec66f5252955d705745754b2c2d597021d9e67394e44cb732",
+    "meshes/stl/wheel_rear_left_visual_0.stl": "8f9fda125083c2fec66f5252955d705745754b2c2d597021d9e67394e44cb732",
+    "meshes/stl/wheel_rear_left_visual_1.stl": "57b09dacb732bb1bedb91f2077dda341a8888eaace73271c790504b5c4bea4db",
+    "meshes/stl/wheel_rear_right_collision_0.stl": "8f9fda125083c2fec66f5252955d705745754b2c2d597021d9e67394e44cb732",
+    "meshes/stl/wheel_rear_right_visual_0.stl": "8f9fda125083c2fec66f5252955d705745754b2c2d597021d9e67394e44cb732",
+    "meshes/stl/wheel_rear_right_visual_1.stl": "57b09dacb732bb1bedb91f2077dda341a8888eaace73271c790504b5c4bea4db",
+    "meshes/stl/wrist1_link_collision_0.stl": "277e9ef706f8f13a3d22b479d7014e4986096bcdabdb44344f8e71de559b1088",
+    "meshes/stl/wrist1_link_visual_0.stl": "277e9ef706f8f13a3d22b479d7014e4986096bcdabdb44344f8e71de559b1088",
+    "meshes/stl/wrist2_link_collision_0.stl": "8c3442fa89b23b00773c51489fc1ba44afc041736a3163cb5ab50d204bc5af37",
+    "meshes/stl/wrist2_link_visual_0.stl": "8c3442fa89b23b00773c51489fc1ba44afc041736a3163cb5ab50d204bc5af37",
+    "meshes/stl/wrist3_link_collision_0.stl": "18e36243d80d6ee48b7153b9f764e72d9831a8a4b1a7c95cde50ba63c7b55e31",
+    "meshes/stl/wrist3_link_visual_0.stl": "18e36243d80d6ee48b7153b9f764e72d9831a8a4b1a7c95cde50ba63c7b55e31",
+    "mjcf/wheelchair_robot.xml": "a19a0213187ff877695ae2b9954607e8775767cae177c36b678dd5794dbe7c6f",
+    "mjcf/wheelchair_scene.xml": "059d599802f3beb9b8f7dcb1ccbf417144baa02cfef93fb232384a6dbddec09c",
+    "urdf/wheelchair.urdf": "29a524507d54d9c6daf221d3393e4ec3a8b99857f59935b41e6a4b525defe63f"
+  }
+}

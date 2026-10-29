@@ -1,0 +1,26 @@
+test_controls_cross_an_independent_python_process (tests.test_live_display.ChannelTests) ... ok
+test_pause_and_speed_keys_have_bounds (tests.test_live_display.ChannelTests) ... ok
+test_two_handles_copy_snapshots_and_keep_controls_separate (tests.test_live_display.ChannelTests) ... ok
+test_completed_snapshot_and_copied_render_model_cannot_modify_physics (tests.test_live_display.ObserverTests) ... ok
+test_observer_preserves_exact_dynamic_trajectory (tests.test_live_display.ObserverTests) ... ok
+test_pause_rebases_pacer_and_closing_cancels (tests.test_live_display.ObserverTests) ... ok
+test_renderer_wall_cadence_and_status_without_native_gui (tests.test_live_display.ObserverTests) ... ok
+test_invalid_timing_is_rejected (tests.test_live_display.PacingTests) ... ok
+test_planning_gap_rebases_instead_of_accumulating_catchup_debt (tests.test_live_display.PacingTests) ... ok
+test_cancelled_and_failed_runs_are_not_recorded_as_passed (tests.test_live_display.WorkerStatusTests) ... Run cancelled; this is not a completed physical task.
+ok
+test_executor_and_renderer_errors_record_error (tests.test_live_display.WorkerStatusTests) ... ok
+test_cancelled_run_is_not_success (tests.test_live_launcher.LiveLauncherTests) ... ok
+test_failed_run_is_not_success (tests.test_live_launcher.LiveLauncherTests) ... ok
+test_fresh_success_only_and_owned_idle_child_cleanup (tests.test_live_launcher.LiveLauncherTests) ... ok
+test_invalid_timing_is_rejected (tests.test_replay.PlaybackTimelineTests) ... ok
+test_pause_speed_restart_end_and_loop (tests.test_replay.PlaybackTimelineTests) ... ok
+test_display_interpolation_preserves_samples_and_quaternions (tests.test_replay.RecordingTests) ... ok
+test_motion_and_final_folded_storage_are_present (tests.test_replay.RecordingTests) ... ok
+test_recorded_poses_and_recipient_motion_are_applied_exactly (tests.test_replay.RecordingTests) ... ok
+test_stale_failed_or_malformed_recordings_are_rejected (tests.test_replay.RecordingTests) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.274s
+
+OK

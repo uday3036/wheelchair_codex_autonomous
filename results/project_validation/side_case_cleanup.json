@@ -1,0 +1,25 @@
+{
+  "archive": "references/side_case_development_20261022.zip",
+  "files": 181,
+  "original_bytes": 227137150,
+  "archive_bytes": 151048429,
+  "archive_sha256": "4d07f937e582c487982e15a4f6265f84224aa5b4a5c3501097748923eb190e99",
+  "verified": true,
+  "removed_identical_render_copies": [
+    {
+      "duplicate": "results/live_validation/nominal.gif",
+      "retained": "results/autonomous_validation/nominal.gif",
+      "bytes": 95619205
+    },
+    {
+      "duplicate": "results/live_validation/arm_storage.png",
+      "retained": "results/autonomous_validation/arm_storage.png",
+      "bytes": 187234
+    },
+    {
+      "duplicate": "results/live_validation/autonomous_stages.png",
+      "retained": "results/autonomous_validation/autonomous_stages.png",
+      "bytes": 497028
+    }
+  ]
+}

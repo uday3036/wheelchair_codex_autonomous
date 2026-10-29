@@ -1,0 +1,35 @@
+{
+  "source_sha256": "c9583205340fae2a88adb3bfe8daacbea54ff4f263a0eb3d9857b83a019874ba",
+  "checks": {
+    "current_physics_source": true,
+    "fresh_live_passed": true,
+    "complete_task_passed": true,
+    "delivery_checks": true,
+    "arms_folded_covers_closed": true,
+    "renderer_no_error": true,
+    "render_p95_below_two_frames_plus_5ms": true,
+    "exact_recorded_qpos": true,
+    "exact_recorded_frame_times_s": true,
+    "exact_recorded_mocap_pos": true,
+    "exact_navigation_trace": true,
+    "exact_deploy_trace": true,
+    "exact_delivery_trace": true,
+    "exact_idle_stow_trace": true,
+    "exact_parking_trace": true,
+    "matched_smoke_p95_improved": true
+  },
+  "passed": true,
+  "presentation_files_sha256": {
+    "scripts/run_live.py": "3328f9ddb2fb9b2f9fd543319bfe32ee631665355ca5375f178cdcef65d7c395",
+    "scripts/live_task.py": "6206a9bcd760f109c192ade113aba6c885f81a463f70474b9e2ca45e56b7e8dc",
+    "scripts/live_display.py": "b1f1bb4f74b25e0e8ff110c7b001064775c5fa9d464577a21fdc82832a4c9074",
+    "scripts/live_channel.py": "1cb36d2496b919ff776898470988a48325f740b01c706d30b51049e8e4106a0a",
+    "scripts/live_renderer.py": "8ae0ac97aa56404a5a58f60481a7dedd475d43fcd709e2b6049ff189bfc50677"
+  },
+  "p95_ms": {
+    "thread_navigation": 317.70755819999795,
+    "process_navigation": 17.010103949999777,
+    "process_complete_task": 17.374324999999583
+  },
+  "scope": "Wall-clock rendering and exact physical-trace equivalence; sensor/planning waits can still hold physical time."
+}

@@ -1,0 +1,302 @@
+{
+  "source_sha256": "c9583205340fae2a88adb3bfe8daacbea54ff4f263a0eb3d9857b83a019874ba",
+  "reverse": {
+    "prealigned": {
+      "initial_caster_angles_rad": [
+        3.141592653589793,
+        3.141592653589793
+      ],
+      "travelled_m": 0.8134335494080206,
+      "full_reverse_ready": true,
+      "final_alignment_error_deg": 0.0013856206102416267,
+      "checks": {
+        "no_unexpected_contacts": true,
+        "finite": true,
+        "stopped_below_8mm_s": true,
+        "arms_still_stored": true
+      },
+      "safe_stop": true,
+      "reverse_completed": true,
+      "unexpected_contacts": {},
+      "scope": "open-floor straight reverse; bounded creep until passive caster readiness; no arbitrary reverse turning claim"
+    },
+    "sideways": {
+      "initial_caster_angles_rad": [
+        1.5707963267948966,
+        1.5707963267948966
+      ],
+      "travelled_m": 0.008291786542742692,
+      "full_reverse_ready": false,
+      "final_alignment_error_deg": 80.3773151911181,
+      "checks": {
+        "no_unexpected_contacts": true,
+        "finite": true,
+        "stopped_below_8mm_s": true,
+        "arms_still_stored": true
+      },
+      "safe_stop": true,
+      "reverse_completed": false,
+      "unexpected_contacts": {},
+      "scope": "open-floor straight reverse; bounded creep until passive caster readiness; no arbitrary reverse turning claim"
+    },
+    "opposed": {
+      "initial_caster_angles_rad": [
+        0.0,
+        3.141592653589793
+      ],
+      "travelled_m": 0.26147098949862035,
+      "full_reverse_ready": false,
+      "final_alignment_error_deg": 179.84888005781818,
+      "checks": {
+        "no_unexpected_contacts": true,
+        "finite": true,
+        "stopped_below_8mm_s": true,
+        "arms_still_stored": true
+      },
+      "safe_stop": true,
+      "reverse_completed": false,
+      "unexpected_contacts": {},
+      "scope": "open-floor straight reverse; bounded creep until passive caster readiness; no arbitrary reverse turning claim"
+    }
+  },
+  "payload": {
+    "nominal": {
+      "mass_kg": 0.3,
+      "friction": 1.0,
+      "payload_feedforward": true,
+      "jaw_closing": true,
+      "arm_appearance": "reference",
+      "jaw_hold_force_N": 7.5,
+      "pregrasp_height_m": 0.04,
+      "peak_preclose_contact_N": 0.0,
+      "contact_impratio": 10.0,
+      "firm_contact": true,
+      "noslip_iterations": 3,
+      "base_fixture": "world weld; bottle unconstrained",
+      "canonical_sha256": "439b5c32393ba5bb97ecca903fbb47a91205256270ad039ff61d019870355653",
+      "arm_dof": 6,
+      "aux_dof": 3,
+      "jaw_dof": 2,
+      "ik": [
+        {
+          "success": true,
+          "iterations": 10,
+          "position_error_m": 9.363447714321126e-06,
+          "orientation_error_rad": 2.0025786032182985e-05
+        },
+        {
+          "success": true,
+          "iterations": 5,
+          "position_error_m": 0.00047181796315006087,
+          "orientation_error_rad": 0.0001515013680235567
+        },
+        {
+          "success": true,
+          "iterations": 3,
+          "position_error_m": 1.3438336648888366e-05,
+          "orientation_error_rad": 9.053302733438652e-06
+        }
+      ],
+      "minimum_lift_m": 0.07690678171820664,
+      "max_hold_relative_slip_m": 0.006943460179519408,
+      "max_hold_tool_error_m": 0.00016325384074971,
+      "minimum_passenger_clearance_m": 0.02500029219611198,
+      "plan_pad_clearance_m": 0.05,
+      "max_arm_torque_Nm": [
+        0.2602777943699501,
+        11.347637750417695,
+        3.624130022906537,
+        0.020040075034620585,
+        0.8954492918539193,
+        0.023233414336197827
+      ],
+      "max_joint_limit_excess_rad": 0.0,
+      "max_jaw_force_N": 7.5075726140998205,
+      "max_jaw_limit_excess_m": 4.81939975190221e-06,
+      "max_reference_speed_rad_s": 0.5462836606797001,
+      "unexpected_contacts": [],
+      "checks": {
+        "planned_pose_ik": true,
+        "bilateral_grasp_confirmed": true,
+        "no_preclose_bottle_contact": true,
+        "grasp_not_lost": true,
+        "lift_above_60mm": true,
+        "relative_drift_below_10mm": true,
+        "upright_below_10deg": true,
+        "both_pads_loaded": true,
+        "table_unloaded": true,
+        "hold_tool_error_below_10mm": true,
+        "base_fixture_drift_below_1mm": true,
+        "aux_hold_below_1deg": true,
+        "joint_limits_below_half_deg": true,
+        "jaw_limit_excess_below_half_mm": true,
+        "arm_reference_speed_below_0_8_rad_s": true,
+        "jaw_reference_speed_below_0_04_m_s": true,
+        "actuator_limits_respected": true,
+        "passenger_clearance_above_10mm": true,
+        "no_unexpected_contacts": true,
+        "finite": true
+      },
+      "passed": true
+    },
+    "heavy_original": {
+      "mass_kg": 0.6,
+      "friction": 1.0,
+      "payload_feedforward": true,
+      "jaw_closing": true,
+      "arm_appearance": "reference",
+      "jaw_hold_force_N": 7.5,
+      "pregrasp_height_m": 0.04,
+      "peak_preclose_contact_N": 0.0,
+      "contact_impratio": 10.0,
+      "firm_contact": true,
+      "noslip_iterations": 3,
+      "base_fixture": "world weld; bottle unconstrained",
+      "canonical_sha256": "439b5c32393ba5bb97ecca903fbb47a91205256270ad039ff61d019870355653",
+      "arm_dof": 6,
+      "aux_dof": 3,
+      "jaw_dof": 2,
+      "ik": [
+        {
+          "success": true,
+          "iterations": 10,
+          "position_error_m": 9.363447714321126e-06,
+          "orientation_error_rad": 2.0025786032182985e-05
+        },
+        {
+          "success": true,
+          "iterations": 5,
+          "position_error_m": 0.00047181796315006087,
+          "orientation_error_rad": 0.0001515013680235567
+        },
+        {
+          "success": true,
+          "iterations": 3,
+          "position_error_m": 1.3438336648888366e-05,
+          "orientation_error_rad": 9.053302733438652e-06
+        }
+      ],
+      "minimum_lift_m": 0.05709483346614386,
+      "max_hold_relative_slip_m": 0.028160052759668385,
+      "max_hold_tool_error_m": 0.001138431330530711,
+      "minimum_passenger_clearance_m": 0.02500029219611198,
+      "plan_pad_clearance_m": 0.05,
+      "max_arm_torque_Nm": [
+        0.2602801187713083,
+        13.175069497415228,
+        4.615204453275782,
+        0.12344113959936488,
+        1.4821278955824058,
+        0.18612770833993578
+      ],
+      "max_joint_limit_excess_rad": 0.0,
+      "max_jaw_force_N": 7.529733660986583,
+      "max_jaw_limit_excess_m": 0.0003313901042465408,
+      "max_reference_speed_rad_s": 0.5462836606797001,
+      "unexpected_contacts": [],
+      "checks": {
+        "planned_pose_ik": true,
+        "bilateral_grasp_confirmed": true,
+        "no_preclose_bottle_contact": true,
+        "grasp_not_lost": true,
+        "lift_above_60mm": false,
+        "relative_drift_below_10mm": false,
+        "upright_below_10deg": true,
+        "both_pads_loaded": true,
+        "table_unloaded": true,
+        "hold_tool_error_below_10mm": true,
+        "base_fixture_drift_below_1mm": true,
+        "aux_hold_below_1deg": true,
+        "joint_limits_below_half_deg": true,
+        "jaw_limit_excess_below_half_mm": true,
+        "arm_reference_speed_below_0_8_rad_s": true,
+        "jaw_reference_speed_below_0_04_m_s": true,
+        "actuator_limits_respected": true,
+        "passenger_clearance_above_10mm": true,
+        "no_unexpected_contacts": true,
+        "finite": true
+      },
+      "passed": false
+    },
+    "heavy_grip_material": {
+      "mass_kg": 0.6,
+      "friction": 1.5,
+      "payload_feedforward": true,
+      "jaw_closing": true,
+      "arm_appearance": "reference",
+      "jaw_hold_force_N": 7.5,
+      "pregrasp_height_m": 0.04,
+      "peak_preclose_contact_N": 0.0,
+      "contact_impratio": 10.0,
+      "firm_contact": true,
+      "noslip_iterations": 3,
+      "base_fixture": "world weld; bottle unconstrained",
+      "canonical_sha256": "439b5c32393ba5bb97ecca903fbb47a91205256270ad039ff61d019870355653",
+      "arm_dof": 6,
+      "aux_dof": 3,
+      "jaw_dof": 2,
+      "ik": [
+        {
+          "success": true,
+          "iterations": 10,
+          "position_error_m": 9.363447714321126e-06,
+          "orientation_error_rad": 2.0025786032182985e-05
+        },
+        {
+          "success": true,
+          "iterations": 5,
+          "position_error_m": 0.00047181796315006087,
+          "orientation_error_rad": 0.0001515013680235567
+        },
+        {
+          "success": true,
+          "iterations": 3,
+          "position_error_m": 1.3438336648888366e-05,
+          "orientation_error_rad": 9.053302733438652e-06
+        }
+      ],
+      "minimum_lift_m": 0.08024783682697356,
+      "max_hold_relative_slip_m": 0.0011873288818506475,
+      "max_hold_tool_error_m": 0.0001545698447071266,
+      "minimum_passenger_clearance_m": 0.02500029219611198,
+      "plan_pad_clearance_m": 0.05,
+      "max_arm_torque_Nm": [
+        0.2602808071472361,
+        13.171803752808753,
+        4.60928659367468,
+        0.02499691463860277,
+        1.4890532216891934,
+        0.04256710210236448
+      ],
+      "max_joint_limit_excess_rad": 0.0,
+      "max_jaw_force_N": 7.501270715769401,
+      "max_jaw_limit_excess_m": 4.819966904206785e-06,
+      "max_reference_speed_rad_s": 0.5462836606797001,
+      "unexpected_contacts": [],
+      "checks": {
+        "planned_pose_ik": true,
+        "bilateral_grasp_confirmed": true,
+        "no_preclose_bottle_contact": true,
+        "grasp_not_lost": true,
+        "lift_above_60mm": true,
+        "relative_drift_below_10mm": true,
+        "upright_below_10deg": true,
+        "both_pads_loaded": true,
+        "table_unloaded": true,
+        "hold_tool_error_below_10mm": true,
+        "base_fixture_drift_below_1mm": true,
+        "aux_hold_below_1deg": true,
+        "joint_limits_below_half_deg": true,
+        "jaw_limit_excess_below_half_mm": true,
+        "arm_reference_speed_below_0_8_rad_s": true,
+        "jaw_reference_speed_below_0_04_m_s": true,
+        "actuator_limits_respected": true,
+        "passenger_clearance_above_10mm": true,
+        "no_unexpected_contacts": true,
+        "finite": true
+      },
+      "passed": true
+    }
+  },
+  "scope": "Material friction is an explicit uncalibrated simulation hypothesis. Heavy pickup does not validate complete heavy delivery."
+}

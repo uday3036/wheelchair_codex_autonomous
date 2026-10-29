@@ -1,0 +1,14 @@
+{
+  "full_suite": {
+    "tests": 90,
+    "passed": true,
+    "duration_s": 120.103
+  },
+  "asset_tests": 8,
+  "urdf_configuration_samples": 20,
+  "mesh_pairs_checked": 163,
+  "mjcf_roundtrip_duration_s": 1.0,
+  "canonical_sha256": "439b5c32393ba5bb97ecca903fbb47a91205256270ad039ff61d019870355653",
+  "asset_manifest_sha256": "ae173ad40e83511342603dc41c72df0f1aec25e83435a01e744ea6f1b8fca902",
+  "scope": "Static design exports and short controlled physics equivalence; existing autonomous source/evidence unchanged; hardware fabrication unvalidated"
+}

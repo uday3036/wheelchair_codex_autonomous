@@ -1,0 +1,28 @@
+{
+  "source_sha256": "c9583205340fae2a88adb3bfe8daacbea54ff4f263a0eb3d9857b83a019874ba",
+  "checks": {
+    "autonomous_validation_source_current": true,
+    "full_task_variations_source_current": true,
+    "robustness_validation_source_current": true,
+    "live_validation_source_current": true,
+    "seven_baseline_outcomes": true,
+    "seven_variation_outcomes": true,
+    "live_controller_task": true,
+    "no_acknowledgement_retained_under_braking": true,
+    "no_recipient_support_retained_under_braking": true,
+    "nominal_full_task_gates": true,
+    "offset_35mm_full_full_task_gates": true,
+    "heading_full_full_task_gates": true,
+    "bottle_nearer_full_full_task_gates": true,
+    "bottle_farther_full_full_task_gates": true,
+    "noisy_full_full_task_gates": true,
+    "moving_obstacle_stopped_without_contact": true,
+    "prealigned_reverse": true,
+    "misaligned_reverse_stops": true,
+    "material_comparison": true,
+    "asset_sources_current": true,
+    "asset_files_unchanged": true
+  },
+  "passed": true,
+  "scope": "Bounded service and explicitly tested comparisons; misaligned reverse remains unresolved, and hardware/human calibration is not validated"
+}

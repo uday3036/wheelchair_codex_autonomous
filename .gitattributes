@@ -1,0 +1,11 @@
+# Preserve exact source/evidence hashes across Git checkouts.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
+*.npz binary
+*.npy binary
+*.zip binary
+*.stl binary
+*.mjb binary

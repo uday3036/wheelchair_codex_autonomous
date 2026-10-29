@@ -1,0 +1,434 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="dual_arm_wheelchair_m1c_mid_casters">
+  <compiler angle="radian" />
+  <option impratio="10" integrator="implicitfast" cone="elliptic" noslip_iterations="3" />
+  <visual>
+    <headlight ambient="0.35 0.35 0.35" diffuse="0.65 0.65 0.65" specular="0.1 0.1 0.1" />
+  </visual>
+  <default>
+    <joint limited="true" armature="0.01" damping="0.3" />
+    <geom friction="1 0.02 0.002" solref="0.01" />
+  </default>
+  <asset>
+    <texture type="skybox" colorspace="auto" name="presentation_sky" builtin="gradient" rgb1="0.88 0.92 0.95" rgb2="0.68 0.75 0.82" width="512" height="3072" />
+    <mesh name="reference_link2_plate" vertex="0.012 -0.004 0 0.081 -0.004 0.02 0.249 -0.004 0.017 0.288 -0.004 0 0.249 -0.004 -0.017 0.081 -0.004 -0.02 0.012 0.004 0 0.081 0.004 0.02 0.249 0.004 0.017 0.288 0.004 0 0.249 0.004 -0.017 0.081 0.004 -0.02" />
+    <mesh name="reference_link3_plate" vertex="0.01 -0.003 0 0.0675 -0.003 0.016 0.2075 -0.003 0.0136 0.24 -0.003 0 0.2075 -0.003 -0.0136 0.0675 -0.003 -0.016 0.01 0.003 0 0.0675 0.003 0.016 0.2075 0.003 0.0136 0.24 0.003 0 0.2075 0.003 -0.0136 0.0675 0.003 -0.016" />
+  </asset>
+  <worldbody>
+    <geom name="ground" size="4 4 0.10000000000000001" type="plane" rgba="0.92 0.94 0.97 1" pos="0 0 0" quat="1 0 0 0" />
+    <geom name="grasp_table" size="0.20000000000000001 0.22 0.025000000000000001" pos="0.68000000000000005 0.215 0.755" type="box" group="4" friction="1 0.002 0.0001" rgba="0.5 0.35 0.2 1" quat="1 0 0 0" />
+    <geom name="cap_bin_floor" size="0.065000000000000002 0.044999999999999998 0.01" pos="0.68000000000000005 0.40000000000000002 0.79000000000000004" type="box" group="4" rgba="0.4 0.5 0.35 1" quat="1 0 0 0" />
+    <geom name="cap_bin_back" size="0.068000000000000005 0.0030000000000000001 0.029999999999999999" pos="0.68000000000000005 0.44800000000000001 0.81999999999999995" type="box" group="4" rgba="0.4 0.5 0.35 1" quat="1 0 0 0" />
+    <geom name="cap_bin_front" size="0.068000000000000005 0.0030000000000000001 0.029999999999999999" pos="0.68000000000000005 0.35199999999999998 0.81999999999999995" type="box" group="4" rgba="0.4 0.5 0.35 1" quat="1 0 0 0" />
+    <geom name="cap_bin_left" size="0.0030000000000000001 0.044999999999999998 0.029999999999999999" pos="0.61199999999999999 0.40000000000000002 0.81999999999999995" type="box" group="4" rgba="0.4 0.5 0.35 1" quat="1 0 0 0" />
+    <geom name="cap_bin_right" size="0.0030000000000000001 0.044999999999999998 0.029999999999999999" pos="0.748 0.40000000000000002 0.81999999999999995" type="box" group="4" rgba="0.4 0.5 0.35 1" quat="1 0 0 0" />
+    <geom name="table_leg_0.6_0.015" size="0.017999999999999999 0.017999999999999999 0.375" pos="0.59999999999999998 0.014999999999999999 0.375" type="box" group="4" rgba="0.35 0.25 0.15 1" quat="1 0 0 0" />
+    <geom name="table_leg_0.6_0.415" size="0.017999999999999999 0.017999999999999999 0.375" pos="0.59999999999999998 0.41499999999999998 0.375" type="box" group="4" rgba="0.35 0.25 0.15 1" quat="1 0 0 0" />
+    <geom name="table_leg_0.86_0.015" size="0.017999999999999999 0.017999999999999999 0.375" pos="0.85999999999999999 0.014999999999999999 0.375" type="box" group="4" rgba="0.35 0.25 0.15 1" quat="1 0 0 0" />
+    <geom name="table_leg_0.86_0.415" size="0.017999999999999999 0.017999999999999999 0.375" pos="0.85999999999999999 0.41499999999999998 0.375" type="box" group="4" rgba="0.35 0.25 0.15 1" quat="1 0 0 0" />
+    <camera name="overview" pos="2.2 -2.8 1.75" quat="0.816818 0.473519 0.165269 0.285087" />
+    <camera name="grasp_view" pos="1.65 -1.15 1.5" quat="0.793946 0.490202 0.188946 0.306023" />
+    <camera name="autonomous_view" pos="2.2 -3.6 2.3" quat="0.773096 0.559662 0.175038 0.241791" />
+    <light name="top_light" pos="0 -1 3" dir="0 0 -1" diffuse="0.8 0.8 0.8" />
+    <body name="base_link" pos="0 0 0.40000000000000002" quat="1 0 0 0">
+      <inertial pos="0 0 0.050000000000000003" quat="1 0 0 0" mass="40" diaginertia="2.8300000000000001 2.4700000000000002 2.0299999999999998" />
+      <joint name="wheelchair_freejoint" type="free" armature="0" damping="0" />
+      <geom name="base_visual_0" size="0.105 0.19 0.070000000000000007" pos="0.02 0 -0.089999999999999997" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+      <geom name="base_collision_0" size="0.105 0.19 0.070000000000000007" pos="0.02 0 -0.089999999999999997" type="box" group="3" rgba="0.25 0.25 0.27 0" quat="1 0 0 0" />
+      <geom name="base_visual_1" size="0.13 0.19 0.035000000000000003" pos="0.02 0 0.044999999999999998" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+      <geom name="base_collision_1" size="0.13 0.19 0.035000000000000003" pos="0.02 0 0.044999999999999998" type="box" group="3" rgba="0.72 0.74 0.78 0" quat="1 0 0 0" />
+      <geom name="base_visual_2" size="0.12 0.19 0.040000000000000001" pos="0.10000000000000001 0 0.12" type="box" contype="0" conaffinity="0" group="1" rgba="0.12 0.17 0.21 1" quat="1 0 0 0" />
+      <geom name="base_collision_2" size="0.12 0.19 0.040000000000000001" pos="0.10000000000000001 0 0.12" type="box" group="3" rgba="0.2 0.72 0.52 0" quat="1 0 0 0" />
+      <geom name="base_visual_3" size="0.029999999999999999 0.17000000000000001 0.215" pos="-0.126 0 0.28999999999999998" quat="0.9944925627484974 0 -0.10480716882888248 0" type="box" contype="0" conaffinity="0" group="1" rgba="0.12 0.17 0.21 1" />
+      <geom name="base_collision_3" size="0.029999999999999999 0.17000000000000001 0.215" pos="-0.126 0 0.28999999999999998" quat="0.9944925627484974 0 -0.10480716882888248 0" type="box" group="3" rgba="0.2 0.72 0.52 0" />
+      <geom name="base_visual_4" size="0.0080000000000000002 0.02" pos="-0.16200000000000001 0 0.51000000000000001" quat="0.9944925627484974 0 -0.10480716882888248 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" />
+      <geom name="base_visual_5" size="0.025000000000000001 0.070000000000000007 0.025000000000000001" pos="-0.16500000000000001 0 0.54500000000000004" quat="0.9944925627484974 0 -0.10480716882888248 0" type="box" contype="0" conaffinity="0" group="1" rgba="0.12 0.17 0.21 1" />
+      <geom name="base_visual_6" size="0.010999999999999999 0.040000000000000001" pos="0.16 -0.215 0.31" quat="0.70710548251123628 0 0.70710807985947355 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" />
+      <geom name="base_visual_7" size="0.044999999999999998 0.029999999999999999 0.014999999999999999" pos="0.20000000000000001 -0.215 0.28499999999999998" type="box" contype="0" conaffinity="0" group="1" rgba="0.12 0.17 0.21 1" quat="1 0 0 0" />
+      <geom name="base_visual_8" size="0.012 0.029999999999999999" pos="0.20000000000000001 -0.215 0.33000000000000002" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+      <geom name="base_visual_9" size="0.016" pos="0.20000000000000001 -0.215 0.36499999999999999" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+      <geom name="base_visual_10" size="0.11 0.0050000000000000001 0.074999999999999997" pos="-0.19 0.22 -0.074999999999999997" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+      <geom name="base_visual_11" size="0.10000000000000001 0.17000000000000001 0.0060000000000000001" pos="0.40000000000000002 0 -0.23999999999999999" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+      <geom name="base_visual_12" size="0.029999999999999999 0.0060000000000000001 0.23000000000000001" pos="-0.14000000000000001 0.19500000000000001 0.28999999999999998" quat="0.9944925627484974 0 -0.10480716882888248 0" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" />
+      <geom name="base_visual_13" size="0.085000000000000006 0.0060000000000000001 0.070000000000000007" pos="0.044999999999999998 0.215 0.23000000000000001" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+      <geom name="base_visual_14" size="0.010999999999999999 0.14999999999999999" pos="-0.029999999999999999 0.215 0.31" quat="0.70710548251123628 0 0.70710807985947355 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" />
+      <geom name="base_visual_15" size="0.0060000000000000001 0.17699999999999999" pos="0.27000000000000002 0.17000000000000001 -0.12" quat="0.39933952940627321 0 0.91680310877176685 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" />
+      <geom name="base_visual_16" size="0.029999999999999999 0.0060000000000000001 0.23000000000000001" pos="-0.14000000000000001 -0.19500000000000001 0.28999999999999998" quat="0.9944925627484974 0 -0.10480716882888248 0" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" />
+      <geom name="base_visual_17" size="0.085000000000000006 0.0060000000000000001 0.070000000000000007" pos="0.044999999999999998 -0.215 0.23000000000000001" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+      <geom name="base_visual_18" size="0.010999999999999999 0.14999999999999999" pos="-0.029999999999999999 -0.215 0.31" quat="0.70710548251123628 0 0.70710807985947355 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" />
+      <geom name="base_visual_19" size="0.0060000000000000001 0.17699999999999999" pos="0.27000000000000002 -0.17000000000000001 -0.12" quat="0.39933952940627321 0 0.91680310877176685 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" />
+      <geom name="controller_box_visual" size="0.12 0.040000000000000001 0.10000000000000001" pos="-0.02 -0.32500000000000001 0.14999999999999999" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+      <geom name="controller_box_collision" size="0.12 0.040000000000000001 0.10000000000000001" pos="-0.02 -0.32500000000000001 0.14999999999999999" type="box" group="3" rgba="0.72 0.74 0.78 0" quat="1 0 0 0" />
+      <geom name="controller_box_panel" size="0.080000000000000002 0.0030000000000000001 0.065000000000000002" pos="-0.02 -0.36699999999999999 0.14999999999999999" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+      <geom name="controller_led_green" size="0.0060000000000000001" pos="-0.089999999999999997 -0.371 0.17499999999999999" contype="0" conaffinity="0" group="1" rgba="0 0 0 0" quat="1 0 0 0" />
+      <geom name="controller_led_blue" size="0.0060000000000000001" pos="-0.089999999999999997 -0.371 0.14499999999999999" contype="0" conaffinity="0" group="1" rgba="0 0 0 0" quat="1 0 0 0" />
+      <geom name="passenger_keepout" size="0.17999999999999999 0.14000000000000001 0.25" pos="0.02 0 0.34999999999999998" type="box" contype="0" conaffinity="0" group="2" rgba="1 0.2 0.2 0.08" quat="1 0 0 0" />
+      <geom name="passenger_head_keepout" size="0.16 0.13 0.20000000000000001" pos="0.02 0 0.79999999999999993" type="box" contype="0" conaffinity="0" group="2" rgba="1 0.2 0.2 0.08" quat="1 0 0 0" />
+      <body name="rocker_left" pos="0.02 0.28000000000000003 0" quat="1 0 0 0">
+        <inertial pos="-0.14999999999999999 0 -0.10000000000000001" quat="1 0 0 0" mass="3" diaginertia="0.029999999999999999 0.080000000000000002 0.080000000000000002" />
+        <joint name="rocker_pivot_left" pos="0 0 0" axis="0 1 0" stiffness="120" range="-0.5 0.5" armature="0.02" damping="6" frictionloss="0.5" />
+        <geom name="rocker_left_visual_0" size="0.14000000000000001 0.025000000000000001 0.02" pos="-0.02 0 0" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+        <geom name="rocker_left_collision_0" size="0.14000000000000001 0.025000000000000001 0.02" pos="-0.02 0 0" type="box" group="3" rgba="0.12 0.12 0.13 0" quat="1 0 0 0" />
+        <geom name="rocker_left_visual_1" size="0.18775 0.025000000000000001 0.025000000000000001" pos="-0.28499999999999998 0 -0.14000000000000001" quat="0.91276243979621086 0 -0.40849079365056512 0" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" />
+        <geom name="rocker_left_collision_1" size="0.18775 0.025000000000000001 0.025000000000000001" pos="-0.28499999999999998 0 -0.14000000000000001" quat="0.91276243979621086 0 -0.40849079365056512 0" type="box" group="3" rgba="0.12 0.12 0.13 0" />
+        <geom name="rocker_left_visual_2" size="0.063500000000000001 0.025000000000000001 0.025000000000000001" pos="0.16500000000000001 0 -0.044999999999999998" quat="0.92387918109221301 0 0.38268428076468186 0" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" />
+        <geom name="rocker_left_collision_2" size="0.063500000000000001 0.025000000000000001 0.025000000000000001" pos="0.16500000000000001 0 -0.044999999999999998" quat="0.92387918109221301 0 0.38268428076468186 0" type="box" group="3" rgba="0.12 0.12 0.13 0" />
+        <body name="bogie_left" pos="0.20999999999999999 0 -0.089999999999999997" quat="1 0 0 0">
+          <inertial pos="0 0 -0.095000000000000001" quat="1 0 0 0" mass="3" diaginertia="0.029999999999999999 0.040000000000000001 0.040000000000000001" />
+          <joint name="bogie_pivot_left" pos="0 0 0" axis="0 1 0" stiffness="28" range="-0.5 0.5" armature="0.02" damping="4" frictionloss="0.5" />
+          <geom name="bogie_left_visual_0" size="0.14915 0.025000000000000001 0.025000000000000001" pos="-0.115 0 -0.095000000000000001" quat="0.94099087402947401 0 -0.33843193553984607 0" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" />
+          <geom name="bogie_left_collision_0" size="0.14915 0.025000000000000001 0.025000000000000001" pos="-0.115 0 -0.095000000000000001" quat="0.94099087402947401 0 -0.33843193553984607 0" type="box" group="3" rgba="0.12 0.12 0.13 0" />
+          <geom name="bogie_left_visual_1" size="0.13794999999999999 0.025000000000000001 0.025000000000000001" pos="0.10000000000000001 0 -0.095000000000000001" quat="0.92884997972041217 0 0.37045609074948388 0" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" />
+          <geom name="bogie_left_collision_1" size="0.13794999999999999 0.025000000000000001 0.025000000000000001" pos="0.10000000000000001 0 -0.095000000000000001" quat="0.92884997972041217 0 0.37045609074948388 0" type="box" group="3" rgba="0.12 0.12 0.13 0" />
+          <body name="motor_mid_left" pos="-0.23000000000000001 0.050000000000000003 -0.19" quat="1 0 0 0">
+            <inertial pos="0 0 0.050000000000000003" quat="1 0 0 0" mass="1" diaginertia="0.002 0.002 0.00050000000000000001" />
+            <geom name="motor_mid_left_visual_0" size="0.035000000000000003 0.022499999999999999 0.035000000000000003" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" pos="0 0 0" quat="1 0 0 0" />
+            <geom name="motor_mid_left_visual_1" size="0.029999999999999999 0.065000000000000002" pos="0 0 0.10000000000000001" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0 0 0 0" quat="1 0 0 0" />
+            <geom name="motor_mid_left_visual_2" size="0.0080000000000000002 0.025000000000000001" pos="0 0.044999999999999998 0" quat="0.70710548251123628 0.70710807985947355 0 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0 0 0 0" />
+          </body>
+          <body name="front_left_knuckle" pos="0.20000000000000001 0.16999999999999998 -0.19" quat="1 0 0 0">
+            <inertial pos="0 0 0" quat="1 0 0 0" mass="0.59999999999999998" diaginertia="0.002 0.002 0.002" />
+            <joint name="front_left_steer_joint" pos="0 0 0" axis="0 0 1" range="-0.7 0.7" damping="0.6" frictionloss="0.02" />
+            <geom name="front_left_knuckle_visual" size="0.029999999999999999 0.02 0.029999999999999999" pos="0 0 0.17000000000000001" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+            <geom name="front_left_fork_-1" size="0.0080000000000000002 0.067500000000000004" pos="0 -0.065000000000000002 0.067500000000000004" type="capsule" group="1" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+            <geom name="front_left_fork_1" size="0.0080000000000000002 0.067500000000000004" pos="0 0.065000000000000002 0.067500000000000004" type="capsule" group="1" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+            <geom name="front_left_fork_top" size="0.0080000000000000002 0.065000000000000002" pos="0 0 0.13500000000000001" quat="0.70710678118654757 0.70710678118654746 0 -0" type="capsule" group="1" rgba="0.36 0.42 0.46 1" />
+            <body name="wheel_front_left" pos="0 0 0" quat="1 0 0 0">
+              <inertial pos="0 0 0" quat="1 0 0 0" mass="2.5" diaginertia="0.01108 0.017999999999999999 0.01108" />
+              <joint name="wheel_front_left_joint" pos="0 0 0" axis="0 1 0" limited="false" damping="0.12" />
+              <geom name="wheel_front_left_visual_0" size="0.12 0.050000000000000003" quat="0.70710548251123628 0.70710807985947355 0 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.08 0.09 0.1 1" pos="0 0 0" />
+              <geom name="wheel_front_left_collision_0" size="0.12 0.050000000000000003" quat="0.70710548251123628 0.70710807985947355 0 0" type="cylinder" group="3" rgba="0.05 0.05 0.05 0" pos="0 0 0" />
+              <geom name="wheel_front_left_visual_1" size="0.074999999999999997 0.051999999999999998" quat="0.70710548251123628 0.70710807985947355 0 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.48 0.52 0.55 1" pos="0 0 0" />
+            </body>
+          </body>
+          <body name="motor_front_left" pos="0.20000000000000001 0.050000000000000003 -0.19" quat="1 0 0 0">
+            <inertial pos="0 0 0.050000000000000003" quat="1 0 0 0" mass="1" diaginertia="0.002 0.002 0.00050000000000000001" />
+            <geom name="motor_front_left_visual_0" size="0.035000000000000003 0.022499999999999999 0.035000000000000003" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" pos="0 0 0" quat="1 0 0 0" />
+            <geom name="motor_front_left_visual_1" size="0.029999999999999999 0.065000000000000002" pos="0 0 0.10000000000000001" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0 0 0 0" quat="1 0 0 0" />
+            <geom name="motor_front_left_visual_2" size="0.0080000000000000002 0.025000000000000001" pos="0 0.044999999999999998 0" quat="0.70710548251123628 0.70710807985947355 0 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0 0 0 0" />
+          </body>
+          <body name="mid_left_caster_swivel" pos="-0.185 0.20999999999999999 -0.19" quat="1 0 0 0">
+            <inertial pos="0 0 0" quat="1 0 0 0" mass="0.34999999999999998" diaginertia="0.0015 0.0015 0.0015" />
+            <joint name="mid_left_caster_yaw" pos="0 0 0" axis="0 0 1" limited="false" armature="0.003" damping="0.25" frictionloss="0.02" />
+            <geom name="mid_left_caster_housing" size="0.024 0.021999999999999999 0.028000000000000001" pos="0 0 0.17000000000000001" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+            <geom name="middle_left_fork_-1" size="0.0080000000000000002 0.071151247353788541" pos="-0.022499999999999999 -0.065000000000000002 0.067500000000000004" quat="0.98708745763749672 0 0.16018224300696723 0" type="capsule" group="1" rgba="0.36 0.42 0.46 1" />
+            <geom name="middle_left_fork_1" size="0.0080000000000000002 0.071151247353788541" pos="-0.022499999999999999 0.065000000000000002 0.067500000000000004" quat="0.98708745763749672 0 0.16018224300696723 0" type="capsule" group="1" rgba="0.36 0.42 0.46 1" />
+            <geom name="middle_left_fork_top" size="0.0080000000000000002 0.065000000000000002" pos="0 0 0.13500000000000001" quat="0.70710678118654757 0.70710678118654746 0 -0" type="capsule" group="1" rgba="0.36 0.42 0.46 1" />
+            <body name="wheel_mid_left" pos="-0.044999999999999998 0 0" quat="1 0 0 0">
+              <inertial pos="0 0 0" quat="1 0 0 0" mass="2.5" diaginertia="0.0093333333333333341 0.017999999999999999 0.0093333333333333341" />
+              <joint name="wheel_mid_left_joint" pos="0 0 0" axis="0 1 0" limited="false" damping="0.15" />
+              <geom name="wheel_mid_left_visual_0" size="0.12 0.02" quat="0.70710548251123628 0.70710807985947355 0 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.08 0.09 0.1 1" pos="0 0 0" />
+              <geom name="wheel_mid_left_collision_0" size="0.12 0.02" quat="0.70710548251123628 0.70710807985947355 0 0" type="cylinder" group="3" rgba="0.05 0.05 0.05 0" pos="0 0 0" />
+              <geom name="wheel_mid_left_visual_1" size="0.074999999999999997 0.021999999999999999" quat="0.70710548251123628 0.70710807985947355 0 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.48 0.52 0.55 1" pos="0 0 0" />
+            </body>
+          </body>
+          <body name="middle_left_support" pos="-0.185 0.105 -0.02" quat="1 0 0 0">
+            <geom name="middle_left_support_collision" size="0.02 0.105 0.012500000000000001" type="box" group="1" mass="0.25" rgba="0.36 0.42 0.46 1" pos="0 0 0" quat="1 0 0 0" />
+            <inertial pos="0 0 0" quat="1 0 0 0" mass="0.25" diaginertia="0.00093177083333333317 4.6354166666666678e-05 0.0009520833333333331" />
+          </body>
+          <body name="front_left_support" pos="0.20000000000000001 0.084999999999999992 -0.02" quat="1 0 0 0">
+            <geom name="front_left_support_collision" size="0.02 0.084999999999999992 0.012500000000000001" type="box" group="1" mass="0.25" rgba="0.36 0.42 0.46 1" pos="0 0 0" quat="1 0 0 0" />
+            <inertial pos="0 0 0" quat="1 0 0 0" mass="0.25" diaginertia="0.00061510416666666658 4.6354166666666678e-05 0.00063541666666666662" />
+          </body>
+        </body>
+        <body name="wheel_rear_left" pos="-0.40999999999999998 0.12 -0.28000000000000003" quat="1 0 0 0">
+          <inertial pos="0 0 0" quat="1 0 0 0" mass="2.5" diaginertia="0.01108 0.017999999999999999 0.01108" />
+          <joint name="wheel_rear_left_joint" pos="0 0 0" axis="0 1 0" limited="false" damping="0.15" />
+          <geom name="wheel_rear_left_visual_0" size="0.12 0.050000000000000003" quat="0.70710548251123628 0.70710807985947355 0 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.08 0.09 0.1 1" pos="0 0 0" />
+          <geom name="wheel_rear_left_collision_0" size="0.12 0.050000000000000003" quat="0.70710548251123628 0.70710807985947355 0 0" type="cylinder" group="3" rgba="0.05 0.05 0.05 0" pos="0 0 0" />
+          <geom name="wheel_rear_left_visual_1" size="0.074999999999999997 0.051999999999999998" quat="0.70710548251123628 0.70710807985947355 0 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.48 0.52 0.55 1" pos="0 0 0" />
+        </body>
+        <body name="motor_rear_left" pos="-0.40999999999999998 0.050000000000000003 -0.28000000000000003" quat="1 0 0 0">
+          <inertial pos="0 0 0.050000000000000003" quat="1 0 0 0" mass="1" diaginertia="0.002 0.002 0.00050000000000000001" />
+          <geom name="motor_rear_left_visual_0" size="0.035000000000000003 0.022499999999999999 0.035000000000000003" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" pos="0 0 0" quat="1 0 0 0" />
+          <geom name="motor_rear_left_visual_1" size="0.029999999999999999 0.065000000000000002" pos="0 0 0.10000000000000001" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0 0 0 0" quat="1 0 0 0" />
+          <geom name="motor_rear_left_visual_2" size="0.0080000000000000002 0.025000000000000001" pos="0 0.044999999999999998 0" quat="0.70710548251123628 0.70710807985947355 0 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0 0 0 0" />
+        </body>
+      </body>
+      <body name="rocker_right" pos="0.02 -0.28000000000000003 0" quat="1 0 0 0">
+        <inertial pos="-0.14999999999999999 0 -0.10000000000000001" quat="1 0 0 0" mass="3" diaginertia="0.029999999999999999 0.080000000000000002 0.080000000000000002" />
+        <joint name="rocker_pivot_right" pos="0 0 0" axis="0 1 0" stiffness="120" range="-0.5 0.5" armature="0.02" damping="6" frictionloss="0.5" />
+        <geom name="rocker_right_visual_0" size="0.14000000000000001 0.025000000000000001 0.02" pos="-0.02 0 0" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+        <geom name="rocker_right_collision_0" size="0.14000000000000001 0.025000000000000001 0.02" pos="-0.02 0 0" type="box" group="3" rgba="0.12 0.12 0.13 0" quat="1 0 0 0" />
+        <geom name="rocker_right_visual_1" size="0.18775 0.025000000000000001 0.025000000000000001" pos="-0.28499999999999998 0 -0.14000000000000001" quat="0.91276243979621086 0 -0.40849079365056512 0" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" />
+        <geom name="rocker_right_collision_1" size="0.18775 0.025000000000000001 0.025000000000000001" pos="-0.28499999999999998 0 -0.14000000000000001" quat="0.91276243979621086 0 -0.40849079365056512 0" type="box" group="3" rgba="0.12 0.12 0.13 0" />
+        <geom name="rocker_right_visual_2" size="0.063500000000000001 0.025000000000000001 0.025000000000000001" pos="0.16500000000000001 0 -0.044999999999999998" quat="0.92387918109221301 0 0.38268428076468186 0" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" />
+        <geom name="rocker_right_collision_2" size="0.063500000000000001 0.025000000000000001 0.025000000000000001" pos="0.16500000000000001 0 -0.044999999999999998" quat="0.92387918109221301 0 0.38268428076468186 0" type="box" group="3" rgba="0.12 0.12 0.13 0" />
+        <body name="bogie_right" pos="0.20999999999999999 0 -0.089999999999999997" quat="1 0 0 0">
+          <inertial pos="0 0 -0.095000000000000001" quat="1 0 0 0" mass="3" diaginertia="0.029999999999999999 0.040000000000000001 0.040000000000000001" />
+          <joint name="bogie_pivot_right" pos="0 0 0" axis="0 1 0" stiffness="28" range="-0.5 0.5" armature="0.02" damping="4" frictionloss="0.5" />
+          <geom name="bogie_right_visual_0" size="0.14915 0.025000000000000001 0.025000000000000001" pos="-0.115 0 -0.095000000000000001" quat="0.94099087402947401 0 -0.33843193553984607 0" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" />
+          <geom name="bogie_right_collision_0" size="0.14915 0.025000000000000001 0.025000000000000001" pos="-0.115 0 -0.095000000000000001" quat="0.94099087402947401 0 -0.33843193553984607 0" type="box" group="3" rgba="0.12 0.12 0.13 0" />
+          <geom name="bogie_right_visual_1" size="0.13794999999999999 0.025000000000000001 0.025000000000000001" pos="0.10000000000000001 0 -0.095000000000000001" quat="0.92884997972041217 0 0.37045609074948388 0" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" />
+          <geom name="bogie_right_collision_1" size="0.13794999999999999 0.025000000000000001 0.025000000000000001" pos="0.10000000000000001 0 -0.095000000000000001" quat="0.92884997972041217 0 0.37045609074948388 0" type="box" group="3" rgba="0.12 0.12 0.13 0" />
+          <body name="motor_mid_right" pos="-0.23000000000000001 -0.050000000000000003 -0.19" quat="1 0 0 0">
+            <inertial pos="0 0 0.050000000000000003" quat="1 0 0 0" mass="1" diaginertia="0.002 0.002 0.00050000000000000001" />
+            <geom name="motor_mid_right_visual_0" size="0.035000000000000003 0.022499999999999999 0.035000000000000003" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" pos="0 0 0" quat="1 0 0 0" />
+            <geom name="motor_mid_right_visual_1" size="0.029999999999999999 0.065000000000000002" pos="0 0 0.10000000000000001" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0 0 0 0" quat="1 0 0 0" />
+            <geom name="motor_mid_right_visual_2" size="0.0080000000000000002 0.025000000000000001" pos="0 -0.044999999999999998 0" quat="0.70710548251123628 0.70710807985947355 0 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0 0 0 0" />
+          </body>
+          <body name="front_right_knuckle" pos="0.20000000000000001 -0.16999999999999998 -0.19" quat="1 0 0 0">
+            <inertial pos="0 0 0" quat="1 0 0 0" mass="0.59999999999999998" diaginertia="0.002 0.002 0.002" />
+            <joint name="front_right_steer_joint" pos="0 0 0" axis="0 0 1" range="-0.7 0.7" damping="0.6" frictionloss="0.02" />
+            <geom name="front_right_knuckle_visual" size="0.029999999999999999 0.02 0.029999999999999999" pos="0 0 0.17000000000000001" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+            <geom name="front_right_fork_-1" size="0.0080000000000000002 0.067500000000000004" pos="0 -0.065000000000000002 0.067500000000000004" type="capsule" group="1" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+            <geom name="front_right_fork_1" size="0.0080000000000000002 0.067500000000000004" pos="0 0.065000000000000002 0.067500000000000004" type="capsule" group="1" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+            <geom name="front_right_fork_top" size="0.0080000000000000002 0.065000000000000002" pos="0 0 0.13500000000000001" quat="0.70710678118654757 0.70710678118654746 0 -0" type="capsule" group="1" rgba="0.36 0.42 0.46 1" />
+            <body name="wheel_front_right" pos="0 0 0" quat="1 0 0 0">
+              <inertial pos="0 0 0" quat="1 0 0 0" mass="2.5" diaginertia="0.01108 0.017999999999999999 0.01108" />
+              <joint name="wheel_front_right_joint" pos="0 0 0" axis="0 1 0" limited="false" damping="0.12" />
+              <geom name="wheel_front_right_visual_0" size="0.12 0.050000000000000003" quat="0.70710548251123628 0.70710807985947355 0 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.08 0.09 0.1 1" pos="0 0 0" />
+              <geom name="wheel_front_right_collision_0" size="0.12 0.050000000000000003" quat="0.70710548251123628 0.70710807985947355 0 0" type="cylinder" group="3" rgba="0.05 0.05 0.05 0" pos="0 0 0" />
+              <geom name="wheel_front_right_visual_1" size="0.074999999999999997 0.051999999999999998" quat="0.70710548251123628 0.70710807985947355 0 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.48 0.52 0.55 1" pos="0 0 0" />
+            </body>
+          </body>
+          <body name="motor_front_right" pos="0.20000000000000001 -0.050000000000000003 -0.19" quat="1 0 0 0">
+            <inertial pos="0 0 0.050000000000000003" quat="1 0 0 0" mass="1" diaginertia="0.002 0.002 0.00050000000000000001" />
+            <geom name="motor_front_right_visual_0" size="0.035000000000000003 0.022499999999999999 0.035000000000000003" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" pos="0 0 0" quat="1 0 0 0" />
+            <geom name="motor_front_right_visual_1" size="0.029999999999999999 0.065000000000000002" pos="0 0 0.10000000000000001" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0 0 0 0" quat="1 0 0 0" />
+            <geom name="motor_front_right_visual_2" size="0.0080000000000000002 0.025000000000000001" pos="0 -0.044999999999999998 0" quat="0.70710548251123628 0.70710807985947355 0 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0 0 0 0" />
+          </body>
+          <body name="mid_right_caster_swivel" pos="-0.185 -0.20999999999999999 -0.19" quat="1 0 0 0">
+            <inertial pos="0 0 0" quat="1 0 0 0" mass="0.34999999999999998" diaginertia="0.0015 0.0015 0.0015" />
+            <joint name="mid_right_caster_yaw" pos="0 0 0" axis="0 0 1" limited="false" armature="0.003" damping="0.25" frictionloss="0.02" />
+            <geom name="mid_right_caster_housing" size="0.024 0.021999999999999999 0.028000000000000001" pos="0 0 0.17000000000000001" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+            <geom name="middle_right_fork_-1" size="0.0080000000000000002 0.071151247353788541" pos="-0.022499999999999999 -0.065000000000000002 0.067500000000000004" quat="0.98708745763749672 0 0.16018224300696723 0" type="capsule" group="1" rgba="0.36 0.42 0.46 1" />
+            <geom name="middle_right_fork_1" size="0.0080000000000000002 0.071151247353788541" pos="-0.022499999999999999 0.065000000000000002 0.067500000000000004" quat="0.98708745763749672 0 0.16018224300696723 0" type="capsule" group="1" rgba="0.36 0.42 0.46 1" />
+            <geom name="middle_right_fork_top" size="0.0080000000000000002 0.065000000000000002" pos="0 0 0.13500000000000001" quat="0.70710678118654757 0.70710678118654746 0 -0" type="capsule" group="1" rgba="0.36 0.42 0.46 1" />
+            <body name="wheel_mid_right" pos="-0.044999999999999998 0 0" quat="1 0 0 0">
+              <inertial pos="0 0 0" quat="1 0 0 0" mass="2.5" diaginertia="0.0093333333333333341 0.017999999999999999 0.0093333333333333341" />
+              <joint name="wheel_mid_right_joint" pos="0 0 0" axis="0 1 0" limited="false" damping="0.15" />
+              <geom name="wheel_mid_right_visual_0" size="0.12 0.02" quat="0.70710548251123628 0.70710807985947355 0 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.08 0.09 0.1 1" pos="0 0 0" />
+              <geom name="wheel_mid_right_collision_0" size="0.12 0.02" quat="0.70710548251123628 0.70710807985947355 0 0" type="cylinder" group="3" rgba="0.05 0.05 0.05 0" pos="0 0 0" />
+              <geom name="wheel_mid_right_visual_1" size="0.074999999999999997 0.021999999999999999" quat="0.70710548251123628 0.70710807985947355 0 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.48 0.52 0.55 1" pos="0 0 0" />
+            </body>
+          </body>
+          <body name="middle_right_support" pos="-0.185 -0.105 -0.02" quat="1 0 0 0">
+            <geom name="middle_right_support_collision" size="0.02 0.105 0.012500000000000001" type="box" group="1" mass="0.25" rgba="0.36 0.42 0.46 1" pos="0 0 0" quat="1 0 0 0" />
+            <inertial pos="0 0 0" quat="1 0 0 0" mass="0.25" diaginertia="0.00093177083333333317 4.6354166666666678e-05 0.0009520833333333331" />
+          </body>
+          <body name="front_right_support" pos="0.20000000000000001 -0.084999999999999992 -0.02" quat="1 0 0 0">
+            <geom name="front_right_support_collision" size="0.02 0.084999999999999992 0.012500000000000001" type="box" group="1" mass="0.25" rgba="0.36 0.42 0.46 1" pos="0 0 0" quat="1 0 0 0" />
+            <inertial pos="0 0 0" quat="1 0 0 0" mass="0.25" diaginertia="0.00061510416666666658 4.6354166666666678e-05 0.00063541666666666662" />
+          </body>
+        </body>
+        <body name="wheel_rear_right" pos="-0.40999999999999998 -0.12 -0.28000000000000003" quat="1 0 0 0">
+          <inertial pos="0 0 0" quat="1 0 0 0" mass="2.5" diaginertia="0.01108 0.017999999999999999 0.01108" />
+          <joint name="wheel_rear_right_joint" pos="0 0 0" axis="0 1 0" limited="false" damping="0.15" />
+          <geom name="wheel_rear_right_visual_0" size="0.12 0.050000000000000003" quat="0.70710548251123628 0.70710807985947355 0 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.08 0.09 0.1 1" pos="0 0 0" />
+          <geom name="wheel_rear_right_collision_0" size="0.12 0.050000000000000003" quat="0.70710548251123628 0.70710807985947355 0 0" type="cylinder" group="3" rgba="0.05 0.05 0.05 0" pos="0 0 0" />
+          <geom name="wheel_rear_right_visual_1" size="0.074999999999999997 0.051999999999999998" quat="0.70710548251123628 0.70710807985947355 0 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.48 0.52 0.55 1" pos="0 0 0" />
+        </body>
+        <body name="motor_rear_right" pos="-0.40999999999999998 -0.050000000000000003 -0.28000000000000003" quat="1 0 0 0">
+          <inertial pos="0 0 0.050000000000000003" quat="1 0 0 0" mass="1" diaginertia="0.002 0.002 0.00050000000000000001" />
+          <geom name="motor_rear_right_visual_0" size="0.035000000000000003 0.022499999999999999 0.035000000000000003" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" pos="0 0 0" quat="1 0 0 0" />
+          <geom name="motor_rear_right_visual_1" size="0.029999999999999999 0.065000000000000002" pos="0 0 0.10000000000000001" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0 0 0 0" quat="1 0 0 0" />
+          <geom name="motor_rear_right_visual_2" size="0.0080000000000000002 0.025000000000000001" pos="0 -0.044999999999999998 0" quat="0.70710548251123628 0.70710807985947355 0 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0 0 0 0" />
+        </body>
+      </body>
+      <body name="arm_base" pos="0.02 0.39000000000000001 0.17999999999999999" quat="1 0 0 0">
+        <inertial pos="0 0 0.01" quat="1 0 0 0" mass="0.80000000000000004" diaginertia="0.0018 0.0018 0.0028" />
+        <geom name="arm_base_visual_0" size="0.034000000000000002 0.034000000000000002 0.02" pos="0 0 0.02" type="box" contype="0" conaffinity="0" group="1" rgba="0.84 0.87 0.89 1" quat="1 0 0 0" />
+        <geom name="arm_base_collision_0" size="0.050000000000000003 0.02" pos="0 0 0.02" type="cylinder" group="3" rgba="0.25 0.25 0.27 0" quat="1 0 0 0" />
+        <body name="link1" pos="0 0 0.040000000000000001" quat="1 0 0 0">
+          <inertial pos="0 0 0.059999999999999998" quat="1 0 0 0" mass="1" diaginertia="0.0030000000000000001 0.0030000000000000001 0.0015" />
+          <joint name="waist" pos="0 0 0" axis="0 0 1" range="-0.6 2.6" armature="0.02" damping="1" frictionloss="0.02" />
+          <geom name="link1_visual_0" size="0.024 0.024 0.059999999999999998" pos="0 0 0.059999999999999998" type="box" contype="0" conaffinity="0" group="1" rgba="0.84 0.87 0.89 1" quat="1 0 0 0" />
+          <geom name="link1_collision_0" size="0.035000000000000003 0.059999999999999998" pos="0 0 0.059999999999999998" type="cylinder" group="3" rgba="0.2 0.72 0.52 0" quat="1 0 0 0" />
+          <geom name="link1_visual_1" size="0.050000000000000003" pos="0 0 0.12" contype="0" conaffinity="0" group="1" rgba="0.84 0.87 0.89 1" quat="1 0 0 0" />
+          <geom name="link1_collision_1" size="0.050000000000000003" pos="0 0 0.12" group="3" rgba="0.5 0.5 0.5 0" quat="1 0 0 0" />
+          <geom name="reference_link1_joint_cover" size="0.035000000000000003 0.033000000000000002" pos="0 0 0.12" quat="0.70710678118654757 0.70710678118654746 0 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.84 0.87 0.89 1" />
+          <body name="link2" pos="0 0 0.12" quat="1 0 0 0">
+            <inertial pos="0.14999999999999999 0 0" quat="1 0 0 0" mass="1.5" diaginertia="0.0011999999999999999 0.0115 0.0115" />
+            <joint name="shoulder" pos="0 0 0" axis="0 -1 0" range="-1.5 2.5" armature="0.02" damping="1" frictionloss="0.02" />
+            <geom name="link2_collision_0" size="0.035000000000000003 0.14999999999999999" pos="0.14999999999999999 0 0" quat="0.70710548251123628 0 0.70710807985947355 0" type="cylinder" group="3" rgba="1 0.5 0.1 0" />
+            <geom name="link2_visual_1" size="0.042000000000000003" pos="0.29999999999999999 0 0" contype="0" conaffinity="0" group="1" rgba="0 0 0 0" quat="1 0 0 0" />
+            <geom name="link2_collision_1" size="0.042000000000000003" pos="0.29999999999999999 0 0" group="3" rgba="0.5 0.5 0.5 0" quat="1 0 0 0" />
+            <geom name="reference_link2_inner" pos="-8.0491169285323849e-16 -0.024 -1.5888922041194696e-33" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0 0 0 0" mesh="reference_link2_plate" />
+            <geom name="reference_link2_outer" size="0.017999999999999999 0.13" pos="0.14999999999999999 0 0" quat="0.70710678118654757 0 0.70710678118654757 0" type="capsule" contype="0" conaffinity="0" group="1" rgba="0.84 0.87 0.89 1" />
+            <geom name="reference_link2_joint_cover" size="0.029999999999999999 0.027" pos="0.29999999999999999 0 0" quat="0.70710678118654757 0.70710678118654746 0 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.84 0.87 0.89 1" />
+            <body name="link3" pos="0.29999999999999999 0 0" quat="1 0 0 0">
+              <inertial pos="0.125 0 0" quat="1 0 0 0" mass="1" diaginertia="0.00069999999999999999 0.0055999999999999999 0.0055999999999999999" />
+              <joint name="elbow" pos="0 0 0" axis="0 -1 0" range="0 3" armature="0.015" damping="0.8" frictionloss="0.01" />
+              <geom name="link3_collision_0" size="0.027 0.125" pos="0.125 0 0" quat="0.70710548251123628 0 0.70710807985947355 0" type="cylinder" group="3" rgba="0.2 0.4 0.9 0" />
+              <geom name="reference_link3_inner" pos="-6.9388939039072284e-16 -0.017999999999999999 2.6963019221421302e-33" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" rgba="0 0 0 0" mesh="reference_link3_plate" />
+              <geom name="reference_link3_outer" size="0.014 0.105" pos="0.125 0 0" quat="0.70710678118654757 0 0.70710678118654757 0" type="capsule" contype="0" conaffinity="0" group="1" rgba="0.84 0.87 0.89 1" />
+              <body name="wrist1_link" pos="0.25 0 0" quat="1 0 0 0">
+                <inertial pos="0 0 0" quat="1 0 0 0" mass="0.20000000000000001" diaginertia="0.00012 0.00012 0.00012" />
+                <joint name="wrist1" pos="0 0 0" axis="1 0 0" range="-2.9 2.9" armature="0.005" damping="0.2" frictionloss="0.002" />
+                <geom name="wrist1_link_visual_0" size="0.029999999999999999 0.014999999999999999" quat="0.70710548251123628 0 0.70710807985947355 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.84 0.87 0.89 1" pos="0 0 0" />
+                <geom name="wrist1_link_collision_0" size="0.029999999999999999 0.014999999999999999" quat="0.70710548251123628 0 0.70710807985947355 0" type="cylinder" group="3" rgba="0.5 0.5 0.5 0" pos="0 0 0" />
+                <body name="wrist2_link" pos="0 0 0" quat="1 0 0 0">
+                  <inertial pos="0 0 0" quat="1 0 0 0" mass="0.20000000000000001" diaginertia="0.00022000000000000001 0.0001 0.00022000000000000001" />
+                  <joint name="wrist2" pos="0 0 0" axis="0 -1 0" range="-2 2" armature="0.005" damping="0.2" frictionloss="0.002" />
+                  <geom name="wrist2_link_visual_0" size="0.025999999999999999 0.029999999999999999" quat="0.70710548251123628 0.70710807985947355 0 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.84 0.87 0.89 1" pos="0 0 0" />
+                  <geom name="wrist2_link_collision_0" size="0.025999999999999999 0.029999999999999999" quat="0.70710548251123628 0.70710807985947355 0 0" type="cylinder" group="3" rgba="0.5 0.5 0.5 0" pos="0 0 0" />
+                  <body name="wrist3_link" pos="0 0 0" quat="1 0 0 0">
+                    <inertial pos="0.014999999999999999 0 0" quat="1 0 0 0" mass="0.14999999999999999" diaginertia="6.0000000000000002e-05 6.0000000000000002e-05 6.0000000000000002e-05" />
+                    <joint name="wrist3" pos="0 0 0" axis="1 0 0" range="-3.1416 3.1416" armature="0.005" damping="0.2" frictionloss="0.002" />
+                    <geom name="wrist3_link_visual_0" size="0.025000000000000001 0.014999999999999999" pos="0.014999999999999999 0 0" quat="0.70710548251123628 0 0.70710807985947355 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.84 0.87 0.89 1" />
+                    <geom name="wrist3_link_collision_0" size="0.025000000000000001 0.014999999999999999" pos="0.014999999999999999 0 0" quat="0.70710548251123628 0 0.70710807985947355 0" type="cylinder" group="3" rgba="0.5 0.5 0.5 0" />
+                    <body name="flange_link" pos="0 0 0" quat="1 0 0 0">
+                      <inertial pos="0.059999999999999998 0 0" quat="1 0 0 0" mass="0.20000000000000001" diaginertia="0.00050000000000000001 0.00050000000000000001 0.00020000000000000001" />
+                      <geom name="flange_link_visual_0" size="0.033000000000000002 0.01" pos="0.040000000000000001 0 0" quat="0.70710548251123628 0 0.70710807985947355 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.84 0.87 0.89 1" />
+                      <geom name="flange_link_collision_0" size="0.033000000000000002 0.01" pos="0.040000000000000001 0 0" quat="0.70710548251123628 0 0.70710807985947355 0" type="cylinder" group="3" rgba="0.25 0.25 0.27 0" />
+                      <geom name="flange_link_visual_1" size="0.0070000000000000001 0.0070000000000000001 0.035000000000000003" pos="0.085000000000000006 0 0" quat="0.70710548251123628 0 0.70710807985947355 0" type="box" contype="0" conaffinity="0" group="1" rgba="0.84 0.87 0.89 1" />
+                      <geom name="flange_link_collision_1" size="0.01 0.035000000000000003" pos="0.085000000000000006 0 0" quat="0.70710548251123628 0 0.70710807985947355 0" type="cylinder" group="3" rgba="1 0.5 0.1 0" />
+                      <body name="end_link" pos="0.12 0 0" quat="1 0 0 0">
+                        <inertial pos="0 0 0" quat="1 0 0 0" mass="0.02" diaginertia="1.9999999999999999e-06 1.9999999999999999e-06 1.9999999999999999e-06" />
+                        <geom name="end_link_visual_0" size="0.01" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" pos="0 0 0" quat="1 0 0 0" />
+                        <geom name="end_link_collision_0" size="0.01" group="3" rgba="1 0.5 0.1 0" pos="0 0 0" quat="1 0 0 0" />
+                        <geom name="end_link_gripper_palm_visual" size="0.025000000000000001 0.028000000000000001 0.017999999999999999" pos="0.014999999999999999 0 0" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+                        <geom name="end_link_collision_gripper_palm" size="0.025000000000000001 0.028000000000000001 0.017999999999999999" pos="0.014999999999999999 0 0" type="box" group="3" rgba="0.25 0.25 0.27 0" quat="1 0 0 0" />
+                        <site name="end_effector" pos="0 0 0" size="0.012" rgba="1 0.1 0.1 1" />
+                        <site name="grasp_center" pos="0.075 0 0" size="0.006" rgba="0 1 0 1" />
+                        <body name="grasp_left_jaw" pos="0 0.050000000000000003 0" quat="1 0 0 0">
+                          <joint name="grasp_left_slide" pos="0 0 0" axis="0 -1 0" type="slide" range="0 0.035" armature="0.001" damping="1" />
+                          <geom name="grasp_left_pad" size="0.040000000000000001 0.0050000000000000001 0.025000000000000001" pos="0.074999999999999997 0 0" type="box" condim="4" friction="1 0.002 0.0001" solref="0.006" solimp="0.99 0.999" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+                          <inertial pos="0.074999999999999997 0 0" quat="1 0 0 0" mass="0.040000000000000001" diaginertia="8.6666666666666678e-06 2.9666666666666675e-05 2.166666666666667e-05" />
+                        </body>
+                        <body name="grasp_right_jaw" pos="0 -0.050000000000000003 0" quat="1 0 0 0">
+                          <joint name="grasp_right_slide" pos="0 0 0" axis="0 1 0" type="slide" range="0 0.035" armature="0.001" damping="1" />
+                          <geom name="grasp_right_pad" size="0.040000000000000001 0.0050000000000000001 0.025000000000000001" pos="0.074999999999999997 0 0" type="box" condim="4" friction="1 0.002 0.0001" solref="0.006" solimp="0.99 0.999" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+                          <inertial pos="0.074999999999999997 0 0" quat="1 0 0 0" mass="0.040000000000000001" diaginertia="8.6666666666666678e-06 2.9666666666666675e-05 2.166666666666667e-05" />
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="secondary_arm_base" pos="0.16 0.26000000000000001 0.10000000000000001" quat="1 0 0 0">
+        <inertial pos="0 0 0.025000000000000001" quat="1 0 0 0" mass="0.69999999999999996" diaginertia="0.001 0.001 0.0011999999999999999" />
+        <geom name="secondary_arm_base_visual" size="0.040000000000000001 0.025000000000000001" pos="0 0 0.025000000000000001" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.84 0.87 0.89 1" quat="1 0 0 0" />
+        <geom name="secondary_arm_base_collision" size="0.040000000000000001 0.025000000000000001" pos="0 0 0.025000000000000001" type="cylinder" group="3" rgba="0.25 0.25 0.27 0" quat="1 0 0 0" />
+        <body name="secondary_link1" pos="0 0 0.050000000000000003" quat="1 0 0 0">
+          <inertial pos="0.10000000000000001 0 0" quat="1 0 0 0" mass="0.65000000000000002" diaginertia="0.00080000000000000004 0.0030000000000000001 0.0030000000000000001" />
+          <joint name="secondary_shoulder" pos="0 0 0" axis="0 -1 0" range="-1.3 1.3" armature="0.015" damping="0.6" />
+          <geom name="secondary_link1_visual" size="0.025000000000000001 0.10000000000000001" pos="0.10000000000000001 0 0" quat="0.70710548251123628 0 0.70710807985947355 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.84 0.87 0.89 1" />
+          <geom name="secondary_link1_collision" size="0.025000000000000001 0.10000000000000001" pos="0.10000000000000001 0 0" quat="0.70710548251123628 0 0.70710807985947355 0" type="cylinder" group="3" rgba="0.72 0.74 0.78 0" />
+          <geom name="secondary_shoulder_joint_visual" size="0.032000000000000001" contype="0" conaffinity="0" group="1" rgba="0.84 0.87 0.89 1" pos="0 0 0" quat="1 0 0 0" />
+          <body name="secondary_link2" pos="0.20000000000000001 0 0" quat="1 0 0 0">
+            <inertial pos="0.085000000000000006 0 0" quat="1 0 0 0" mass="0.47999999999999998" diaginertia="0.00050000000000000001 0.0018 0.0018" />
+            <joint name="secondary_elbow" pos="0 0 0" axis="0 -1 0" range="-2.2 2.2" armature="0.012" damping="0.45" />
+            <geom name="secondary_link2_visual" size="0.021999999999999999 0.085000000000000006" pos="0.085000000000000006 0 0" quat="0.70710548251123628 0 0.70710807985947355 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.84 0.87 0.89 1" />
+            <geom name="secondary_link2_collision" size="0.021999999999999999 0.085000000000000006" pos="0.085000000000000006 0 0" quat="0.70710548251123628 0 0.70710807985947355 0" type="cylinder" group="3" rgba="0.2 0.4 0.9 0" />
+            <geom name="secondary_elbow_joint_visual" size="0.028000000000000001" pos="0.17000000000000001 0 0" contype="0" conaffinity="0" group="1" rgba="0.84 0.87 0.89 1" quat="1 0 0 0" />
+            <body name="secondary_link3" pos="0.17000000000000001 0 0" quat="1 0 0 0">
+              <inertial pos="0.044999999999999998 0 0" quat="1 0 0 0" mass="0.22" diaginertia="0.00020000000000000001 0.00040000000000000002 0.00040000000000000002" />
+              <joint name="secondary_wrist" pos="0 0 0" axis="0 -1 0" range="-1.8 1.8" armature="0.006" damping="0.25" />
+              <geom name="secondary_link3_visual" size="0.017999999999999999 0.044999999999999998" pos="0.044999999999999998 0 0" quat="0.70710548251123628 0 0.70710807985947355 0" type="cylinder" contype="0" conaffinity="0" group="1" rgba="0.84 0.87 0.89 1" />
+              <geom name="secondary_link3_collision" size="0.017999999999999999 0.044999999999999998" pos="0.044999999999999998 0 0" quat="0.70710548251123628 0 0.70710807985947355 0" type="cylinder" group="3" rgba="0.72 0.74 0.78 0" />
+              <body name="secondary_gripper" pos="0.089999999999999997 0 0" quat="1 0 0 0">
+                <inertial pos="0.035000000000000003 0 0" quat="1 0 0 0" mass="0.17999999999999999" diaginertia="0.00020000000000000001 0.00029999999999999997 0.00029999999999999997" />
+                <geom name="secondary_gripper_palm_visual" size="0.02 0.025000000000000001 0.012500000000000001" pos="0.014999999999999999 0 0" type="box" contype="0" conaffinity="0" group="1" rgba="0.84 0.87 0.89 1" quat="1 0 0 0" />
+                <geom name="secondary_gripper_palm_collision" size="0.02 0.025000000000000001 0.012500000000000001" pos="0.014999999999999999 0 0" type="box" group="3" rgba="0.25 0.25 0.27 0" quat="1 0 0 0" />
+                <site name="secondary_end_effector" pos="0.075 0 0" size="0.01" rgba="0.2 0.8 0.9 1" />
+                <site name="aux_grasp_center" pos="0.095 0 0" size="0.006" rgba="1 0.6 0 1" />
+                <body name="aux_left_jaw" pos="0 0.050000000000000003 0" quat="1 0 0 0">
+                  <joint name="aux_left_slide" pos="0 0 0" axis="0 -1 0" type="slide" range="0 0.035" armature="0.001" damping="1" />
+                  <geom name="aux_left_pad" size="0.040000000000000001 0.0050000000000000001 0.02" pos="0.095000000000000001 0 0" type="box" condim="4" priority="1" friction="1 0.002 0.0001" solref="0.006" solimp="0.99 0.999" mass="0.04" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+                  <inertial pos="0.095000000000000001 0 0" quat="1 0 0 0" mass="0.040000000000000001" diaginertia="5.6666666666666678e-06 2.666666666666667e-05 2.166666666666667e-05" />
+                </body>
+                <body name="aux_right_jaw" pos="0 -0.050000000000000003 0" quat="1 0 0 0">
+                  <joint name="aux_right_slide" pos="0 0 0" axis="0 1 0" type="slide" range="0 0.035" armature="0.001" damping="1" />
+                  <geom name="aux_right_pad" size="0.040000000000000001 0.0050000000000000001 0.02" pos="0.095000000000000001 0 0" type="box" condim="4" priority="1" friction="1 0.002 0.0001" solref="0.006" solimp="0.99 0.999" mass="0.04" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+                  <inertial pos="0.095000000000000001 0 0" quat="1 0 0 0" mass="0.040000000000000001" diaginertia="5.6666666666666678e-06 2.666666666666667e-05 2.166666666666667e-05" />
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="main_frame_bracket" pos="0 0 0" quat="1 0 0 0">
+        <geom name="main_frame_outrigger" size="0.025000000000000001 0.105 0.014999999999999999" pos="0.02 0.28499999999999998 0.070000000000000007" type="box" group="1" mass="0.25" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+        <geom name="main_case_pedestal" size="0.025000000000000001 0.025000000000000001 0.050000000000000003" pos="0.02 0.39000000000000001 0.13" type="box" group="1" mass="0.15" rgba="0.84 0.87 0.89 1" quat="1 0 0 0" />
+        <inertial pos="0.02 0.32437499999999997 0.092499999999999985" quat="0.58007417931649707 0.81456365404447906 0 0" mass="0.40000000000000002" diaginertia="0.0024648437500000009 0.0022713163400334556 0.00036019407663321251" />
+      </body>
+      <body name="main_storage_case" pos="0 0 0" quat="1 0 0 0">
+        <geom name="main_case_floor_front" size="0.17999999999999999 0.059999999999999998 0.0030000000000000027" pos="0.14000000000000001 0.38700000000000001 0.11699999999999999" type="box" group="5" mass="0.04" rgba="0.84 0.87 0.89 1" quat="1 0 0 0" />
+        <inertial pos="0.14000000000000001 0.38700000000000001 0.11699999999999999" quat="1 0 0 0" mass="0.040000000000000001" diaginertia="4.812e-05 0.00043212000000000003 0.00047999999999999996" />
+      </body>
+      <body name="main_case_lid" pos="0 0 0" quat="1 0 0 0">
+        <joint name="main_case_slide" pos="0 0 0" axis="-1 0 0" type="slide" range="0 0.39" damping="2" frictionloss="0.05" />
+        <geom name="main_case_back" size="0.0029999999999999992 0.063 0.17300000000000001" pos="-0.042999999999999997 0.39000000000000001 0.28700000000000003" type="box" group="5" mass="0.04" rgba="0.84 0.87 0.89 1" quat="1 0 0 0" />
+        <geom name="main_case_outer" size="0.17999999999999999 0.0030000000000000027 0.17300000000000001" pos="0.14000000000000001 0.45000000000000001 0.28700000000000003" type="box" group="5" mass="0.04" rgba="0.84 0.87 0.89 1" quat="1 0 0 0" />
+        <geom name="main_case_inner_front" size="0.17999999999999999 0.0030000000000000027 0.17000000000000001" pos="0.14000000000000001 0.33000000000000002 0.29000000000000004" type="box" group="5" mass="0.04" rgba="0.84 0.87 0.89 1" quat="1 0 0 0" />
+        <geom name="main_case_cover" size="0.186 0.063 0.0030000000000000027" pos="0.14000000000000001 0.39000000000000001 0.46300000000000002" type="box" group="5" mass="0.1" rgba="0.84 0.87 0.89 1" quat="1 0 0 0" />
+        <inertial pos="0.10672727272727274 0.39000000000000007 0.36754545454545462" quat="0.63699848500168765 0.3063910511613675 0.30456813394204968 0.63843222479825346" mass="0.22" diaginertia="0.0059677812288054617 0.0040609577989360428 0.0028536973358948615" />
+      </body>
+      <body name="aux_storage_case" pos="0 0 0" quat="1 0 0 0">
+        <geom name="aux_case_back" size="0.0030000000000000027 0.066000000000000003 0.152" pos="0.107 0.26000000000000001 0.113" type="box" group="5" mass="0.04" rgba="0.84 0.87 0.89 1" quat="1 0 0 0" />
+        <geom name="aux_case_outer" size="0.14500000000000002 0.0030000000000000027 0.152" pos="0.255 0.32300000000000001 0.113" type="box" group="5" mass="0.04" rgba="0.84 0.87 0.89 1" quat="1 0 0 0" />
+        <geom name="aux_case_inner" size="0.14500000000000002 0.0030000000000000027 0.152" pos="0.255 0.19700000000000001 0.113" type="box" group="5" mass="0.04" rgba="0.84 0.87 0.89 1" quat="1 0 0 0" />
+        <geom name="aux_case_floor" size="0.14500000000000002 0.059999999999999998 0.0029999999999999992" pos="0.255 0.26000000000000001 -0.036000000000000004" type="box" group="5" mass="0.04" rgba="0.84 0.87 0.89 1" quat="1 0 0 0" />
+        <inertial pos="0.218 0.26000000000000001 0.075749999999999998" quat="0.66633320848304456 -0.23664330810883338 -0.23664330810883338 0.66633320848304456" mass="0.16" diaginertia="0.0030885499999999998 0.0021933888147788157 0.0017428411852211851" />
+      </body>
+      <body name="aux_case_lid" pos="0 0 0" quat="1 0 0 0">
+        <joint name="aux_case_slide" pos="0 0 0" axis="-1 0 0" type="slide" range="0 0.32" damping="2" frictionloss="0.05" />
+        <geom name="aux_case_cover" size="0.15100000000000002 0.066000000000000003 0.0030000000000000027" pos="0.255 0.26000000000000001 0.26800000000000002" type="box" group="5" mass="0.1" rgba="0.84 0.87 0.89 1" quat="1 0 0 0" />
+        <inertial pos="0.255 0.26000000000000001 0.26800000000000002" quat="1 0 0 0" mass="0.10000000000000001" diaginertia="0.00014550000000000004 0.00076033333333333346 0.00090523333333333367" />
+      </body>
+    </body>
+    <body name="bottle" pos="0.62 0.215 0.88" quat="1 0 0 0">
+      <inertial pos="0 0 0" quat="1 0 0 0" mass="0.29999999999999999" diaginertia="0.0010588000000000001 0.0010588000000000001 0.00011760000000000001" />
+      <joint name="bottle_free" type="free" armature="0" damping="0" />
+      <geom name="bottle_collision" size="0.028000000000000001 0.10000000000000001" type="cylinder" condim="4" friction="1 0.002 0.0001" solref="0.006" solimp="0.99 0.999" rgba="0.1 0.6 0.9 0.85" pos="0 0 0" quat="1 0 0 0" />
+      <geom name="bottle_neck" size="0.012 0.017999999999999999" pos="0 0 0.11799999999999999" type="cylinder" friction="0.2 0.001 0.0001" mass="0" rgba="0.15 0.55 0.8 1" quat="1 0 0 0" />
+    </body>
+    <body name="cap" pos="0.62 0.215 1.028" quat="1 0 0 0">
+      <joint name="cap_free" type="free" armature="0" damping="0" />
+      <geom name="cap_collision" size="0.017999999999999999 0.012" type="cylinder" condim="4" friction="1 0.002 0.0001" solref="0.006" solimp="0.99 0.999" mass="0.012" rgba="0.95 0.95 0.8 1" pos="0 0 0" quat="1 0 0 0" />
+      <geom name="cap_rib_0" size="0.0015 0.002 0.01" pos="0.017999999999999999 0 0" type="box" condim="4" friction="1 0.002 0.0001" solref="0.006" solimp="0.99 0.999" mass="0" rgba="0.8 0.2 0.1 1" quat="1 0 0 0" />
+      <geom name="cap_rib_1" size="0.0015 0.002 0.01" pos="0.015588457268119896 0.0089999999999999976 0" quat="0.96592582628906831 0 0 0.25881904510252074" type="box" condim="4" friction="1 0.002 0.0001" solref="0.006" solimp="0.99 0.999" mass="0" rgba="0.85 0.8 0.65 1" />
+      <geom name="cap_rib_2" size="0.0015 0.002 0.01" pos="0.0090000000000000011 0.015588457268119894 0" quat="0.86602540378443871 0 0 0.49999999999999994" type="box" condim="4" friction="1 0.002 0.0001" solref="0.006" solimp="0.99 0.999" mass="0" rgba="0.85 0.8 0.65 1" />
+      <geom name="cap_rib_3" size="0.0015 0.002 0.01" pos="1.1021821192326178e-18 0.017999999999999999 0" quat="0.70710678118654757 0 0 0.70710678118654746" type="box" condim="4" friction="1 0.002 0.0001" solref="0.006" solimp="0.99 0.999" mass="0" rgba="0.85 0.8 0.65 1" />
+      <geom name="cap_rib_4" size="0.0015 0.002 0.01" pos="-0.0089999999999999959 0.015588457268119896 0" quat="0.50000000000000011 0 0 0.8660254037844386" type="box" condim="4" friction="1 0.002 0.0001" solref="0.006" solimp="0.99 0.999" mass="0" rgba="0.85 0.8 0.65 1" />
+      <geom name="cap_rib_5" size="0.0015 0.002 0.01" pos="-0.015588457268119891 0.0090000000000000045 0" quat="0.25881904510252096 0 0 0.9659258262890682" type="box" condim="4" friction="1 0.002 0.0001" solref="0.006" solimp="0.99 0.999" mass="0" rgba="0.85 0.8 0.65 1" />
+      <geom name="cap_rib_6" size="0.0015 0.002 0.01" pos="-0.017999999999999999 2.2043642384652355e-18 0" quat="6.123233995736766e-17 0 0 1" type="box" condim="4" friction="1 0.002 0.0001" solref="0.006" solimp="0.99 0.999" mass="0" rgba="0.85 0.8 0.65 1" />
+      <geom name="cap_rib_7" size="0.0015 0.002 0.01" pos="-0.015588457268119898 -0.0089999999999999959 0" quat="-0.25881904510252063 0 0 0.96592582628906831" type="box" condim="4" friction="1 0.002 0.0001" solref="0.006" solimp="0.99 0.999" mass="0" rgba="0.85 0.8 0.65 1" />
+      <geom name="cap_rib_8" size="0.0015 0.002 0.01" pos="-0.009000000000000008 -0.015588457268119889 0" quat="-0.49999999999999983 0 0 0.86602540378443871" type="box" condim="4" friction="1 0.002 0.0001" solref="0.006" solimp="0.99 0.999" mass="0" rgba="0.85 0.8 0.65 1" />
+      <geom name="cap_rib_9" size="0.0015 0.002 0.01" pos="-3.3065463576978533e-18 -0.017999999999999999 0" quat="-0.70710678118654746 0 0 0.70710678118654757" type="box" condim="4" friction="1 0.002 0.0001" solref="0.006" solimp="0.99 0.999" mass="0" rgba="0.85 0.8 0.65 1" />
+      <geom name="cap_rib_10" size="0.0015 0.002 0.01" pos="0.0089999999999999872 -0.015588457268119901 0" quat="-0.86602540378443849 0 0 0.50000000000000033" type="box" condim="4" friction="1 0.002 0.0001" solref="0.006" solimp="0.99 0.999" mass="0" rgba="0.85 0.8 0.65 1" />
+      <geom name="cap_rib_11" size="0.0015 0.002 0.01" pos="0.015588457268119889 -0.009000000000000008 0" quat="-0.9659258262890682 0 0 0.25881904510252102" type="box" condim="4" friction="1 0.002 0.0001" solref="0.006" solimp="0.99 0.999" mass="0" rgba="0.85 0.8 0.65 1" />
+      <inertial pos="0 0 0" quat="1 0 0 0" mass="0.012" diaginertia="1.548e-06 1.548e-06 1.9439999999999999e-06" />
+    </body>
+    <body name="passenger_hand" pos="0.45000000000000001 0.5 1.04" mocap="true" quat="1 0 0 0">
+      <geom name="recipient_pad" size="0.065000000000000002 0.065000000000000002 0.01" type="box" contype="0" conaffinity="0" friction="1 0.002 0.0001" rgba="0.3 0.75 0.4 0.8" pos="0 0 0" quat="1 0 0 0" />
+      <inertial pos="0 0 0" quat="1 0 0 0" mass="0.33800000000000002" diaginertia="0.00048728333333333346 0.00048728333333333346 0.0009520333333333334" />
+    </body>
+  </worldbody>
+  <contact>
+    <exclude body1="link3" body2="wrist2_link" />
+    <exclude body1="link3" body2="wrist3_link" />
+    <exclude body1="wrist1_link" body2="wrist3_link" />
+    <exclude body1="wrist1_link" body2="flange_link" />
+  </contact>
+  <actuator>
+    <general name="arm_motor_waist" joint="waist" ctrllimited="true" ctrlrange="-20 20" />
+    <general name="arm_motor_shoulder" joint="shoulder" ctrllimited="true" ctrlrange="-20 20" />
+    <general name="arm_motor_elbow" joint="elbow" ctrllimited="true" ctrlrange="-15 15" />
+    <general name="arm_motor_wrist1" joint="wrist1" ctrllimited="true" ctrlrange="-5 5" />
+    <general name="arm_motor_wrist2" joint="wrist2" ctrllimited="true" ctrlrange="-5 5" />
+    <general name="arm_motor_wrist3" joint="wrist3" ctrllimited="true" ctrlrange="-5 5" />
+    <general name="secondary_motor_shoulder" joint="secondary_shoulder" ctrllimited="true" ctrlrange="-10 10" />
+    <general name="secondary_motor_elbow" joint="secondary_elbow" ctrllimited="true" ctrlrange="-8 8" />
+    <general name="secondary_motor_wrist" joint="secondary_wrist" ctrllimited="true" ctrlrange="-4 4" />
+    <general name="rear_drive_left" joint="wheel_rear_left_joint" ctrllimited="true" ctrlrange="-35 35" />
+    <general name="rear_drive_right" joint="wheel_rear_right_joint" ctrllimited="true" ctrlrange="-35 35" />
+    <general name="steer_front_left" joint="front_left_steer_joint" ctrllimited="true" ctrlrange="-25 25" />
+    <general name="steer_front_right" joint="front_right_steer_joint" ctrllimited="true" ctrlrange="-25 25" />
+    <general name="grasp_left_motor" joint="grasp_left_slide" ctrllimited="true" ctrlrange="-8 8" />
+    <general name="grasp_right_motor" joint="grasp_right_slide" ctrllimited="true" ctrlrange="-8 8" />
+    <general name="aux_left_motor" joint="aux_left_slide" ctrllimited="true" ctrlrange="-8 8" />
+    <general name="aux_right_motor" joint="aux_right_slide" ctrllimited="true" ctrlrange="-8 8" />
+    <general name="main_case_motor" joint="main_case_slide" ctrllimited="true" ctrlrange="-10 10" />
+    <general name="aux_case_motor" joint="aux_case_slide" ctrllimited="true" ctrlrange="-10 10" />
+  </actuator>
+  <keyframe>
+    <key name="folded" qpos="0 0 0.40000000000000002 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.59999999999999998 2.3999999999999999 0 1.3 0 0.029999999999999999 0.029999999999999999 -0.80000000000000004 2.1000000000000001 1.6000000000000001 0.029999999999999999 0.029999999999999999 0 0 0.62 0.215 0.88 1 0 0 0 0.62 0.215 1.028 1 0 0 0" mpos="0.45000000000000001 0.5 1.04" mquat="1 0 0 0" />
+  </keyframe>
+</mujoco>

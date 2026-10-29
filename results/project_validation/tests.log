@@ -1,0 +1,133 @@
+test_alignment_pulse_is_bounded_and_uses_only_existing_motors (test_alignment.AlignmentTests) ... ok
+test_contact_moment_projection_and_passive_torque (test_alignment.AlignmentTests) ... ok
+test_inactive_contact_friction_coefficients_cannot_fix_condim3 (test_alignment.AlignmentTests) ... ok
+test_narrow_tire_preserves_forward_turns_and_both_braking_directions (test_alignment.AlignmentTests) ... ok
+test_narrow_tire_probe_updates_visual_collision_and_inertia_together (test_alignment.AlignmentTests) ... ok
+test_narrow_tire_with_pulse_partial_reverse_acceptance (test_alignment.AlignmentTests) ... ok
+test_reduced_resistance_does_not_hide_alignment_failure (test_alignment.AlignmentTests) ... ok
+test_resistance_probes_preserve_geometry_contacts_and_actuation (test_alignment.AlignmentTests) ... ok
+nominal navigation True None
+nominal delivery True None
+nominal idle stow confirmed
+bottle_absent navigation False No supported bottle detected; driving and grasping inhibited
+blocked_route navigation False No collision-free observed approach; driving and grasping inhibited
+caster_sideways navigation True None
+offset_approach navigation True None
+no_acknowledgement navigation True None
+no_acknowledgement delivery False No passenger acknowledgement: bottle retained by primary
+  failed delivery gates: ['acknowledgement_before_release', 'recipient_support_before_release', 'completed_without_block', 'final_hold_observed', 'recipient_holds_bottle', 'grippers_unloaded', 'final_upright', 'final_position']
+no_recipient_support navigation True None
+no_recipient_support delivery False Recipient support insufficient: primary release prohibited
+  failed delivery gates: ['acknowledgement_before_release', 'recipient_support_before_release', 'completed_without_block', 'final_hold_observed', 'recipient_holds_bottle', 'grippers_unloaded', 'final_upright', 'final_position']
+test_missing_bottle_and_blocked_route_prevent_driving (test_autonomous.ContinuousEvidenceTests) ... ok
+test_mobile_ack_and_support_negative_controls_and_approaches (test_autonomous.ContinuousEvidenceTests) ... ok
+test_nominal_physics_passes_all_gates_with_free_base (test_autonomous.ContinuousEvidenceTests) ... ok
+test_recording_is_continuous_and_bottle_not_teleported (test_autonomous.ContinuousEvidenceTests) ... ok
+test_release_requires_real_recipient_force_after_acknowledgement (test_autonomous.ContinuousEvidenceTests) ... ok
+test_chassis_is_free_and_middle_wheels_have_no_actuation (test_autonomous.SensorAndPlanningTests) ... ok
+test_inflation_detour_unknown_space_and_corner_gates (test_autonomous.SensorAndPlanningTests) ... ok
+test_low_barrier_is_seen_by_lidar_without_hiding_bottle (test_autonomous.SensorAndPlanningTests) ... ok
+test_missing_bottle_and_nonblue_objects_do_not_trigger (test_autonomous.SensorAndPlanningTests) ... ok
+test_moving_root_numpy_fk_and_jacobian_against_engine (test_autonomous.SensorAndPlanningTests) ... ok
+test_rgb_depth_estimate_matches_three_independent_bottle_poses (test_autonomous.SensorAndPlanningTests) ... ok
+Running nominal
+nominal PASS []
+Running jammed_cap
+jammed_cap BLOCKED Cap did not physically disengage; bottle remains on auxiliary
+Running no_acknowledgement
+no_acknowledgement BLOCKED No passenger acknowledgement: bottle retained by primary
+Running no_recipient_support
+no_recipient_support BLOCKED Recipient support insufficient: primary release prohibited
+test_final_recipient_support_and_clear_grippers (test_delivery.DeliveryEvidenceTests) ... ok
+test_negative_controls_block_the_correct_stage_and_retain_support (test_delivery.DeliveryEvidenceTests) ... ok
+test_nominal_sequence_and_support_before_both_releases (test_delivery.DeliveryEvidenceTests) ... ok
+test_saved_animation_has_real_hand_motion_only_after_ack (test_delivery.DeliveryEvidenceTests) ... ok
+test_aabb_certificate_handles_separated_boxes_and_rejects_overlap (test_delivery.TaskFixtureTests) ... ok
+test_independent_free_cap_preserves_arms_and_only_base_is_welded (test_delivery.TaskFixtureTests) ... ok
+test_thread_internal_wrenches_do_no_work_on_common_rigid_motion (test_delivery.TaskFixtureTests) ... ok
+test_thread_requires_measured_rotation_and_axial_rise (test_delivery.TaskFixtureTests) ... ok
+test_candidate_preserves_passive_joints_and_actuator_limits (test_geometry.ClearanceTests) ... ok
+test_forward_turns_and_braking_remain_accepted (test_geometry.ClearanceTests) ... ok
+test_pre_aligned_reverse_passes_without_loaded_frame_contacts (test_geometry.ClearanceTests) ... ok
+test_sampled_articulated_clearance_with_collision_masks_active (test_geometry.ClearanceTests) ... ok
+test_sideways_passive_alignment_failure_is_not_hidden (test_geometry.ClearanceTests) ... ok
+test_arms_preserved_and_bottle_has_no_attachment_constraint (test_grasp.GraspFixtureTests) ... ok
+test_blocked_reach_is_rejected_before_execution (test_grasp.GraspFixtureTests) ... ok
+test_fixture_wrist_still_collides_with_external_obstacle (test_grasp.GraspFixtureTests) ... ok
+test_reference_style_preserves_collision_geometry_and_dynamics (test_grasp.GraspFixtureTests) ... ok
+test_visible_link_plates_fit_the_collision_cylinders (test_grasp.GraspFixtureTests) ... ok
+test_far_pickup_remains_within_the_original_limits (test_grasp.GraspPhysicsTests) ... ok
+test_negative_controls_prevent_false_grasp_success (test_grasp.GraspPhysicsTests) ... ok
+test_nominal_is_a_contact_supported_lift (test_grasp.GraspPhysicsTests) ... ok
+test_payload_feedforward_comparison_and_payload_limit_are_explicit (test_grasp.GraspPhysicsTests) ... ok
+test_raised_pregrasp_removes_the_near_bottle_collision (test_grasp.GraspPhysicsTests) ... ok
+test_jacobian_finite_difference_and_full_pose_ik (test_grasp.ManipulationMathTests) ... ok
+test_numpy_fk_and_jacobian_match_engine_verification (test_grasp.ManipulationMathTests) ... ok
+test_quintic_endpoints_velocity_and_invalid_duration (test_grasp.ManipulationMathTests) ... ok
+test_observer_preserves_exact_physics_and_nested_context (test_improvements.RuntimeAndDesignTests) ... ok
+test_simple_style_changes_visuals_without_changing_dynamics_or_collisions (test_improvements.RuntimeAndDesignTests) ... ok
+test_corridor_derivatives_endpoints_and_obstacle_rejection (test_improvements.SensorAndDockingTests) ... ok
+test_noisy_detections_and_missing_bottle (test_improvements.SensorAndDockingTests) ... ok
+test_rotated_support_certificate_preserves_gap_and_rejects_overlap (test_improvements.SensorAndDockingTests) ... ok
+test_cancelled_run_is_not_success (test_live_launcher.LiveLauncherTests) ... ok
+test_failed_run_is_not_success (test_live_launcher.LiveLauncherTests) ... ok
+test_fresh_success_only_and_owned_idle_child_cleanup (test_live_launcher.LiveLauncherTests) ... ok
+test_caster_sweep_exposes_interference_without_disabling_collisions (test_mobility.IntegralTests) ... ok
+test_feedback_memory_is_reset_on_stop_and_reference_change (test_mobility.IntegralTests) ... ok
+test_integral_bound_saturation_blocking_and_unwinding (test_mobility.IntegralTests) ... ok
+test_integral_resets_do_not_spoil_forward_or_reverse_braking (test_mobility.IntegralTests) ... ok
+test_long_reverse_reports_late_windows_and_loaded_self_contacts (test_mobility.IntegralTests) ... ok
+test_staged_integral_improvements_preserve_motor_limits (test_mobility.IntegralTests) ... ok
+test_extracted_controller_matches_notebook_reference (test_mobility.ModelTests) ... ok
+test_mechanical_intent_and_geometry (test_mobility.ModelTests) ... ok
+test_wrist_repair_preserves_other_collision_geometry_and_dynamics (test_mobility.ModelTests) ... ok
+test_wrist_still_collides_with_external_obstacle (test_mobility.ModelTests) ... ok
+test_invalid_simulation_parameters (test_mobility.PhysicsTests) ... ok
+test_log_pose_timestamps_are_synchronized (test_mobility.PhysicsTests) ... ok
+test_stiffness_comparison_meets_flat_floor_regression_targets (test_mobility.PhysicsTests) ... ok
+test_wrist_contact_change_removes_large_error_without_gain_changes (test_mobility.PhysicsTests) ... ok
+test_ackermann_has_common_turn_centre_and_reverse_symmetry (test_mobility.SteeringMathTests) ... ok
+test_braking_requires_a_sustained_stop_and_final_residual_limits (test_mobility.SteeringMathTests) ... ok
+test_curvature_uses_signed_achieved_speed_and_rejects_low_motion (test_mobility.SteeringMathTests) ... ok
+test_rear_axle_velocity_and_yaw_rate_match_finite_differences (test_mobility.SteeringMathTests) ... ok
+test_ackermann_improves_forward_curvature_with_posture_preserved (test_mobility.SteeringPhysicsTests) ... ok
+test_reverse_straight_and_both_braking_directions (test_mobility.SteeringPhysicsTests) ... ok
+test_reverse_turn_slowdown_is_exposed (test_mobility.SteeringPhysicsTests) ... ok
+test_invalid_timing_is_rejected (test_replay.PlaybackTimelineTests) ... ok
+test_pause_speed_restart_end_and_loop (test_replay.PlaybackTimelineTests) ... ok
+test_display_interpolation_preserves_samples_and_quaternions (test_replay.RecordingTests) ... ok
+test_motion_and_final_folded_storage_are_present (test_replay.RecordingTests) ... ok
+test_recorded_poses_and_recipient_motion_are_applied_exactly (test_replay.RecordingTests) ... ok
+test_stale_failed_or_malformed_recordings_are_rejected (test_replay.RecordingTests) ... ok
+test_independent_urdf_fk_and_geometry_match_twenty_articulations (test_robot_assets.RobotAssetTests) ... ok
+test_obj_stl_agree_closed_oriented_nonzero_meshes (test_robot_assets.RobotAssetTests) ... ok
+test_robot_keyframe_is_folded_and_assembly_matches_visual_bounds (test_robot_assets.RobotAssetTests) ... ok
+test_scene_roundtrip_preserves_physics_over_one_second (test_robot_assets.RobotAssetTests) ... ok
+test_source_and_generated_files_have_current_hashes (test_robot_assets.RobotAssetTests) ... ok
+test_urdf_joint_axes_limits_and_inertias (test_robot_assets.RobotAssetTests) ... ok
+test_urdf_loads_in_mujoco_and_keeps_inertial_tree (test_robot_assets.RobotAssetTests) ... ok
+test_urdf_tree_dofs_and_passive_wheels (test_robot_assets.RobotAssetTests) ... ok
+test_empty_arms_return_to_cases_after_delivery_with_recipient_support (test_stowage.StorageEvidenceTests) ... ok
+test_motion_is_folded_and_covered_then_deploys_after_braking (test_stowage.StorageEvidenceTests) ... ok
+test_both_folded_arms_fit_closed_cases_with_clearance (test_stowage.StorageTests) ... ok
+test_case_cannot_close_over_deployed_arms (test_stowage.StorageTests) ... ok
+test_cases_clear_suspension_over_flat_floor_articulation_sweep (test_stowage.StorageTests) ... ok
+test_checked_auxiliary_route_preserves_physical_state (test_stowage.StorageTests) ... ok
+test_folding_requires_stationary_base (test_stowage.StorageTests) ... ok
+test_jaw_centering_opposes_slide_imbalance_without_raising_caps (test_stowage.StorageTests) ... ok
+test_main_mount_is_on_frame_inside_side_case_below_armrest (test_stowage.StorageTests) ... ok
+test_side_mount_reaches_pickup_and_service_clearance_waypoints (test_stowage.StorageTests) ... ok
+test_unfolded_or_open_cover_blocks_drive_and_retains_tool_control (test_stowage.StorageTests) ... ok
+test_auxiliary_clamp_preserves_both_arms_and_free_bottle (test_transfer.AuxiliaryFixtureTests) ... ok
+test_auxiliary_numpy_fk_and_jacobian (test_transfer.AuxiliaryFixtureTests) ... ok
+test_failed_auxiliary_grasps_never_release_primary (test_transfer.HandoverPhysicsTests) ... ok
+test_invalid_hold_duration_is_rejected_before_simulation (test_transfer.HandoverPhysicsTests) ... ok
+test_long_hold_extends_the_identical_short_trial (test_transfer.HandoverPhysicsTests) ... ok
+test_near_and_far_transfer_respect_limits_for_fifteen_seconds (test_transfer.HandoverPhysicsTests) ... ok
+test_nominal_handover_is_supported_after_primary_withdrawal (test_transfer.HandoverPhysicsTests) ... ok
+test_planner_restores_physical_state_on_collision_rejection (test_transfer.HandoverPhysicsTests) ... ok
+
+----------------------------------------------------------------------
+Ran 107 tests in 608.460s
+
+OK

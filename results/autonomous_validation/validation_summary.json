@@ -1,0 +1,36 @@
+{
+  "source_sha256": "1fdd4fd715c3c3dc9cd9040c632e607c0d9a531599d476b86777061856bada65",
+  "all_expected_comparison_outcomes_passed": true,
+  "comparison_count": 7,
+  "tests": {
+    "mobility": 34,
+    "manipulation": 29,
+    "autonomous": 11,
+    "stowage": 8,
+    "total": 82
+  },
+  "notebook": {
+    "passed": true,
+    "seconds": 276.68,
+    "executed_code_cells": 23,
+    "image_outputs": 6,
+    "error": null
+  },
+  "folded_idle": {
+    "ready": true,
+    "case_margins_m": {
+      "main": 0.007000000000000589,
+      "aux": 0.010000000000000439
+    },
+    "fold_error_rad": 0.0003978279373363806,
+    "arm_speed_rad_s": 3.6375862154927366e-06,
+    "covers_closed": true
+  },
+  "animation": {
+    "recorded_poses": 2592,
+    "playback_ms": 259200,
+    "timing_verified": true
+  },
+  "canonical_sha256": "439b5c32393ba5bb97ecca903fbb47a91205256270ad039ff61d019870355653",
+  "scope": "Cased-arm forward mobile MuJoCo task; ideal sensors and recipient surrogate"
+}

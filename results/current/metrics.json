@@ -1,0 +1,2752 @@
+{
+  "environment": {
+    "python": "3.9.6",
+    "numpy": "2.0.2",
+    "mujoco": "3.3.7",
+    "model_sha256": "439b5c32393ba5bb97ecca903fbb47a91205256270ad039ff61d019870355653"
+  },
+  "profile": "baseline",
+  "trials": {
+    "original_hold": {
+      "scenario": "hold",
+      "original_contacts": true,
+      "rocker_stiffness_Nm_rad": 45.0,
+      "peak_tilt_deg": 11.056568499140623,
+      "height_range_m": [
+        0.3999659427361408,
+        0.40377244822375
+      ],
+      "duration_s": 5.999999999999561,
+      "peak_arm_error_norm_deg": [
+        9.773468295533982,
+        0.40253814712176417
+      ],
+      "max_joint_limit_excess_deg": 0.0,
+      "turn_distance_m": 7.582848447179528e-05,
+      "turn_yaw_deg": -0.00034236212228099325,
+      "wheelbase_m": 0.82,
+      "rear_track_m": 0.8,
+      "rear_radius_m": 0.12,
+      "mass_kg": 82.20000000000002,
+      "mean_turn_steering_deg": [
+        0.00017859678972184737,
+        0.00017986440911150735
+      ],
+      "mean_turn_wheel_load_N": [
+        124.78142709568577,
+        111.0714387535755,
+        159.9636781365789,
+        145.65912350516118,
+        141.3160360508012,
+        128.87616759763895
+      ],
+      "turn_slip_rms_m_s": [
+        [
+          2.2488909302196767e-05,
+          2.8419343037409015e-05
+        ],
+        [
+          3.1265633010967646e-06,
+          2.8419167779096843e-05
+        ],
+        [
+          1.3911165347501246e-05,
+          1.2083151745267311e-05
+        ],
+        [
+          3.503615618228482e-06,
+          1.2083062448007585e-05
+        ],
+        [
+          1.3771782743964896e-05,
+          1.0189683822783094e-05
+        ],
+        [
+          3.7222011569677725e-06,
+          1.0192911472864525e-05
+        ]
+      ],
+      "rear_saturation_pct": 0.0,
+      "initial_penetrations_over_1mm": [
+        [
+          "link3_collision_0",
+          "wrist2_link_collision_0",
+          -0.025999999995377335
+        ],
+        [
+          "wrist1_link_collision_0",
+          "wrist3_link_collision_0",
+          -0.015000000000101156
+        ]
+      ],
+      "unexpected_contacts": [
+        {
+          "geoms": [
+            "link3_collision_0",
+            "wrist2_link_collision_0"
+          ],
+          "depth_m": -0.026000000298260207
+        },
+        {
+          "geoms": [
+            "wrist1_link_collision_0",
+            "wrist3_link_collision_0"
+          ],
+          "depth_m": -0.015506301556809645
+        }
+      ],
+      "checks": {
+        "finite": true,
+        "main_hold_below_1_deg": false,
+        "aux_hold_below_1_deg": true,
+        "joint_limit_excess_below_half_deg": true,
+        "height_between_0_38_and_0_43_m": true,
+        "tilt_below_5_deg": false,
+        "no_unexpected_deep_contacts": false,
+        "yaw_direction": true
+      },
+      "passed": false,
+      "steering_mode": "shared",
+      "feedback_mode": "pd",
+      "protocol": "standard",
+      "speed_scale": 1.0,
+      "caster_outboard_offset_m": 0.0,
+      "clearance_geometry": false,
+      "caster_resistance": "baseline",
+      "caster_tire_half_width_m": 0.05,
+      "alignment_steer_deg": 0.0,
+      "wheel_ground_condim": [
+        3
+      ],
+      "caster_initial_yaw_deg": [
+        0.0,
+        0.0
+      ],
+      "integral_config": {
+        "steering_Ki": 80.0,
+        "drive_Ki": 7.0,
+        "steering_bound_Nm": 8.0,
+        "drive_bound_Nm": 10.0
+      },
+      "max_integral_torque_Nm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "non_ground_contacts": [
+        {
+          "geoms": [
+            "link3_collision_0",
+            "wrist2_link_collision_0"
+          ],
+          "minimum_distance_m": -0.026000000298260207,
+          "peak_normal_force_N": 7055.759764368664
+        },
+        {
+          "geoms": [
+            "link3_collision_0",
+            "wrist3_link_collision_0"
+          ],
+          "minimum_distance_m": -0.000506308641652753,
+          "peak_normal_force_N": 2.3713493695062697e-05
+        },
+        {
+          "geoms": [
+            "wrist1_link_collision_0",
+            "wrist3_link_collision_0"
+          ],
+          "minimum_distance_m": -0.015506301556809645,
+          "peak_normal_force_N": 3141.2528999921483
+        }
+      ],
+      "mobility": {
+        "steering_rmse_deg": [],
+        "rear_speed_rmse_rad_s": [],
+        "curvature": null,
+        "braking": null,
+        "checks": {
+          "steering_targets_feasible": true,
+          "no_loaded_self_contacts": false
+        },
+        "signed_longitudinal_travel_m": -4.245309879260678e-05,
+        "target_clipping_pct": 0.0,
+        "measurement_windows_s": {
+          "turn": [
+            1.5,
+            3.5
+          ],
+          "curvature": [
+            2.5,
+            3.4
+          ],
+          "speed": [
+            2.5,
+            2.9
+          ]
+        }
+      },
+      "caster_diagnostics": {
+        "window_s": [
+          2.5,
+          2.9
+        ],
+        "mean_rear_traction_utilization": [
+          0.005379276905378678,
+          0.005910112768846988
+        ],
+        "mean_rear_longitudinal_slip_m_s": [
+          6.506979620900721e-06,
+          -2.777755821179478e-07
+        ],
+        "mean_middle_load_N": [
+          141.3033011710075,
+          128.7174081292667
+        ],
+        "mean_caster_rate_rad_s": [
+          1.8415469064078336e-05,
+          1.8385228682146595e-05
+        ],
+        "mean_passive_torque_Nm": [
+          -4.603867266019584e-06,
+          -4.596307170536649e-06
+        ],
+        "mean_ground_torque_Nm": [
+          -0.002058326954951635,
+          -0.002054556614352907
+        ],
+        "mean_normal_torque_Nm": [
+          4.2415624673788424e-05,
+          3.864708176512595e-05
+        ],
+        "mean_tangent_torque_Nm": [
+          -0.0021007425796254237,
+          -0.0020932036961180335
+        ],
+        "mean_trail_torque_Nm": [
+          -0.004856007029859404,
+          -0.004820034764664259
+        ],
+        "mean_patch_torque_Nm": [
+          0.002797680074907767,
+          0.002765478150311352
+        ],
+        "max_caster_actuator_torque_Nm": [
+          0.0,
+          0.0
+        ]
+      },
+      "mobility_passed": false
+    },
+    "contact_only_hold": {
+      "scenario": "hold",
+      "original_contacts": false,
+      "rocker_stiffness_Nm_rad": 45.0,
+      "peak_tilt_deg": 11.04425465697016,
+      "height_range_m": [
+        0.399965957988899,
+        0.4037682444434958
+      ],
+      "duration_s": 5.999999999999561,
+      "peak_arm_error_norm_deg": [
+        0.32805445202211153,
+        0.4021006013601008
+      ],
+      "max_joint_limit_excess_deg": 0.0,
+      "turn_distance_m": 3.884023606041899e-06,
+      "turn_yaw_deg": 7.378349294500545e-08,
+      "wheelbase_m": 0.82,
+      "rear_track_m": 0.8,
+      "rear_radius_m": 0.12,
+      "mass_kg": 82.20000000000002,
+      "mean_turn_steering_deg": [
+        2.50418976670778e-05,
+        2.7227133938168708e-05
+      ],
+      "mean_turn_wheel_load_N": [
+        123.50809641375022,
+        109.73448350382706,
+        159.3478661582551,
+        144.945311140778,
+        140.6850297105353,
+        128.16003319062452
+      ],
+      "turn_slip_rms_m_s": [
+        [
+          3.7314578233488435e-08,
+          3.5397248464558877e-09
+        ],
+        [
+          3.829436938834259e-08,
+          3.539731435849851e-09
+        ],
+        [
+          2.406939863885672e-09,
+          2.8012389307677003e-09
+        ],
+        [
+          2.136455447715563e-09,
+          2.801360042684119e-09
+        ],
+        [
+          2.8728885558166893e-09,
+          7.0504732018697125e-09
+        ],
+        [
+          2.599843591575467e-09,
+          6.211514476760042e-09
+        ]
+      ],
+      "rear_saturation_pct": 0.0,
+      "initial_penetrations_over_1mm": [],
+      "unexpected_contacts": [],
+      "checks": {
+        "finite": true,
+        "main_hold_below_1_deg": true,
+        "aux_hold_below_1_deg": true,
+        "joint_limit_excess_below_half_deg": true,
+        "height_between_0_38_and_0_43_m": true,
+        "tilt_below_5_deg": false,
+        "no_unexpected_deep_contacts": true,
+        "yaw_direction": true
+      },
+      "passed": false,
+      "steering_mode": "shared",
+      "feedback_mode": "pd",
+      "protocol": "standard",
+      "speed_scale": 1.0,
+      "caster_outboard_offset_m": 0.0,
+      "clearance_geometry": false,
+      "caster_resistance": "baseline",
+      "caster_tire_half_width_m": 0.05,
+      "alignment_steer_deg": 0.0,
+      "wheel_ground_condim": [
+        3
+      ],
+      "caster_initial_yaw_deg": [
+        0.0,
+        0.0
+      ],
+      "integral_config": {
+        "steering_Ki": 80.0,
+        "drive_Ki": 7.0,
+        "steering_bound_Nm": 8.0,
+        "drive_bound_Nm": 10.0
+      },
+      "max_integral_torque_Nm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "non_ground_contacts": [
+        {
+          "geoms": [
+            "link3_collision_0",
+            "wrist3_link_collision_0"
+          ],
+          "minimum_distance_m": -4.1228028503312844e-06,
+          "peak_normal_force_N": 0.49084770891212715
+        }
+      ],
+      "mobility": {
+        "steering_rmse_deg": [],
+        "rear_speed_rmse_rad_s": [],
+        "curvature": null,
+        "braking": null,
+        "checks": {
+          "steering_targets_feasible": true,
+          "no_loaded_self_contacts": true
+        },
+        "signed_longitudinal_travel_m": 2.7445910212900972e-06,
+        "target_clipping_pct": 0.0,
+        "measurement_windows_s": {
+          "turn": [
+            1.5,
+            3.5
+          ],
+          "curvature": [
+            2.5,
+            3.4
+          ],
+          "speed": [
+            2.5,
+            2.9
+          ]
+        }
+      },
+      "caster_diagnostics": {
+        "window_s": [
+          2.5,
+          2.9
+        ],
+        "mean_rear_traction_utilization": [
+          9.469302026879132e-07,
+          1.0472570803812026e-06
+        ],
+        "mean_rear_longitudinal_slip_m_s": [
+          -3.5067340953331957e-10,
+          -3.757463570933831e-10
+        ],
+        "mean_middle_load_N": [
+          140.68411836949488,
+          128.15896004304304
+        ],
+        "mean_caster_rate_rad_s": [
+          2.0786464690237078e-07,
+          1.892003561071232e-07
+        ],
+        "mean_passive_torque_Nm": [
+          -5.1966161725592694e-08,
+          -4.73000890267808e-08
+        ],
+        "mean_ground_torque_Nm": [
+          1.1576224799323032e-05,
+          1.1211138968096396e-05
+        ],
+        "mean_normal_torque_Nm": [
+          4.251770441624274e-05,
+          3.874586768855528e-05
+        ],
+        "mean_tangent_torque_Nm": [
+          -3.094147961691971e-05,
+          -2.7534728720458885e-05
+        ],
+        "mean_trail_torque_Nm": [
+          3.1497849196444975e-05,
+          2.9165619273739408e-05
+        ],
+        "mean_patch_torque_Nm": [
+          -1.9921624397121946e-05,
+          -1.7954480305643014e-05
+        ],
+        "max_caster_actuator_torque_Nm": [
+          0.0,
+          0.0
+        ]
+      },
+      "mobility_passed": false
+    },
+    "corrected_hold": {
+      "scenario": "hold",
+      "original_contacts": false,
+      "rocker_stiffness_Nm_rad": 120.0,
+      "peak_tilt_deg": 3.176126951226333,
+      "height_range_m": [
+        0.3999659219712101,
+        0.4010449569171089
+      ],
+      "duration_s": 5.999999999999561,
+      "peak_arm_error_norm_deg": [
+        0.2568602197701988,
+        0.3159070908793567
+      ],
+      "max_joint_limit_excess_deg": 0.0,
+      "turn_distance_m": 5.090502230320034e-07,
+      "turn_yaw_deg": -3.703893120970643e-08,
+      "wheelbase_m": 0.82,
+      "rear_track_m": 0.8,
+      "rear_radius_m": 0.12,
+      "mass_kg": 82.20000000000002,
+      "mean_turn_steering_deg": [
+        5.221912765941255e-06,
+        7.43623181865058e-06
+      ],
+      "mean_turn_wheel_load_N": [
+        128.61945402040587,
+        114.8371170150129,
+        156.61432810957206,
+        142.21581543171598,
+        138.30840293112976,
+        125.7869641070947
+      ],
+      "turn_slip_rms_m_s": [
+        [
+          3.893225253285645e-09,
+          2.8960725806766e-09
+        ],
+        [
+          3.98591737930278e-09,
+          2.896073488287915e-09
+        ],
+        [
+          2.615798672976819e-10,
+          1.9738291271691034e-09
+        ],
+        [
+          2.49519386102517e-10,
+          1.973898391001778e-09
+        ],
+        [
+          3.124366010149191e-10,
+          6.7432588941001485e-09
+        ],
+        [
+          2.9927047128026085e-10,
+          5.902162051356997e-09
+        ]
+      ],
+      "rear_saturation_pct": 0.0,
+      "initial_penetrations_over_1mm": [],
+      "unexpected_contacts": [],
+      "checks": {
+        "finite": true,
+        "main_hold_below_1_deg": true,
+        "aux_hold_below_1_deg": true,
+        "joint_limit_excess_below_half_deg": true,
+        "height_between_0_38_and_0_43_m": true,
+        "tilt_below_5_deg": true,
+        "no_unexpected_deep_contacts": true,
+        "yaw_direction": true
+      },
+      "passed": true,
+      "steering_mode": "shared",
+      "feedback_mode": "pd",
+      "protocol": "standard",
+      "speed_scale": 1.0,
+      "caster_outboard_offset_m": 0.0,
+      "clearance_geometry": false,
+      "caster_resistance": "baseline",
+      "caster_tire_half_width_m": 0.05,
+      "alignment_steer_deg": 0.0,
+      "wheel_ground_condim": [
+        3
+      ],
+      "caster_initial_yaw_deg": [
+        0.0,
+        0.0
+      ],
+      "integral_config": {
+        "steering_Ki": 80.0,
+        "drive_Ki": 7.0,
+        "steering_bound_Nm": 8.0,
+        "drive_bound_Nm": 10.0
+      },
+      "max_integral_torque_Nm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "non_ground_contacts": [
+        {
+          "geoms": [
+            "link3_collision_0",
+            "wrist3_link_collision_0"
+          ],
+          "minimum_distance_m": -3.6204211553888596e-06,
+          "peak_normal_force_N": 0.4335495946625264
+        }
+      ],
+      "mobility": {
+        "steering_rmse_deg": [],
+        "rear_speed_rmse_rad_s": [],
+        "curvature": null,
+        "braking": null,
+        "checks": {
+          "steering_targets_feasible": true,
+          "no_loaded_self_contacts": true
+        },
+        "signed_longitudinal_travel_m": 4.3018669075707865e-06,
+        "target_clipping_pct": 0.0,
+        "measurement_windows_s": {
+          "turn": [
+            1.5,
+            3.5
+          ],
+          "curvature": [
+            2.5,
+            3.4
+          ],
+          "speed": [
+            2.5,
+            2.9
+          ]
+        }
+      },
+      "caster_diagnostics": {
+        "window_s": [
+          2.5,
+          2.9
+        ],
+        "mean_rear_traction_utilization": [
+          1.059901396269586e-06,
+          1.167809103108416e-06
+        ],
+        "mean_rear_longitudinal_slip_m_s": [
+          -6.709519538514471e-10,
+          -7.026266649812472e-10
+        ],
+        "mean_middle_load_N": [
+          138.30795839204652,
+          125.78656963620256
+        ],
+        "mean_caster_rate_rad_s": [
+          2.044166043797897e-07,
+          1.8572963711057355e-07
+        ],
+        "mean_passive_torque_Nm": [
+          -5.110415109494743e-08,
+          -4.643240927764339e-08
+        ],
+        "mean_ground_torque_Nm": [
+          1.1504776563113032e-05,
+          1.1139246441370952e-05
+        ],
+        "mean_normal_torque_Nm": [
+          4.17728246182734e-05,
+          3.800417188610094e-05
+        ],
+        "mean_tangent_torque_Nm": [
+          -3.026804805516036e-05,
+          -2.6864925444729986e-05
+        ],
+        "mean_trail_torque_Nm": [
+          3.1000675767021295e-05,
+          2.8670871342682504e-05
+        ],
+        "mean_patch_torque_Nm": [
+          -1.9495899203908266e-05,
+          -1.7531624901311553e-05
+        ],
+        "max_caster_actuator_torque_Nm": [
+          0.0,
+          0.0
+        ]
+      },
+      "mobility_passed": true
+    },
+    "original_straight": {
+      "scenario": "straight",
+      "original_contacts": true,
+      "rocker_stiffness_Nm_rad": 45.0,
+      "peak_tilt_deg": 11.185555069205932,
+      "height_range_m": [
+        0.3999460342049378,
+        0.4038166187668364
+      ],
+      "duration_s": 5.999999999999561,
+      "peak_arm_error_norm_deg": [
+        9.524581294495503,
+        0.36138273779269514
+      ],
+      "max_joint_limit_excess_deg": 0.0,
+      "turn_distance_m": 0.28247443382024545,
+      "turn_yaw_deg": -0.0004301519656953935,
+      "wheelbase_m": 0.82,
+      "rear_track_m": 0.8,
+      "rear_radius_m": 0.12,
+      "mass_kg": 82.20000000000002,
+      "mean_turn_steering_deg": [
+        -0.0004320823375329535,
+        -0.0004516527517271619
+      ],
+      "mean_turn_wheel_load_N": [
+        124.31188846953455,
+        110.55139768890426,
+        160.76114530737635,
+        146.39241255007337,
+        138.37885596639182,
+        125.88833076101288
+      ],
+      "turn_slip_rms_m_s": [
+        [
+          6.208158946226954e-05,
+          2.2597117425810477e-05
+        ],
+        [
+          5.9607884035241245e-05,
+          2.2596950571840685e-05
+        ],
+        [
+          2.535589230764406e-05,
+          4.548760237907561e-06
+        ],
+        [
+          2.1916459138140435e-05,
+          4.5361654313417875e-06
+        ],
+        [
+          4.1202674240122185e-05,
+          1.0773714343769631e-05
+        ],
+        [
+          3.938966611226847e-05,
+          1.0775674389789122e-05
+        ]
+      ],
+      "rear_saturation_pct": 0.0,
+      "initial_penetrations_over_1mm": [
+        [
+          "link3_collision_0",
+          "wrist2_link_collision_0",
+          -0.025999999995377335
+        ],
+        [
+          "wrist1_link_collision_0",
+          "wrist3_link_collision_0",
+          -0.015000000000101156
+        ]
+      ],
+      "unexpected_contacts": [
+        {
+          "geoms": [
+            "link3_collision_0",
+            "wrist2_link_collision_0"
+          ],
+          "depth_m": -0.02600000029825837
+        },
+        {
+          "geoms": [
+            "wrist1_link_collision_0",
+            "wrist3_link_collision_0"
+          ],
+          "depth_m": -0.015522117252522498
+        }
+      ],
+      "checks": {
+        "finite": true,
+        "main_hold_below_1_deg": false,
+        "aux_hold_below_1_deg": true,
+        "joint_limit_excess_below_half_deg": true,
+        "height_between_0_38_and_0_43_m": true,
+        "tilt_below_5_deg": false,
+        "no_unexpected_deep_contacts": false,
+        "yaw_direction": true
+      },
+      "passed": false,
+      "steering_mode": "shared",
+      "feedback_mode": "pd",
+      "protocol": "standard",
+      "speed_scale": 1.0,
+      "caster_outboard_offset_m": 0.0,
+      "clearance_geometry": false,
+      "caster_resistance": "baseline",
+      "caster_tire_half_width_m": 0.05,
+      "alignment_steer_deg": 0.0,
+      "wheel_ground_condim": [
+        3
+      ],
+      "caster_initial_yaw_deg": [
+        0.0,
+        0.0
+      ],
+      "integral_config": {
+        "steering_Ki": 80.0,
+        "drive_Ki": 7.0,
+        "steering_bound_Nm": 8.0,
+        "drive_bound_Nm": 10.0
+      },
+      "max_integral_torque_Nm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "non_ground_contacts": [
+        {
+          "geoms": [
+            "link3_collision_0",
+            "wrist2_link_collision_0"
+          ],
+          "minimum_distance_m": -0.02600000029825837,
+          "peak_normal_force_N": 7055.85864911762
+        },
+        {
+          "geoms": [
+            "link3_collision_0",
+            "wrist3_link_collision_0"
+          ],
+          "minimum_distance_m": -0.0005221636133760078,
+          "peak_normal_force_N": 2.387858708206798e-05
+        },
+        {
+          "geoms": [
+            "wrist1_link_collision_0",
+            "wrist3_link_collision_0"
+          ],
+          "minimum_distance_m": -0.015522117252522498,
+          "peak_normal_force_N": 3141.2529008383904
+        }
+      ],
+      "mobility": {
+        "steering_rmse_deg": [
+          0.0013278755514780371,
+          0.001364967938559348
+        ],
+        "rear_speed_rmse_rad_s": [
+          0.18790128873425158,
+          0.1877852438009641
+        ],
+        "curvature": null,
+        "braking": {
+          "command_zero_time_s": 4.701999999999704,
+          "command_zero_sample_s": 4.721999999999702,
+          "measurement_interval_s": 0.019999999999997797,
+          "settling_duration_s": 0.2,
+          "stopping_time_s": 0.27999999999996916,
+          "stopping_distance_m": 0.014430129440597473,
+          "pre_brake_speed_m_s": 0.16970695385285617,
+          "residual_body_speed_m_s": 0.00018936137032864037,
+          "residual_rear_speed_rad_s": 0.0017435195930593722
+        },
+        "checks": {
+          "steady_speed_error_below_20pct": true,
+          "steering_targets_feasible": true,
+          "stop_within_1_s": true,
+          "stop_within_0_05_m": true,
+          "residual_speed_below_0_005_m_s": true,
+          "residual_rear_speed_below_0_05_rad_s": true,
+          "moving_before_brake": true,
+          "no_loaded_self_contacts": false
+        },
+        "mean_speed_command_m_s": 0.1671610169491525,
+        "mean_speed_achieved_m_s": 0.1541449884785847,
+        "steady_speed_ratio": 0.9428117711019448,
+        "signed_longitudinal_travel_m": 0.7414042636502387,
+        "target_clipping_pct": 0.0,
+        "measurement_windows_s": {
+          "turn": [
+            1.5,
+            3.5
+          ],
+          "curvature": [
+            2.5,
+            3.4
+          ],
+          "speed": [
+            2.5,
+            2.9
+          ]
+        }
+      },
+      "caster_diagnostics": {
+        "window_s": [
+          2.5,
+          2.9
+        ],
+        "mean_rear_traction_utilization": [
+          0.021296857925029247,
+          0.023958983097870527
+        ],
+        "mean_rear_longitudinal_slip_m_s": [
+          -5.6958269637734774e-05,
+          -5.88966293440906e-05
+        ],
+        "mean_middle_load_N": [
+          138.09700134290762,
+          125.6225565953591
+        ],
+        "mean_caster_rate_rad_s": [
+          3.7226854246470565e-06,
+          3.731468088077326e-06
+        ],
+        "mean_passive_torque_Nm": [
+          -9.306713561617641e-07,
+          -9.328670220193315e-07
+        ],
+        "mean_ground_torque_Nm": [
+          0.00026636524612137433,
+          0.00026619904923943366
+        ],
+        "mean_normal_torque_Nm": [
+          3.975571646550396e-05,
+          3.621951748895931e-05
+        ],
+        "mean_tangent_torque_Nm": [
+          0.0002266095296558704,
+          0.00022997953175047433
+        ],
+        "mean_trail_torque_Nm": [
+          0.0009951678769336406,
+          0.0009886826001259427
+        ],
+        "mean_patch_torque_Nm": [
+          -0.0007288026308122664,
+          -0.0007224835508865089
+        ],
+        "max_caster_actuator_torque_Nm": [
+          0.0,
+          0.0
+        ]
+      },
+      "mobility_passed": false
+    },
+    "contact_only_straight": {
+      "scenario": "straight",
+      "original_contacts": false,
+      "rocker_stiffness_Nm_rad": 45.0,
+      "peak_tilt_deg": 11.483461968154808,
+      "height_range_m": [
+        0.3999434192866163,
+        0.4039185916982131
+      ],
+      "duration_s": 5.999999999999561,
+      "peak_arm_error_norm_deg": [
+        0.2807040371163831,
+        0.3636577688866821
+      ],
+      "max_joint_limit_excess_deg": 0.0,
+      "turn_distance_m": 0.28250897558072785,
+      "turn_yaw_deg": -0.00025875417230009686,
+      "wheelbase_m": 0.82,
+      "rear_track_m": 0.8,
+      "rear_radius_m": 0.12,
+      "mass_kg": 82.20000000000002,
+      "mean_turn_steering_deg": [
+        -0.0005095768713083012,
+        -0.0005287086851873083
+      ],
+      "mean_turn_wheel_load_N": [
+        124.37254260286079,
+        110.77517938306337,
+        160.5872473254107,
+        146.37008856925382,
+        138.31927039233142,
+        125.95578362345493
+      ],
+      "turn_slip_rms_m_s": [
+        [
+          5.8996373192678226e-05,
+          9.799969824213987e-07
+        ],
+        [
+          6.008452592220667e-05,
+          9.799974598779024e-07
+        ],
+        [
+          2.1105811347408717e-05,
+          8.53905189156759e-07
+        ],
+        [
+          2.148324064069827e-05,
+          8.261509046132543e-07
+        ],
+        [
+          3.864463789779084e-05,
+          2.6820954867009962e-08
+        ],
+        [
+          3.900523049911533e-05,
+          2.9712718972281084e-08
+        ]
+      ],
+      "rear_saturation_pct": 0.0,
+      "initial_penetrations_over_1mm": [],
+      "unexpected_contacts": [],
+      "checks": {
+        "finite": true,
+        "main_hold_below_1_deg": true,
+        "aux_hold_below_1_deg": true,
+        "joint_limit_excess_below_half_deg": true,
+        "height_between_0_38_and_0_43_m": true,
+        "tilt_below_5_deg": false,
+        "no_unexpected_deep_contacts": true,
+        "yaw_direction": true
+      },
+      "passed": false,
+      "steering_mode": "shared",
+      "feedback_mode": "pd",
+      "protocol": "standard",
+      "speed_scale": 1.0,
+      "caster_outboard_offset_m": 0.0,
+      "clearance_geometry": false,
+      "caster_resistance": "baseline",
+      "caster_tire_half_width_m": 0.05,
+      "alignment_steer_deg": 0.0,
+      "wheel_ground_condim": [
+        3
+      ],
+      "caster_initial_yaw_deg": [
+        0.0,
+        0.0
+      ],
+      "integral_config": {
+        "steering_Ki": 80.0,
+        "drive_Ki": 7.0,
+        "steering_bound_Nm": 8.0,
+        "drive_bound_Nm": 10.0
+      },
+      "max_integral_torque_Nm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "non_ground_contacts": [
+        {
+          "geoms": [
+            "link3_collision_0",
+            "wrist3_link_collision_0"
+          ],
+          "minimum_distance_m": -3.365709130555971e-06,
+          "peak_normal_force_N": 0.39985953831119697
+        }
+      ],
+      "mobility": {
+        "steering_rmse_deg": [
+          0.0013527350098750195,
+          0.0013900314212066628
+        ],
+        "rear_speed_rmse_rad_s": [
+          0.18782917867882098,
+          0.18771833505329327
+        ],
+        "curvature": null,
+        "braking": {
+          "command_zero_time_s": 4.701999999999704,
+          "command_zero_sample_s": 4.721999999999702,
+          "measurement_interval_s": 0.019999999999997797,
+          "settling_duration_s": 0.2,
+          "stopping_time_s": 0.27999999999996916,
+          "stopping_distance_m": 0.01449148544570335,
+          "pre_brake_speed_m_s": 0.16970506572936206,
+          "residual_body_speed_m_s": 2.6745009648170347e-05,
+          "residual_rear_speed_rad_s": 0.00022031458751627065
+        },
+        "checks": {
+          "steady_speed_error_below_20pct": true,
+          "steering_targets_feasible": true,
+          "stop_within_1_s": true,
+          "stop_within_0_05_m": true,
+          "residual_speed_below_0_005_m_s": true,
+          "residual_rear_speed_below_0_05_rad_s": true,
+          "moving_before_brake": true,
+          "no_loaded_self_contacts": true
+        },
+        "mean_speed_command_m_s": 0.1671610169491525,
+        "mean_speed_achieved_m_s": 0.15414033487688497,
+        "steady_speed_ratio": 0.942808247385029,
+        "signed_longitudinal_travel_m": 0.741370150317058,
+        "target_clipping_pct": 0.0,
+        "measurement_windows_s": {
+          "turn": [
+            1.5,
+            3.5
+          ],
+          "curvature": [
+            2.5,
+            3.4
+          ],
+          "speed": [
+            2.5,
+            2.9
+          ]
+        }
+      },
+      "caster_diagnostics": {
+        "window_s": [
+          2.5,
+          2.9
+        ],
+        "mean_rear_traction_utilization": [
+          0.021249759333504484,
+          0.023857768104946733
+        ],
+        "mean_rear_longitudinal_slip_m_s": [
+          -5.8037088661603694e-05,
+          -5.9114183618446664e-05
+        ],
+        "mean_middle_load_N": [
+          138.04326425922784,
+          125.69400307361241
+        ],
+        "mean_caster_rate_rad_s": [
+          3.332873360391651e-06,
+          3.3433822482936274e-06
+        ],
+        "mean_passive_torque_Nm": [
+          -8.332183400979127e-07,
+          -8.358455620734068e-07
+        ],
+        "mean_ground_torque_Nm": [
+          7.241344834650783e-05,
+          7.261638403097264e-05
+        ],
+        "mean_normal_torque_Nm": [
+          3.992583626755923e-05,
+          3.641306547273842e-05
+        ],
+        "mean_tangent_torque_Nm": [
+          3.24876120789486e-05,
+          3.620331855823423e-05
+        ],
+        "mean_trail_torque_Nm": [
+          9.161788455510759e-05,
+          9.291154801558573e-05
+        ],
+        "mean_patch_torque_Nm": [
+          -1.9204436208599753e-05,
+          -2.0295163984613094e-05
+        ],
+        "max_caster_actuator_torque_Nm": [
+          0.0,
+          0.0
+        ]
+      },
+      "mobility_passed": false
+    },
+    "corrected_straight": {
+      "scenario": "straight",
+      "original_contacts": false,
+      "rocker_stiffness_Nm_rad": 120.0,
+      "peak_tilt_deg": 3.0962753788600916,
+      "height_range_m": [
+        0.39994340347201923,
+        0.40101714501561386
+      ],
+      "duration_s": 5.999999999999561,
+      "peak_arm_error_norm_deg": [
+        0.1986658472170688,
+        0.26934001986205497
+      ],
+      "max_joint_limit_excess_deg": 0.0,
+      "turn_distance_m": 0.2825018863934198,
+      "turn_yaw_deg": -0.00026556336647992086,
+      "wheelbase_m": 0.82,
+      "rear_track_m": 0.8,
+      "rear_radius_m": 0.12,
+      "mass_kg": 82.20000000000002,
+      "mean_turn_steering_deg": [
+        -0.0005308491954455841,
+        -0.0005499309840825027
+      ],
+      "mean_turn_wheel_load_N": [
+        129.38173956322282,
+        115.78122630026718,
+        157.9087950740554,
+        143.69245919417597,
+        135.99041462423162,
+        123.62768332121172
+      ],
+      "turn_slip_rms_m_s": [
+        [
+          5.8949039246331236e-05,
+          9.72112283975172e-07
+        ],
+        [
+          6.0037786066178784e-05,
+          9.721126808319782e-07
+        ],
+        [
+          2.1110066169437645e-05,
+          8.547092997683628e-07
+        ],
+        [
+          2.1487228850292296e-05,
+          8.26645351273252e-07
+        ],
+        [
+          3.865485446818986e-05,
+          4.408510873074479e-08
+        ],
+        [
+          3.901472465828311e-05,
+          4.7620881169492654e-08
+        ]
+      ],
+      "rear_saturation_pct": 0.0,
+      "initial_penetrations_over_1mm": [],
+      "unexpected_contacts": [],
+      "checks": {
+        "finite": true,
+        "main_hold_below_1_deg": true,
+        "aux_hold_below_1_deg": true,
+        "joint_limit_excess_below_half_deg": true,
+        "height_between_0_38_and_0_43_m": true,
+        "tilt_below_5_deg": true,
+        "no_unexpected_deep_contacts": true,
+        "yaw_direction": true
+      },
+      "passed": true,
+      "steering_mode": "shared",
+      "feedback_mode": "pd",
+      "protocol": "standard",
+      "speed_scale": 1.0,
+      "caster_outboard_offset_m": 0.0,
+      "clearance_geometry": false,
+      "caster_resistance": "baseline",
+      "caster_tire_half_width_m": 0.05,
+      "alignment_steer_deg": 0.0,
+      "wheel_ground_condim": [
+        3
+      ],
+      "caster_initial_yaw_deg": [
+        0.0,
+        0.0
+      ],
+      "integral_config": {
+        "steering_Ki": 80.0,
+        "drive_Ki": 7.0,
+        "steering_bound_Nm": 8.0,
+        "drive_bound_Nm": 10.0
+      },
+      "max_integral_torque_Nm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "non_ground_contacts": [
+        {
+          "geoms": [
+            "link3_collision_0",
+            "wrist3_link_collision_0"
+          ],
+          "minimum_distance_m": -2.754406505719908e-06,
+          "peak_normal_force_N": 0.32878890979807773
+        }
+      ],
+      "mobility": {
+        "steering_rmse_deg": [
+          0.0013324470509987244,
+          0.0013700004657531159
+        ],
+        "rear_speed_rmse_rad_s": [
+          0.1874533737849586,
+          0.18734411207810214
+        ],
+        "curvature": null,
+        "braking": {
+          "command_zero_time_s": 4.701999999999704,
+          "command_zero_sample_s": 4.721999999999702,
+          "measurement_interval_s": 0.019999999999997797,
+          "settling_duration_s": 0.2,
+          "stopping_time_s": 0.27999999999996916,
+          "stopping_distance_m": 0.014509475467654163,
+          "pre_brake_speed_m_s": 0.16970359455803083,
+          "residual_body_speed_m_s": 1.6143965714537107e-05,
+          "residual_rear_speed_rad_s": 0.0001333437911077463
+        },
+        "checks": {
+          "steady_speed_error_below_20pct": true,
+          "steering_targets_feasible": true,
+          "stop_within_1_s": true,
+          "stop_within_0_05_m": true,
+          "residual_speed_below_0_005_m_s": true,
+          "residual_rear_speed_below_0_05_rad_s": true,
+          "moving_before_brake": true,
+          "no_loaded_self_contacts": true
+        },
+        "mean_speed_command_m_s": 0.1671610169491525,
+        "mean_speed_achieved_m_s": 0.15413968113770946,
+        "steady_speed_ratio": 0.9427997585445573,
+        "signed_longitudinal_travel_m": 0.7413316454271309,
+        "target_clipping_pct": 0.0,
+        "measurement_windows_s": {
+          "turn": [
+            1.5,
+            3.5
+          ],
+          "curvature": [
+            2.5,
+            3.4
+          ],
+          "speed": [
+            2.5,
+            2.9
+          ]
+        }
+      },
+      "caster_diagnostics": {
+        "window_s": [
+          2.5,
+          2.9
+        ],
+        "mean_rear_traction_utilization": [
+          0.020429376894792704,
+          0.022829710692133194
+        ],
+        "mean_rear_longitudinal_slip_m_s": [
+          -5.8019482912284876e-05,
+          -5.909775043388099e-05
+        ],
+        "mean_middle_load_N": [
+          135.71319796383813,
+          123.36507445488664
+        ],
+        "mean_caster_rate_rad_s": [
+          3.5850298555213174e-06,
+          3.595272573328139e-06
+        ],
+        "mean_passive_torque_Nm": [
+          -8.962574638803294e-07,
+          -8.988181433320347e-07
+        ],
+        "mean_ground_torque_Nm": [
+          7.730352016395054e-05,
+          7.750136021579152e-05
+        ],
+        "mean_normal_torque_Nm": [
+          3.9227356279656326e-05,
+          3.571623764312137e-05
+        ],
+        "mean_tangent_torque_Nm": [
+          3.807616388429422e-05,
+          4.178512257267016e-05
+        ],
+        "mean_trail_torque_Nm": [
+          0.00011531212103459742,
+          0.00011640639573603157
+        ],
+        "mean_patch_torque_Nm": [
+          -3.800860087064686e-05,
+          -3.8905035520240044e-05
+        ],
+        "max_caster_actuator_torque_Nm": [
+          0.0,
+          0.0
+        ]
+      },
+      "mobility_passed": true
+    },
+    "original_left": {
+      "scenario": "left",
+      "original_contacts": true,
+      "rocker_stiffness_Nm_rad": 45.0,
+      "peak_tilt_deg": 10.953403436357561,
+      "height_range_m": [
+        0.3999460342049378,
+        0.40375475642075903
+      ],
+      "duration_s": 5.999999999999561,
+      "peak_arm_error_norm_deg": [
+        9.524265191493281,
+        0.36138273779269514
+      ],
+      "max_joint_limit_excess_deg": 0.0,
+      "turn_distance_m": 0.21849970646819036,
+      "turn_yaw_deg": 3.5247348307434083,
+      "wheelbase_m": 0.82,
+      "rear_track_m": 0.8,
+      "rear_radius_m": 0.12,
+      "mass_kg": 82.20000000000002,
+      "mean_turn_steering_deg": [
+        14.622137771260935,
+        17.59445201244941
+      ],
+      "mean_turn_wheel_load_N": [
+        132.59628221157985,
+        121.68401902396474,
+        142.8623630032538,
+        196.6647920924214,
+        144.75009654775812,
+        84.15316217410879
+      ],
+      "turn_slip_rms_m_s": [
+        [
+          0.0004419934345863685,
+          0.00043590487145786364
+        ],
+        [
+          0.0008218233794402147,
+          0.0004356942046552246
+        ],
+        [
+          0.006898381910211161,
+          0.0015412380238747766
+        ],
+        [
+          0.0057311311383870965,
+          0.012133892322745922
+        ],
+        [
+          0.001087176925560411,
+          0.004345373536560058
+        ],
+        [
+          0.002612355703009971,
+          0.0036501889432489732
+        ]
+      ],
+      "rear_saturation_pct": 0.0,
+      "initial_penetrations_over_1mm": [
+        [
+          "link3_collision_0",
+          "wrist2_link_collision_0",
+          -0.025999999995377335
+        ],
+        [
+          "wrist1_link_collision_0",
+          "wrist3_link_collision_0",
+          -0.015000000000101156
+        ]
+      ],
+      "unexpected_contacts": [
+        {
+          "geoms": [
+            "link3_collision_0",
+            "wrist2_link_collision_0"
+          ],
+          "depth_m": -0.02600000029825837
+        },
+        {
+          "geoms": [
+            "wrist1_link_collision_0",
+            "wrist3_link_collision_0"
+          ],
+          "depth_m": -0.015522117252522498
+        }
+      ],
+      "checks": {
+        "finite": true,
+        "main_hold_below_1_deg": false,
+        "aux_hold_below_1_deg": true,
+        "joint_limit_excess_below_half_deg": true,
+        "height_between_0_38_and_0_43_m": true,
+        "tilt_below_5_deg": false,
+        "no_unexpected_deep_contacts": false,
+        "yaw_direction": true
+      },
+      "passed": false,
+      "steering_mode": "shared",
+      "feedback_mode": "pd",
+      "protocol": "standard",
+      "speed_scale": 1.0,
+      "caster_outboard_offset_m": 0.0,
+      "clearance_geometry": false,
+      "caster_resistance": "baseline",
+      "caster_tire_half_width_m": 0.05,
+      "alignment_steer_deg": 0.0,
+      "wheel_ground_condim": [
+        3
+      ],
+      "caster_initial_yaw_deg": [
+        0.0,
+        0.0
+      ],
+      "integral_config": {
+        "steering_Ki": 80.0,
+        "drive_Ki": 7.0,
+        "steering_bound_Nm": 8.0,
+        "drive_bound_Nm": 10.0
+      },
+      "max_integral_torque_Nm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "non_ground_contacts": [
+        {
+          "geoms": [
+            "link3_collision_0",
+            "wrist2_link_collision_0"
+          ],
+          "minimum_distance_m": -0.02600000029825837,
+          "peak_normal_force_N": 7055.85864911762
+        },
+        {
+          "geoms": [
+            "link3_collision_0",
+            "wrist3_link_collision_0"
+          ],
+          "minimum_distance_m": -0.0005221636133760078,
+          "peak_normal_force_N": 2.387858708206798e-05
+        },
+        {
+          "geoms": [
+            "wrist1_link_collision_0",
+            "wrist3_link_collision_0"
+          ],
+          "minimum_distance_m": -0.015522117252522498,
+          "peak_normal_force_N": 3141.2529008383904
+        }
+      ],
+      "mobility": {
+        "steering_rmse_deg": [
+          6.068894205772354,
+          4.4831247358706605
+        ],
+        "rear_speed_rmse_rad_s": [
+          0.25199579233339015,
+          0.459614230752303
+        ],
+        "curvature": {
+          "window_s": [
+            2.501999999999946,
+            3.381999999999849
+          ],
+          "actual_per_m": 0.31876919653743035,
+          "target_per_m": 0.4438661393490272,
+          "ratio": 0.7181651589935117,
+          "relative_error": 0.28183484100648826,
+          "signed_distance_m": 0.09112931945014117,
+          "measured_yaw_deg": 1.6643977008309896,
+          "target_yaw_at_achieved_speed_deg": 2.3175695450940506
+        },
+        "braking": {
+          "command_zero_time_s": 4.701999999999704,
+          "command_zero_sample_s": 4.721999999999702,
+          "measurement_interval_s": 0.019999999999997797,
+          "settling_duration_s": 0.2,
+          "stopping_time_s": 0.27999999999996916,
+          "stopping_distance_m": 0.014345649519036672,
+          "pre_brake_speed_m_s": 0.1674932583676764,
+          "residual_body_speed_m_s": 0.00022578768271763893,
+          "residual_rear_speed_rad_s": 0.002149237972372546
+        },
+        "checks": {
+          "steady_speed_error_below_20pct": false,
+          "steering_targets_feasible": true,
+          "curvature_error_below_20pct": false,
+          "stop_within_1_s": true,
+          "stop_within_0_05_m": true,
+          "residual_speed_below_0_005_m_s": true,
+          "residual_rear_speed_below_0_05_rad_s": true,
+          "moving_before_brake": true,
+          "no_loaded_self_contacts": false
+        },
+        "mean_speed_command_m_s": 0.15,
+        "mean_speed_achieved_m_s": 0.11011474819271148,
+        "steady_speed_ratio": 0.6851987073755148,
+        "signed_longitudinal_travel_m": 0.6684872798085718,
+        "target_clipping_pct": 0.0,
+        "measurement_windows_s": {
+          "turn": [
+            1.5,
+            3.5
+          ],
+          "curvature": [
+            2.5,
+            3.4
+          ],
+          "speed": [
+            2.5,
+            2.9
+          ]
+        }
+      },
+      "caster_diagnostics": {
+        "window_s": [
+          2.5,
+          2.9
+        ],
+        "mean_rear_traction_utilization": [
+          0.5577233602833606,
+          0.5908076369219343
+        ],
+        "mean_rear_longitudinal_slip_m_s": [
+          -0.0004141842482908899,
+          -0.0008625407044492368
+        ],
+        "mean_middle_load_N": [
+          146.06522958517007,
+          78.11142987396143
+        ],
+        "mean_caster_rate_rad_s": [
+          0.03921513162073691,
+          0.029398679243379917
+        ],
+        "mean_passive_torque_Nm": [
+          -0.009803782905184227,
+          -0.007349669810844979
+        ],
+        "mean_ground_torque_Nm": [
+          0.024200947274188228,
+          0.01704860795520087
+        ],
+        "mean_normal_torque_Nm": [
+          0.00023756082900018154,
+          0.00012823289033206902
+        ],
+        "mean_tangent_torque_Nm": [
+          0.023963386445188042,
+          0.016920375064868803
+        ],
+        "mean_trail_torque_Nm": [
+          4.89515968434615,
+          2.5043857330870076
+        ],
+        "mean_patch_torque_Nm": [
+          -4.8709587370719625,
+          -2.4873371251318064
+        ],
+        "max_caster_actuator_torque_Nm": [
+          0.0,
+          0.0
+        ]
+      },
+      "mobility_passed": false
+    },
+    "contact_only_left": {
+      "scenario": "left",
+      "original_contacts": false,
+      "rocker_stiffness_Nm_rad": 45.0,
+      "peak_tilt_deg": 10.973429323752235,
+      "height_range_m": [
+        0.3999434192866163,
+        0.4037966240732287
+      ],
+      "duration_s": 5.999999999999561,
+      "peak_arm_error_norm_deg": [
+        0.2807040371163831,
+        0.3636577688866821
+      ],
+      "max_joint_limit_excess_deg": 0.0,
+      "turn_distance_m": 0.21818228790395097,
+      "turn_yaw_deg": 3.507213527639079,
+      "wheelbase_m": 0.82,
+      "rear_track_m": 0.8,
+      "rear_radius_m": 0.12,
+      "mass_kg": 82.20000000000002,
+      "mean_turn_steering_deg": [
+        14.635490623084564,
+        17.59929829436199
+      ],
+      "mean_turn_wheel_load_N": [
+        132.99662498014925,
+        116.07109764237372,
+        145.3567765289431,
+        158.8561107118009,
+        144.3887754748841,
+        88.32256419038593
+      ],
+      "turn_slip_rms_m_s": [
+        [
+          0.000388351866742021,
+          0.00042699645379891106
+        ],
+        [
+          0.0007436334464555161,
+          0.00042679530270064916
+        ],
+        [
+          0.0035410093461979925,
+          0.0015178967020265386
+        ],
+        [
+          0.006196728040873862,
+          0.010620146143339315
+        ],
+        [
+          0.0018687811415058612,
+          0.004313147323203404
+        ],
+        [
+          0.0024443492950491303,
+          0.0037479128265432322
+        ]
+      ],
+      "rear_saturation_pct": 0.0,
+      "initial_penetrations_over_1mm": [],
+      "unexpected_contacts": [],
+      "checks": {
+        "finite": true,
+        "main_hold_below_1_deg": true,
+        "aux_hold_below_1_deg": true,
+        "joint_limit_excess_below_half_deg": true,
+        "height_between_0_38_and_0_43_m": true,
+        "tilt_below_5_deg": false,
+        "no_unexpected_deep_contacts": true,
+        "yaw_direction": true
+      },
+      "passed": false,
+      "steering_mode": "shared",
+      "feedback_mode": "pd",
+      "protocol": "standard",
+      "speed_scale": 1.0,
+      "caster_outboard_offset_m": 0.0,
+      "clearance_geometry": false,
+      "caster_resistance": "baseline",
+      "caster_tire_half_width_m": 0.05,
+      "alignment_steer_deg": 0.0,
+      "wheel_ground_condim": [
+        3
+      ],
+      "caster_initial_yaw_deg": [
+        0.0,
+        0.0
+      ],
+      "integral_config": {
+        "steering_Ki": 80.0,
+        "drive_Ki": 7.0,
+        "steering_bound_Nm": 8.0,
+        "drive_bound_Nm": 10.0
+      },
+      "max_integral_torque_Nm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "non_ground_contacts": [
+        {
+          "geoms": [
+            "link3_collision_0",
+            "wrist3_link_collision_0"
+          ],
+          "minimum_distance_m": -3.365709130555971e-06,
+          "peak_normal_force_N": 0.4410551869290734
+        }
+      ],
+      "mobility": {
+        "steering_rmse_deg": [
+          6.06211584461,
+          4.482113613482245
+        ],
+        "rear_speed_rmse_rad_s": [
+          0.2557132901775963,
+          0.45770328309762626
+        ],
+        "curvature": {
+          "window_s": [
+            2.501999999999946,
+            3.381999999999849
+          ],
+          "actual_per_m": 0.3152504897359653,
+          "target_per_m": 0.44386613934902736,
+          "ratio": 0.710237753657692,
+          "relative_error": 0.2897622463423079,
+          "signed_distance_m": 0.09103044067360612,
+          "measured_yaw_deg": 1.6442393875220687,
+          "target_yaw_at_achieved_speed_deg": 2.315054894018673
+        },
+        "braking": {
+          "command_zero_time_s": 4.701999999999704,
+          "command_zero_sample_s": 4.721999999999702,
+          "measurement_interval_s": 0.019999999999997797,
+          "settling_duration_s": 0.2,
+          "stopping_time_s": 0.27999999999996916,
+          "stopping_distance_m": 0.014372295177158753,
+          "pre_brake_speed_m_s": 0.1677363377374052,
+          "residual_body_speed_m_s": 0.00013995757953068477,
+          "residual_rear_speed_rad_s": 0.001473118307504029
+        },
+        "checks": {
+          "steady_speed_error_below_20pct": false,
+          "steering_targets_feasible": true,
+          "curvature_error_below_20pct": false,
+          "stop_within_1_s": true,
+          "stop_within_0_05_m": true,
+          "residual_speed_below_0_005_m_s": true,
+          "residual_rear_speed_below_0_05_rad_s": true,
+          "moving_before_brake": true,
+          "no_loaded_self_contacts": true
+        },
+        "mean_speed_command_m_s": 0.15,
+        "mean_speed_achieved_m_s": 0.10990112074468905,
+        "steady_speed_ratio": 0.6843928681445908,
+        "signed_longitudinal_travel_m": 0.6680843688412575,
+        "target_clipping_pct": 0.0,
+        "measurement_windows_s": {
+          "turn": [
+            1.5,
+            3.5
+          ],
+          "curvature": [
+            2.5,
+            3.4
+          ],
+          "speed": [
+            2.5,
+            2.9
+          ]
+        }
+      },
+      "caster_diagnostics": {
+        "window_s": [
+          2.5,
+          2.9
+        ],
+        "mean_rear_traction_utilization": [
+          0.564200487270456,
+          0.6011363282286799
+        ],
+        "mean_rear_longitudinal_slip_m_s": [
+          -0.0002472742594362506,
+          -0.0006938908022353403
+        ],
+        "mean_middle_load_N": [
+          147.21357869797583,
+          82.9856608954461
+        ],
+        "mean_caster_rate_rad_s": [
+          0.03976921385131775,
+          0.027672337992615197
+        ],
+        "mean_passive_torque_Nm": [
+          -0.009942303462829438,
+          -0.006918084498153799
+        ],
+        "mean_ground_torque_Nm": [
+          0.04698895671882615,
+          0.09047947584633378
+        ],
+        "mean_normal_torque_Nm": [
+          0.0002512880170986573,
+          0.00014928689167973726
+        ],
+        "mean_tangent_torque_Nm": [
+          0.046737668701727506,
+          0.09033018895465403
+        ],
+        "mean_trail_torque_Nm": [
+          4.942753817988381,
+          2.5934357364731104
+        ],
+        "mean_patch_torque_Nm": [
+          -4.895764861269554,
+          -2.502956260626777
+        ],
+        "max_caster_actuator_torque_Nm": [
+          0.0,
+          0.0
+        ]
+      },
+      "mobility_passed": false
+    },
+    "corrected_left": {
+      "scenario": "left",
+      "original_contacts": false,
+      "rocker_stiffness_Nm_rad": 120.0,
+      "peak_tilt_deg": 3.0630361791025003,
+      "height_range_m": [
+        0.39994340347201923,
+        0.4010055492984854
+      ],
+      "duration_s": 5.999999999999561,
+      "peak_arm_error_norm_deg": [
+        0.1986658472170688,
+        0.26934001986205497
+      ],
+      "max_joint_limit_excess_deg": 0.0,
+      "turn_distance_m": 0.21883720239825571,
+      "turn_yaw_deg": 3.5475377277915405,
+      "wheelbase_m": 0.82,
+      "rear_track_m": 0.8,
+      "rear_radius_m": 0.12,
+      "mass_kg": 82.20000000000002,
+      "mean_turn_steering_deg": [
+        14.721817001597485,
+        17.662158552176013
+      ],
+      "mean_turn_wheel_load_N": [
+        136.66262169385172,
+        124.36628978967401,
+        136.48793406813147,
+        178.4753097721737,
+        143.02802873334417,
+        84.10301965172738
+      ],
+      "turn_slip_rms_m_s": [
+        [
+          0.0003909866524787609,
+          0.0004233791833042139
+        ],
+        [
+          0.0007489484512324308,
+          0.0004232051220981954
+        ],
+        [
+          0.003930648676249682,
+          0.0014125912885378231
+        ],
+        [
+          0.00621120903213465,
+          0.011783774588184798
+        ],
+        [
+          0.0023167475902059476,
+          0.004562785711696908
+        ],
+        [
+          0.0026699626934991913,
+          0.0038100947531341054
+        ]
+      ],
+      "rear_saturation_pct": 0.0,
+      "initial_penetrations_over_1mm": [],
+      "unexpected_contacts": [],
+      "checks": {
+        "finite": true,
+        "main_hold_below_1_deg": true,
+        "aux_hold_below_1_deg": true,
+        "joint_limit_excess_below_half_deg": true,
+        "height_between_0_38_and_0_43_m": true,
+        "tilt_below_5_deg": true,
+        "no_unexpected_deep_contacts": true,
+        "yaw_direction": true
+      },
+      "passed": true,
+      "steering_mode": "shared",
+      "feedback_mode": "pd",
+      "protocol": "standard",
+      "speed_scale": 1.0,
+      "caster_outboard_offset_m": 0.0,
+      "clearance_geometry": false,
+      "caster_resistance": "baseline",
+      "caster_tire_half_width_m": 0.05,
+      "alignment_steer_deg": 0.0,
+      "wheel_ground_condim": [
+        3
+      ],
+      "caster_initial_yaw_deg": [
+        0.0,
+        0.0
+      ],
+      "integral_config": {
+        "steering_Ki": 80.0,
+        "drive_Ki": 7.0,
+        "steering_bound_Nm": 8.0,
+        "drive_bound_Nm": 10.0
+      },
+      "max_integral_torque_Nm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "non_ground_contacts": [
+        {
+          "geoms": [
+            "link3_collision_0",
+            "wrist3_link_collision_0"
+          ],
+          "minimum_distance_m": -2.754406505719908e-06,
+          "peak_normal_force_N": 0.5918045340941621
+        }
+      ],
+      "mobility": {
+        "steering_rmse_deg": [
+          5.9842165806088445,
+          4.447915551898297
+        ],
+        "rear_speed_rmse_rad_s": [
+          0.25168607162774076,
+          0.45461528214163066
+        ],
+        "curvature": {
+          "window_s": [
+            2.501999999999946,
+            3.381999999999849
+          ],
+          "actual_per_m": 0.31841060754318384,
+          "target_per_m": 0.44386613934902736,
+          "ratio": 0.7173572825585746,
+          "relative_error": 0.28264271744142544,
+          "signed_distance_m": 0.09159277869805736,
+          "measured_yaw_deg": 1.6709805487126268,
+          "target_yaw_at_achieved_speed_deg": 2.329356081467237
+        },
+        "braking": {
+          "command_zero_time_s": 4.701999999999704,
+          "command_zero_sample_s": 4.721999999999702,
+          "measurement_interval_s": 0.019999999999997797,
+          "settling_duration_s": 0.2,
+          "stopping_time_s": 0.27999999999996916,
+          "stopping_distance_m": 0.014237203214378349,
+          "pre_brake_speed_m_s": 0.1677716771776622,
+          "residual_body_speed_m_s": 0.00012260783507808467,
+          "residual_rear_speed_rad_s": 0.001314300797690356
+        },
+        "checks": {
+          "steady_speed_error_below_20pct": false,
+          "steering_targets_feasible": true,
+          "curvature_error_below_20pct": false,
+          "stop_within_1_s": true,
+          "stop_within_0_05_m": true,
+          "residual_speed_below_0_005_m_s": true,
+          "residual_rear_speed_below_0_05_rad_s": true,
+          "moving_before_brake": true,
+          "no_loaded_self_contacts": true
+        },
+        "mean_speed_command_m_s": 0.15,
+        "mean_speed_achieved_m_s": 0.11013490036635865,
+        "steady_speed_ratio": 0.6889019302064587,
+        "signed_longitudinal_travel_m": 0.6687132356736941,
+        "target_clipping_pct": 0.0,
+        "measurement_windows_s": {
+          "turn": [
+            1.5,
+            3.5
+          ],
+          "curvature": [
+            2.5,
+            3.4
+          ],
+          "speed": [
+            2.5,
+            2.9
+          ]
+        }
+      },
+      "caster_diagnostics": {
+        "window_s": [
+          2.5,
+          2.9
+        ],
+        "mean_rear_traction_utilization": [
+          0.5495147980053108,
+          0.5886095091163148
+        ],
+        "mean_rear_longitudinal_slip_m_s": [
+          -0.000284590008183818,
+          -0.0006862685374874015
+        ],
+        "mean_middle_load_N": [
+          144.73344786268183,
+          80.84486726818982
+        ],
+        "mean_caster_rate_rad_s": [
+          0.040895403012927066,
+          0.03190458297099362
+        ],
+        "mean_passive_torque_Nm": [
+          -0.010223850753231766,
+          -0.007976145742748405
+        ],
+        "mean_ground_torque_Nm": [
+          0.04173013263861407,
+          0.05669705137458514
+        ],
+        "mean_normal_torque_Nm": [
+          0.00022527742171284728,
+          0.00014712842074431323
+        ],
+        "mean_tangent_torque_Nm": [
+          0.04150485521690123,
+          0.0565499229538408
+        ],
+        "mean_trail_torque_Nm": [
+          4.857892159061384,
+          2.497373960589474
+        ],
+        "mean_patch_torque_Nm": [
+          -4.816162026422768,
+          -2.440676909214889
+        ],
+        "max_caster_actuator_torque_Nm": [
+          0.0,
+          0.0
+        ]
+      },
+      "mobility_passed": false
+    },
+    "original_right": {
+      "scenario": "right",
+      "original_contacts": true,
+      "rocker_stiffness_Nm_rad": 45.0,
+      "peak_tilt_deg": 10.953403436357561,
+      "height_range_m": [
+        0.3999460342049378,
+        0.4037502445436616
+      ],
+      "duration_s": 5.999999999999561,
+      "peak_arm_error_norm_deg": [
+        9.525207224757882,
+        0.36138273779269514
+      ],
+      "max_joint_limit_excess_deg": 0.0,
+      "turn_distance_m": 0.21972569489149862,
+      "turn_yaw_deg": -3.6964885257838604,
+      "wheelbase_m": 0.82,
+      "rear_track_m": 0.8,
+      "rear_radius_m": 0.12,
+      "mass_kg": 82.20000000000002,
+      "mean_turn_steering_deg": [
+        -17.16390253295921,
+        -15.208898156256108
+      ],
+      "mean_turn_wheel_load_N": [
+        131.1228873094616,
+        118.60552943356838,
+        184.4555635428055,
+        127.00156697402787,
+        99.46344903926048,
+        133.20617136222063
+      ],
+      "turn_slip_rms_m_s": [
+        [
+          0.0006598845606327249,
+          0.00039964039149007163
+        ],
+        [
+          0.0004080902386871191,
+          0.0003997134677467718
+        ],
+        [
+          0.005533031460315348,
+          0.01051639307937647
+        ],
+        [
+          0.0028547319838499664,
+          0.001964908645395788
+        ],
+        [
+          0.0035674370600279263,
+          0.004066394754503648
+        ],
+        [
+          0.0014229751557409821,
+          0.004493015195850156
+        ]
+      ],
+      "rear_saturation_pct": 0.0,
+      "initial_penetrations_over_1mm": [
+        [
+          "link3_collision_0",
+          "wrist2_link_collision_0",
+          -0.025999999995377335
+        ],
+        [
+          "wrist1_link_collision_0",
+          "wrist3_link_collision_0",
+          -0.015000000000101156
+        ]
+      ],
+      "unexpected_contacts": [
+        {
+          "geoms": [
+            "link3_collision_0",
+            "wrist2_link_collision_0"
+          ],
+          "depth_m": -0.02600000029825837
+        },
+        {
+          "geoms": [
+            "wrist1_link_collision_0",
+            "wrist3_link_collision_0"
+          ],
+          "depth_m": -0.015522117252522498
+        }
+      ],
+      "checks": {
+        "finite": true,
+        "main_hold_below_1_deg": false,
+        "aux_hold_below_1_deg": true,
+        "joint_limit_excess_below_half_deg": true,
+        "height_between_0_38_and_0_43_m": true,
+        "tilt_below_5_deg": false,
+        "no_unexpected_deep_contacts": false,
+        "yaw_direction": true
+      },
+      "passed": false,
+      "steering_mode": "shared",
+      "feedback_mode": "pd",
+      "protocol": "standard",
+      "speed_scale": 1.0,
+      "caster_outboard_offset_m": 0.0,
+      "clearance_geometry": false,
+      "caster_resistance": "baseline",
+      "caster_tire_half_width_m": 0.05,
+      "alignment_steer_deg": 0.0,
+      "wheel_ground_condim": [
+        3
+      ],
+      "caster_initial_yaw_deg": [
+        0.0,
+        0.0
+      ],
+      "integral_config": {
+        "steering_Ki": 80.0,
+        "drive_Ki": 7.0,
+        "steering_bound_Nm": 8.0,
+        "drive_bound_Nm": 10.0
+      },
+      "max_integral_torque_Nm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "non_ground_contacts": [
+        {
+          "geoms": [
+            "link3_collision_0",
+            "wrist2_link_collision_0"
+          ],
+          "minimum_distance_m": -0.02600000029825837,
+          "peak_normal_force_N": 7055.85864911762
+        },
+        {
+          "geoms": [
+            "link3_collision_0",
+            "wrist3_link_collision_0"
+          ],
+          "minimum_distance_m": -0.0005221636133760078,
+          "peak_normal_force_N": 2.387858708206798e-05
+        },
+        {
+          "geoms": [
+            "wrist1_link_collision_0",
+            "wrist3_link_collision_0"
+          ],
+          "minimum_distance_m": -0.015522117252522498,
+          "peak_normal_force_N": 3141.2529008383904
+        }
+      ],
+      "mobility": {
+        "steering_rmse_deg": [
+          4.743697537562991,
+          5.619481464025265
+        ],
+        "rear_speed_rmse_rad_s": [
+          0.4461283105438998,
+          0.25325817834424524
+        ],
+        "curvature": {
+          "window_s": [
+            2.501999999999946,
+            3.381999999999849
+          ],
+          "actual_per_m": -0.33139360955816255,
+          "target_per_m": -0.44386613934902724,
+          "ratio": 0.7466070965543428,
+          "relative_error": 0.25339290344565724,
+          "signed_distance_m": 0.09110764591223919,
+          "measured_yaw_deg": -1.7299023437958174,
+          "target_yaw_at_achieved_speed_deg": -2.3170183511239966
+        },
+        "braking": {
+          "command_zero_time_s": 4.701999999999704,
+          "command_zero_sample_s": 4.721999999999702,
+          "measurement_interval_s": 0.019999999999997797,
+          "settling_duration_s": 0.2,
+          "stopping_time_s": 0.23999999999997357,
+          "stopping_distance_m": 0.012316394558358272,
+          "pre_brake_speed_m_s": 0.15947473454485087,
+          "residual_body_speed_m_s": 0.0001442897677327331,
+          "residual_rear_speed_rad_s": 0.0016153894935525498
+        },
+        "checks": {
+          "steady_speed_error_below_20pct": false,
+          "steering_targets_feasible": true,
+          "curvature_error_below_20pct": false,
+          "stop_within_1_s": true,
+          "stop_within_0_05_m": true,
+          "residual_speed_below_0_005_m_s": true,
+          "residual_rear_speed_below_0_05_rad_s": true,
+          "moving_before_brake": true,
+          "no_loaded_self_contacts": false
+        },
+        "mean_speed_command_m_s": 0.15,
+        "mean_speed_achieved_m_s": 0.11057112800605626,
+        "steady_speed_ratio": 0.6885423390935981,
+        "signed_longitudinal_travel_m": 0.6613615324563399,
+        "target_clipping_pct": 0.0,
+        "measurement_windows_s": {
+          "turn": [
+            1.5,
+            3.5
+          ],
+          "curvature": [
+            2.5,
+            3.4
+          ],
+          "speed": [
+            2.5,
+            2.9
+          ]
+        }
+      },
+      "caster_diagnostics": {
+        "window_s": [
+          2.5,
+          2.9
+        ],
+        "mean_rear_traction_utilization": [
+          0.5759210181927078,
+          0.6306793594701597
+        ],
+        "mean_rear_longitudinal_slip_m_s": [
+          -0.0006999259871164953,
+          -0.0003715571235296525
+        ],
+        "mean_middle_load_N": [
+          90.32566042346508,
+          136.58473506463073
+        ],
+        "mean_caster_rate_rad_s": [
+          -0.031954763890470625,
+          -0.04076112103626002
+        ],
+        "mean_passive_torque_Nm": [
+          0.007988690972617656,
+          0.010190280259065005
+        ],
+        "mean_ground_torque_Nm": [
+          -0.02303796098274332,
+          -0.030309219810429687
+        ],
+        "mean_normal_torque_Nm": [
+          -3.572130036263908e-05,
+          -6.217229305988806e-05
+        ],
+        "mean_tangent_torque_Nm": [
+          -0.02300223968238068,
+          -0.030247047517369806
+        ],
+        "mean_trail_torque_Nm": [
+          -3.0208554516188384,
+          -4.5806784687981175
+        ],
+        "mean_patch_torque_Nm": [
+          2.997817490636095,
+          4.550369248987689
+        ],
+        "max_caster_actuator_torque_Nm": [
+          0.0,
+          0.0
+        ]
+      },
+      "mobility_passed": false
+    },
+    "contact_only_right": {
+      "scenario": "right",
+      "original_contacts": false,
+      "rocker_stiffness_Nm_rad": 45.0,
+      "peak_tilt_deg": 10.954784761707566,
+      "height_range_m": [
+        0.3999434192866163,
+        0.40378392211045827
+      ],
+      "duration_s": 5.999999999999561,
+      "peak_arm_error_norm_deg": [
+        0.2807040371163831,
+        0.3636577688866821
+      ],
+      "max_joint_limit_excess_deg": 0.0,
+      "turn_distance_m": 0.2197163479923284,
+      "turn_yaw_deg": -3.693407859203986,
+      "wheelbase_m": 0.82,
+      "rear_track_m": 0.8,
+      "rear_radius_m": 0.12,
+      "mass_kg": 82.20000000000002,
+      "mean_turn_steering_deg": [
+        -17.15924137545266,
+        -15.193189639361783
+      ],
+      "mean_turn_wheel_load_N": [
+        131.93621264201772,
+        119.06068523057529,
+        196.93770568028143,
+        125.70005143015781,
+        97.81478122287322,
+        132.53570157817535
+      ],
+      "turn_slip_rms_m_s": [
+        [
+          0.0007128848320329767,
+          0.00040563042329688916
+        ],
+        [
+          0.0004166811862812424,
+          0.0004057210928146741
+        ],
+        [
+          0.00647518325575553,
+          0.010028032478702872
+        ],
+        [
+          0.003284060831769555,
+          0.0019305942151536112
+        ],
+        [
+          0.0033217762478758854,
+          0.0040780843189598135
+        ],
+        [
+          0.0017476931833230855,
+          0.004405606196737422
+        ]
+      ],
+      "rear_saturation_pct": 0.0,
+      "initial_penetrations_over_1mm": [],
+      "unexpected_contacts": [],
+      "checks": {
+        "finite": true,
+        "main_hold_below_1_deg": true,
+        "aux_hold_below_1_deg": true,
+        "joint_limit_excess_below_half_deg": true,
+        "height_between_0_38_and_0_43_m": true,
+        "tilt_below_5_deg": false,
+        "no_unexpected_deep_contacts": true,
+        "yaw_direction": true
+      },
+      "passed": false,
+      "steering_mode": "shared",
+      "feedback_mode": "pd",
+      "protocol": "standard",
+      "speed_scale": 1.0,
+      "caster_outboard_offset_m": 0.0,
+      "clearance_geometry": false,
+      "caster_resistance": "baseline",
+      "caster_tire_half_width_m": 0.05,
+      "alignment_steer_deg": 0.0,
+      "wheel_ground_condim": [
+        3
+      ],
+      "caster_initial_yaw_deg": [
+        0.0,
+        0.0
+      ],
+      "integral_config": {
+        "steering_Ki": 80.0,
+        "drive_Ki": 7.0,
+        "steering_bound_Nm": 8.0,
+        "drive_bound_Nm": 10.0
+      },
+      "max_integral_torque_Nm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "non_ground_contacts": [
+        {
+          "geoms": [
+            "link3_collision_0",
+            "wrist3_link_collision_0"
+          ],
+          "minimum_distance_m": -3.365709130555971e-06,
+          "peak_normal_force_N": 0.5733241691704082
+        }
+      ],
+      "mobility": {
+        "steering_rmse_deg": [
+          4.74890724142939,
+          5.632868572942758
+        ],
+        "rear_speed_rmse_rad_s": [
+          0.4522264395023728,
+          0.2501337277471411
+        ],
+        "curvature": {
+          "window_s": [
+            2.501999999999946,
+            3.381999999999849
+          ],
+          "actual_per_m": -0.33294507862553646,
+          "target_per_m": -0.4438661393490272,
+          "ratio": 0.7501024500626085,
+          "relative_error": 0.24989754993739158,
+          "signed_distance_m": 0.09106448475854592,
+          "measured_yaw_deg": -1.7371777848381897,
+          "target_yaw_at_achieved_speed_deg": -2.3159206914911334
+        },
+        "braking": {
+          "command_zero_time_s": 4.701999999999704,
+          "command_zero_sample_s": 4.721999999999702,
+          "measurement_interval_s": 0.019999999999997797,
+          "settling_duration_s": 0.2,
+          "stopping_time_s": 0.23999999999997357,
+          "stopping_distance_m": 0.012343590826332148,
+          "pre_brake_speed_m_s": 0.15982657793110988,
+          "residual_body_speed_m_s": 6.002051041655572e-05,
+          "residual_rear_speed_rad_s": 0.0006659181089881226
+        },
+        "checks": {
+          "steady_speed_error_below_20pct": false,
+          "steering_targets_feasible": true,
+          "curvature_error_below_20pct": false,
+          "stop_within_1_s": true,
+          "stop_within_0_05_m": true,
+          "residual_speed_below_0_005_m_s": true,
+          "residual_rear_speed_below_0_05_rad_s": true,
+          "moving_before_brake": true,
+          "no_loaded_self_contacts": true
+        },
+        "mean_speed_command_m_s": 0.15,
+        "mean_speed_achieved_m_s": 0.11057545082302483,
+        "steady_speed_ratio": 0.6883030361545948,
+        "signed_longitudinal_travel_m": 0.6619400699482796,
+        "target_clipping_pct": 0.0,
+        "measurement_windows_s": {
+          "turn": [
+            1.5,
+            3.5
+          ],
+          "curvature": [
+            2.5,
+            3.4
+          ],
+          "speed": [
+            2.5,
+            2.9
+          ]
+        }
+      },
+      "caster_diagnostics": {
+        "window_s": [
+          2.5,
+          2.9
+        ],
+        "mean_rear_traction_utilization": [
+          0.5749231458512178,
+          0.6309506544352395
+        ],
+        "mean_rear_longitudinal_slip_m_s": [
+          -0.000795150934447796,
+          -0.00045963071266044004
+        ],
+        "mean_middle_load_N": [
+          89.02615918516419,
+          136.04365856634763
+        ],
+        "mean_caster_rate_rad_s": [
+          -0.03161641453269627,
+          -0.040523728888359443
+        ],
+        "mean_passive_torque_Nm": [
+          0.007904103633174068,
+          0.010130932222089861
+        ],
+        "mean_ground_torque_Nm": [
+          6.05777147619245e-05,
+          -0.01895146693995052
+        ],
+        "mean_normal_torque_Nm": [
+          -2.724560162031587e-05,
+          -6.14357822371274e-05
+        ],
+        "mean_tangent_torque_Nm": [
+          8.782331638224048e-05,
+          -0.018890031157713396
+        ],
+        "mean_trail_torque_Nm": [
+          -2.9746086018397153,
+          -4.558259609099002
+        ],
+        "mean_patch_torque_Nm": [
+          2.974669179554477,
+          4.539308142159053
+        ],
+        "max_caster_actuator_torque_Nm": [
+          0.0,
+          0.0
+        ]
+      },
+      "mobility_passed": false
+    },
+    "corrected_right": {
+      "scenario": "right",
+      "original_contacts": false,
+      "rocker_stiffness_Nm_rad": 120.0,
+      "peak_tilt_deg": 3.0508031693708544,
+      "height_range_m": [
+        0.39994340347201923,
+        0.4010013029632305
+      ],
+      "duration_s": 5.999999999999561,
+      "peak_arm_error_norm_deg": [
+        0.1986658472170688,
+        0.26934001986205497
+      ],
+      "max_joint_limit_excess_deg": 0.0,
+      "turn_distance_m": 0.22086888939052804,
+      "turn_yaw_deg": -3.7202730557210635,
+      "wheelbase_m": 0.82,
+      "rear_track_m": 0.8,
+      "rear_radius_m": 0.12,
+      "mass_kg": 82.20000000000002,
+      "mean_turn_steering_deg": [
+        -17.176078179530908,
+        -15.230108511902069
+      ],
+      "mean_turn_wheel_load_N": [
+        134.781441296897,
+        125.46228218370098,
+        184.66894883366464,
+        129.5643224561038,
+        93.65002346469335,
+        132.92193592395893
+      ],
+      "turn_slip_rms_m_s": [
+        [
+          0.0006678949617131804,
+          0.0003969771009801844
+        ],
+        [
+          0.00041551510172233664,
+          0.00039711366826255395
+        ],
+        [
+          0.0051628097677824955,
+          0.009810988286352408
+        ],
+        [
+          0.0036361048320278557,
+          0.002053257482799003
+        ],
+        [
+          0.0028403369437863487,
+          0.0040696287728781075
+        ],
+        [
+          0.0019238726708227223,
+          0.004403519718756773
+        ]
+      ],
+      "rear_saturation_pct": 0.0,
+      "initial_penetrations_over_1mm": [],
+      "unexpected_contacts": [],
+      "checks": {
+        "finite": true,
+        "main_hold_below_1_deg": true,
+        "aux_hold_below_1_deg": true,
+        "joint_limit_excess_below_half_deg": true,
+        "height_between_0_38_and_0_43_m": true,
+        "tilt_below_5_deg": true,
+        "no_unexpected_deep_contacts": true,
+        "yaw_direction": true
+      },
+      "passed": true,
+      "steering_mode": "shared",
+      "feedback_mode": "pd",
+      "protocol": "standard",
+      "speed_scale": 1.0,
+      "caster_outboard_offset_m": 0.0,
+      "clearance_geometry": false,
+      "caster_resistance": "baseline",
+      "caster_tire_half_width_m": 0.05,
+      "alignment_steer_deg": 0.0,
+      "wheel_ground_condim": [
+        3
+      ],
+      "caster_initial_yaw_deg": [
+        0.0,
+        0.0
+      ],
+      "integral_config": {
+        "steering_Ki": 80.0,
+        "drive_Ki": 7.0,
+        "steering_bound_Nm": 8.0,
+        "drive_bound_Nm": 10.0
+      },
+      "max_integral_torque_Nm": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "non_ground_contacts": [
+        {
+          "geoms": [
+            "link3_collision_0",
+            "wrist3_link_collision_0"
+          ],
+          "minimum_distance_m": -2.754406505719908e-06,
+          "peak_normal_force_N": 0.615958627995337
+        }
+      ],
+      "mobility": {
+        "steering_rmse_deg": [
+          4.728775317047659,
+          5.59786845918342
+        ],
+        "rear_speed_rmse_rad_s": [
+          0.44372414096205837,
+          0.24774090649972966
+        ],
+        "curvature": {
+          "window_s": [
+            2.501999999999946,
+            3.381999999999849
+          ],
+          "actual_per_m": -0.33302762453332957,
+          "target_per_m": -0.44386613934902724,
+          "ratio": 0.7502884203371469,
+          "relative_error": 0.2497115796628531,
+          "signed_distance_m": 0.09168375992082471,
+          "measured_yaw_deg": -1.74942491451553,
+          "target_yaw_at_achieved_speed_deg": -2.3316698846683717
+        },
+        "braking": {
+          "command_zero_time_s": 4.701999999999704,
+          "command_zero_sample_s": 4.721999999999702,
+          "measurement_interval_s": 0.019999999999997797,
+          "settling_duration_s": 0.2,
+          "stopping_time_s": 0.25999999999997137,
+          "stopping_distance_m": 0.012615272969908756,
+          "pre_brake_speed_m_s": 0.15978446161571178,
+          "residual_body_speed_m_s": 4.8679200847949884e-05,
+          "residual_rear_speed_rad_s": 0.0005459851527155236
+        },
+        "checks": {
+          "steady_speed_error_below_20pct": false,
+          "steering_targets_feasible": true,
+          "curvature_error_below_20pct": false,
+          "stop_within_1_s": true,
+          "stop_within_0_05_m": true,
+          "residual_speed_below_0_005_m_s": true,
+          "residual_rear_speed_below_0_05_rad_s": true,
+          "moving_before_brake": true,
+          "no_loaded_self_contacts": true
+        },
+        "mean_speed_command_m_s": 0.15,
+        "mean_speed_achieved_m_s": 0.11116448675109777,
+        "steady_speed_ratio": 0.6934546691214789,
+        "signed_longitudinal_travel_m": 0.6629410803488913,
+        "target_clipping_pct": 0.0,
+        "measurement_windows_s": {
+          "turn": [
+            1.5,
+            3.5
+          ],
+          "curvature": [
+            2.5,
+            3.4
+          ],
+          "speed": [
+            2.5,
+            2.9
+          ]
+        }
+      },
+      "caster_diagnostics": {
+        "window_s": [
+          2.5,
+          2.9
+        ],
+        "mean_rear_traction_utilization": [
+          0.5649378133463755,
+          0.6174819508190266
+        ],
+        "mean_rear_longitudinal_slip_m_s": [
+          -0.000736119063791294,
+          -0.0003980309056626147
+        ],
+        "mean_middle_load_N": [
+          88.29809272620878,
+          133.98556111522007
+        ],
+        "mean_caster_rate_rad_s": [
+          -0.030329491942682328,
+          -0.04027980815723413
+        ],
+        "mean_passive_torque_Nm": [
+          0.007582372985670582,
+          0.010069952039308532
+        ],
+        "mean_ground_torque_Nm": [
+          -0.03129805894927794,
+          -0.025129907499952985
+        ],
+        "mean_normal_torque_Nm": [
+          -5.505530360730139e-05,
+          -8.650410469510817e-05
+        ],
+        "mean_tangent_torque_Nm": [
+          -0.031243003645670637,
+          -0.02504340339525788
+        ],
+        "mean_trail_torque_Nm": [
+          -2.8440014401462754,
+          -4.492029583626627
+        ],
+        "mean_patch_torque_Nm": [
+          2.812703381196998,
+          4.466899676126673
+        ],
+        "max_caster_actuator_torque_Nm": [
+          0.0,
+          0.0
+        ]
+      },
+      "mobility_passed": false
+    }
+  },
+  "regression_passed": true,
+  "mobility_passed": false
+}

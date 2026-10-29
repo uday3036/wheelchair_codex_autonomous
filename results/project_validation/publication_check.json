@@ -1,0 +1,41 @@
+{
+  "scope": "Isolated export of staged Git files; no dependency on omitted project outputs",
+  "checks": [
+    {
+      "command": [
+        "scripts/validate_project.py"
+      ],
+      "passed": true
+    },
+    {
+      "command": [
+        "scripts/replay_autonomous.py",
+        "--check"
+      ],
+      "passed": true
+    },
+    {
+      "command": [
+        "scripts/check_live_display.py"
+      ],
+      "passed": true
+    },
+    {
+      "command": [
+        "-m",
+        "unittest",
+        "tests.test_live_display",
+        "tests.test_live_launcher",
+        "tests.test_replay",
+        "tests.test_robot_assets",
+        "tests.test_mobility.ModelTests.test_extracted_controller_matches_notebook_reference",
+        "-v"
+      ],
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "tests_passed": 29,
+  "replay_frames_checked": 2898,
+  "integration_checks_passed": 21
+}
