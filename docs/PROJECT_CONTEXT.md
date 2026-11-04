@@ -1,5 +1,30 @@
 # Project context for Codex (transferred from ChatGPT conversation)
 
+## Sensor-planned obstacle approach — 4 November 2026
+
+The optional `--obstacles detour` scenario now starts 5.4 m from the table,
+detects the known bottle with simulated RGB-D, builds a 40 mm occupancy grid
+from a 1,440-ray, 6.5 m LiDAR scan, searches 147 NumPy C2 forward detours and
+tracks the selected collision-checked route before replanning the final docking
+corridor from measured chassis pose. Obstacle coordinates are not passed to the
+planner. Unknown cells remain forbidden. The original straight route physically
+intersects the inserted box.
+
+Current-source MuJoCo evidence passes the complete detour task, the mirrored
+navigation case, and blocked-route/missing-bottle protective stops. The complete
+run travels 5.446 m, docks in 84.496 simulated seconds with 2.54 mm lateral
+error, 0.081 degree heading error and 30.74 mm minimum environment clearance,
+then completes delivery and final empty-arm case closure. Recipient-hand rolling
+resistance damps post-release bottle rocking while the measured support, 6 N
+force and upright gates remain unchanged. The original no-obstacle nominal task
+also passes with the same current source. The independent obstacle audit passes
+all 16 checks. Current source fingerprint:
+`b758b86f817da9fad8cc74f5f9936879a69053fd16218db947e83ae8215ac8c7`.
+
+This remains a bounded static forward approach with simulated localization. It
+does not provide SLAM, general-room exploration or moving-obstacle replanning.
+See `docs/OBSTACLE_NAVIGATION.md` and `results/obstacle_validation/`.
+
 ## Live display pacing — 29 October 2026
 
 The recommended `scripts/run_live.py` now runs the unchanged canonical executor

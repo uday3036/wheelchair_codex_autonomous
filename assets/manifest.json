@@ -10,15 +10,16 @@
     "src/control.py": "e3f2856e2ba075a24bd66af88180611293060b4b4ba6c9183de1fdc4ad5767f9",
     "src/design.py": "d56790bae229cc0f7e19c245f00be2c2f8015345a22bc4925733a3b32933ad59",
     "src/geometry_audit.py": "db8f1bd674226f50ac9ca602a80a39620bcc5ab62fd1cfd399513d29ed251dca",
-    "src/grasp_scene.py": "4b0d3b4700463c48a889c166e2f8014706cdc82ccf0b83c7ce1a01f5d05e1578",
+    "src/grasp_scene.py": "16a1b83735fa909a38e1e8d3d9ab73a39fb2c227a997020d613036242d41e615",
     "src/live_view.py": "8390037cb9976975601909d1a2d11cb290d2b5fae028808b3161cede9e2c7d07",
     "src/manipulation.py": "ef1f74a7779c4f5329e098603f63c3540ddff75b80d6fe442fa785029d881a21",
     "src/mobility_metrics.py": "f01441548a76a02a4d0b8da58b76538b9079ac9ea5c279bab57748a5e5f596f3",
     "src/model.py": "17af29cba70386331587bd26b560b7152eb791bc404f29086eda7779a98d4bc9",
-    "src/navigation.py": "ff276095f79624500947b7191d2d7c1864eaaab27d359e43ec56f2a298db01ce",
+    "src/navigation.py": "67977e622690747c8131f91c54549c2de99ac6a23b6e9c833f94385ff8277af5",
+    "src/obstacle_navigation.py": "32dc4ca06f3bdb53ab97b7c7acbf966faac8909c7a6bfe0186a8ebc4ad8153b9",
     "src/preview_arm.py": "b8572d0b576499034b67d970468f7d9f9cdbbf4ac8752b6908ad9a166c61b833",
     "src/robustness.py": "88182aa002ea7822aa8c366348528b06403843cc25b91263cbf3d6e6bb93b891",
-    "src/run_autonomous.py": "d19f36dd9726f0ff53bdcb08848ac9ee48a614fa4da0fbbead6ccc5da1b355ef",
+    "src/run_autonomous.py": "c481c52842dc1d60210ee8c7d3a4387bf99cd91cb8af327057815bfc4f784635",
     "src/run_delivery.py": "82905104e268e9b4b679c31060454dd233a06922b3033f3e5eee9649a9ac8814",
     "src/run_experiments.py": "7772d906eda43b95454f5bd2782cd45f53045427b2538d4c1ecbf45a3937d86b",
     "src/run_grasp.py": "0f504de8f763c28e91f854e0a0c48baf519b728f712fecff310c85601051610a",
@@ -26,7 +27,7 @@
     "src/runtime.py": "ccfe9420d859659856d56fa8134b9d248f6e7277d33afdc12244a9b0c6a67561",
     "src/simulation.py": "2e6f1ff773b233ab85ae87a073415c97a6f14a72a88d91d72b0b8f170acfe97b",
     "src/stowage.py": "236714e3ae33210521b1abfe057d27e05c1fd7112927bb1de963c13b5db15037",
-    "src/task_scene.py": "ccc6f3a4987b70dc92a69c43d79aac6ed6efc103ac4dae961467fb7cc423ea31",
+    "src/task_scene.py": "52c763e25e31488d0e74f9414e3c7c0617b247066920715e34836ab0384a8ce4",
     "src/transfer.py": "dcca25e9a1b63016758ee8f6a8406cc83c856b32599ac641a32ba987cb911790",
     "scripts/export_robot_assets.py": "c6add66b79ad401ec704ca82bd0ea52e7778433644f467a2918e6f80531a4579"
   },
@@ -4034,7 +4035,7 @@
     "meshes/stl/wrist3_link_collision_0.stl": "18e36243d80d6ee48b7153b9f764e72d9831a8a4b1a7c95cde50ba63c7b55e31",
     "meshes/stl/wrist3_link_visual_0.stl": "18e36243d80d6ee48b7153b9f764e72d9831a8a4b1a7c95cde50ba63c7b55e31",
     "mjcf/wheelchair_robot.xml": "a19a0213187ff877695ae2b9954607e8775767cae177c36b678dd5794dbe7c6f",
-    "mjcf/wheelchair_scene.xml": "059d599802f3beb9b8f7dcb1ccbf417144baa02cfef93fb232384a6dbddec09c",
+    "mjcf/wheelchair_scene.xml": "4c75ec126a6b6a16cd62f8d2fcad22db1f15c7a7bf07173385b4f1882114b470",
     "urdf/wheelchair.urdf": "29a524507d54d9c6daf221d3393e4ec3a8b99857f59935b41e6a4b525defe63f"
   }
 }

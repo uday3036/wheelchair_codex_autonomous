@@ -1,0 +1,274 @@
+{
+  "source_sha256": "b758b86f817da9fad8cc74f5f9936879a69053fd16218db947e83ae8215ac8c7",
+  "trials": {
+    "nominal": {
+      "navigation": {
+        "passed": true,
+        "checks": {
+          "bottle_detected": true,
+          "observed_route_found": true,
+          "docked": true,
+          "no_unexpected_contacts": true,
+          "chassis_tilt_below_3deg": true,
+          "motor_limits": true,
+          "no_base_weld": true,
+          "arms_contained_in_cases": true,
+          "travel_interlock_respected": true,
+          "arrival_speed_below_8mm_s": true,
+          "docking_lateral_error_below_5mm": true,
+          "docking_heading_error_below_1deg": true,
+          "steady_speed_error_below_20pct": true,
+          "ground_support_within_10pct_weight": true,
+          "parked_arms_below_1deg": true,
+          "bottle_detection_error_below_3mm": true,
+          "bottle_remains_on_table": true,
+          "environment_clearance_above_10mm": true,
+          "finite": true
+        },
+        "blocked_reason": null,
+        "events": [
+          {
+            "event": "bottle_detected_and_route_planned",
+            "time_s": 0.0,
+            "observed_xyz": [
+              0.619999999999965,
+              0.21499999999999475,
+              0.8745668898244576
+            ]
+          },
+          {
+            "event": "sensor_detour_selected",
+            "time_s": 0.0,
+            "candidates": 147,
+            "planning_wall_s": 0.023091583999999887
+          },
+          {
+            "event": "travel_paused_for_storage_readiness",
+            "time_s": 3.801999999999803,
+            "arm_speed_rad_s": 0.03277870839023964,
+            "covers_closed": true
+          },
+          {
+            "event": "storage_readiness_reconfirmed",
+            "time_s": 4.053999999999776
+          },
+          {
+            "event": "travel_paused_for_storage_readiness",
+            "time_s": 21.337999999999052,
+            "arm_speed_rad_s": 0.03312892056946508,
+            "covers_closed": true
+          },
+          {
+            "event": "storage_readiness_reconfirmed",
+            "time_s": 21.6159999999989
+          },
+          {
+            "event": "travel_paused_for_storage_readiness",
+            "time_s": 21.839999999998774,
+            "arm_speed_rad_s": 0.030630401416163605,
+            "covers_closed": true
+          },
+          {
+            "event": "storage_readiness_reconfirmed",
+            "time_s": 22.091999999998635
+          },
+          {
+            "event": "travel_paused_for_storage_readiness",
+            "time_s": 26.293999999996306,
+            "arm_speed_rad_s": 0.03152651782339968,
+            "covers_closed": true
+          },
+          {
+            "event": "storage_readiness_reconfirmed",
+            "time_s": 26.579999999996147
+          },
+          {
+            "event": "travel_paused_for_storage_readiness",
+            "time_s": 26.779999999996036,
+            "arm_speed_rad_s": 0.0315131522885674,
+            "covers_closed": true
+          },
+          {
+            "event": "storage_readiness_reconfirmed",
+            "time_s": 27.031999999995897
+          },
+          {
+            "event": "travel_paused_for_storage_readiness",
+            "time_s": 27.103999999995857,
+            "arm_speed_rad_s": 0.032539818136896555,
+            "covers_closed": true
+          },
+          {
+            "event": "storage_readiness_reconfirmed",
+            "time_s": 27.355999999995717
+          },
+          {
+            "event": "travel_paused_for_storage_readiness",
+            "time_s": 27.679999999995538,
+            "arm_speed_rad_s": 0.0324018543813015,
+            "covers_closed": true
+          },
+          {
+            "event": "storage_readiness_reconfirmed",
+            "time_s": 27.931999999995398
+          },
+          {
+            "event": "travel_paused_for_storage_readiness",
+            "time_s": 36.06199999999811,
+            "arm_speed_rad_s": 0.037670611448016623,
+            "covers_closed": true
+          },
+          {
+            "event": "storage_readiness_reconfirmed",
+            "time_s": 36.34399999999845
+          },
+          {
+            "event": "travel_paused_for_storage_readiness",
+            "time_s": 41.69600000000499,
+            "arm_speed_rad_s": 0.03132078685577853,
+            "covers_closed": true
+          },
+          {
+            "event": "storage_readiness_reconfirmed",
+            "time_s": 41.9460000000053
+          },
+          {
+            "event": "travel_paused_for_storage_readiness",
+            "time_s": 50.93400000001628,
+            "arm_speed_rad_s": 0.03190193781158872,
+            "covers_closed": true
+          },
+          {
+            "event": "storage_readiness_reconfirmed",
+            "time_s": 51.21800000001663
+          },
+          {
+            "event": "travel_paused_for_storage_readiness",
+            "time_s": 51.30800000001674,
+            "arm_speed_rad_s": 0.03343190457114567,
+            "covers_closed": true
+          },
+          {
+            "event": "storage_readiness_reconfirmed",
+            "time_s": 51.6020000000171
+          },
+          {
+            "event": "travel_paused_for_storage_readiness",
+            "time_s": 56.24200000002277,
+            "arm_speed_rad_s": 0.03226195381564293,
+            "covers_closed": true
+          },
+          {
+            "event": "storage_readiness_reconfirmed",
+            "time_s": 56.492000000023076
+          },
+          {
+            "event": "precision_alignment_replanned_from_measured_pose",
+            "time_s": 64.81800000003034,
+            "xy": [
+              -1.249994952703191,
+              0.013264871661124836
+            ],
+            "heading_rad": -0.01865862515523588
+          },
+          {
+            "event": "travel_paused_for_storage_readiness",
+            "time_s": 67.78000000002343,
+            "arm_speed_rad_s": 0.03365113301234621,
+            "covers_closed": true
+          },
+          {
+            "event": "storage_readiness_reconfirmed",
+            "time_s": 68.06200000002278
+          },
+          {
+            "event": "travel_paused_for_storage_readiness",
+            "time_s": 73.6760000000097,
+            "arm_speed_rad_s": 0.03246546374425629,
+            "covers_closed": true
+          },
+          {
+            "event": "storage_readiness_reconfirmed",
+            "time_s": 73.96400000000902
+          },
+          {
+            "event": "travel_paused_for_storage_readiness",
+            "time_s": 78.59199999999824,
+            "arm_speed_rad_s": 0.03348025925848875,
+            "covers_closed": true
+          },
+          {
+            "event": "storage_readiness_reconfirmed",
+            "time_s": 78.84399999999765
+          },
+          {
+            "event": "braking_started",
+            "time_s": 86.84999999997899
+          },
+          {
+            "event": "arrival_verified_and_brakes_engaged",
+            "time_s": 87.85399999997665
+          }
+        ],
+        "travelled_m": 5.448069359084744,
+        "arrival_xyz": [
+          0.001114020170753114,
+          0.0037677524547671732,
+          0.4003082621782559
+        ],
+        "arrival_yaw_deg": -0.05345858238149774,
+        "duration_s": 87.85399999997665,
+        "travel_posture": "folded in protective cases; covers closed",
+        "minimum_storage_margin_m": 0.006999999999998341,
+        "max_chassis_tilt_deg": 1.1757337343759378,
+        "maximum_parked_arm_error_rad": 0.002314689233479328,
+        "steady_speed_relative_error": 0.019380527900750042,
+        "arrival_speed_m_s": 0.00019046383579707137,
+        "mean_ground_force_to_weight_ratio": 0.9991866322468549,
+        "bottle_detection_error_m": 5.020162880788292e-05,
+        "bottle_drift_m": 6.532104114947907e-05,
+        "minimum_environment_gap_m": 0.028940846221919118,
+        "max_wheel_torque_Nm": [
+          6.448492641779514,
+          6.676190387627184,
+          9.013155895672634,
+          7.807182044901665
+        ],
+        "unexpected_contacts": {},
+        "goal_xy": [
+          -3.497202527569243e-14,
+          -5.245803791353865e-15
+        ],
+        "precision_docking": true,
+        "sensor_noise": null,
+        "obstacles": "mirrored",
+        "navigation_sensor_range_m": 6.5,
+        "planner": {
+          "method": "sampled C2 forward detours with LiDAR occupancy checks",
+          "candidates": 147,
+          "wall_time_s": 0.023091583999999887,
+          "max_reference_curvature_per_m": 0.4889937259690466
+        },
+        "detection": {
+          "position": [
+            0.6199838658883156,
+            0.21504116536213705,
+            0.88
+          ],
+          "pixels": 295,
+          "radius_m": 0.028000379778921478,
+          "fit_rms_m": 1.0275102198315329e-05,
+          "tabletop_z": 0.78
+        },
+        "scope": "ideal surface-color RGB-D and environmental LiDAR; calibrated simulated localization; forward approach; free base and rear motor brakes"
+      },
+      "passed": true,
+      "configuration": {
+        "obstacles": "mirrored"
+      },
+      "expected_failure": false
+    }
+  },
+  "nominal_passed": true,
+  "all_expected_outcomes": true
+}

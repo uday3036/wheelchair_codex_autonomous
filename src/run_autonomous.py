@@ -21,11 +21,13 @@ from .run_experiments import plt
 from .simulation import contacts, vehicle_measurement
 
 
-def navigate(bottle_present=True, blocked_route=False, start=(-1.2, 0., 0.), bottle_xy=(.62, .215),
-             caster_angles=(0., 0.),sensor_noise=None,dynamic_obstacle_at=None,precision_docking=True,mass=.3,grip_friction=1.):
+def navigate(bottle_present=True, blocked_route=False, start=None, bottle_xy=(.62, .215),
+             caster_angles=(0., 0.),sensor_noise=None,dynamic_obstacle_at=None,precision_docking=True,mass=.3,grip_friction=1.,obstacles=None):
+    start = ((-5.4,0.,0.) if obstacles else (-1.2,0.,0.)) if start is None else start
+    sensor_range=6.5 if obstacles else 5.
     model = bottle_scene(auxiliary_clamp=True, opening_fixture=True, mobile=True,
                          bottle_present=bottle_present, blocked_route=blocked_route, bottle_xy=bottle_xy,
-                         dynamic_obstacle=dynamic_obstacle_at is not None,mass=mass,friction=grip_friction)
+                         dynamic_obstacle=dynamic_obstacle_at is not None,mass=mass,friction=grip_friction,obstacles=obstacles)
     state, refs = initialize(model)
     state.qpos[:3] = [start[0], start[1], .4]
     state.qpos[3:7] = [np.cos(start[2]/2), 0., 0., np.sin(start[2]/2)]
@@ -40,25 +42,36 @@ def navigate(bottle_present=True, blocked_route=False, start=(-1.2, 0., 0.), bot
     controller.thread = thread
     frames, times, mocaps, rows, events = [], [], [], [], []
     failure, detected, path, goal = None, None, None, None
-    grid = OccupancyGrid()
+    grid = OccupancyGrid(bounds=(-6.5,1.5,-3.,3.)) if obstacles else OccupancyGrid()
     # All motion requires fresh observed bottle AND a free-space path.
     noise=SensorNoise(**sensor_noise) if sensor_noise is not None else None
     controller.sensor_noise=noise
-    observation,detected=observe_bottle(model,state,refs,noise=noise)
+    observation,detected=observe_bottle(model,state,refs,noise=noise,
+                                      resolution=(320,200) if obstacles else (160,100),max_range=sensor_range)
     corridor=None
+    final_alignment=None
     if detected is None:
         failure = 'No supported bottle detected; driving and grasping inhibited'
     else:
         goal = detected['position'][:2]-[.62, .215]
-        origin, dirs, ranges, _ = lidar_observation(model, state, refs)
-        grid.update(origin, dirs, ranges)
+        origin, dirs, ranges, _ = lidar_observation(model, state, refs,max_range=sensor_range,rays=1440 if obstacles else 720)
+        grid.update(origin, dirs, ranges,max_range=sensor_range)
         path = grid.plan(state.xpos[refs['body'], :2], goal)
         if path is None:
             failure = 'No collision-free observed approach; driving and grasping inhibited'
         else:
             events.append({'event': 'bottle_detected_and_route_planned', 'time_s': float(state.time),
                            'observed_xyz': detected['position'].tolist()})
-            if precision_docking:
+            if obstacles:
+                from .obstacle_navigation import ForwardDetour
+                try:
+                    corridor=ForwardDetour(state.xpos[refs['body'],:2],goal,start[2],grid)
+                    path=corridor.path
+                    events.append({'event':'sensor_detour_selected','time_s':float(state.time),
+                                   'candidates':corridor.candidates,'planning_wall_s':corridor.planning_s})
+                except ValueError as exc:
+                    failure=f'Obstacle approach rejected: {exc}'
+            elif precision_docking:
                 try: corridor=DockingCorridor(state.xpos[refs['body'],:2],goal,start[2],grid)
                 except ValueError as exc:
                     failure=f'Precision docking rejected: {exc}'
@@ -82,13 +95,31 @@ def navigate(bottle_present=True, blocked_route=False, start=(-1.2, 0., 0.), bot
     robot_geoms = [i for i in range(model.ngeom) if model.geom_contype[i] and model.geom_group[i] != 4
                    and model.geom_bodyid[i] != 0 and (model.body(model.geom_bodyid[i]).name or '') not in ('bottle', 'cap')]
     environment = [i for i in range(model.ngeom) if model.geom_group[i] == 4]
-    for step in range(int(55/model.opt.timestep)):
+    for step in range(int((100 if obstacles else 55)/model.opt.timestep)):
         t = float(state.time)
+        command_ready=False
+        if obstacles and step % 5000 == 0:
+            print(f'Obstacle navigation t={t:.0f}s xy={state.xpos[refs["body"],:2].round(3)} heading={np.rad2deg(yaw(state,refs)):.2f}deg',flush=True)
         if dynamic_obstacle_at is not None:
             bid=model.body('dynamic_barrier').id
             state.mocap_pos[model.body_mocapid[bid]]=[0.,max(0.,3.-max(0.,t-dynamic_obstacle_at)),.35]
         xy = state.xpos[refs['body'], :2].copy()
         heading = yaw(state, refs)
+        if obstacles and failure is None and final_alignment is None and goal[0]-xy[0] <= 1.25:
+            try:
+                # Finish the lateral correction 0.60 m before the actual dock:
+                # the corridor already reserves 0.30 m, plus this virtual end.
+                final_alignment=DockingCorridor(xy,goal-[.30,0.],heading,grid)
+                # Replace only the unexecuted route with the newly checked
+                # precision corridor registered to the measured chassis pose.
+                xs=np.linspace(xy[0],goal[0],int(np.ceil((goal[0]-xy[0])/.015))+1)
+                tail=np.array([[x,final_alignment.reference(x)[0]] for x in xs])
+                corridor.path=np.vstack([corridor.path[corridor.path[:,0]<xy[0]],tail])
+                path=corridor.path
+                events.append({'event':'precision_alignment_replanned_from_measured_pose','time_s':t,
+                               'xy':xy.tolist(),'heading_rad':float(heading)})
+            except ValueError as exc:
+                failure=f'Final docking alignment rejected: {exc}'
         if failure is None and not docked:
             remaining = goal[0]-xy[0]
             if remaining < .003 and brake_start is None:
@@ -107,29 +138,37 @@ def navigate(bottle_present=True, blocked_route=False, start=(-1.2, 0., 0.), bot
                 curvature = 2*lateral/max(.2, np.dot(offset, offset))
                 desired_steering = float(np.clip(np.arctan(refs['wheelbase']*curvature), -.48, .48))
                 if corridor is not None:
-                    desired_steering=corridor.steering(xy,heading,refs['wheelbase'])
-                desired_speed = float(np.clip(.8*remaining, .025, .14))
+                    desired_steering=(final_alignment or corridor).steering(xy,heading,refs['wheelbase'])
+                    if final_alignment is not None:
+                        ry,rh,rk=final_alignment.reference(xy[0])
+                        desired_steering=float(np.clip(np.arctan(refs['wheelbase']*(
+                            rk+4.5*wrap(rh-heading)+12.*(ry-xy[1]))),-.48,.48))
+                desired_speed = float(np.clip(.8*remaining, .025, .11 if obstacles else .14))
             else:
                 desired_speed, desired_steering = 0., 0.
             readiness=storage_status(model,state,refs,controller.storage_groups)
+            command_ready=readiness['ready']
             if not readiness['ready']:
                 last_unready=t
                 if not storage_pause:
                     storage_pause=True;pause_start=t
-                    events.append({'event':'travel_paused_for_storage_readiness','time_s':t})
+                    events.append({'event':'travel_paused_for_storage_readiness','time_s':t,
+                                   'arm_speed_rad_s':readiness['arm_speed_rad_s'],
+                                   'covers_closed':readiness['covers_closed']})
                 # A traction transient must not bypass the storage interlock.
                 # Brake, let bounded folded control settle, then ramp again.
-                speed,steering=0.,0.
+                speed=0.
+                if not obstacles: steering=0.
             if storage_pause:
                 if readiness['ready'] and t-last_unready>=.25:
                     storage_pause=False;pause_start=None
                     events.append({'event':'storage_readiness_reconfirmed','time_s':t})
                 else:
-                    desired_speed,desired_steering=0.,0.
+                    desired_speed,desired_steering=0.,steering if obstacles else 0.
                     if t-pause_start>3.:
                         failure='Storage readiness did not recover under braking'
             if t<1.5: desired_speed,desired_steering=0.,0.
-            speed += np.clip(desired_speed-speed, -.15*model.opt.timestep, .08*model.opt.timestep)
+            speed += np.clip(desired_speed-speed, -.15*model.opt.timestep, (.02 if obstacles else .08)*model.opt.timestep)
             steering += np.clip(desired_steering-steering, -.15*model.opt.timestep, .15*model.opt.timestep)
             targets=controller.drive(model, state, speed, steering)
             if targets['travel_inhibited']:
@@ -171,7 +210,7 @@ def navigate(bottle_present=True, blocked_route=False, start=(-1.2, 0., 0.), bot
             rows.append([state.time, *state.xpos[refs['body']], yaw(state, refs), speed, steering,
                          *state.qvel[refs['rear_d']], *state.ctrl[refs['rear_a']],
                          *state.qpos[refs['front_p']], *state.qpos[refs['caster_p']], *ground,
-                         vehicle[2], vehicle[3], *slip.ravel(), *traction, *stowed['case_margins_m'].values(), float(stowed['ready']), *state.qpos[case_indices(model)[0]]])
+                         vehicle[2], vehicle[3], *slip.ravel(), *traction, *stowed['case_margins_m'].values(), float(stowed['ready']), *state.qpos[case_indices(model)[0]],float(command_ready)])
             frames.append(state.qpos.copy()); times.append(float(state.time)); mocaps.append(state.mocap_pos.copy())
             for a in robot_geoms:
                 for b in environment:
@@ -181,10 +220,13 @@ def navigate(bottle_present=True, blocked_route=False, start=(-1.2, 0., 0.), bot
                         failure = 'Observed physical clearance below 10 mm; emergency stop' 
             if t-last_scan >= .5:
                 last_scan = t
-                origin, dirs, ranges, _ = lidar_observation(model, state, refs)
-                grid.update(origin, dirs, ranges)
+                origin, dirs, ranges, _ = lidar_observation(model, state, refs,max_range=sensor_range,rays=1440 if obstacles else 720)
+                grid.update(origin, dirs, ranges,max_range=sensor_range)
                 if failure is None and brake_start is None:
-                    if grid.plan(state.xpos[refs['body'], :2], goal) is None:
+                    route_clear = (corridor.remaining_clear(grid,state.xpos[refs['body'],0])
+                                   if obstacles and corridor is not None else
+                                   grid.plan(state.xpos[refs['body'], :2], goal) is not None)
+                    if not route_clear:
                         failure = 'Observed route became blocked; emergency stop'
                         events.append({'event':'observed_route_blocked_braking','time_s':float(state.time)})
         if brake_start is not None:
@@ -214,7 +256,7 @@ def navigate(bottle_present=True, blocked_route=False, start=(-1.2, 0., 0.), bot
              'rear_l_N,rear_r_N,front_l_N,front_r_N,middle_l_N,middle_r_N,forward_m_s,lateral_m_s').split(',')
     names += [f'{wheel}_{axis}_slip_m_s' for wheel in ('rear_l','rear_r','front_l','front_r','middle_l','middle_r') for axis in ('long','lat')]
     names += [f'{wheel}_traction' for wheel in ('rear_l','rear_r','front_l','front_r','middle_l','middle_r')]
-    names += ['main_case_margin_m','aux_case_margin_m','travel_ready','main_cover_m','aux_cover_m']
+    names += ['main_case_margin_m','aux_case_margin_m','travel_ready','main_cover_m','aux_cover_m','command_travel_ready']
     log = dict(zip(names, np.asarray(rows).T))
     steady = (log['time'] > 3.) & (log['command_speed'] > .1)
     steady_speed_error = float(np.mean(np.abs(log['forward_m_s'][steady]-log['command_speed'][steady])/log['command_speed'][steady])) if steady.any() else None
@@ -229,7 +271,10 @@ def navigate(bottle_present=True, blocked_route=False, start=(-1.2, 0., 0.), bot
               'chassis_tilt_below_3deg': max_tilt < 3., 'motor_limits': bool(np.all(max_wheel_torque <= [35,35,25,25])),
               'no_base_weld': model.neq == 0,
               'arms_contained_in_cases': minimum_storage_margin>=.002,
-              'travel_interlock_respected': stowage_interlock_violations==0 and bool(np.all(log['travel_ready'][log['command_speed']>1e-10]>.5)),
+              # Correlate travel commands with the readiness measured BEFORE
+              # that physics tick. Post-step transients trigger the next stop;
+              # they must not be mislabelled as an unguarded control request.
+              'travel_interlock_respected': stowage_interlock_violations==0 and controller.interlock_stops==0 and bool(np.all(log['command_travel_ready'][log['command_speed']>1e-10]>.5)),
               'arrival_speed_below_8mm_s': stopped_speed < .008,
               'docking_lateral_error_below_5mm': goal is not None and abs(state.xpos[refs['body'],1]-goal[1])<.005,
               'docking_heading_error_below_1deg': abs(yaw(state,refs))<np.deg2rad(1),
@@ -252,7 +297,11 @@ def navigate(bottle_present=True, blocked_route=False, start=(-1.2, 0., 0.), bot
                'bottle_drift_m': bottle_drift, 'minimum_environment_gap_m': float(min_environment_gap),
                'max_wheel_torque_Nm': max_wheel_torque.tolist(), 'unexpected_contacts': unexpected,
                'goal_xy': None if goal is None else goal.tolist(),
-               'precision_docking':corridor is not None,'sensor_noise':sensor_noise,
+               'precision_docking':corridor is not None,'sensor_noise':sensor_noise,'obstacles':obstacles,'navigation_sensor_range_m':sensor_range,
+               'planner': ({'method':'sampled C2 forward detours with LiDAR occupancy checks',
+                            'candidates':corridor.candidates,'wall_time_s':corridor.planning_s,
+                            'max_reference_curvature_per_m':corridor.max_curvature}
+                           if obstacles and corridor is not None else None),
                'detection': None if detected is None else {k: v.tolist() if isinstance(v,np.ndarray) else v for k,v in detected.items()},
                'scope': 'ideal surface-color RGB-D and environmental LiDAR; calibrated simulated localization; forward approach; free base and rear motor brakes'}
     return model, state, controller, np.array(frames), times, np.array(mocaps), np.array(rows), names, metrics, observation, grid, path
@@ -359,6 +408,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--acknowledge-passenger', action='store_true')
     parser.add_argument('--navigation-only', action='store_true')
+    parser.add_argument('--obstacles', choices=('detour','mirrored','blocked'), help='Sensor-planned obstacle approach from a longer starting distance')
     parser.add_argument('--compare', action='store_true')
     parser.add_argument('--robustness',action='store_true',help='Additional complete-task variations and a moving-obstacle stop')
     parser.add_argument('--render', action='store_true')
@@ -397,7 +447,9 @@ def main(argv=None):
 
 def _execute(args):
     report = {'source_sha256': source_fingerprint(), 'trials': {}}
-    cases = [('nominal', {} if args.start is None else {'start':tuple(args.start)})]
+    options = {} if args.start is None else {'start':tuple(args.start)}
+    if getattr(args,'obstacles',None): options['obstacles']=args.obstacles
+    cases = [('nominal', options)]
     if args.compare:
         cases += [('bottle_absent', {'bottle_present': False}), ('blocked_route', {'blocked_route': True}),
                   ('caster_sideways', {'caster_angles': (np.pi/2,np.pi/2), 'navigation_only': True}),

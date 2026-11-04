@@ -397,7 +397,7 @@
       <inertial pos="0 0 0" quat="1 0 0 0" mass="0.012" diaginertia="1.548e-06 1.548e-06 1.9439999999999999e-06" />
     </body>
     <body name="passenger_hand" pos="0.45000000000000001 0.5 1.04" mocap="true" quat="1 0 0 0">
-      <geom name="recipient_pad" size="0.065000000000000002 0.065000000000000002 0.01" type="box" contype="0" conaffinity="0" friction="1 0.002 0.0001" rgba="0.3 0.75 0.4 0.8" pos="0 0 0" quat="1 0 0 0" />
+      <geom name="recipient_pad" size="0.065000000000000002 0.065000000000000002 0.01" type="box" contype="0" conaffinity="0" condim="6" friction="1 0.002 0.01" rgba="0.3 0.75 0.4 0.8" pos="0 0 0" quat="1 0 0 0" />
       <inertial pos="0 0 0" quat="1 0 0 0" mass="0.33800000000000002" diaginertia="0.00048728333333333346 0.00048728333333333346 0.0009520333333333334" />
     </body>
   </worldbody>

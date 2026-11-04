@@ -34,7 +34,7 @@ def ray_sensor(model, state, origin, directions, groups, max_range=5.):
     return distances, rgb
 
 
-def camera_observation(model, state, refs, width=160, height=100, pitch=.21):
+def camera_observation(model, state, refs, width=160, height=100, pitch=.21, max_range=5.):
     """Ideal pinhole color/depth, calibrated to the chassis; physical occlusion."""
     R = state.xmat[refs['body']].reshape(3, 3)
     origin = state.xpos[refs['body']]+R@np.array([.15, 0., .90])
@@ -47,7 +47,7 @@ def camera_observation(model, state, refs, width=160, height=100, pitch=.21):
     directions = (forward+(u.ravel()[:, None]-(width-1)/2)*right/focal-
                   (v.ravel()[:, None]-(height-1)/2)*up/focal)
     directions /= np.linalg.norm(directions, axis=1)[:, None]
-    depth, rgb = ray_sensor(model, state, origin, directions, [1, 1, 0, 0, 1, 1])
+    depth, rgb = ray_sensor(model, state, origin, directions, [1, 1, 0, 0, 1, 1], max_range=max_range)
     points = origin+depth[:, None]*directions
     return {'rgb': rgb.reshape(height, width, 3), 'range': depth.reshape(height, width),
             'points': points.reshape(height, width, 3), 'origin': origin}
@@ -79,14 +79,14 @@ class SensorNoise:
         return result
 
 
-def observe_bottle(model,state,refs,pitch=.21,noise=None):
+def observe_bottle(model,state,refs,pitch=.21,noise=None,resolution=(160,100),max_range=5.):
     """Use only sensor samples; repeated fits reduce noisy partial-arc bias."""
-    raw=camera_observation(model,state,refs,pitch=pitch)
+    raw=camera_observation(model,state,refs,pitch=pitch,width=resolution[0],height=resolution[1],max_range=max_range)
     if noise is None:
         return raw,detect_bottle(raw)
     detections=[]
     for _ in range(5):
-        raw=noise.apply(camera_observation(model,state,refs,pitch=pitch))
+        raw=noise.apply(camera_observation(model,state,refs,pitch=pitch,width=resolution[0],height=resolution[1],max_range=max_range))
         detected=detect_bottle(raw,refine=True)
         if detected is not None: detections.append(detected)
     if len(detections)<3: return raw,None
@@ -173,12 +173,12 @@ class DockingCorridor:
         return float(np.clip(np.arctan(wheelbase*curvature),-.48,.48))
 
 
-def lidar_observation(model, state, refs):
+def lidar_observation(model, state, refs, max_range=5., rays=720):
     R = state.xmat[refs['body']].reshape(3, 3)
     origin = state.xpos[refs['body']]+R@np.array([.15, 0., .1])
-    angles = np.linspace(-np.pi, np.pi, 720, endpoint=False)
+    angles = np.linspace(-np.pi, np.pi, rays, endpoint=False)
     directions = np.einsum('ij,kj->ik', np.c_[np.cos(angles), np.sin(angles), np.zeros(len(angles))], R)
-    ranges, _ = ray_sensor(model, state, origin, directions, [0, 0, 0, 0, 1, 0])
+    ranges, _ = ray_sensor(model, state, origin, directions, [0, 0, 0, 0, 1, 0],max_range=max_range)
     endpoints = origin+ranges[:, None]*directions
     return origin[:2], directions[:, :2], ranges, endpoints
 
@@ -250,9 +250,13 @@ class OccupancyGrid:
         if not self.inside(a) or not self.inside(b) or blocked[a] or blocked[b]:
             return None
         queue, cost, parent = [(0., a)], {a: 0.}, {}
+        expanded = set()
         directions = [(i, j) for i in (-1, 0, 1) for j in (-1, 0, 1) if i or j]
         while queue:
             _, current = heapq.heappop(queue)
+            if current in expanded:
+                continue
+            expanded.add(current)
             if current == b:
                 path = [current]
                 while current != a:

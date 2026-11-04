@@ -34,6 +34,10 @@ MUJOCO_LOG.TXT
 !/results/transfer_validation/
 !/results/asset_validation/
 !/results/current/
+!/results/obstacle_validation/
+!/results/obstacle_mirrored/
+!/results/obstacle_blocked/
+!/results/obstacle_absent/
 !/results/README.md
 !/results/project_validation/tests.log
 !/results/display_validation/tests.log

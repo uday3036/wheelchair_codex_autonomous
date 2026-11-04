@@ -17,6 +17,7 @@ def main(argv=None):
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--acknowledge-passenger', action='store_true')
     parser.add_argument('--navigation-only', action='store_true')
+    parser.add_argument('--obstacles',choices=('detour','mirrored','blocked'))
     parser.add_argument('--speed', type=float, default=1.)
     parser.add_argument('--fps', type=float, default=60.)
     parser.add_argument('--exit-after', type=float)

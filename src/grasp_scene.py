@@ -12,7 +12,9 @@ from .model import MODEL
 
 def bottle_scene(mass=.30, bottle_xy=(.62, .215), friction=1.0, contact_impratio=10., firm_contact=True,
                  arm_appearance="reference", auxiliary_clamp=False, auxiliary_friction=None, opening_fixture=False, mobile=False, blocked_route=False, bottle_present=True, arm_storage=True,
-                 design_style="simple", dynamic_obstacle=False):
+                 design_style="simple", dynamic_obstacle=False, obstacles=None):
+    if obstacles not in (None, 'detour', 'mirrored', 'blocked'):
+        raise ValueError('Unknown obstacle layout')
     if not np.isfinite([mass, friction, *bottle_xy]).all() or not .05 <= mass <= 1. or not 0 <= friction <= 2.:
         raise ValueError("Bottle mass 0.05..1 kg, friction 0..2 and finite position required")
     root = ET.parse(MODEL).getroot()
@@ -137,6 +139,20 @@ def bottle_scene(mass=.30, bottle_xy=(.62, .215), friction=1.0, contact_impratio
             obstacle=ET.SubElement(world,"body",name="dynamic_barrier",mocap="true",pos="0 3 .35")
             ET.SubElement(obstacle,"geom",name="dynamic_barrier_geom",type="box",size=".06 2 .35",
                           group="4",rgba=".65 .18 .12 1")
+        if obstacles is not None:
+            root.find(".//geom[@name='ground']").set('size','7 5 .1')
+            # Physical scene only: planners receive LiDAR samples, never these poses.
+            side = -1 if obstacles == 'mirrored' else 1
+            for name, x, y, hx, hy in (
+                    ('approach_box', -3.7, side*.60, .18, .10),
+                    ('side_box', -3.6, -side*1.5, .22, .20)):
+                ET.SubElement(world, 'geom', name=name, type='box',
+                              pos=f'{x} {y} .32', size=f'{hx} {hy} .32',
+                              rgba='.82 .32 .10 1', group='4')
+            if obstacles == 'blocked':
+                ET.SubElement(world, 'geom', name='obstacle_wall', type='box',
+                              pos='-3.7 0 .32', size='.12 3 .32',
+                              rgba='.65 .18 .12 1', group='4')
         if not bottle_present:
             world.remove(bottle)
             cap = world.find("body[@name='cap']")
@@ -146,7 +162,7 @@ def bottle_scene(mass=.30, bottle_xy=(.62, .215), friction=1.0, contact_impratio
         from .stowage import add_cases
         add_cases(root)
     if mobile:
-        camera_pos = np.array([2.2, -3.6, 2.3])
+        camera_pos = np.array([2.2, -3.6, 2.3]) if obstacles is None else np.array([1.8,-6.8,5.5])
         back = camera_pos-np.array([-.4, .15, .8]); back /= np.linalg.norm(back)
         right = np.cross([0., 0., 1.], back); right /= np.linalg.norm(right)
         up = np.cross(back, right)

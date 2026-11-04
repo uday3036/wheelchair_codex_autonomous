@@ -101,7 +101,8 @@ def add_task_fixture(root, bottle, xy):
                   rgba="1 .2 .2 .08", contype="0", conaffinity="0", group="2")
     hand = ET.SubElement(world, "body", name="passenger_hand", mocap="true", pos=".45 .50 1.04")
     ET.SubElement(hand, "geom", name="recipient_pad", type="box", size=".065 .065 .01",
-                  rgba=".3 .75 .4 .8", friction="1 .002 .0001", contype="0", conaffinity="0")
+                  rgba=".3 .75 .4 .8", friction="1 .002 .01", condim="6",
+                  contype="0", conaffinity="0")
     # A shallow bin on the existing table. The floor top is z=.80 m.
     ET.SubElement(world, "geom", name="cap_bin_floor", type="box", pos=".68 .40 .79", size=".065 .045 .01",
                   rgba=".4 .5 .35 1")

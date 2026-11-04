@@ -64,6 +64,9 @@ def main(argv=None):
                     show_left_ui=False, show_right_ui=False)
         viewer.cam.lookat[:] = [-.35, .1, .8]
         viewer.cam.distance, viewer.cam.azimuth, viewer.cam.elevation = 3.5, 125., -22.
+        if mujoco.mj_name2id(model,mujoco.mjtObj.mjOBJ_GEOM,'approach_box') >= 0:
+            viewer.cam.lookat[:] = [-1.8,0.,.5]
+            viewer.cam.distance,viewer.cam.elevation = 6.5,-40.
         viewer.opt.geomgroup[4:6] = 1
         viewer.opt.geomgroup[2] = 0
         channel.update(ready=True)

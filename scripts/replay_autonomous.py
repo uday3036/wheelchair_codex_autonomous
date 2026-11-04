@@ -30,7 +30,8 @@ class Recording:
         self.metrics = report["trials"]["nominal"]
         if not self.metrics.get("passed"):
             raise ValueError("The nominal recording did not pass its task checks; use a successful run for this demonstration.")
-        self.model = bottle_scene(auxiliary_clamp=True, opening_fixture=True, mobile=True)
+        self.model = bottle_scene(auxiliary_clamp=True, opening_fixture=True, mobile=True,
+                                 obstacles=self.metrics.get('configuration',{}).get('obstacles'))
         with np.load(directory/"nominal_poses.npz", allow_pickle=False) as archive:
             self.qpos = archive["qpos"].copy()
             self.times = archive["frame_times_s"].copy()
@@ -130,6 +131,9 @@ def main(argv=None):
                                      show_left_ui=False,show_right_ui=False) as viewer:
         viewer.cam.lookat[:] = [-.35,.15,.8]
         viewer.cam.distance,viewer.cam.azimuth,viewer.cam.elevation = 3.5,125.,-22.
+        if mujoco.mj_name2id(recording.model,mujoco.mjtObj.mjOBJ_GEOM,'approach_box') >= 0:
+            viewer.cam.lookat[:] = [-1.8,0.,.5]
+            viewer.cam.distance,viewer.cam.elevation = 6.5,-40.
         viewer.opt.geomgroup[4:6] = 1
         viewer.opt.geomgroup[2] = 0
         print("SPACE pause/resume | R restart | 1 half speed | 2 normal | 3 double speed. "

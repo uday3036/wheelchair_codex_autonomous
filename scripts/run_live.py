@@ -50,6 +50,7 @@ def main(argv=None):
     p.add_argument('--fps',type=float,default=60.,help='Wall-clock display frame limit, independent of physics speed')
     p.add_argument('--timing-log',action='store_true',help='Save display timing diagnostics in output/display_timing.json')
     p.add_argument('--navigation-only',action='store_true')
+    p.add_argument('--obstacles',choices=('detour','mirrored','blocked'))
     p.add_argument('--exit-after',type=float,help='Display cancellation smoke-test timeout')
     args=p.parse_args(argv)
     # Physics runs without Cocoa; LiveDisplay starts its own mjpython renderer.
@@ -60,6 +61,7 @@ def main(argv=None):
              '--fps',str(args.fps),'--output',str(output)]
     if args.acknowledge_passenger:command.append('--acknowledge-passenger')
     if args.navigation_only:command.append('--navigation-only')
+    if args.obstacles:command+=['--obstacles',args.obstacles]
     if args.exit_after is not None:command+=['--exit-after',str(args.exit_after)]
     if args.timing_log:command.append('--timing-log')
     print('Starting fresh controller-driven MuJoCo physics. Close the window to cancel.',flush=True)

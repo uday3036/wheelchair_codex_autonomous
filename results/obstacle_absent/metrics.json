@@ -1,0 +1,71 @@
+{
+  "source_sha256": "b758b86f817da9fad8cc74f5f9936879a69053fd16218db947e83ae8215ac8c7",
+  "trials": {
+    "nominal": {
+      "configuration": {
+        "obstacles": "detour",
+        "bottle_present": false
+      },
+      "passed": false,
+      "navigation": {
+        "passed": false,
+        "checks": {
+          "bottle_detected": false,
+          "observed_route_found": false,
+          "docked": false,
+          "no_unexpected_contacts": true,
+          "chassis_tilt_below_3deg": true,
+          "motor_limits": true,
+          "no_base_weld": true,
+          "arms_contained_in_cases": true,
+          "travel_interlock_respected": true,
+          "arrival_speed_below_8mm_s": true,
+          "docking_lateral_error_below_5mm": false,
+          "docking_heading_error_below_1deg": true,
+          "steady_speed_error_below_20pct": false,
+          "ground_support_within_10pct_weight": true,
+          "parked_arms_below_1deg": true,
+          "bottle_detection_error_below_3mm": false,
+          "bottle_remains_on_table": false,
+          "environment_clearance_above_10mm": true,
+          "finite": true
+        },
+        "blocked_reason": "No supported bottle detected; driving and grasping inhibited",
+        "events": [],
+        "travelled_m": 0.000341784251241696,
+        "arrival_xyz": [
+          -5.399993682518253,
+          3.6604747079949103e-06,
+          0.4002221377172523
+        ],
+        "arrival_yaw_deg": -9.203207215407542e-06,
+        "duration_s": 2.002000000000001,
+        "travel_posture": "folded in protective cases; covers closed",
+        "minimum_storage_margin_m": 0.006999999999998452,
+        "max_chassis_tilt_deg": 0.8212584606190897,
+        "maximum_parked_arm_error_rad": 0.0003608161480455063,
+        "steady_speed_relative_error": null,
+        "arrival_speed_m_s": 2.574505946996613e-07,
+        "mean_ground_force_to_weight_ratio": 0.9999999830495709,
+        "bottle_detection_error_m": null,
+        "bottle_drift_m": null,
+        "minimum_environment_gap_m": 0.1,
+        "max_wheel_torque_Nm": [
+          0.060300032937468405,
+          0.06032950953800538,
+          0.0003433057857643605,
+          0.00028589800473437243
+        ],
+        "unexpected_contacts": {},
+        "goal_xy": null,
+        "precision_docking": false,
+        "sensor_noise": null,
+        "obstacles": "detour",
+        "navigation_sensor_range_m": 6.5,
+        "planner": null,
+        "detection": null,
+        "scope": "ideal surface-color RGB-D and environmental LiDAR; calibrated simulated localization; forward approach; free base and rear motor brakes"
+      }
+    }
+  }
+}

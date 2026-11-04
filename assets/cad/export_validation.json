@@ -1,0 +1,30 @@
+{
+  "source": "assets/meshes/assemblies/wheelchair_folded.obj",
+  "source_sha256": "0be490b7a815c1f5be265271f9964fb6a52ccd5c3de6b907ecc78abfa64ff61d",
+  "dxf_sha256": "e80024c7065a7386b5f2c471dd55a86ad6a496d54441aa10e70cbb958130c8fd",
+  "units": "millimetres",
+  "pose": "folded",
+  "frame": "base_link",
+  "triangles": 23556,
+  "component_layers": 107,
+  "bounds_mm": [
+    [
+      -509.9999999999999,
+      -563.0,
+      -400.00018365944567
+    ],
+    [
+      549.9999999999999,
+      563.0,
+      574.6622703642562
+    ]
+  ],
+  "extent_mm": [
+    1059.9999999999998,
+    1126.0,
+    974.6624540237019
+  ],
+  "roundtrip_coordinates_passed": true,
+  "dxf_audit_errors": 0,
+  "autocad_application_tested": false
+}

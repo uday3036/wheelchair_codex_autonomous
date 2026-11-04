@@ -1,0 +1,94 @@
+{
+  "source_sha256": "b758b86f817da9fad8cc74f5f9936879a69053fd16218db947e83ae8215ac8c7",
+  "checks": {
+    "obstacle_validation_current_source": true,
+    "obstacle_validation_navigation": true,
+    "obstacle_validation_recording": true,
+    "obstacle_validation_measured_detour": true,
+    "obstacle_validation_scene_restored": true,
+    "delivery_and_idle_storage": true,
+    "straight_route_really_intersects_obstacle": true,
+    "obstacle_mirrored_current_source": true,
+    "obstacle_mirrored_navigation": true,
+    "obstacle_mirrored_recording": true,
+    "obstacle_mirrored_measured_detour": true,
+    "obstacle_mirrored_scene_restored": true,
+    "obstacle_blocked_current_source": true,
+    "obstacle_blocked_protective_stop": true,
+    "obstacle_absent_current_source": true,
+    "obstacle_absent_protective_stop": true
+  },
+  "passed": true,
+  "trials": {
+    "obstacle_validation": {
+      "passed": true,
+      "blocked_reason": null,
+      "travelled_m": 5.4462336606880095,
+      "duration_s": 84.49599999998448,
+      "arrival_xyz": [
+        0.0005748321058415542,
+        -0.0025386916758288925,
+        0.4002753092751699
+      ],
+      "arrival_yaw_deg": 0.08089767183648591,
+      "minimum_environment_gap_m": 0.03074020173919032,
+      "arrival_speed_m_s": 8.834207747645039e-05,
+      "planner": {
+        "method": "sampled C2 forward detours with LiDAR occupancy checks",
+        "candidates": 147,
+        "wall_time_s": 0.0230712500000001,
+        "max_reference_curvature_per_m": 0.48899372596906193
+      }
+    },
+    "obstacle_mirrored": {
+      "passed": true,
+      "blocked_reason": null,
+      "travelled_m": 5.448069359084744,
+      "duration_s": 87.85399999997665,
+      "arrival_xyz": [
+        0.001114020170753114,
+        0.0037677524547671732,
+        0.4003082621782559
+      ],
+      "arrival_yaw_deg": -0.05345858238149774,
+      "minimum_environment_gap_m": 0.028940846221919118,
+      "arrival_speed_m_s": 0.00019046383579707137,
+      "planner": {
+        "method": "sampled C2 forward detours with LiDAR occupancy checks",
+        "candidates": 147,
+        "wall_time_s": 0.023091583999999887,
+        "max_reference_curvature_per_m": 0.4889937259690466
+      }
+    },
+    "obstacle_blocked": {
+      "passed": false,
+      "blocked_reason": "No collision-free observed approach; driving and grasping inhibited",
+      "travelled_m": 0.00034178425224308756,
+      "duration_s": 2.002000000000001,
+      "arrival_xyz": [
+        -5.3999936825181605,
+        3.660474729452304e-06,
+        0.400222137717562
+      ],
+      "arrival_yaw_deg": -9.20320024972522e-06,
+      "minimum_environment_gap_m": 0.1,
+      "arrival_speed_m_s": 2.574503192545717e-07,
+      "planner": null
+    },
+    "obstacle_absent": {
+      "passed": false,
+      "blocked_reason": "No supported bottle detected; driving and grasping inhibited",
+      "travelled_m": 0.000341784251241696,
+      "duration_s": 2.002000000000001,
+      "arrival_xyz": [
+        -5.399993682518253,
+        3.6604747079949103e-06,
+        0.4002221377172523
+      ],
+      "arrival_yaw_deg": -9.203207215407542e-06,
+      "minimum_environment_gap_m": 0.1,
+      "arrival_speed_m_s": 2.574505946996613e-07,
+      "planner": null
+    }
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "source_sha256": "c9583205340fae2a88adb3bfe8daacbea54ff4f263a0eb3d9857b83a019874ba",
+  "source_sha256": "0191a81bd2aeb6fb03069d6bbab58748609e78e868ee00f28578101818d0fd32",
   "trials": {
     "nominal": {
       "navigation": {
@@ -76,6 +76,8 @@
         ],
         "precision_docking": true,
         "sensor_noise": null,
+        "obstacles": null,
+        "planner": null,
         "detection": {
           "position": [
             0.619988339232929,
@@ -1169,6 +1171,8 @@
         "goal_xy": null,
         "precision_docking": false,
         "sensor_noise": null,
+        "obstacles": null,
+        "planner": null,
         "detection": null,
         "scope": "ideal surface-color RGB-D and environmental LiDAR; calibrated simulated localization; forward approach; free base and rear motor brakes"
       },
@@ -1236,6 +1240,8 @@
         ],
         "precision_docking": false,
         "sensor_noise": null,
+        "obstacles": null,
+        "planner": null,
         "detection": {
           "position": [
             0.6199999999999941,
@@ -1293,7 +1299,9 @@
           },
           {
             "event": "travel_paused_for_storage_readiness",
-            "time_s": 2.657999999999929
+            "time_s": 2.657999999999929,
+            "arm_speed_rad_s": 0.03259463111785991,
+            "covers_closed": true
           },
           {
             "event": "storage_readiness_reconfirmed",
@@ -1301,7 +1309,9 @@
           },
           {
             "event": "travel_paused_for_storage_readiness",
-            "time_s": 3.9779999999997835
+            "time_s": 3.9779999999997835,
+            "arm_speed_rad_s": 0.031172750834529684,
+            "covers_closed": true
           },
           {
             "event": "storage_readiness_reconfirmed",
@@ -1309,7 +1319,9 @@
           },
           {
             "event": "travel_paused_for_storage_readiness",
-            "time_s": 5.481999999999618
+            "time_s": 5.481999999999618,
+            "arm_speed_rad_s": 0.031370095804111695,
+            "covers_closed": true
           },
           {
             "event": "storage_readiness_reconfirmed",
@@ -1317,7 +1329,9 @@
           },
           {
             "event": "travel_paused_for_storage_readiness",
-            "time_s": 6.911999999999461
+            "time_s": 6.911999999999461,
+            "arm_speed_rad_s": 0.03187564394332275,
+            "covers_closed": true
           },
           {
             "event": "storage_readiness_reconfirmed",
@@ -1325,7 +1339,9 @@
           },
           {
             "event": "travel_paused_for_storage_readiness",
-            "time_s": 8.215999999999413
+            "time_s": 8.215999999999413,
+            "arm_speed_rad_s": 0.031869612615634715,
+            "covers_closed": true
           },
           {
             "event": "storage_readiness_reconfirmed",
@@ -1333,7 +1349,9 @@
           },
           {
             "event": "travel_paused_for_storage_readiness",
-            "time_s": 9.505999999999844
+            "time_s": 9.505999999999844,
+            "arm_speed_rad_s": 0.031043885667419127,
+            "covers_closed": true
           },
           {
             "event": "storage_readiness_reconfirmed",
@@ -1341,7 +1359,9 @@
           },
           {
             "event": "travel_paused_for_storage_readiness",
-            "time_s": 10.686000000000238
+            "time_s": 10.686000000000238,
+            "arm_speed_rad_s": 0.031139233561300758,
+            "covers_closed": true
           },
           {
             "event": "storage_readiness_reconfirmed",
@@ -1349,7 +1369,9 @@
           },
           {
             "event": "travel_paused_for_storage_readiness",
-            "time_s": 11.990000000000673
+            "time_s": 11.990000000000673,
+            "arm_speed_rad_s": 0.031394647594897615,
+            "covers_closed": true
           },
           {
             "event": "storage_readiness_reconfirmed",
@@ -1357,7 +1379,9 @@
           },
           {
             "event": "travel_paused_for_storage_readiness",
-            "time_s": 13.138000000001057
+            "time_s": 13.138000000001057,
+            "arm_speed_rad_s": 0.030018460404644672,
+            "covers_closed": true
           },
           {
             "event": "storage_readiness_reconfirmed",
@@ -1365,7 +1389,9 @@
           },
           {
             "event": "travel_paused_for_storage_readiness",
-            "time_s": 14.31400000000145
+            "time_s": 14.31400000000145,
+            "arm_speed_rad_s": 0.030509638373914228,
+            "covers_closed": true
           },
           {
             "event": "storage_readiness_reconfirmed",
@@ -1373,7 +1399,9 @@
           },
           {
             "event": "travel_paused_for_storage_readiness",
-            "time_s": 15.500000000001846
+            "time_s": 15.500000000001846,
+            "arm_speed_rad_s": 0.030276083180244592,
+            "covers_closed": true
           },
           {
             "event": "storage_readiness_reconfirmed",
@@ -1419,6 +1447,8 @@
         ],
         "precision_docking": true,
         "sensor_noise": null,
+        "obstacles": null,
+        "planner": null,
         "detection": {
           "position": [
             0.6200389777641447,
@@ -1479,7 +1509,9 @@
           },
           {
             "event": "travel_paused_for_storage_readiness",
-            "time_s": 5.8799999999995745
+            "time_s": 5.8799999999995745,
+            "arm_speed_rad_s": 0.034360870427472115,
+            "covers_closed": true
           },
           {
             "event": "storage_readiness_reconfirmed",
@@ -1487,7 +1519,9 @@
           },
           {
             "event": "travel_paused_for_storage_readiness",
-            "time_s": 9.94399999999999
+            "time_s": 9.94399999999999,
+            "arm_speed_rad_s": 0.03224733588179338,
+            "covers_closed": true
           },
           {
             "event": "storage_readiness_reconfirmed",
@@ -1533,6 +1567,8 @@
         ],
         "precision_docking": true,
         "sensor_noise": null,
+        "obstacles": null,
+        "planner": null,
         "detection": {
           "position": [
             0.6199701247088999,
@@ -1632,6 +1668,8 @@
         ],
         "precision_docking": true,
         "sensor_noise": null,
+        "obstacles": null,
+        "planner": null,
         "detection": {
           "position": [
             0.619988339232929,
@@ -2720,6 +2758,8 @@
         ],
         "precision_docking": true,
         "sensor_noise": null,
+        "obstacles": null,
+        "planner": null,
         "detection": {
           "position": [
             0.619988339232929,

@@ -14,6 +14,12 @@ from src.task_scene import CapThread, CAP_HEIGHT, THREAD_LEAD, THREAD_ENGAGEMENT
 
 
 class TaskFixtureTests(unittest.TestCase):
+    def test_recipient_pad_has_rolling_resistance_for_stable_handover(self):
+        m = bottle_scene(auxiliary_clamp=True, opening_fixture=True)
+        pad = m.geom("recipient_pad").id
+        self.assertEqual(m.geom_condim[pad], 6)
+        self.assertGreaterEqual(m.geom_friction[pad, 2], .01)
+
     def test_independent_free_cap_preserves_arms_and_only_base_is_welded(self):
         m, original = bottle_scene(auxiliary_clamp=True, opening_fixture=True), load_model()
         self.assertEqual((m.nq, m.nv, m.nu, m.neq, m.nmocap), (48, 45, 17, 1, 1))

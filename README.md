@@ -158,3 +158,11 @@ liquid handling, real cap/human calibration and hardware readiness remain
 unvalidated. The 6 N recipient-force and 10 mm clearance thresholds are explicit
 simulation gates, not certified human safety limits. A higher-friction 0.6 kg
 stationary pickup does not establish complete mobile delivery at that payload.
+
+# Obstacle navigation demonstration
+
+Run `.venv/bin/python -B scripts/run_live.py --obstacles detour --acknowledge-passenger --speed 2 --output results/obstacle_live`
+to detect the bottle, navigate around two orange obstacles, dock and execute the
+bottle service. The notebook selects this scenario with
+`AUTONOMOUS_OBSTACLES = "detour"`; set it to `None` for the original comparison.
+See [planning, limits and validation](docs/OBSTACLE_NAVIGATION.md).
