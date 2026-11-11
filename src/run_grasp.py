@@ -11,6 +11,7 @@ from pathlib import Path
 import mujoco
 from .runtime import step as physics_tick
 import numpy as np
+from .bottle_command import resting_distractor
 
 from .control import ARM_NAMES, ARM_KP, ARM_KD, ARM_MAX, SEC_HOME, SEC_KP, SEC_KD, SEC_MAX
 from .grasp_scene import bottle_scene
@@ -49,6 +50,10 @@ def collision_check(model, state):
 
 def plan(model, state, indices, pregrasp_height=.04, observed_bottle=None):
     arm = SerialArm(model, ARM_NAMES, "grasp_center", state)
+    if pregrasp_height > 0 and any((model.body(b).name or "").startswith("bottle_") for b in range(model.nbody)):
+        # Other bottles stand on the table (their tops are at z 0.98): the reach move from the deployed pose
+        # passed 7 mm over one at pad height. A higher pregrasp point lifts the whole move clear of them.
+        pregrasp_height = max(pregrasp_height, .12)
     bottle = state.xpos[model.body("bottle").id].copy() if observed_bottle is None else np.asarray(observed_bottle).copy()
     grasp = bottle+np.array([0., 0., .04])
     targets = [grasp+[-.11, 0., pregrasp_height], grasp, grasp+[0., 0., .08]]
@@ -228,7 +233,7 @@ def simulate_grasp(mass=.30, friction=1., payload_feedforward=True, bottle_xy=(.
         for i, c in enumerate(state.contact):
             a, b = model.geom(c.geom1).name, model.geom(c.geom2).name
             permitted = ("ground" in (a, b) and any(n.startswith("wheel_") for n in (a, b))) or (
-                "bottle_collision" in (a, b) and any(n in ("grasp_left_pad", "grasp_right_pad", "grasp_table") for n in (a, b))) or (
+                "bottle_collision" in (a, b) and any(n in ("grasp_left_pad", "grasp_right_pad", "grasp_table") for n in (a, b))) or resting_distractor((a, b)) or (
                 {a, b} == {"bottle_neck", "cap_collision"})
             force = np.zeros(6)
             mujoco.mj_contactForce(model, state, i, force)

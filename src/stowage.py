@@ -7,6 +7,7 @@ import xml.etree.ElementTree as ET
 import mujoco
 from .runtime import step as physics_tick
 import numpy as np
+from .bottle_command import resting_distractor
 from .control import ARM_KP, ARM_KD, ARM_MAX, SEC_KP, SEC_KD, SEC_MAX
 from .run_grasp import START, track_arm
 from .transfer import MOBILE_AUX_WAIT as AUX_WAIT
@@ -293,7 +294,7 @@ class StorageMotion:
 def storage_legal(names):
     """Empty tools must not touch the bottle/cap during fold or deployment."""
     return (('ground' in names and any(n.startswith('wheel_') for n in names)) or
-            ('bottle_collision' in names and any(n in ('grasp_table','recipient_pad') for n in names)) or
+            ('bottle_collision' in names and any(n in ('grasp_table','recipient_pad') for n in names)) or resting_distractor(names) or
             (any(n.startswith(('cap_collision','cap_rib_')) for n in names) and
              any(n.startswith('cap_bin_') or n=='bottle_neck' for n in names)))
 
@@ -309,6 +310,7 @@ def auxiliary_route(model,state,refs,goal,seed=21,configuration_check=None):
     limits=model.jnt_range[[model.joint(n).id for n in SEC_NAMES]].copy()
     rng=np.random.default_rng(seed)
     moving=arm_geoms(model,'aux')
+    table=model.geom('grasp_table').id if any((model.geom(g).name or '')=='grasp_table' for g in range(model.ngeom)) else None
     def valid(q):
         state.qpos[qindex]=q;mujoco.mj_forward(model,state)
         if configuration_check is not None:
@@ -317,6 +319,10 @@ def auxiliary_route(model,state,refs,goal,seed=21,configuration_check=None):
             for c in state.contact:
                 names=(model.geom(c.geom1).name or '',model.geom(c.geom2).name or '')
                 if c.dist<.001 and not storage_legal(names):return False
+            # Contact tests alone let a route graze the table between samples (the
+            # level rigid frame exposed a 1.2 N touch): require 5 mm of clearance.
+            if table is not None and any(mujoco.mj_geomDistance(model,state,table,g,.006,None)<.005 for g in moving):
+                return False
         return all(conservative_gap(model,state,model.geom(proxy).id,g)>=.01
                    for proxy in ('passenger_keepout','passenger_head_keepout') for g in moving)
     def edge(a,b):

@@ -77,7 +77,7 @@ class RobotAssetTests(unittest.TestCase):
         links = {e.get("name") for e in self.root.findall("link")}
         joints = self.root.findall("joint")
         children = [j.find("child").get("link") for j in joints]
-        self.assertEqual(len(links), 48)  # Includes the frame-mounted arm bracket.
+        self.assertEqual(len(links), 48)  # Rocker-bogie design; includes the frame-mounted arm bracket.
         self.assertEqual(len(set(children)), len(children))
         self.assertEqual(links-set(children), {"base_link"})
         moving = {j.get("name"):j for j in joints if j.get("type") != "fixed"}
@@ -87,8 +87,15 @@ class RobotAssetTests(unittest.TestCase):
             for name in (f"mid_{side}_caster_yaw", f"wheel_mid_{side}_joint", f"wheel_front_{side}_joint"):
                 self.assertEqual(moving[name].get("type"), "continuous")
                 self.assertEqual(float(moving[name].find("limit").get("effort")), 0.)
-        self.assertNotIn("bottle", links)
+            for name in (f"rocker_pivot_{side}", f"bogie_pivot_{side}"):  # passive spring-loaded pivots
+                self.assertEqual(float(moving[name].find("limit").get("effort")), 0.)
+                self.assertNotIn("bottle", links)
         self.assertNotIn("passenger_hand", links)
+        base = next(link for link in self.root.findall("link") if link.get("name") == "base_link")
+        visual_names = {v.get("name") for v in base.findall("visual")}
+        for name in ("rgbd_camera_housing", "rgbd_camera_lens", "lidar_housing", "lidar_scan_head"):
+            self.assertIn(f"{name}_visual", visual_names)
+            self.assertNotIn(f"{name}_collision", {c.get("name") for c in base.findall("collision")})
 
     def test_urdf_joint_axes_limits_and_inertias(self):
         m = self.model
@@ -168,7 +175,7 @@ class RobotAssetTests(unittest.TestCase):
     def test_urdf_loads_in_mujoco_and_keeps_inertial_tree(self):
         loaded = mujoco.MjModel.from_xml_path(str(ASSETS/"urdf/wheelchair.urdf"))
         self.assertEqual(loaded.njnt,29)
-        self.assertEqual(loaded.nbody,49)  # Includes world and frame bracket.
+        self.assertEqual(loaded.nbody,49)  # Includes world and frame bracket.  # Includes world and frame bracket.
         self.assertAlmostEqual(float(loaded.body_mass.sum()),self.manifest["robot_mass_kg"],places=8)
         state=mujoco.MjData(loaded)
         folded=json.loads((ASSETS/"urdf/folded_joint_positions.json").read_text())

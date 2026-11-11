@@ -160,6 +160,8 @@ def main(argv=None, default_profile="baseline"):
     parser.add_argument("--render", action="store_true", help="Save animated MuJoCo GIFs")
     parser.add_argument("--rocker-stiffness", type=float, default=None,
                         help="Optional mechanical spring comparison [N m/rad]; XML default remains 45")
+    parser.add_argument("--simple-frame", action="store_true",
+                        help="Rigid side-rail frame instead of the rocker-bogie linkage (src/frame_design.py)")
     parser.add_argument("--output", type=Path, default=None)
     args = parser.parse_args(argv)
     current = args.profile == "current"
@@ -229,7 +231,8 @@ def main(argv=None, default_profile="baseline"):
                 protocol="caster" if caster_family else "standard",
                 speed_scale=.5 if caster_family else 1., seconds=12. if caster_family else 6.,
                 caster_outboard_offset=args.caster_outboard_offset, clearance_geometry=geometry,
-                caster_resistance=resistance, alignment_steer_deg=pulse, caster_tire_half_width=width)
+                caster_resistance=resistance, alignment_steer_deg=pulse, caster_tire_half_width=width,
+                simple_frame=args.simple_frame)
             report["trials"][label] = metrics
             logs[label] = data
             np.savetxt(args.output / f"{label}.csv", data, delimiter=",", header=",".join(names))

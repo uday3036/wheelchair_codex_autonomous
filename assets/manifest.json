@@ -6,29 +6,34 @@
     "models/wheelchair_m1e_rocker.xml": "439b5c32393ba5bb97ecca903fbb47a91205256270ad039ff61d019870355653",
     "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "src/arm_appearance.py": "c510932239066db400c770a48d4df9fbaecd20894d7730636b0101c39b1fc356",
-    "src/assistive_task.py": "1e39e17c6902987110b03bb79a42ac4608dd8f18ae17d3ec22b0d123061d8be7",
+    "src/assistive_task.py": "9705404c36a98c9b55dbd14e081919649a56cc6e748775f97a79935fa8024094",
+    "src/bottle_command.py": "e8e9d99e66480a79cd582718e0b0a24cfd944757757a19bc111074cb7df91dc3",
     "src/control.py": "e3f2856e2ba075a24bd66af88180611293060b4b4ba6c9183de1fdc4ad5767f9",
-    "src/design.py": "d56790bae229cc0f7e19c245f00be2c2f8015345a22bc4925733a3b32933ad59",
-    "src/geometry_audit.py": "db8f1bd674226f50ac9ca602a80a39620bcc5ab62fd1cfd399513d29ed251dca",
-    "src/grasp_scene.py": "16a1b83735fa909a38e1e8d3d9ab73a39fb2c227a997020d613036242d41e615",
+    "src/design.py": "09faff12df6a5249063312beb9b9b5d5f14b316b160834fe68b75d1e0ee1d45a",
+    "src/frame_design.py": "ac80c4ed138d1233724630b6b9098505c6ccc6b00c4fc0a9131d36dc7057562b",
+    "src/geometry_audit.py": "c10788241c946e6cb8da219c5e82c00b092b92e408d8cdd8db0f737aea3cad18",
+    "src/grasp_scene.py": "353ab6b44bc1e740904cafbebf9f4717567b63fdb7e2a3ca8160b69df21a75b5",
     "src/live_view.py": "8390037cb9976975601909d1a2d11cb290d2b5fae028808b3161cede9e2c7d07",
     "src/manipulation.py": "ef1f74a7779c4f5329e098603f63c3540ddff75b80d6fe442fa785029d881a21",
     "src/mobility_metrics.py": "f01441548a76a02a4d0b8da58b76538b9079ac9ea5c279bab57748a5e5f596f3",
-    "src/model.py": "17af29cba70386331587bd26b560b7152eb791bc404f29086eda7779a98d4bc9",
-    "src/navigation.py": "67977e622690747c8131f91c54549c2de99ac6a23b6e9c833f94385ff8277af5",
+    "src/model.py": "87571144e64b5123ff62a4262814328d8e2cdc5917cccb95a0b75fae0569845a",
+    "src/navigation.py": "bea532477197c46881109d148e01ce21bc3a2c033f2fe5906790d873194eba9c",
     "src/obstacle_navigation.py": "32dc4ca06f3bdb53ab97b7c7acbf966faac8909c7a6bfe0186a8ebc4ad8153b9",
     "src/preview_arm.py": "b8572d0b576499034b67d970468f7d9f9cdbbf4ac8752b6908ad9a166c61b833",
+    "src/realistic_arm.py": "9c6f30f208ce589fe02144dbb35bc5e228a510df349c75038cb36567dd826e02",
+    "src/realistic_aux_arm.py": "9fa4ea0ff6c40a264a0c7b55e22685ac0f71fcbb1cb911b8101be75098d34c96",
     "src/robustness.py": "88182aa002ea7822aa8c366348528b06403843cc25b91263cbf3d6e6bb93b891",
-    "src/run_autonomous.py": "c481c52842dc1d60210ee8c7d3a4387bf99cd91cb8af327057815bfc4f784635",
+    "src/run_autonomous.py": "1e9413e1d33089c64ffd170ffcf085376b37a583473a41a917d093d873d7868d",
     "src/run_delivery.py": "82905104e268e9b4b679c31060454dd233a06922b3033f3e5eee9649a9ac8814",
-    "src/run_experiments.py": "7772d906eda43b95454f5bd2782cd45f53045427b2538d4c1ecbf45a3937d86b",
-    "src/run_grasp.py": "0f504de8f763c28e91f854e0a0c48baf519b728f712fecff310c85601051610a",
+    "src/run_experiments.py": "99d76492533d580093e804dab198eac9aaa2de11718cf95e5cec862af096da88",
+    "src/run_grasp.py": "f699ecdba8f306f3e184d7e1e8404abb894230f5a9bc533ebf27118e179cbde3",
     "src/run_transfer.py": "1ce1e828ab63b5b0ea23bdbb65a121f6b19c28705a493094985583cac2fc3bd9",
     "src/runtime.py": "ccfe9420d859659856d56fa8134b9d248f6e7277d33afdc12244a9b0c6a67561",
-    "src/simulation.py": "2e6f1ff773b233ab85ae87a073415c97a6f14a72a88d91d72b0b8f170acfe97b",
-    "src/stowage.py": "236714e3ae33210521b1abfe057d27e05c1fd7112927bb1de963c13b5db15037",
-    "src/task_scene.py": "52c763e25e31488d0e74f9414e3c7c0617b247066920715e34836ab0384a8ce4",
-    "src/transfer.py": "dcca25e9a1b63016758ee8f6a8406cc83c856b32599ac641a32ba987cb911790",
+    "src/simulation.py": "700837f4bed62d14e9442b214d3b9995825996f0afebc472b518b5e0e772d783",
+    "src/stowage.py": "834fd271ab3d7212c137737465291c4a1aa8b7ec27556bac8799adbc672fa39a",
+    "src/structural_geometry.py": "fd573d7af7c138536789620669b1d77b266fa326a30b1c302ad7ef875218b1fb",
+    "src/task_scene.py": "c0a6d4a037f5218e24a9d4e09e77f72f71c34f3188737f736635376db8cf1515",
+    "src/transfer.py": "1bea9155841322ebb1100c8dca952ce71d39f0440a79d6ff7abfa5360a153899",
     "scripts/export_robot_assets.py": "c6add66b79ad401ec704ca82bd0ea52e7778433644f467a2918e6f80531a4579"
   },
   "robot_links": 48,
@@ -1097,6 +1102,732 @@
       "stl": "meshes/stl/controller_box_panel.stl"
     },
     {
+      "name": "rgbd_camera_foot",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.012,
+          -0.012,
+          -0.077
+        ],
+        [
+          0.012,
+          0.012,
+          0.077
+        ]
+      ],
+      "obj": "meshes/obj/rgbd_camera_foot.obj",
+      "stl": "meshes/stl/rgbd_camera_foot.stl"
+    },
+    {
+      "name": "rgbd_camera_mast",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.012,
+          -0.012,
+          -0.523
+        ],
+        [
+          0.012,
+          0.012,
+          0.523
+        ]
+      ],
+      "obj": "meshes/obj/rgbd_camera_mast.obj",
+      "stl": "meshes/stl/rgbd_camera_mast.stl"
+    },
+    {
+      "name": "rgbd_camera_clamp_low",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.008,
+          -0.008,
+          -0.0395
+        ],
+        [
+          0.008,
+          0.008,
+          0.0395
+        ]
+      ],
+      "obj": "meshes/obj/rgbd_camera_clamp_low.obj",
+      "stl": "meshes/stl/rgbd_camera_clamp_low.stl"
+    },
+    {
+      "name": "rgbd_camera_clamp_high",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.008,
+          -0.008,
+          -0.033499999999999995
+        ],
+        [
+          0.008,
+          0.008,
+          0.033499999999999995
+        ]
+      ],
+      "obj": "meshes/obj/rgbd_camera_clamp_high.obj",
+      "stl": "meshes/stl/rgbd_camera_clamp_high.stl"
+    },
+    {
+      "name": "rgbd_camera_mount",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.012,
+          -0.012,
+          -0.03449999999999999
+        ],
+        [
+          0.012,
+          0.012,
+          0.03449999999999999
+        ]
+      ],
+      "obj": "meshes/obj/rgbd_camera_mount.obj",
+      "stl": "meshes/stl/rgbd_camera_mount.stl"
+    },
+    {
+      "name": "rgbd_camera_housing",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.045,
+          -0.055,
+          -0.032
+        ],
+        [
+          0.045,
+          0.055,
+          0.032
+        ]
+      ],
+      "obj": "meshes/obj/rgbd_camera_housing.obj",
+      "stl": "meshes/stl/rgbd_camera_housing.stl"
+    },
+    {
+      "name": "rgbd_camera_lens",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.018,
+          -0.018,
+          -0.01068877916321595
+        ],
+        [
+          0.018,
+          0.018,
+          0.01068877916321595
+        ]
+      ],
+      "obj": "meshes/obj/rgbd_camera_lens.obj",
+      "stl": "meshes/stl/rgbd_camera_lens.stl"
+    },
+    {
+      "name": "lidar_mount",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.05,
+          -0.04,
+          -0.012
+        ],
+        [
+          0.05,
+          0.04,
+          0.012
+        ]
+      ],
+      "obj": "meshes/obj/lidar_mount.obj",
+      "stl": "meshes/stl/lidar_mount.stl"
+    },
+    {
+      "name": "lidar_housing",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.055,
+          -0.055,
+          -0.025
+        ],
+        [
+          0.055,
+          0.055,
+          0.025
+        ]
+      ],
+      "obj": "meshes/obj/lidar_housing.obj",
+      "stl": "meshes/stl/lidar_housing.stl"
+    },
+    {
+      "name": "lidar_scan_head",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 66,
+      "triangles": 128,
+      "local_bounds_m": [
+        [
+          -0.045,
+          -0.045,
+          -0.006
+        ],
+        [
+          0.045,
+          0.045,
+          0.006
+        ]
+      ],
+      "obj": "meshes/obj/lidar_scan_head.obj",
+      "stl": "meshes/stl/lidar_scan_head.stl"
+    },
+    {
+      "name": "electronics_bracket_-0.09",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.015,
+          -0.06,
+          -0.015
+        ],
+        [
+          0.015,
+          0.06,
+          0.015
+        ]
+      ],
+      "obj": "meshes/obj/electronics_bracket_-0.09.obj",
+      "stl": "meshes/stl/electronics_bracket_-0.09.stl"
+    },
+    {
+      "name": "electronics_bracket_0.05",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.015,
+          -0.06,
+          -0.015
+        ],
+        [
+          0.015,
+          0.06,
+          0.015
+        ]
+      ],
+      "obj": "meshes/obj/electronics_bracket_0.05.obj",
+      "stl": "meshes/stl/electronics_bracket_0.05.stl"
+    },
+    {
+      "name": "armrest_frame_bridge_right",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.025,
+          -0.03,
+          -0.015
+        ],
+        [
+          0.025,
+          0.03,
+          0.015
+        ]
+      ],
+      "obj": "meshes/obj/armrest_frame_bridge_right.obj",
+      "stl": "meshes/stl/armrest_frame_bridge_right.stl"
+    },
+    {
+      "name": "armrest_front_post_right",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.012,
+          -0.012,
+          -0.095
+        ],
+        [
+          0.012,
+          0.012,
+          0.095
+        ]
+      ],
+      "obj": "meshes/obj/armrest_front_post_right.obj",
+      "stl": "meshes/stl/armrest_front_post_right.stl"
+    },
+    {
+      "name": "armrest_frame_bridge_left",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.025,
+          -0.03,
+          -0.015
+        ],
+        [
+          0.025,
+          0.03,
+          0.015
+        ]
+      ],
+      "obj": "meshes/obj/armrest_frame_bridge_left.obj",
+      "stl": "meshes/stl/armrest_frame_bridge_left.stl"
+    },
+    {
+      "name": "armrest_front_post_left",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.012,
+          -0.012,
+          -0.095
+        ],
+        [
+          0.012,
+          0.012,
+          0.095
+        ]
+      ],
+      "obj": "meshes/obj/armrest_front_post_left.obj",
+      "stl": "meshes/stl/armrest_front_post_left.stl"
+    },
+    {
+      "name": "structure_core_standoff_0",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.018,
+          -0.018,
+          -0.0175
+        ],
+        [
+          0.018,
+          0.018,
+          0.0175
+        ]
+      ],
+      "obj": "meshes/obj/structure_core_standoff_0.obj",
+      "stl": "meshes/stl/structure_core_standoff_0.stl"
+    },
+    {
+      "name": "structure_core_standoff_1",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.018,
+          -0.018,
+          -0.0175
+        ],
+        [
+          0.018,
+          0.018,
+          0.0175
+        ]
+      ],
+      "obj": "meshes/obj/structure_core_standoff_1.obj",
+      "stl": "meshes/stl/structure_core_standoff_1.stl"
+    },
+    {
+      "name": "structure_core_standoff_2",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.018,
+          -0.018,
+          -0.0175
+        ],
+        [
+          0.018,
+          0.018,
+          0.0175
+        ]
+      ],
+      "obj": "meshes/obj/structure_core_standoff_2.obj",
+      "stl": "meshes/stl/structure_core_standoff_2.stl"
+    },
+    {
+      "name": "structure_core_standoff_3",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.018,
+          -0.018,
+          -0.0175
+        ],
+        [
+          0.018,
+          0.018,
+          0.0175
+        ]
+      ],
+      "obj": "meshes/obj/structure_core_standoff_3.obj",
+      "stl": "meshes/stl/structure_core_standoff_3.stl"
+    },
+    {
+      "name": "structure_left_footrest_hanger",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.022,
+          -0.016,
+          -0.008
+        ],
+        [
+          0.022,
+          0.016,
+          0.008
+        ]
+      ],
+      "obj": "meshes/obj/structure_left_footrest_hanger.obj",
+      "stl": "meshes/stl/structure_left_footrest_hanger.stl"
+    },
+    {
+      "name": "structure_right_footrest_hanger",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.022,
+          -0.016,
+          -0.008
+        ],
+        [
+          0.022,
+          0.016,
+          0.008
+        ]
+      ],
+      "obj": "meshes/obj/structure_right_footrest_hanger.obj",
+      "stl": "meshes/stl/structure_right_footrest_hanger.stl"
+    },
+    {
+      "name": "structure_left_side_plate_bracket_0",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.02,
+          -0.0175,
+          -0.02
+        ],
+        [
+          0.02,
+          0.0175,
+          0.02
+        ]
+      ],
+      "obj": "meshes/obj/structure_left_side_plate_bracket_0.obj",
+      "stl": "meshes/stl/structure_left_side_plate_bracket_0.stl"
+    },
+    {
+      "name": "structure_left_side_plate_bracket_1",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.02,
+          -0.0175,
+          -0.02
+        ],
+        [
+          0.02,
+          0.0175,
+          0.02
+        ]
+      ],
+      "obj": "meshes/obj/structure_left_side_plate_bracket_1.obj",
+      "stl": "meshes/stl/structure_left_side_plate_bracket_1.stl"
+    },
+    {
+      "name": "structure_left_rocker_spindle",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.018,
+          -0.018,
+          -0.088
+        ],
+        [
+          0.018,
+          0.018,
+          0.088
+        ]
+      ],
+      "obj": "meshes/obj/structure_left_rocker_spindle.obj",
+      "stl": "meshes/stl/structure_left_rocker_spindle.stl"
+    },
+    {
+      "name": "structure_left_backrest_anchor",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.012,
+          -0.012,
+          -0.054573465914816
+        ],
+        [
+          0.012,
+          0.012,
+          0.054573465914816
+        ]
+      ],
+      "obj": "meshes/obj/structure_left_backrest_anchor.obj",
+      "stl": "meshes/stl/structure_left_backrest_anchor.stl"
+    },
+    {
+      "name": "structure_right_rocker_spindle",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.018,
+          -0.018,
+          -0.088
+        ],
+        [
+          0.018,
+          0.018,
+          0.088
+        ]
+      ],
+      "obj": "meshes/obj/structure_right_rocker_spindle.obj",
+      "stl": "meshes/stl/structure_right_rocker_spindle.stl"
+    },
+    {
+      "name": "structure_right_backrest_anchor",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.012,
+          -0.012,
+          -0.054573465914816
+        ],
+        [
+          0.012,
+          0.012,
+          0.054573465914816
+        ]
+      ],
+      "obj": "meshes/obj/structure_right_backrest_anchor.obj",
+      "stl": "meshes/stl/structure_right_backrest_anchor.stl"
+    },
+    {
+      "name": "structure_aux_mount",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.022,
+          -0.022,
+          -0.07124428900898053
+        ],
+        [
+          0.022,
+          0.022,
+          0.07124428900898053
+        ]
+      ],
+      "obj": "meshes/obj/structure_aux_mount.obj",
+      "stl": "meshes/stl/structure_aux_mount.stl"
+    },
+    {
+      "name": "structure_main_cover_rail",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.008,
+          -0.008,
+          -0.393
+        ],
+        [
+          0.008,
+          0.008,
+          0.393
+        ]
+      ],
+      "obj": "meshes/obj/structure_main_cover_rail.obj",
+      "stl": "meshes/stl/structure_main_cover_rail.stl"
+    },
+    {
+      "name": "structure_main_rail_bracket",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.01,
+          -0.01,
+          -0.14152946437965908
+        ],
+        [
+          0.01,
+          0.01,
+          0.14152946437965908
+        ]
+      ],
+      "obj": "meshes/obj/structure_main_rail_bracket.obj",
+      "stl": "meshes/stl/structure_main_rail_bracket.stl"
+    },
+    {
+      "name": "structure_aux_cover_rail",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.008,
+          -0.008,
+          -0.323
+        ],
+        [
+          0.008,
+          0.008,
+          0.323
+        ]
+      ],
+      "obj": "meshes/obj/structure_aux_cover_rail.obj",
+      "stl": "meshes/stl/structure_aux_cover_rail.stl"
+    },
+    {
+      "name": "structure_aux_rail_bracket",
+      "link": "base_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.01,
+          -0.01,
+          -0.11403004373737424
+        ],
+        [
+          0.01,
+          0.01,
+          0.11403004373737424
+        ]
+      ],
+      "obj": "meshes/obj/structure_aux_rail_bracket.obj",
+      "stl": "meshes/stl/structure_aux_rail_bracket.stl"
+    },
+    {
       "name": "rocker_left_visual_0",
       "link": "rocker_left",
       "visual": true,
@@ -1229,6 +1960,50 @@
       "stl": "meshes/stl/rocker_left_collision_2.stl"
     },
     {
+      "name": "structure_left_rear_axle",
+      "link": "rocker_left",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.016,
+          -0.016,
+          -0.08600000000000001
+        ],
+        [
+          0.016,
+          0.016,
+          0.08600000000000001
+        ]
+      ],
+      "obj": "meshes/obj/structure_left_rear_axle.obj",
+      "stl": "meshes/stl/structure_left_rear_axle.stl"
+    },
+    {
+      "name": "structure_left_rear_motor_bracket",
+      "link": "rocker_left",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.015,
+          -0.015,
+          -0.04
+        ],
+        [
+          0.015,
+          0.015,
+          0.04
+        ]
+      ],
+      "obj": "meshes/obj/structure_left_rear_motor_bracket.obj",
+      "stl": "meshes/stl/structure_left_rear_motor_bracket.stl"
+    },
+    {
       "name": "bogie_left_visual_0",
       "link": "bogie_left",
       "visual": true,
@@ -1315,6 +2090,138 @@
       ],
       "obj": "meshes/obj/bogie_left_collision_1.obj",
       "stl": "meshes/stl/bogie_left_collision_1.stl"
+    },
+    {
+      "name": "structure_left_front_riser",
+      "link": "bogie_left",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.016,
+          -0.016,
+          -0.0935
+        ],
+        [
+          0.016,
+          0.016,
+          0.0935
+        ]
+      ],
+      "obj": "meshes/obj/structure_left_front_riser.obj",
+      "stl": "meshes/stl/structure_left_front_riser.stl"
+    },
+    {
+      "name": "structure_left_front_bridge",
+      "link": "bogie_left",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.016,
+          -0.016,
+          -0.101
+        ],
+        [
+          0.016,
+          0.016,
+          0.101
+        ]
+      ],
+      "obj": "meshes/obj/structure_left_front_bridge.obj",
+      "stl": "meshes/stl/structure_left_front_bridge.stl"
+    },
+    {
+      "name": "structure_left_middle_riser",
+      "link": "bogie_left",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.016,
+          -0.016,
+          -0.081
+        ],
+        [
+          0.016,
+          0.016,
+          0.081
+        ]
+      ],
+      "obj": "meshes/obj/structure_left_middle_riser.obj",
+      "stl": "meshes/stl/structure_left_middle_riser.stl"
+    },
+    {
+      "name": "structure_left_middle_bridge",
+      "link": "bogie_left",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.016,
+          -0.016,
+          -0.121
+        ],
+        [
+          0.016,
+          0.016,
+          0.121
+        ]
+      ],
+      "obj": "meshes/obj/structure_left_middle_bridge.obj",
+      "stl": "meshes/stl/structure_left_middle_bridge.stl"
+    },
+    {
+      "name": "structure_left_front_motor_bracket",
+      "link": "bogie_left",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.015,
+          -0.015,
+          -0.04
+        ],
+        [
+          0.015,
+          0.015,
+          0.04
+        ]
+      ],
+      "obj": "meshes/obj/structure_left_front_motor_bracket.obj",
+      "stl": "meshes/stl/structure_left_front_motor_bracket.stl"
+    },
+    {
+      "name": "structure_left_mid_motor_bracket",
+      "link": "bogie_left",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.015,
+          -0.015,
+          -0.04
+        ],
+        [
+          0.015,
+          0.015,
+          0.04
+        ]
+      ],
+      "obj": "meshes/obj/structure_left_mid_motor_bracket.obj",
+      "stl": "meshes/stl/structure_left_mid_motor_bracket.stl"
     },
     {
       "name": "motor_mid_left_visual_0",
@@ -1425,6 +2332,50 @@
       ],
       "obj": "meshes/obj/front_left_fork_top.obj",
       "stl": "meshes/stl/front_left_fork_top.stl"
+    },
+    {
+      "name": "structure_left_front_kingpin",
+      "link": "front_left_knuckle",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.015,
+          -0.015,
+          -0.042499999999999996
+        ],
+        [
+          0.015,
+          0.015,
+          0.042499999999999996
+        ]
+      ],
+      "obj": "meshes/obj/structure_left_front_kingpin.obj",
+      "stl": "meshes/stl/structure_left_front_kingpin.stl"
+    },
+    {
+      "name": "structure_left_front_axle",
+      "link": "front_left_knuckle",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.012,
+          -0.012,
+          -0.087
+        ],
+        [
+          0.012,
+          0.012,
+          0.087
+        ]
+      ],
+      "obj": "meshes/obj/structure_left_front_axle.obj",
+      "stl": "meshes/stl/structure_left_front_axle.stl"
     },
     {
       "name": "wheel_front_left_visual_0",
@@ -1601,6 +2552,50 @@
       ],
       "obj": "meshes/obj/middle_left_fork_top.obj",
       "stl": "meshes/stl/middle_left_fork_top.stl"
+    },
+    {
+      "name": "structure_left_middle_kingpin",
+      "link": "mid_left_caster_swivel",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.015,
+          -0.015,
+          -0.042499999999999996
+        ],
+        [
+          0.015,
+          0.015,
+          0.042499999999999996
+        ]
+      ],
+      "obj": "meshes/obj/structure_left_middle_kingpin.obj",
+      "stl": "meshes/stl/structure_left_middle_kingpin.stl"
+    },
+    {
+      "name": "structure_left_middle_axle",
+      "link": "mid_left_caster_swivel",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.012,
+          -0.012,
+          -0.087
+        ],
+        [
+          0.012,
+          0.012,
+          0.087
+        ]
+      ],
+      "obj": "meshes/obj/structure_left_middle_axle.obj",
+      "stl": "meshes/stl/structure_left_middle_axle.stl"
     },
     {
       "name": "wheel_mid_left_visual_0",
@@ -1933,6 +2928,50 @@
       "stl": "meshes/stl/rocker_right_collision_2.stl"
     },
     {
+      "name": "structure_right_rear_axle",
+      "link": "rocker_right",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.016,
+          -0.016,
+          -0.08600000000000001
+        ],
+        [
+          0.016,
+          0.016,
+          0.08600000000000001
+        ]
+      ],
+      "obj": "meshes/obj/structure_right_rear_axle.obj",
+      "stl": "meshes/stl/structure_right_rear_axle.stl"
+    },
+    {
+      "name": "structure_right_rear_motor_bracket",
+      "link": "rocker_right",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.015,
+          -0.015,
+          -0.04
+        ],
+        [
+          0.015,
+          0.015,
+          0.04
+        ]
+      ],
+      "obj": "meshes/obj/structure_right_rear_motor_bracket.obj",
+      "stl": "meshes/stl/structure_right_rear_motor_bracket.stl"
+    },
+    {
       "name": "bogie_right_visual_0",
       "link": "bogie_right",
       "visual": true,
@@ -2019,6 +3058,138 @@
       ],
       "obj": "meshes/obj/bogie_right_collision_1.obj",
       "stl": "meshes/stl/bogie_right_collision_1.stl"
+    },
+    {
+      "name": "structure_right_front_riser",
+      "link": "bogie_right",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.016,
+          -0.016,
+          -0.0935
+        ],
+        [
+          0.016,
+          0.016,
+          0.0935
+        ]
+      ],
+      "obj": "meshes/obj/structure_right_front_riser.obj",
+      "stl": "meshes/stl/structure_right_front_riser.stl"
+    },
+    {
+      "name": "structure_right_front_bridge",
+      "link": "bogie_right",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.016,
+          -0.016,
+          -0.101
+        ],
+        [
+          0.016,
+          0.016,
+          0.101
+        ]
+      ],
+      "obj": "meshes/obj/structure_right_front_bridge.obj",
+      "stl": "meshes/stl/structure_right_front_bridge.stl"
+    },
+    {
+      "name": "structure_right_middle_riser",
+      "link": "bogie_right",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.016,
+          -0.016,
+          -0.081
+        ],
+        [
+          0.016,
+          0.016,
+          0.081
+        ]
+      ],
+      "obj": "meshes/obj/structure_right_middle_riser.obj",
+      "stl": "meshes/stl/structure_right_middle_riser.stl"
+    },
+    {
+      "name": "structure_right_middle_bridge",
+      "link": "bogie_right",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.016,
+          -0.016,
+          -0.121
+        ],
+        [
+          0.016,
+          0.016,
+          0.121
+        ]
+      ],
+      "obj": "meshes/obj/structure_right_middle_bridge.obj",
+      "stl": "meshes/stl/structure_right_middle_bridge.stl"
+    },
+    {
+      "name": "structure_right_front_motor_bracket",
+      "link": "bogie_right",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.015,
+          -0.015,
+          -0.04
+        ],
+        [
+          0.015,
+          0.015,
+          0.04
+        ]
+      ],
+      "obj": "meshes/obj/structure_right_front_motor_bracket.obj",
+      "stl": "meshes/stl/structure_right_front_motor_bracket.stl"
+    },
+    {
+      "name": "structure_right_mid_motor_bracket",
+      "link": "bogie_right",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.015,
+          -0.015,
+          -0.04
+        ],
+        [
+          0.015,
+          0.015,
+          0.04
+        ]
+      ],
+      "obj": "meshes/obj/structure_right_mid_motor_bracket.obj",
+      "stl": "meshes/stl/structure_right_mid_motor_bracket.stl"
     },
     {
       "name": "motor_mid_right_visual_0",
@@ -2129,6 +3300,50 @@
       ],
       "obj": "meshes/obj/front_right_fork_top.obj",
       "stl": "meshes/stl/front_right_fork_top.stl"
+    },
+    {
+      "name": "structure_right_front_kingpin",
+      "link": "front_right_knuckle",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.015,
+          -0.015,
+          -0.042499999999999996
+        ],
+        [
+          0.015,
+          0.015,
+          0.042499999999999996
+        ]
+      ],
+      "obj": "meshes/obj/structure_right_front_kingpin.obj",
+      "stl": "meshes/stl/structure_right_front_kingpin.stl"
+    },
+    {
+      "name": "structure_right_front_axle",
+      "link": "front_right_knuckle",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.012,
+          -0.012,
+          -0.087
+        ],
+        [
+          0.012,
+          0.012,
+          0.087
+        ]
+      ],
+      "obj": "meshes/obj/structure_right_front_axle.obj",
+      "stl": "meshes/stl/structure_right_front_axle.stl"
     },
     {
       "name": "wheel_front_right_visual_0",
@@ -2305,6 +3520,50 @@
       ],
       "obj": "meshes/obj/middle_right_fork_top.obj",
       "stl": "meshes/stl/middle_right_fork_top.stl"
+    },
+    {
+      "name": "structure_right_middle_kingpin",
+      "link": "mid_right_caster_swivel",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.015,
+          -0.015,
+          -0.042499999999999996
+        ],
+        [
+          0.015,
+          0.015,
+          0.042499999999999996
+        ]
+      ],
+      "obj": "meshes/obj/structure_right_middle_kingpin.obj",
+      "stl": "meshes/stl/structure_right_middle_kingpin.stl"
+    },
+    {
+      "name": "structure_right_middle_axle",
+      "link": "mid_right_caster_swivel",
+      "visual": true,
+      "collision": false,
+      "vertices": 514,
+      "triangles": 1024,
+      "local_bounds_m": [
+        [
+          -0.012,
+          -0.012,
+          -0.087
+        ],
+        [
+          0.012,
+          0.012,
+          0.087
+        ]
+      ],
+      "obj": "meshes/obj/structure_right_middle_axle.obj",
+      "stl": "meshes/stl/structure_right_middle_axle.stl"
     },
     {
       "name": "wheel_mid_right_visual_0",
@@ -3099,6 +4358,28 @@
       "stl": "meshes/stl/end_link_collision_gripper_palm.stl"
     },
     {
+      "name": "grasp_guide_rail",
+      "link": "end_link",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.008,
+          -0.06,
+          -0.008
+        ],
+        [
+          0.008,
+          0.06,
+          0.008
+        ]
+      ],
+      "obj": "meshes/obj/grasp_guide_rail.obj",
+      "stl": "meshes/stl/grasp_guide_rail.stl"
+    },
+    {
       "name": "grasp_left_pad",
       "link": "grasp_left_jaw",
       "visual": true,
@@ -3121,6 +4402,50 @@
       "stl": "meshes/stl/grasp_left_pad.stl"
     },
     {
+      "name": "grasp_left_carriage",
+      "link": "grasp_left_jaw",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.012,
+          -0.009,
+          -0.012
+        ],
+        [
+          0.012,
+          0.009,
+          0.012
+        ]
+      ],
+      "obj": "meshes/obj/grasp_left_carriage.obj",
+      "stl": "meshes/stl/grasp_left_carriage.stl"
+    },
+    {
+      "name": "grasp_left_finger_support",
+      "link": "grasp_left_jaw",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.012499999999999997,
+          -0.005,
+          -0.01
+        ],
+        [
+          0.012499999999999997,
+          0.005,
+          0.01
+        ]
+      ],
+      "obj": "meshes/obj/grasp_left_finger_support.obj",
+      "stl": "meshes/stl/grasp_left_finger_support.stl"
+    },
+    {
       "name": "grasp_right_pad",
       "link": "grasp_right_jaw",
       "visual": true,
@@ -3141,6 +4466,50 @@
       ],
       "obj": "meshes/obj/grasp_right_pad.obj",
       "stl": "meshes/stl/grasp_right_pad.stl"
+    },
+    {
+      "name": "grasp_right_carriage",
+      "link": "grasp_right_jaw",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.012,
+          -0.009,
+          -0.012
+        ],
+        [
+          0.012,
+          0.009,
+          0.012
+        ]
+      ],
+      "obj": "meshes/obj/grasp_right_carriage.obj",
+      "stl": "meshes/stl/grasp_right_carriage.stl"
+    },
+    {
+      "name": "grasp_right_finger_support",
+      "link": "grasp_right_jaw",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.012499999999999997,
+          -0.005,
+          -0.01
+        ],
+        [
+          0.012499999999999997,
+          0.005,
+          0.01
+        ]
+      ],
+      "obj": "meshes/obj/grasp_right_finger_support.obj",
+      "stl": "meshes/stl/grasp_right_finger_support.stl"
     },
     {
       "name": "secondary_arm_base_visual",
@@ -3407,6 +4776,28 @@
       "stl": "meshes/stl/secondary_gripper_palm_collision.stl"
     },
     {
+      "name": "aux_guide_rail",
+      "link": "secondary_gripper",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.008,
+          -0.06,
+          -0.008
+        ],
+        [
+          0.008,
+          0.06,
+          0.008
+        ]
+      ],
+      "obj": "meshes/obj/aux_guide_rail.obj",
+      "stl": "meshes/stl/aux_guide_rail.stl"
+    },
+    {
       "name": "aux_left_pad",
       "link": "aux_left_jaw",
       "visual": true,
@@ -3429,6 +4820,50 @@
       "stl": "meshes/stl/aux_left_pad.stl"
     },
     {
+      "name": "aux_left_carriage",
+      "link": "aux_left_jaw",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.012,
+          -0.009,
+          -0.012
+        ],
+        [
+          0.012,
+          0.009,
+          0.012
+        ]
+      ],
+      "obj": "meshes/obj/aux_left_carriage.obj",
+      "stl": "meshes/stl/aux_left_carriage.stl"
+    },
+    {
+      "name": "aux_left_finger_support",
+      "link": "aux_left_jaw",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.0225,
+          -0.005,
+          -0.01
+        ],
+        [
+          0.0225,
+          0.005,
+          0.01
+        ]
+      ],
+      "obj": "meshes/obj/aux_left_finger_support.obj",
+      "stl": "meshes/stl/aux_left_finger_support.stl"
+    },
+    {
       "name": "aux_right_pad",
       "link": "aux_right_jaw",
       "visual": true,
@@ -3449,6 +4884,50 @@
       ],
       "obj": "meshes/obj/aux_right_pad.obj",
       "stl": "meshes/stl/aux_right_pad.stl"
+    },
+    {
+      "name": "aux_right_carriage",
+      "link": "aux_right_jaw",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.012,
+          -0.009,
+          -0.012
+        ],
+        [
+          0.012,
+          0.009,
+          0.012
+        ]
+      ],
+      "obj": "meshes/obj/aux_right_carriage.obj",
+      "stl": "meshes/stl/aux_right_carriage.stl"
+    },
+    {
+      "name": "aux_right_finger_support",
+      "link": "aux_right_jaw",
+      "visual": true,
+      "collision": false,
+      "vertices": 8,
+      "triangles": 12,
+      "local_bounds_m": [
+        [
+          -0.0225,
+          -0.005,
+          -0.01
+        ],
+        [
+          0.0225,
+          0.005,
+          0.01
+        ]
+      ],
+      "obj": "meshes/obj/aux_right_finger_support.obj",
+      "stl": "meshes/stl/aux_right_finger_support.stl"
     },
     {
       "name": "main_frame_outrigger",
@@ -3721,13 +5200,13 @@
     "bounds_m": [
       [
         -0.5099999999999999,
-        -0.563,
+        -0.577,
         -0.4000001836594457
       ],
       [
         0.5499999999999999,
-        0.563,
-        0.5746622703642562
+        0.577,
+        1.1076776847642473
       ]
     ]
   },
@@ -3739,17 +5218,26 @@
     "Velocity values are interchange limits/placeholders, not motor specifications"
   ],
   "files_sha256": {
-    "meshes/assemblies/wheelchair_folded.mtl": "76ef5887abc80f98a544d0a331f7f055355462168a100cb0c871586837ed849c",
-    "meshes/assemblies/wheelchair_folded.obj": "0be490b7a815c1f5be265271f9964fb6a52ccd5c3de6b907ecc78abfa64ff61d",
-    "meshes/assemblies/wheelchair_folded.stl": "99cc320bccbdcbc0258fc95935c5be33f0e036c2fa0c419bb791d5f7092a6b9d",
+    "meshes/assemblies/wheelchair_folded.mtl": "5f70ff3bb48f5d76178636d70d0aab31d7e530a78e868f81e133158fad500a55",
+    "meshes/assemblies/wheelchair_folded.obj": "7c3a613e1fd8fe5999b66f7b0756a2c300d7cb7889c5c096cb2c74570b1bbdb4",
+    "meshes/assemblies/wheelchair_folded.stl": "2ffa10dd99ba45ae6c4a6c702ea549c3576d2f0e4ebcb707e6725c402c69e944",
     "meshes/obj/arm_base_collision_0.obj": "7dd25229836c950f019a8bcdbb386516cb1396e335cd271b096c57858f27753b",
     "meshes/obj/arm_base_visual_0.obj": "897c0d8bcd35cdf34e172d4f9a1348063d54d4d60408c8923833a8f43bacaabe",
+    "meshes/obj/armrest_frame_bridge_left.obj": "f2fd8c19f35e0d38ff6c594273710e4bbce706dc689bbd9737b82fd472db3d81",
+    "meshes/obj/armrest_frame_bridge_right.obj": "f2fd8c19f35e0d38ff6c594273710e4bbce706dc689bbd9737b82fd472db3d81",
+    "meshes/obj/armrest_front_post_left.obj": "651e115e9bfc5f3edad71281a648c5668f57be840dfc29abebb379a6431803c8",
+    "meshes/obj/armrest_front_post_right.obj": "651e115e9bfc5f3edad71281a648c5668f57be840dfc29abebb379a6431803c8",
     "meshes/obj/aux_case_back.obj": "a519136113f7fc73299cc450117560eb3a49528cc0c7abcc3f69c9b399702626",
     "meshes/obj/aux_case_cover.obj": "da5db7d6376cf3a9be3373c83b9297e9ce716bc5f65901129febae7f1eb85d90",
     "meshes/obj/aux_case_floor.obj": "265307f6a028404eab049955f41064271e28d5a7b1cf93e055eb6a687dbfe94d",
     "meshes/obj/aux_case_inner.obj": "60a73bba3763ffdc4cab735940ee340ae750216b1196362f6e8b291f75822122",
     "meshes/obj/aux_case_outer.obj": "60a73bba3763ffdc4cab735940ee340ae750216b1196362f6e8b291f75822122",
+    "meshes/obj/aux_guide_rail.obj": "208772475b98334c7688468d488bda6099abed4ca46cc33662559649cedbf9a9",
+    "meshes/obj/aux_left_carriage.obj": "f488f4c541bb6d3e8c2d14f90c8f7560d043da9200844ccb6665082bc9117ecd",
+    "meshes/obj/aux_left_finger_support.obj": "0a2ca75fe0fe37ea686e352ee66802d9cf22e0e35bcb039fc9dbbcaff549900d",
     "meshes/obj/aux_left_pad.obj": "9c61775989ce78b9aee927714dd620ec014ab407ccc04226e75d7adcf0206c40",
+    "meshes/obj/aux_right_carriage.obj": "f488f4c541bb6d3e8c2d14f90c8f7560d043da9200844ccb6665082bc9117ecd",
+    "meshes/obj/aux_right_finger_support.obj": "0a2ca75fe0fe37ea686e352ee66802d9cf22e0e35bcb039fc9dbbcaff549900d",
     "meshes/obj/aux_right_pad.obj": "9c61775989ce78b9aee927714dd620ec014ab407ccc04226e75d7adcf0206c40",
     "meshes/obj/base_collision_0.obj": "46787c97506d8b57fbce7815b9cfcf5c835579721ade2491f299075ac691ed30",
     "meshes/obj/base_collision_1.obj": "d4a36eb383009c19576be72497f77b306e57cc4f0a42a3a5a1418f8cc83dff2c",
@@ -3786,6 +5274,8 @@
     "meshes/obj/controller_box_collision.obj": "ac54216a072a5e1cccc2580036763929ee294ef8303043119c83c79cf0e06a75",
     "meshes/obj/controller_box_panel.obj": "b6598ca358795fa6fc46d639f1f9bf20036df2e11b0e6dc97297881ded9a9fb9",
     "meshes/obj/controller_box_visual.obj": "ac54216a072a5e1cccc2580036763929ee294ef8303043119c83c79cf0e06a75",
+    "meshes/obj/electronics_bracket_-0.09.obj": "548c97cde2c3b0e1247ce69d8223adcb17678ded5c404bdd4675ba787e9314c0",
+    "meshes/obj/electronics_bracket_0.05.obj": "548c97cde2c3b0e1247ce69d8223adcb17678ded5c404bdd4675ba787e9314c0",
     "meshes/obj/end_link_collision_0.obj": "b7db4127e3d3925542a0765e0e6c880bd0bf6aa07d03bdcd4753eae082b69d6d",
     "meshes/obj/end_link_collision_gripper_palm.obj": "1a6f3794d82bd871eae20516874594c14b7d30507014de5c39777b27487d5db7",
     "meshes/obj/end_link_gripper_palm_visual.obj": "1a6f3794d82bd871eae20516874594c14b7d30507014de5c39777b27487d5db7",
@@ -3804,8 +5294,16 @@
     "meshes/obj/front_right_fork_top.obj": "071ebcc3b55f892775c0150605a97ae9965d946f16fdd7e26174e4fbeb86db97",
     "meshes/obj/front_right_knuckle_visual.obj": "55e8958ca130a4930e0c5a12fbc652463da3a91dceb0f57b44394fa5356e9392",
     "meshes/obj/front_right_support_collision.obj": "308c00381efe1173eb8aad8269ba68f1ceb3647e78fbc0db839993c5402d4b0a",
+    "meshes/obj/grasp_guide_rail.obj": "208772475b98334c7688468d488bda6099abed4ca46cc33662559649cedbf9a9",
+    "meshes/obj/grasp_left_carriage.obj": "f488f4c541bb6d3e8c2d14f90c8f7560d043da9200844ccb6665082bc9117ecd",
+    "meshes/obj/grasp_left_finger_support.obj": "a28557d3fd38d42eaf6134462fa7625f115a5acae0b52d1c255cbe97fef44289",
     "meshes/obj/grasp_left_pad.obj": "5737371d8480376e0280462ec1e12b49d53c8c6c3b7bd5fef90f6781cb5c0bca",
+    "meshes/obj/grasp_right_carriage.obj": "f488f4c541bb6d3e8c2d14f90c8f7560d043da9200844ccb6665082bc9117ecd",
+    "meshes/obj/grasp_right_finger_support.obj": "a28557d3fd38d42eaf6134462fa7625f115a5acae0b52d1c255cbe97fef44289",
     "meshes/obj/grasp_right_pad.obj": "5737371d8480376e0280462ec1e12b49d53c8c6c3b7bd5fef90f6781cb5c0bca",
+    "meshes/obj/lidar_housing.obj": "27e275b2997dd17cd54e960b7ab57429bddb8b7962115fc367b1ba20b00f0ae9",
+    "meshes/obj/lidar_mount.obj": "f6745a5f2637eea4b3e82b1f66483486b0cf34bb07e3e08847459904cd495402",
+    "meshes/obj/lidar_scan_head.obj": "f2dc2b59b1c1e83d373b01a5a80dd6bd734f958f65f8b7b08e056792990c8796",
     "meshes/obj/link1_collision_0.obj": "c5dfbbcf12f579d2cc0bda9c521d64e4eaa212d1216a832794b2f0cbb2dc132d",
     "meshes/obj/link1_collision_1.obj": "3b1c5dfb58b3f18e85ef5797e5bc667a53ad332c4dafe6b68647ac3eeecec2a1",
     "meshes/obj/link1_visual_0.obj": "36a0c2c8a662395c7c7c5a9710053ebe568529629da832ef4a9580a1aeb2182e",
@@ -3840,6 +5338,13 @@
     "meshes/obj/reference_link2_joint_cover.obj": "090977a4c89321fbd1270b6b881a9956a379a56098e80695790345ae08f512be",
     "meshes/obj/reference_link2_outer.obj": "b1fa2051a65482b52478b988ee4770ec19ade36142da7157c325119cb364cc7a",
     "meshes/obj/reference_link3_outer.obj": "2873910df50ab436dc6f0bdc40f859f0661e00639941b7a3c5396d461690db3b",
+    "meshes/obj/rgbd_camera_clamp_high.obj": "1ae17dc1ae3b2e5f728e521ed85f6099acba15a239c4ebc5f8a2728a37b4c58d",
+    "meshes/obj/rgbd_camera_clamp_low.obj": "5ed2fd5793a9575d79b27ced34c01491aa47afebd3d6f8e17140fae6a12f03d4",
+    "meshes/obj/rgbd_camera_foot.obj": "a2304560d4b5bf9cb96e880a171b84236fe1791547873c1966dee7b08d782569",
+    "meshes/obj/rgbd_camera_housing.obj": "bac555397914e3ce608c09dc6ef1451074f804eb5f98a134841cab94d9b627e8",
+    "meshes/obj/rgbd_camera_lens.obj": "b100f56a39a2ca93bf260e65b14947bb53a54a6d28bfa4906323f28f8527f84f",
+    "meshes/obj/rgbd_camera_mast.obj": "695f24843ea808b213f02ca1fc686db0137cebd39a11aa76c11190431b2b10de",
+    "meshes/obj/rgbd_camera_mount.obj": "103c857c31fc2eec36334814c4820a25d62a74593e093b1663212756d89a2c80",
     "meshes/obj/rocker_left_collision_0.obj": "70fe6b0a957193f88a8d6d2151768fde8ebcf9c3cc2dcfce4ae2a330a0649670",
     "meshes/obj/rocker_left_collision_1.obj": "f86af8fe64334427d7a08a387a862a1fd0f72d4c7ddc08ac5fa30f5ba04dcb70",
     "meshes/obj/rocker_left_collision_2.obj": "a02fbb4c0d8aea183d7e1861452997effb5f52404692875c052c18d651f374bd",
@@ -3864,6 +5369,47 @@
     "meshes/obj/secondary_link3_collision.obj": "d565e7c5e389d17e9aef32144009053f9ba207c2e9ce91f617e09adca5d7d5cb",
     "meshes/obj/secondary_link3_visual.obj": "d565e7c5e389d17e9aef32144009053f9ba207c2e9ce91f617e09adca5d7d5cb",
     "meshes/obj/secondary_shoulder_joint_visual.obj": "88c72cb6209ddcabc4735d828626cf50e18498ff4507c40df4e88b38717d2323",
+    "meshes/obj/structure_aux_cover_rail.obj": "704e989ddfeb15e5c1162f806ea5f43671cf31342eac05d3aa115bd4705893eb",
+    "meshes/obj/structure_aux_mount.obj": "c868566bd83445b2a6d3ab2e51c8912284d1f5b1c4960544b37b7c36526201f0",
+    "meshes/obj/structure_aux_rail_bracket.obj": "7ea16539ef57c6c94e4ed5c1ce717e3976f91fe720750b31ec3fbe3e98144539",
+    "meshes/obj/structure_core_standoff_0.obj": "98496e5b23b912b895e08f3db6868fb3f769a8b42fffa44ec091e94bbbeb42ed",
+    "meshes/obj/structure_core_standoff_1.obj": "98496e5b23b912b895e08f3db6868fb3f769a8b42fffa44ec091e94bbbeb42ed",
+    "meshes/obj/structure_core_standoff_2.obj": "98496e5b23b912b895e08f3db6868fb3f769a8b42fffa44ec091e94bbbeb42ed",
+    "meshes/obj/structure_core_standoff_3.obj": "98496e5b23b912b895e08f3db6868fb3f769a8b42fffa44ec091e94bbbeb42ed",
+    "meshes/obj/structure_left_backrest_anchor.obj": "8c3817cfbd98806312b8a8d1f2cf332a9252d7f630b4ae4d9318d2921aa7a75c",
+    "meshes/obj/structure_left_footrest_hanger.obj": "2a5fc4012da36a1b81c99eb757edc7f53143cedae4cbd6705fa3d003e06a97f7",
+    "meshes/obj/structure_left_front_axle.obj": "5f5d7d47281031efc962b38e8adcecab3a4e9fae016e0c07a7b8c0c1dcd2ba0c",
+    "meshes/obj/structure_left_front_bridge.obj": "9c910724b89d0bdbcc8b7896a28937dee3f6cbc72a8c43429f5f1c1f4901045b",
+    "meshes/obj/structure_left_front_kingpin.obj": "fdbaf2381bd4c550e9576091020c90ea50b27313acc24f765df1b56e79322991",
+    "meshes/obj/structure_left_front_motor_bracket.obj": "f4e7bfd064b7ccdd708e8fff1f4ca3f742183616b5abc200b29526a22c669246",
+    "meshes/obj/structure_left_front_riser.obj": "746aed01114b66f29c3bd71eed7bea77ee0717ee727f74a6d60192f6a31b6d80",
+    "meshes/obj/structure_left_mid_motor_bracket.obj": "f4e7bfd064b7ccdd708e8fff1f4ca3f742183616b5abc200b29526a22c669246",
+    "meshes/obj/structure_left_middle_axle.obj": "5f5d7d47281031efc962b38e8adcecab3a4e9fae016e0c07a7b8c0c1dcd2ba0c",
+    "meshes/obj/structure_left_middle_bridge.obj": "6974a8ef36e3bc9b03e42349b2bacd7ba4b47bb6c70aecf4cd6266ac019cdcc2",
+    "meshes/obj/structure_left_middle_kingpin.obj": "fdbaf2381bd4c550e9576091020c90ea50b27313acc24f765df1b56e79322991",
+    "meshes/obj/structure_left_middle_riser.obj": "8f42b1732df6090b050fc12b8c64421f0af0773b23fa1192a1e57b512646266d",
+    "meshes/obj/structure_left_rear_axle.obj": "5fff6d0015774f239ea6a5c42ac6ad91834734fba521a7ea59b791cf59c236e0",
+    "meshes/obj/structure_left_rear_motor_bracket.obj": "f4e7bfd064b7ccdd708e8fff1f4ca3f742183616b5abc200b29526a22c669246",
+    "meshes/obj/structure_left_rocker_spindle.obj": "892dfe7808bc07c6223c7aba1cb251e67efd5f0f7476db080c9c7ee456621351",
+    "meshes/obj/structure_left_side_plate_bracket_0.obj": "f7bb0a92520dcbb6e75e04f0ab48d87a324282aecbc143db08181c9e9ff65118",
+    "meshes/obj/structure_left_side_plate_bracket_1.obj": "f7bb0a92520dcbb6e75e04f0ab48d87a324282aecbc143db08181c9e9ff65118",
+    "meshes/obj/structure_main_cover_rail.obj": "cdea1e83ff09e0d71c543e4d40a7fd1b8e8a25fd7141dc80fb885cf313428b8e",
+    "meshes/obj/structure_main_rail_bracket.obj": "2fa7f6a0758d19f000de822ec3852c6c5cbd686f83ac12c21488fdc55a053b6e",
+    "meshes/obj/structure_right_backrest_anchor.obj": "8c3817cfbd98806312b8a8d1f2cf332a9252d7f630b4ae4d9318d2921aa7a75c",
+    "meshes/obj/structure_right_footrest_hanger.obj": "2a5fc4012da36a1b81c99eb757edc7f53143cedae4cbd6705fa3d003e06a97f7",
+    "meshes/obj/structure_right_front_axle.obj": "5f5d7d47281031efc962b38e8adcecab3a4e9fae016e0c07a7b8c0c1dcd2ba0c",
+    "meshes/obj/structure_right_front_bridge.obj": "9c910724b89d0bdbcc8b7896a28937dee3f6cbc72a8c43429f5f1c1f4901045b",
+    "meshes/obj/structure_right_front_kingpin.obj": "fdbaf2381bd4c550e9576091020c90ea50b27313acc24f765df1b56e79322991",
+    "meshes/obj/structure_right_front_motor_bracket.obj": "f4e7bfd064b7ccdd708e8fff1f4ca3f742183616b5abc200b29526a22c669246",
+    "meshes/obj/structure_right_front_riser.obj": "746aed01114b66f29c3bd71eed7bea77ee0717ee727f74a6d60192f6a31b6d80",
+    "meshes/obj/structure_right_mid_motor_bracket.obj": "f4e7bfd064b7ccdd708e8fff1f4ca3f742183616b5abc200b29526a22c669246",
+    "meshes/obj/structure_right_middle_axle.obj": "5f5d7d47281031efc962b38e8adcecab3a4e9fae016e0c07a7b8c0c1dcd2ba0c",
+    "meshes/obj/structure_right_middle_bridge.obj": "6974a8ef36e3bc9b03e42349b2bacd7ba4b47bb6c70aecf4cd6266ac019cdcc2",
+    "meshes/obj/structure_right_middle_kingpin.obj": "fdbaf2381bd4c550e9576091020c90ea50b27313acc24f765df1b56e79322991",
+    "meshes/obj/structure_right_middle_riser.obj": "8f42b1732df6090b050fc12b8c64421f0af0773b23fa1192a1e57b512646266d",
+    "meshes/obj/structure_right_rear_axle.obj": "5fff6d0015774f239ea6a5c42ac6ad91834734fba521a7ea59b791cf59c236e0",
+    "meshes/obj/structure_right_rear_motor_bracket.obj": "f4e7bfd064b7ccdd708e8fff1f4ca3f742183616b5abc200b29526a22c669246",
+    "meshes/obj/structure_right_rocker_spindle.obj": "892dfe7808bc07c6223c7aba1cb251e67efd5f0f7476db080c9c7ee456621351",
     "meshes/obj/wheel_front_left_collision_0.obj": "b07c293702562fe4763636a73e7d8199f7dfa29a6190daa89f2c0e00aeb183e4",
     "meshes/obj/wheel_front_left_visual_0.obj": "b07c293702562fe4763636a73e7d8199f7dfa29a6190daa89f2c0e00aeb183e4",
     "meshes/obj/wheel_front_left_visual_1.obj": "f987543d7b719707720819fb362e7468d23017f68091647a81fc3faecfa2dc35",
@@ -3890,12 +5436,21 @@
     "meshes/obj/wrist3_link_visual_0.obj": "ad44110e3ad8251186673dde59c26d827d9c37b4be0477ca951c2089d75ef5b1",
     "meshes/stl/arm_base_collision_0.stl": "33530f9e606e736ed3755b8419586d98fc13cd61fa0a9a7894d6aadc2455d18b",
     "meshes/stl/arm_base_visual_0.stl": "4709d62c424f572b45276379d06afacd617738a4be825000ee89c05e9fa0d8e8",
+    "meshes/stl/armrest_frame_bridge_left.stl": "b8630fde6956eaaa3e0615dfff2c81614ae0617943e303d73cadb567b2a5497d",
+    "meshes/stl/armrest_frame_bridge_right.stl": "b8630fde6956eaaa3e0615dfff2c81614ae0617943e303d73cadb567b2a5497d",
+    "meshes/stl/armrest_front_post_left.stl": "ff2db622511341b78998dd283d83bc7bb9ef539bf227cb302148375fe6800527",
+    "meshes/stl/armrest_front_post_right.stl": "ff2db622511341b78998dd283d83bc7bb9ef539bf227cb302148375fe6800527",
     "meshes/stl/aux_case_back.stl": "49fe734b37ad332d756cc6323ae42b4745ffaeadd2ba9a67ff527b549a328a7d",
     "meshes/stl/aux_case_cover.stl": "fe1db0b78bceb8ae4548afe03a920e204b479afb71ce0c87449e849d821d345c",
     "meshes/stl/aux_case_floor.stl": "a9ca7c3d349f02eebb48f1f190a7e253fa77650b7af396e125dd64bee5f67c2b",
     "meshes/stl/aux_case_inner.stl": "1a4f17dd23a60f646d86acb955164d65eafee6cc1617e06c473d0cb0c1b80234",
     "meshes/stl/aux_case_outer.stl": "1a4f17dd23a60f646d86acb955164d65eafee6cc1617e06c473d0cb0c1b80234",
+    "meshes/stl/aux_guide_rail.stl": "0ad1902b67f86eb025cc45ae89ca65702648e2584243fab8b658f86da8bb4a01",
+    "meshes/stl/aux_left_carriage.stl": "1a6e01a982c1049343d27c6d357b597e387186a85ec1efb45232550ffeab66e4",
+    "meshes/stl/aux_left_finger_support.stl": "4f32b1282d4cc3e78497e66ea78882c4dea85078187ed6c9043c0167c6bd9c3a",
     "meshes/stl/aux_left_pad.stl": "98f22ec2108e3547b1abc6933f9937aae68c6c06679a3f5a3e19ed2f23d68e08",
+    "meshes/stl/aux_right_carriage.stl": "1a6e01a982c1049343d27c6d357b597e387186a85ec1efb45232550ffeab66e4",
+    "meshes/stl/aux_right_finger_support.stl": "4f32b1282d4cc3e78497e66ea78882c4dea85078187ed6c9043c0167c6bd9c3a",
     "meshes/stl/aux_right_pad.stl": "98f22ec2108e3547b1abc6933f9937aae68c6c06679a3f5a3e19ed2f23d68e08",
     "meshes/stl/base_collision_0.stl": "011cd330a2982fb76707e76de0fb4f437ae7fb213974e30ac660525980a945c6",
     "meshes/stl/base_collision_1.stl": "3ec058749d6cfdb5b7a5331bde3cf7ceca3527a15ab14eb530c573e0eb182831",
@@ -3932,6 +5487,8 @@
     "meshes/stl/controller_box_collision.stl": "e8fa289f48caea48a8ec160fa17cda6844adc73e7f1edf52d22f3461760755a6",
     "meshes/stl/controller_box_panel.stl": "9b586d0601c897daea7cf8981264fc3664aa6dd54f8334d3f026b4196db3121e",
     "meshes/stl/controller_box_visual.stl": "e8fa289f48caea48a8ec160fa17cda6844adc73e7f1edf52d22f3461760755a6",
+    "meshes/stl/electronics_bracket_-0.09.stl": "d40d79a5230890d3632b585e197bbb55fdddb3b00ba4cd0c59395725325fd2d8",
+    "meshes/stl/electronics_bracket_0.05.stl": "d40d79a5230890d3632b585e197bbb55fdddb3b00ba4cd0c59395725325fd2d8",
     "meshes/stl/end_link_collision_0.stl": "379f42dd21d4a192c853d9d197688725b8516e994b068e039ced829f6305dfff",
     "meshes/stl/end_link_collision_gripper_palm.stl": "fa6e4b8b8e40d0a84a555a5874692bb4dae0f48bd1aab29f03a846108643bf16",
     "meshes/stl/end_link_gripper_palm_visual.stl": "fa6e4b8b8e40d0a84a555a5874692bb4dae0f48bd1aab29f03a846108643bf16",
@@ -3950,8 +5507,16 @@
     "meshes/stl/front_right_fork_top.stl": "41092e09545db62b1920d29e58caa4075b1f1e504d92f8afcbb44532b8d705e8",
     "meshes/stl/front_right_knuckle_visual.stl": "ba42791dfdd5471b1c18d286e3eea7ab14549946a655cadfb396486c11e838d4",
     "meshes/stl/front_right_support_collision.stl": "f120966d1aab06c863ee9d3c14a9e194ee1fa7863b606f66a4108acc3e388aab",
+    "meshes/stl/grasp_guide_rail.stl": "0ad1902b67f86eb025cc45ae89ca65702648e2584243fab8b658f86da8bb4a01",
+    "meshes/stl/grasp_left_carriage.stl": "1a6e01a982c1049343d27c6d357b597e387186a85ec1efb45232550ffeab66e4",
+    "meshes/stl/grasp_left_finger_support.stl": "2d36fadf49af210b3e66049188f91cc4eb2adbf934e6c6bc7f9745d1150532de",
     "meshes/stl/grasp_left_pad.stl": "c6c8c392cbed8fc406d47862fcbfeb0d52c0208872c2c312ac16abb7bf87191d",
+    "meshes/stl/grasp_right_carriage.stl": "1a6e01a982c1049343d27c6d357b597e387186a85ec1efb45232550ffeab66e4",
+    "meshes/stl/grasp_right_finger_support.stl": "2d36fadf49af210b3e66049188f91cc4eb2adbf934e6c6bc7f9745d1150532de",
     "meshes/stl/grasp_right_pad.stl": "c6c8c392cbed8fc406d47862fcbfeb0d52c0208872c2c312ac16abb7bf87191d",
+    "meshes/stl/lidar_housing.stl": "66bd13d487909ac7fa6e530a879a604c542aecd434a43fcd39e08370eb5eb238",
+    "meshes/stl/lidar_mount.stl": "44cdb45c03264e212e36782fcc2d14a4a1572d4047c190fab07b725352058fea",
+    "meshes/stl/lidar_scan_head.stl": "417e10ab0629e40473eca9dd0ffda58955af24d009cd94af251cfe659b5219a0",
     "meshes/stl/link1_collision_0.stl": "d36c8d1c6d8e2aebd73918d72c5188e0aacd9c300e1c030bb88696d8e9f993e0",
     "meshes/stl/link1_collision_1.stl": "fa7c0d5d75e2fd9e7bc4dfa0b50d924f67fafef993d61f038c00235ad72b544c",
     "meshes/stl/link1_visual_0.stl": "695f27ed4feac5beb6ef4d0ba07a67b55ad968a9cfe24833b35d20130d5b30b8",
@@ -3986,6 +5551,13 @@
     "meshes/stl/reference_link2_joint_cover.stl": "1ac63318d93b56477db1fb166651b22cb2b15746c8557f7127ee5279e1d28ca4",
     "meshes/stl/reference_link2_outer.stl": "e95dd44275b26e3b65e7630395aa14c06405bd6070eabcf792e9054455309706",
     "meshes/stl/reference_link3_outer.stl": "f318c45bb8410732bfd0f7cd04b8404660c9eb46ad92391c9eb021966f9c598a",
+    "meshes/stl/rgbd_camera_clamp_high.stl": "03b825b84afdee6df7c765ae8dca96007cde6038d9369ecb9c9e05658fd76ffb",
+    "meshes/stl/rgbd_camera_clamp_low.stl": "581d7a48652ec31ae51d0b20c5bc3452bcf9d77204547f41f28fa8613b790ac8",
+    "meshes/stl/rgbd_camera_foot.stl": "6adfdc06abb22ebeb2360f063664a1f56157ba49224a2d94028c14965ed4d78b",
+    "meshes/stl/rgbd_camera_housing.stl": "d06d16a540c6988002eaae8dc8c1f25e71ec86d4aaf740c3bd4134807fbebabb",
+    "meshes/stl/rgbd_camera_lens.stl": "8b00238d4f08da3ee51837772f7416ead2c7a153ca9428c15ca51847358c6d7a",
+    "meshes/stl/rgbd_camera_mast.stl": "0df703a8fe351a095316f365499303a91737145307c92e8a2e77a8aa404b2c25",
+    "meshes/stl/rgbd_camera_mount.stl": "a18198eece8bf2484bdfbda1df6ef3970ba3f2b1d5403992048f2e41ed8f59b1",
     "meshes/stl/rocker_left_collision_0.stl": "12fef39aaa8735889d60bb31291afb88bb117d952d436a770b50467ff4f6ea16",
     "meshes/stl/rocker_left_collision_1.stl": "cc4ad751cd5b4fcd2fca88fd99e31d3b11ab17636f90e0a2e8c6ac1f5e043338",
     "meshes/stl/rocker_left_collision_2.stl": "b6233df44386efbfc74e9be3f60c0175c509b7692cae39db505f35ea1d044503",
@@ -4010,6 +5582,47 @@
     "meshes/stl/secondary_link3_collision.stl": "c4a1dd195dc6fbd5064e7ce47ba9408e0856a17085af4440db2567fe3e528ace",
     "meshes/stl/secondary_link3_visual.stl": "c4a1dd195dc6fbd5064e7ce47ba9408e0856a17085af4440db2567fe3e528ace",
     "meshes/stl/secondary_shoulder_joint_visual.stl": "00b561e380a4799c77bc68cf4e05a85a77a45fff95a09dbb725f4d12faa36a0a",
+    "meshes/stl/structure_aux_cover_rail.stl": "6e5f03190845092199eac6a8c6ca62ca035e1f60496d39d3b013f95d96e640cc",
+    "meshes/stl/structure_aux_mount.stl": "70904147fb5e6bfc825c1826bcf1180e26c698409092e6d6b715e8b0ea0aea6c",
+    "meshes/stl/structure_aux_rail_bracket.stl": "8408c5a212a0312827f3ccbf35ee647a7291085c449bccef0297f4a8117cec00",
+    "meshes/stl/structure_core_standoff_0.stl": "3151a14511bb462202d12099a84805423deb5acd5f70ecb4ca07d6b7e2efdafe",
+    "meshes/stl/structure_core_standoff_1.stl": "3151a14511bb462202d12099a84805423deb5acd5f70ecb4ca07d6b7e2efdafe",
+    "meshes/stl/structure_core_standoff_2.stl": "3151a14511bb462202d12099a84805423deb5acd5f70ecb4ca07d6b7e2efdafe",
+    "meshes/stl/structure_core_standoff_3.stl": "3151a14511bb462202d12099a84805423deb5acd5f70ecb4ca07d6b7e2efdafe",
+    "meshes/stl/structure_left_backrest_anchor.stl": "ff2c65252504e64d7c830ba520a553f146cccbebed82a46d76c8f1fea4b5ac4c",
+    "meshes/stl/structure_left_footrest_hanger.stl": "c793996d3f089dd51bf9447ef161a35f65d04d1e8ac659149498a08cf8f73971",
+    "meshes/stl/structure_left_front_axle.stl": "274ba8f94cbc443d9578d1b8eb258fb95c7e646b04582c150a0be1411edaba16",
+    "meshes/stl/structure_left_front_bridge.stl": "cd358205666bf5fcf71be0b19c3c685e07601a258fa90b6dd2cc835946665172",
+    "meshes/stl/structure_left_front_kingpin.stl": "a3b7131346b00aa92fa1683040754cf9858b9bbdbc817d3cbec00902b9778ff5",
+    "meshes/stl/structure_left_front_motor_bracket.stl": "b455df909af790b29e8374b11d6e9fcbd67f3ad7428cb9e7f7156a100625e35e",
+    "meshes/stl/structure_left_front_riser.stl": "ff283eec82be041c957259c7a48c0b5910ec2c0eeb35f75abbbd216c01c76eeb",
+    "meshes/stl/structure_left_mid_motor_bracket.stl": "b455df909af790b29e8374b11d6e9fcbd67f3ad7428cb9e7f7156a100625e35e",
+    "meshes/stl/structure_left_middle_axle.stl": "274ba8f94cbc443d9578d1b8eb258fb95c7e646b04582c150a0be1411edaba16",
+    "meshes/stl/structure_left_middle_bridge.stl": "e17e9d4e01d022798a8eee50a1b79162f7e8180f4384663227e3a22458533fa5",
+    "meshes/stl/structure_left_middle_kingpin.stl": "a3b7131346b00aa92fa1683040754cf9858b9bbdbc817d3cbec00902b9778ff5",
+    "meshes/stl/structure_left_middle_riser.stl": "37059579fc63aaf2bab308e5acbf4778be9cb24fb5247882e498abbd7510730b",
+    "meshes/stl/structure_left_rear_axle.stl": "70ea75cb05602be5d19181c8200e9dbaed832370db7cb7e9e286a0bb823b6fc3",
+    "meshes/stl/structure_left_rear_motor_bracket.stl": "b455df909af790b29e8374b11d6e9fcbd67f3ad7428cb9e7f7156a100625e35e",
+    "meshes/stl/structure_left_rocker_spindle.stl": "6489e05b54e7940d5e499927ba6778d6f63fd7757b8302a8e8ccba9f6d51335a",
+    "meshes/stl/structure_left_side_plate_bracket_0.stl": "25754e5bfd259ea619335ae668e3d25235ac5e6317cc07f414e7e331801eb20e",
+    "meshes/stl/structure_left_side_plate_bracket_1.stl": "25754e5bfd259ea619335ae668e3d25235ac5e6317cc07f414e7e331801eb20e",
+    "meshes/stl/structure_main_cover_rail.stl": "35b518eee60d3634ffdfd13117873e5a0b29aa50129759b23911a73c631ece72",
+    "meshes/stl/structure_main_rail_bracket.stl": "4712d058ef224ecacd91bd37a0e6af47752cea73bde106374b92870522461638",
+    "meshes/stl/structure_right_backrest_anchor.stl": "ff2c65252504e64d7c830ba520a553f146cccbebed82a46d76c8f1fea4b5ac4c",
+    "meshes/stl/structure_right_footrest_hanger.stl": "c793996d3f089dd51bf9447ef161a35f65d04d1e8ac659149498a08cf8f73971",
+    "meshes/stl/structure_right_front_axle.stl": "274ba8f94cbc443d9578d1b8eb258fb95c7e646b04582c150a0be1411edaba16",
+    "meshes/stl/structure_right_front_bridge.stl": "cd358205666bf5fcf71be0b19c3c685e07601a258fa90b6dd2cc835946665172",
+    "meshes/stl/structure_right_front_kingpin.stl": "a3b7131346b00aa92fa1683040754cf9858b9bbdbc817d3cbec00902b9778ff5",
+    "meshes/stl/structure_right_front_motor_bracket.stl": "b455df909af790b29e8374b11d6e9fcbd67f3ad7428cb9e7f7156a100625e35e",
+    "meshes/stl/structure_right_front_riser.stl": "ff283eec82be041c957259c7a48c0b5910ec2c0eeb35f75abbbd216c01c76eeb",
+    "meshes/stl/structure_right_mid_motor_bracket.stl": "b455df909af790b29e8374b11d6e9fcbd67f3ad7428cb9e7f7156a100625e35e",
+    "meshes/stl/structure_right_middle_axle.stl": "274ba8f94cbc443d9578d1b8eb258fb95c7e646b04582c150a0be1411edaba16",
+    "meshes/stl/structure_right_middle_bridge.stl": "e17e9d4e01d022798a8eee50a1b79162f7e8180f4384663227e3a22458533fa5",
+    "meshes/stl/structure_right_middle_kingpin.stl": "a3b7131346b00aa92fa1683040754cf9858b9bbdbc817d3cbec00902b9778ff5",
+    "meshes/stl/structure_right_middle_riser.stl": "37059579fc63aaf2bab308e5acbf4778be9cb24fb5247882e498abbd7510730b",
+    "meshes/stl/structure_right_rear_axle.stl": "70ea75cb05602be5d19181c8200e9dbaed832370db7cb7e9e286a0bb823b6fc3",
+    "meshes/stl/structure_right_rear_motor_bracket.stl": "b455df909af790b29e8374b11d6e9fcbd67f3ad7428cb9e7f7156a100625e35e",
+    "meshes/stl/structure_right_rocker_spindle.stl": "6489e05b54e7940d5e499927ba6778d6f63fd7757b8302a8e8ccba9f6d51335a",
     "meshes/stl/wheel_front_left_collision_0.stl": "8f9fda125083c2fec66f5252955d705745754b2c2d597021d9e67394e44cb732",
     "meshes/stl/wheel_front_left_visual_0.stl": "8f9fda125083c2fec66f5252955d705745754b2c2d597021d9e67394e44cb732",
     "meshes/stl/wheel_front_left_visual_1.stl": "57b09dacb732bb1bedb91f2077dda341a8888eaace73271c790504b5c4bea4db",
@@ -4034,8 +5647,8 @@
     "meshes/stl/wrist2_link_visual_0.stl": "8c3442fa89b23b00773c51489fc1ba44afc041736a3163cb5ab50d204bc5af37",
     "meshes/stl/wrist3_link_collision_0.stl": "18e36243d80d6ee48b7153b9f764e72d9831a8a4b1a7c95cde50ba63c7b55e31",
     "meshes/stl/wrist3_link_visual_0.stl": "18e36243d80d6ee48b7153b9f764e72d9831a8a4b1a7c95cde50ba63c7b55e31",
-    "mjcf/wheelchair_robot.xml": "a19a0213187ff877695ae2b9954607e8775767cae177c36b678dd5794dbe7c6f",
-    "mjcf/wheelchair_scene.xml": "4c75ec126a6b6a16cd62f8d2fcad22db1f15c7a7bf07173385b4f1882114b470",
-    "urdf/wheelchair.urdf": "29a524507d54d9c6daf221d3393e4ec3a8b99857f59935b41e6a4b525defe63f"
+    "mjcf/wheelchair_robot.xml": "9b9473e6181697d68437f60fbb166dfeecf3a40addeb59f3f1a4f5a08d6df3f8",
+    "mjcf/wheelchair_scene.xml": "fb8ee3bcd6ef97337660767c5660ca76ae5fc07a665f3598c6554c7e60d2b68f",
+    "urdf/wheelchair.urdf": "33d4b889fc4969af983b1f92bb564278d54a021286edfd88861c9b440e7f2876"
   }
 }

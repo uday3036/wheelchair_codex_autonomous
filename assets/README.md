@@ -5,6 +5,11 @@ meshes live together under `assets/`, while Python algorithms remain in `src/`
 and executable tools in `scripts/`. Existing notebook and simulation paths are
 preserved. Do not edit generated descriptions independently of their source.
 
+The generated robot includes visible, non-colliding RGB-D camera and 2D LiDAR
+housings. Their geometry is registered to the same named MuJoCo sites used by
+online sensing. The URDF shows these housings but does not implement camera or
+LiDAR drivers by itself.
+
 ```text
 assets/
   mjcf/

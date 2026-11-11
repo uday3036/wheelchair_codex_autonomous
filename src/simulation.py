@@ -140,7 +140,8 @@ def caster_measurement(model, state):
 def simulate(scenario="left", original_contacts=False, seconds=6., rocker_stiffness=None,
              steering_mode="shared", feedback_mode="pd", caster_yaw=(0., 0.),
              protocol="standard", speed_scale=1., caster_outboard_offset=0., clearance_geometry=False,
-             caster_resistance="baseline", alignment_steer_deg=0., caster_tire_half_width=None):
+             caster_resistance="baseline", alignment_steer_deg=0., caster_tire_half_width=None,
+             simple_frame=False):
     if scenario not in SCENARIOS:
         raise ValueError("Unknown scenario")
     if not np.isfinite(seconds) or seconds <= 0:
@@ -156,7 +157,7 @@ def simulate(scenario="left", original_contacts=False, seconds=6., rocker_stiffn
     if alignment_steer_deg and protocol != "caster":
         raise ValueError("Alignment maneuver is defined only for the long caster protocol")
     model = load_model(original_contacts, rocker_stiffness, caster_outboard_offset, clearance_geometry,
-                       caster_resistance, caster_tire_half_width)
+                       caster_resistance, caster_tire_half_width, simple_frame=simple_frame)
     state, indices = initialize(model)
     caster_yaw = np.asarray(caster_yaw, dtype=float)
     if caster_yaw.shape != (2,) or not np.isfinite(caster_yaw).all():
@@ -272,7 +273,9 @@ def simulate(scenario="left", original_contacts=False, seconds=6., rocker_stiffn
                                         turn_yaw < -1. if scenario in ("right", "reverse_left") else
                                         np.max(np.abs(np.rad2deg(log[:, 4]))) < .5)
     metrics = {"scenario": scenario, "original_contacts": original_contacts,
-               "rocker_stiffness_Nm_rad": float(model.jnt_stiffness[model.joint("rocker_pivot_left").id]),
+               "rocker_stiffness_Nm_rad": (None if simple_frame else
+                                           float(model.jnt_stiffness[model.joint("rocker_pivot_left").id])),
+               "simple_frame": bool(simple_frame),
                "peak_tilt_deg": float(np.rad2deg(peak_tilt)), "height_range_m": height_range,
                "duration_s": float(state.time), "peak_arm_error_norm_deg": peak_arm.tolist(),
                "max_joint_limit_excess_deg": float(np.rad2deg(max_limit_excess)),

@@ -134,7 +134,7 @@ def main(argv=None):
         if mujoco.mj_name2id(recording.model,mujoco.mjtObj.mjOBJ_GEOM,'approach_box') >= 0:
             viewer.cam.lookat[:] = [-1.8,0.,.5]
             viewer.cam.distance,viewer.cam.elevation = 6.5,-40.
-        viewer.opt.geomgroup[4:6] = 1
+        viewer.opt.geomgroup[3:6] = 1
         viewer.opt.geomgroup[2] = 0
         print("SPACE pause/resume | R restart | 1 half speed | 2 normal | 3 double speed. "
               "Drag to rotate, scroll to zoom. Close the window to exit.",flush=True)

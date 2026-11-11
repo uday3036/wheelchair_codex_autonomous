@@ -37,7 +37,7 @@ def ray_sensor(model, state, origin, directions, groups, max_range=5.):
 def camera_observation(model, state, refs, width=160, height=100, pitch=.21, max_range=5.):
     """Ideal pinhole color/depth, calibrated to the chassis; physical occlusion."""
     R = state.xmat[refs['body']].reshape(3, 3)
-    origin = state.xpos[refs['body']]+R@np.array([.15, 0., .90])
+    origin = state.site_xpos[model.site('rgbd_sensor_origin').id].copy()
     # Optical forward pitched down 12 degrees, horizontal FOV 64 degrees.
     forward = R@np.array([np.cos(pitch), 0., -np.sin(pitch)])
     right = R@np.array([0., -1., 0.])
@@ -79,15 +79,15 @@ class SensorNoise:
         return result
 
 
-def observe_bottle(model,state,refs,pitch=.21,noise=None,resolution=(160,100),max_range=5.):
+def observe_bottle(model,state,refs,pitch=.21,noise=None,resolution=(160,100),max_range=5.,color='blue'):
     """Use only sensor samples; repeated fits reduce noisy partial-arc bias."""
     raw=camera_observation(model,state,refs,pitch=pitch,width=resolution[0],height=resolution[1],max_range=max_range)
     if noise is None:
-        return raw,detect_bottle(raw)
+        return raw,detect_bottle(raw,color=color)
     detections=[]
     for _ in range(5):
         raw=noise.apply(camera_observation(model,state,refs,pitch=pitch,width=resolution[0],height=resolution[1],max_range=max_range))
-        detected=detect_bottle(raw,refine=True)
+        detected=detect_bottle(raw,refine=True,color=color)
         if detected is not None: detections.append(detected)
     if len(detections)<3: return raw,None
     position=np.median([d['position'] for d in detections],axis=0)
@@ -97,8 +97,17 @@ def observe_bottle(model,state,refs,pitch=.21,noise=None,resolution=(160,100),ma
     return raw,result
 
 
-def detect_bottle(observation,refine=False):
-    """Fit known 28 mm radius vertical blue cylinder from RGB-D surface points.
+BOTTLE_MASKS = {
+    # Surface-colour tests on the measured RGB (alpha is not seen). Chosen so that no other scene colour
+    # (brown table, green-grey bin, orange obstacles and pads, green recipient pad) passes them.
+    'blue': lambda c: (c[:, 2] > .75) & (c[:, 1] > .4) & (c[:, 0] < .2),
+    'red': lambda c: (c[:, 0] > .75) & (c[:, 1] < .25) & (c[:, 2] < .25),
+    'green': lambda c: (c[:, 1] > .6) & (c[:, 0] < .25) & (c[:, 2] < .35),
+}
+
+
+def detect_bottle(observation,refine=False,color='blue'):
+    """Fit known 28 mm radius vertical coloured cylinder (red, green or blue) from RGB-D surface points.
 
     Brown horizontal tabletop evidence is required beneath the candidate.
     This recognizes the simulated bottle class; arbitrary real bottles excluded.
@@ -106,7 +115,9 @@ def detect_bottle(observation,refine=False):
     rgb = observation['rgb'].reshape(-1, 3)
     xyz = observation['points'].reshape(-1, 3)
     finite = np.isfinite(xyz).all(axis=1)
-    blue = finite & (rgb[:, 2] > .75) & (rgb[:, 1] > .4) & (rgb[:, 0] < .2)
+    if color not in BOTTLE_MASKS:
+        raise ValueError('Unknown bottle colour')
+    blue = finite & BOTTLE_MASKS[color](rgb)
     blue &= (xyz[:, 2] > .805) & (xyz[:, 2] < .955)
     p = xyz[blue]
     if len(p) < 8:
@@ -143,17 +154,23 @@ class DockingCorridor:
     Bounded forward corridor, not a general nonholonomic global planner.
     Every sampled reference must remain in observed/inflated free space.
     """
-    def __init__(self,start,goal,heading,grid):
+    def __init__(self,start,goal,heading,grid,max_lateral=.08,max_curvature=.45):
+        # max_lateral defaults to the originally validated 0.08 m; the three-bottle task allows more, but
+        # only while the planned path stays gentle (peak curvature below max_curvature, checked below).
         self.x0=float(start[0]);distance=float(goal[0]-start[0])
-        if distance<.8 or abs(goal[1]-start[1])>.08 or abs(heading)>.08:
+        if distance<.8 or abs(goal[1]-start[1])>max_lateral or abs(heading)>.08:
             raise ValueError('Outside the validated forward docking corridor')
         # Finish lateral alignment before the last 0.30 m straight settling
         # section: passive caster/tire dynamics lag the geometric reference.
-        self.length=distance-.30
+        # Larger sideways moves leave the passive casters more to settle: lengthen the final straight section.
+        settle=min(1.5,.30+6.5*max(0.,abs(goal[1]-start[1])-.08))
+        self.length=distance-settle
         self.coeff=np.zeros(6);self.coeff[0]=start[1];self.coeff[1]=self.length*np.tan(heading)
         self.coeff[3:]=np.linalg.solve(np.array([[1,1,1],[3,4,5],[6,12,20]],float),
                                       [goal[1]-sum(self.coeff[:3]),-self.coeff[1],0.])
         blocked=grid.inflated()
+        if abs(goal[1]-start[1])>.08 and max(abs(self.reference(x)[2]) for x in np.linspace(start[0],goal[0],160))>max_curvature:
+            raise ValueError('Outside the validated forward docking corridor: lateral alignment too sharp for this distance')
         for x in np.linspace(start[0],goal[0],160):
             y,_,_=self.reference(x);index=grid.index([x,y])
             if not grid.inside(index) or blocked[index]:
@@ -175,7 +192,7 @@ class DockingCorridor:
 
 def lidar_observation(model, state, refs, max_range=5., rays=720):
     R = state.xmat[refs['body']].reshape(3, 3)
-    origin = state.xpos[refs['body']]+R@np.array([.15, 0., .1])
+    origin = state.site_xpos[model.site('lidar_sensor_origin').id].copy()
     angles = np.linspace(-np.pi, np.pi, rays, endpoint=False)
     directions = np.einsum('ij,kj->ik', np.c_[np.cos(angles), np.sin(angles), np.zeros(len(angles))], R)
     ranges, _ = ray_sensor(model, state, origin, directions, [0, 0, 0, 0, 1, 0],max_range=max_range)
@@ -202,17 +219,34 @@ class OccupancyGrid:
         return self.low+(np.asarray(ij)+.5)*self.resolution
 
     def update(self, origin, directions, ranges, max_range=5.):
-        for direction, distance in zip(directions, ranges):
-            hit = np.isfinite(distance)
-            length = min(distance, max_range) if hit else max_range
-            for t in np.arange(0., max(0., length-.02), self.resolution/2):
-                cell = self.index(origin+direction*t)
-                if self.inside(cell) and self.cells[cell] != 1:
-                    self.cells[cell] = 0
-            if hit:
-                cell = self.index(origin+direction*distance)
-                if self.inside(cell):
-                    self.cells[cell] = 1
+        """Ray-trace free space and mark hit cells (vectorised; identical result to the
+        per-cell loop it replaced, which froze the live display for ~1 s per scan).
+
+        The outcome does not depend on ray order: previously occupied cells stay
+        occupied, every hit cell becomes occupied, and any other cell a ray passes
+        through becomes free.  Samples are spaced resolution/2 along each ray and stop
+        2 cm short of the hit, exactly as ``np.arange(0, length-.02, resolution/2)``.
+        """
+        origin = np.asarray(origin, float)
+        directions = np.asarray(directions, float).reshape(-1, 2)
+        ranges = np.asarray(ranges, float)
+        hit = np.isfinite(ranges)
+        length = np.where(hit, np.minimum(ranges, max_range), max_range)
+        step = self.resolution/2
+        counts = np.ceil(np.maximum(0., length-.02)/step).astype(int)
+        ray = np.repeat(np.arange(len(counts)), counts)
+        along = np.arange(len(ray))-np.repeat(np.cumsum(counts)-counts, counts)
+        free = np.floor((origin+directions[ray]*(along*step)[:, None]-self.low)/self.resolution).astype(int)
+        free = free[self._inside(free)]
+        hits = np.floor((origin+directions[hit]*ranges[hit][:, None]-self.low)/self.resolution).astype(int)
+        hits = hits[self._inside(hits)]
+        passed = np.zeros(self.shape, bool)
+        passed[free[:, 0], free[:, 1]] = True
+        self.cells[passed & (self.cells != 1)] = 0
+        self.cells[hits[:, 0], hits[:, 1]] = 1
+
+    def _inside(self, cells):
+        return ((cells >= 0) & (cells < np.array(self.shape))).all(axis=1)
 
     def inflated(self, radius=.57):
         occupied = self.cells == 1

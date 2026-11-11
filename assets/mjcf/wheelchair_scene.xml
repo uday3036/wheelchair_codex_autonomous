@@ -62,8 +62,43 @@
       <geom name="controller_box_panel" size="0.080000000000000002 0.0030000000000000001 0.065000000000000002" pos="-0.02 -0.36699999999999999 0.14999999999999999" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
       <geom name="controller_led_green" size="0.0060000000000000001" pos="-0.089999999999999997 -0.371 0.17499999999999999" contype="0" conaffinity="0" group="1" rgba="0 0 0 0" quat="1 0 0 0" />
       <geom name="controller_led_blue" size="0.0060000000000000001" pos="-0.089999999999999997 -0.371 0.14499999999999999" contype="0" conaffinity="0" group="1" rgba="0 0 0 0" quat="1 0 0 0" />
+      <geom name="rgbd_camera_foot" size="0.012 0.065000000000000002" pos="-0.16999999999999998 0 0.044999999999999998" quat="0.70710678118654757 0 -0.70710678118654746 0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.1 0.14 0.18 1" />
+      <geom name="rgbd_camera_mast" size="0.012 0.51100000000000001" pos="-0.23499999999999999 0 0.55599999999999994" quat="6.123233995736766e-17 1 0 0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.1 0.14 0.18 1" />
+      <geom name="rgbd_camera_clamp_low" size="0.0080000000000000002 0.0315" pos="-0.20349999999999999 0 0.40000000000000002" quat="0.70710678118654757 0 0.70710678118654746 0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.1 0.14 0.18 1" />
+      <geom name="rgbd_camera_clamp_high" size="0.0080000000000000002 0.025499999999999995" pos="-0.20949999999999999 0 0.47999999999999998" quat="0.70710678118654757 0 0.70710678118654746 0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.1 0.14 0.18 1" />
+      <geom name="rgbd_camera_mount" size="0.012 0.022499999999999992" pos="-0.21249999999999999 0 1.0669999999999999" quat="0.70710678118654757 0 -0.70710678118654746 0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.1 0.14 0.18 1" />
+      <geom name="rgbd_camera_housing" size="0.044999999999999998 0.055 0.032000000000000001" pos="-0.184 0 1.0669999999999999" quat="0.9944925627484974 0 0.10480716882888248 0" type="box" contype="0" conaffinity="0" group="3" mass="0" rgba="0.1 0.14 0.18 1" />
+      <geom name="rgbd_camera_lens" size="0.017999999999999999 0.01068877916321595" pos="-0.14450000000000002 0 1.0590000000000002" quat="0.77042589127377636 0 -0.637529564847786 0" type="cylinder" contype="0" conaffinity="0" group="3" mass="0" rgba="0.08 0.55 0.82 1" />
+      <geom name="lidar_mount" size="0.050000000000000003 0.040000000000000001 0.012" pos="0.45500000000000002 0 -0.25600000000000001" type="box" contype="0" conaffinity="0" group="3" mass="0" rgba="0.1 0.14 0.18 1" quat="1 0 0 0" />
+      <geom name="lidar_housing" size="0.055 0.025000000000000001" pos="0.45500000000000002 0 -0.29999999999999999" type="cylinder" contype="0" conaffinity="0" group="3" mass="0" rgba="0.1 0.14 0.18 1" quat="1 0 0 0" />
+      <geom name="lidar_scan_head" size="0.044999999999999998 0.0060000000000000001" pos="0.45500000000000002 0 -0.27199999999999996" type="cylinder" contype="0" conaffinity="0" group="3" mass="0" rgba="0.1 0.72 0.7 1" quat="1 0 0 0" />
+      <geom name="electronics_bracket_-0.09" size="0.014999999999999999 0.059999999999999998 0.014999999999999999" pos="-0.089999999999999997 -0.23999999999999999 0.065000000000000002" type="box" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+      <geom name="electronics_bracket_0.05" size="0.014999999999999999 0.059999999999999998 0.014999999999999999" pos="0.050000000000000003 -0.23999999999999999 0.065000000000000002" type="box" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+      <geom name="armrest_frame_bridge_right" size="0.025000000000000001 0.029999999999999999 0.014999999999999999" pos="0.070000000000000007 -0.20000000000000001 0.12" type="box" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+      <geom name="armrest_front_post_right" size="0.012 0.012 0.095000000000000001" pos="0.070000000000000007 -0.215 0.215" type="box" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+      <geom name="armrest_frame_bridge_left" size="0.025000000000000001 0.029999999999999999 0.014999999999999999" pos="0.070000000000000007 0.20000000000000001 0.12" type="box" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+      <geom name="armrest_front_post_left" size="0.012 0.012 0.095000000000000001" pos="0.070000000000000007 0.215 0.215" type="box" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
       <geom name="passenger_keepout" size="0.17999999999999999 0.14000000000000001 0.25" pos="0.02 0 0.34999999999999998" type="box" contype="0" conaffinity="0" group="2" rgba="1 0.2 0.2 0.08" quat="1 0 0 0" />
       <geom name="passenger_head_keepout" size="0.16 0.13 0.20000000000000001" pos="0.02 0 0.79999999999999993" type="box" contype="0" conaffinity="0" group="2" rgba="1 0.2 0.2 0.08" quat="1 0 0 0" />
+      <geom name="structure_core_standoff_0" size="0.017999999999999999 0.017999999999999999 0.017500000000000002" pos="-0.059999999999999998 -0.14000000000000001 -0.0050000000000000001" type="box" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+      <geom name="structure_core_standoff_1" size="0.017999999999999999 0.017999999999999999 0.017500000000000002" pos="-0.059999999999999998 0.14000000000000001 -0.0050000000000000001" type="box" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+      <geom name="structure_core_standoff_2" size="0.017999999999999999 0.017999999999999999 0.017500000000000002" pos="0.10000000000000001 -0.14000000000000001 -0.0050000000000000001" type="box" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+      <geom name="structure_core_standoff_3" size="0.017999999999999999 0.017999999999999999 0.017500000000000002" pos="0.10000000000000001 0.14000000000000001 -0.0050000000000000001" type="box" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+      <geom name="structure_left_footrest_hanger" size="0.021999999999999999 0.016 0.0080000000000000002" pos="0.13500000000000001 0.17000000000000001 0.0060000000000000001" type="box" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+      <geom name="structure_right_footrest_hanger" size="0.021999999999999999 0.016 0.0080000000000000002" pos="0.13500000000000001 -0.17000000000000001 0.0060000000000000001" type="box" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+      <geom name="structure_left_side_plate_bracket_0" size="0.02 0.017500000000000002 0.02" pos="-0.070000000000000007 0.20250000000000001 -0.12" type="box" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+      <geom name="structure_left_side_plate_bracket_1" size="0.02 0.017500000000000002 0.02" pos="-0.070000000000000007 0.20250000000000001 -0.040000000000000001" type="box" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+      <geom name="structure_left_rocker_spindle" size="0.017999999999999999 0.069999999999999993" pos="0.02 0.22999999999999998 0" quat="0.70710678118654757 0.70710678118654746 0 -0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
+      <geom name="structure_left_backrest_anchor" size="0.012 0.042573465914816006" pos="-0.13 0.17749999999999999 0.08249999999999999" quat="0.24410005195405524 0.84197883279775299 0.48113076159871637 -0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
+      <geom name="structure_right_rocker_spindle" size="0.017999999999999999 0.069999999999999993" pos="0.02 -0.22999999999999998 0" quat="0.70710678118654757 -0.70710678118654746 0 0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
+      <geom name="structure_right_backrest_anchor" size="0.012 0.042573465914816006" pos="-0.13 -0.17749999999999999 0.08249999999999999" quat="0.24410005195405524 -0.84197883279775299 0.48113076159871637 0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
+      <geom name="structure_aux_mount" size="0.021999999999999999 0.049244289008980521" pos="0.14000000000000001 0.21500000000000002 0.10000000000000001" quat="0.70710678118654757 0.64616234275596429 -0.28718326344709527 0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
+      <geom name="structure_main_cover_rail" size="0.0080000000000000002 0.38500000000000001" pos="-0.065000000000000002 0.45000000000000001 0.14000000000000001" quat="0.70710678118654757 0 -0.70710678118654746 0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
+      <geom name="structure_main_rail_bracket" size="0.01 0.13152946437965907" pos="0.02 0.32000000000000001 0.12000000000000001" quat="0.65113086846887347 0.75896547492423561 0 -0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
+      <geom name="structure_aux_cover_rail" size="0.0080000000000000002 0.315" pos="0.085000000000000006 0.32300000000000001 0.26000000000000001" quat="0.70710678118654757 0 -0.70710678118654746 0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
+      <geom name="structure_aux_rail_bracket" size="0.01 0.10403004373737425" pos="0.02 0.25650000000000001 0.17999999999999999" quat="0.33984657095936238 0.94048089199470875 0 -0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
+      <site name="rgbd_sensor_origin" pos="-0.15 0 1.06" size="0.004" group="3" rgba="0 0 0 0" />
+      <site name="lidar_sensor_origin" pos="0.455 0 -0.3" size="0.004" group="3" rgba="0 0 0 0" />
       <body name="rocker_left" pos="0.02 0.28000000000000003 0" quat="1 0 0 0">
         <inertial pos="-0.14999999999999999 0 -0.10000000000000001" quat="1 0 0 0" mass="3" diaginertia="0.029999999999999999 0.080000000000000002 0.080000000000000002" />
         <joint name="rocker_pivot_left" pos="0 0 0" axis="0 1 0" stiffness="120" range="-0.5 0.5" armature="0.02" damping="6" frictionloss="0.5" />
@@ -73,6 +108,8 @@
         <geom name="rocker_left_collision_1" size="0.18775 0.025000000000000001 0.025000000000000001" pos="-0.28499999999999998 0 -0.14000000000000001" quat="0.91276243979621086 0 -0.40849079365056512 0" type="box" group="3" rgba="0.12 0.12 0.13 0" />
         <geom name="rocker_left_visual_2" size="0.063500000000000001 0.025000000000000001 0.025000000000000001" pos="0.16500000000000001 0 -0.044999999999999998" quat="0.92387918109221301 0 0.38268428076468186 0" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" />
         <geom name="rocker_left_collision_2" size="0.063500000000000001 0.025000000000000001 0.025000000000000001" pos="0.16500000000000001 0 -0.044999999999999998" quat="0.92387918109221301 0 0.38268428076468186 0" type="box" group="3" rgba="0.12 0.12 0.13 0" />
+        <geom name="structure_left_rear_axle" size="0.016 0.070000000000000007" pos="-0.40999999999999998 0.070000000000000007 -0.28000000000000003" quat="0.70710678118654757 0.70710678118654746 0 -0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
+        <geom name="structure_left_rear_motor_bracket" size="0.014999999999999999 0.025000000000000001" pos="-0.40999999999999998 0.025000000000000001 -0.28000000000000003" quat="0.70710678118654757 0.70710678118654746 0 -0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
         <body name="bogie_left" pos="0.20999999999999999 0 -0.089999999999999997" quat="1 0 0 0">
           <inertial pos="0 0 -0.095000000000000001" quat="1 0 0 0" mass="3" diaginertia="0.029999999999999999 0.040000000000000001 0.040000000000000001" />
           <joint name="bogie_pivot_left" pos="0 0 0" axis="0 1 0" stiffness="28" range="-0.5 0.5" armature="0.02" damping="4" frictionloss="0.5" />
@@ -80,6 +117,12 @@
           <geom name="bogie_left_collision_0" size="0.14915 0.025000000000000001 0.025000000000000001" pos="-0.115 0 -0.095000000000000001" quat="0.94099087402947401 0 -0.33843193553984607 0" type="box" group="3" rgba="0.12 0.12 0.13 0" />
           <geom name="bogie_left_visual_1" size="0.13794999999999999 0.025000000000000001 0.025000000000000001" pos="0.10000000000000001 0 -0.095000000000000001" quat="0.92884997972041217 0 0.37045609074948388 0" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" />
           <geom name="bogie_left_collision_1" size="0.13794999999999999 0.025000000000000001 0.025000000000000001" pos="0.10000000000000001 0 -0.095000000000000001" quat="0.92884997972041217 0 0.37045609074948388 0" type="box" group="3" rgba="0.12 0.12 0.13 0" />
+          <geom name="structure_left_front_riser" size="0.016 0.077499999999999999" pos="0.20000000000000001 0 -0.097499999999999989" quat="6.123233995736766e-17 1 0 0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
+          <geom name="structure_left_front_bridge" size="0.016 0.085000000000000006" pos="0.20000000000000001 0.085000000000000006 -0.02" quat="0.70710678118654757 0.70710678118654746 0 -0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
+          <geom name="structure_left_middle_riser" size="0.016 0.065000000000000002" pos="-0.185 0 -0.084999999999999992" quat="6.123233995736766e-17 1 0 0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
+          <geom name="structure_left_middle_bridge" size="0.016 0.105" pos="-0.185 0.105 -0.02" quat="0.70710678118654757 0.70710678118654746 0 -0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
+          <geom name="structure_left_front_motor_bracket" size="0.014999999999999999 0.025000000000000001" pos="0.20000000000000001 0.025000000000000001 -0.19" quat="0.70710678118654757 0.70710678118654746 0 -0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
+          <geom name="structure_left_mid_motor_bracket" size="0.014999999999999999 0.025000000000000001" pos="-0.23000000000000001 0.025000000000000001 -0.19" quat="0.70710678118654757 0.70710678118654746 0 -0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
           <body name="motor_mid_left" pos="-0.23000000000000001 0.050000000000000003 -0.19" quat="1 0 0 0">
             <inertial pos="0 0 0.050000000000000003" quat="1 0 0 0" mass="1" diaginertia="0.002 0.002 0.00050000000000000001" />
             <geom name="motor_mid_left_visual_0" size="0.035000000000000003 0.022499999999999999 0.035000000000000003" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" pos="0 0 0" quat="1 0 0 0" />
@@ -93,6 +136,8 @@
             <geom name="front_left_fork_-1" size="0.0080000000000000002 0.067500000000000004" pos="0 -0.065000000000000002 0.067500000000000004" type="capsule" group="1" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
             <geom name="front_left_fork_1" size="0.0080000000000000002 0.067500000000000004" pos="0 0.065000000000000002 0.067500000000000004" type="capsule" group="1" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
             <geom name="front_left_fork_top" size="0.0080000000000000002 0.065000000000000002" pos="0 0 0.13500000000000001" quat="0.70710678118654757 0.70710678118654746 0 -0" type="capsule" group="1" rgba="0.36 0.42 0.46 1" />
+            <geom name="structure_left_front_kingpin" size="0.014999999999999999 0.027499999999999997" pos="0 0 0.16250000000000001" quat="6.123233995736766e-17 1 0 0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
+            <geom name="structure_left_front_axle" size="0.012 0.074999999999999997" quat="0.70710678118654757 0.70710678118654746 0 -0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" pos="0 0 0" />
             <body name="wheel_front_left" pos="0 0 0" quat="1 0 0 0">
               <inertial pos="0 0 0" quat="1 0 0 0" mass="2.5" diaginertia="0.01108 0.017999999999999999 0.01108" />
               <joint name="wheel_front_left_joint" pos="0 0 0" axis="0 1 0" limited="false" damping="0.12" />
@@ -114,6 +159,8 @@
             <geom name="middle_left_fork_-1" size="0.0080000000000000002 0.071151247353788541" pos="-0.022499999999999999 -0.065000000000000002 0.067500000000000004" quat="0.98708745763749672 0 0.16018224300696723 0" type="capsule" group="1" rgba="0.36 0.42 0.46 1" />
             <geom name="middle_left_fork_1" size="0.0080000000000000002 0.071151247353788541" pos="-0.022499999999999999 0.065000000000000002 0.067500000000000004" quat="0.98708745763749672 0 0.16018224300696723 0" type="capsule" group="1" rgba="0.36 0.42 0.46 1" />
             <geom name="middle_left_fork_top" size="0.0080000000000000002 0.065000000000000002" pos="0 0 0.13500000000000001" quat="0.70710678118654757 0.70710678118654746 0 -0" type="capsule" group="1" rgba="0.36 0.42 0.46 1" />
+            <geom name="structure_left_middle_kingpin" size="0.014999999999999999 0.027499999999999997" pos="0 0 0.16250000000000001" quat="6.123233995736766e-17 1 0 0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
+            <geom name="structure_left_middle_axle" size="0.012 0.074999999999999997" pos="-0.044999999999999998 0 0" quat="0.70710678118654757 0.70710678118654746 0 -0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
             <body name="wheel_mid_left" pos="-0.044999999999999998 0 0" quat="1 0 0 0">
               <inertial pos="0 0 0" quat="1 0 0 0" mass="2.5" diaginertia="0.0093333333333333341 0.017999999999999999 0.0093333333333333341" />
               <joint name="wheel_mid_left_joint" pos="0 0 0" axis="0 1 0" limited="false" damping="0.15" />
@@ -154,6 +201,8 @@
         <geom name="rocker_right_collision_1" size="0.18775 0.025000000000000001 0.025000000000000001" pos="-0.28499999999999998 0 -0.14000000000000001" quat="0.91276243979621086 0 -0.40849079365056512 0" type="box" group="3" rgba="0.12 0.12 0.13 0" />
         <geom name="rocker_right_visual_2" size="0.063500000000000001 0.025000000000000001 0.025000000000000001" pos="0.16500000000000001 0 -0.044999999999999998" quat="0.92387918109221301 0 0.38268428076468186 0" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" />
         <geom name="rocker_right_collision_2" size="0.063500000000000001 0.025000000000000001 0.025000000000000001" pos="0.16500000000000001 0 -0.044999999999999998" quat="0.92387918109221301 0 0.38268428076468186 0" type="box" group="3" rgba="0.12 0.12 0.13 0" />
+        <geom name="structure_right_rear_axle" size="0.016 0.070000000000000007" pos="-0.40999999999999998 -0.070000000000000007 -0.28000000000000003" quat="0.70710678118654757 -0.70710678118654746 0 0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
+        <geom name="structure_right_rear_motor_bracket" size="0.014999999999999999 0.025000000000000001" pos="-0.40999999999999998 -0.025000000000000001 -0.28000000000000003" quat="0.70710678118654757 -0.70710678118654746 0 0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
         <body name="bogie_right" pos="0.20999999999999999 0 -0.089999999999999997" quat="1 0 0 0">
           <inertial pos="0 0 -0.095000000000000001" quat="1 0 0 0" mass="3" diaginertia="0.029999999999999999 0.040000000000000001 0.040000000000000001" />
           <joint name="bogie_pivot_right" pos="0 0 0" axis="0 1 0" stiffness="28" range="-0.5 0.5" armature="0.02" damping="4" frictionloss="0.5" />
@@ -161,6 +210,12 @@
           <geom name="bogie_right_collision_0" size="0.14915 0.025000000000000001 0.025000000000000001" pos="-0.115 0 -0.095000000000000001" quat="0.94099087402947401 0 -0.33843193553984607 0" type="box" group="3" rgba="0.12 0.12 0.13 0" />
           <geom name="bogie_right_visual_1" size="0.13794999999999999 0.025000000000000001 0.025000000000000001" pos="0.10000000000000001 0 -0.095000000000000001" quat="0.92884997972041217 0 0.37045609074948388 0" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" />
           <geom name="bogie_right_collision_1" size="0.13794999999999999 0.025000000000000001 0.025000000000000001" pos="0.10000000000000001 0 -0.095000000000000001" quat="0.92884997972041217 0 0.37045609074948388 0" type="box" group="3" rgba="0.12 0.12 0.13 0" />
+          <geom name="structure_right_front_riser" size="0.016 0.077499999999999999" pos="0.20000000000000001 0 -0.097499999999999989" quat="6.123233995736766e-17 1 0 0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
+          <geom name="structure_right_front_bridge" size="0.016 0.085000000000000006" pos="0.20000000000000001 -0.085000000000000006 -0.02" quat="0.70710678118654757 -0.70710678118654746 0 0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
+          <geom name="structure_right_middle_riser" size="0.016 0.065000000000000002" pos="-0.185 0 -0.084999999999999992" quat="6.123233995736766e-17 1 0 0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
+          <geom name="structure_right_middle_bridge" size="0.016 0.105" pos="-0.185 -0.105 -0.02" quat="0.70710678118654757 -0.70710678118654746 0 0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
+          <geom name="structure_right_front_motor_bracket" size="0.014999999999999999 0.025000000000000001" pos="0.20000000000000001 -0.025000000000000001 -0.19" quat="0.70710678118654757 -0.70710678118654746 0 0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
+          <geom name="structure_right_mid_motor_bracket" size="0.014999999999999999 0.025000000000000001" pos="-0.23000000000000001 -0.025000000000000001 -0.19" quat="0.70710678118654757 -0.70710678118654746 0 0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
           <body name="motor_mid_right" pos="-0.23000000000000001 -0.050000000000000003 -0.19" quat="1 0 0 0">
             <inertial pos="0 0 0.050000000000000003" quat="1 0 0 0" mass="1" diaginertia="0.002 0.002 0.00050000000000000001" />
             <geom name="motor_mid_right_visual_0" size="0.035000000000000003 0.022499999999999999 0.035000000000000003" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" pos="0 0 0" quat="1 0 0 0" />
@@ -174,6 +229,8 @@
             <geom name="front_right_fork_-1" size="0.0080000000000000002 0.067500000000000004" pos="0 -0.065000000000000002 0.067500000000000004" type="capsule" group="1" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
             <geom name="front_right_fork_1" size="0.0080000000000000002 0.067500000000000004" pos="0 0.065000000000000002 0.067500000000000004" type="capsule" group="1" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
             <geom name="front_right_fork_top" size="0.0080000000000000002 0.065000000000000002" pos="0 0 0.13500000000000001" quat="0.70710678118654757 0.70710678118654746 0 -0" type="capsule" group="1" rgba="0.36 0.42 0.46 1" />
+            <geom name="structure_right_front_kingpin" size="0.014999999999999999 0.027499999999999997" pos="0 0 0.16250000000000001" quat="6.123233995736766e-17 1 0 0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
+            <geom name="structure_right_front_axle" size="0.012 0.074999999999999997" quat="0.70710678118654757 0.70710678118654746 0 -0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" pos="0 0 0" />
             <body name="wheel_front_right" pos="0 0 0" quat="1 0 0 0">
               <inertial pos="0 0 0" quat="1 0 0 0" mass="2.5" diaginertia="0.01108 0.017999999999999999 0.01108" />
               <joint name="wheel_front_right_joint" pos="0 0 0" axis="0 1 0" limited="false" damping="0.12" />
@@ -195,6 +252,8 @@
             <geom name="middle_right_fork_-1" size="0.0080000000000000002 0.071151247353788541" pos="-0.022499999999999999 -0.065000000000000002 0.067500000000000004" quat="0.98708745763749672 0 0.16018224300696723 0" type="capsule" group="1" rgba="0.36 0.42 0.46 1" />
             <geom name="middle_right_fork_1" size="0.0080000000000000002 0.071151247353788541" pos="-0.022499999999999999 0.065000000000000002 0.067500000000000004" quat="0.98708745763749672 0 0.16018224300696723 0" type="capsule" group="1" rgba="0.36 0.42 0.46 1" />
             <geom name="middle_right_fork_top" size="0.0080000000000000002 0.065000000000000002" pos="0 0 0.13500000000000001" quat="0.70710678118654757 0.70710678118654746 0 -0" type="capsule" group="1" rgba="0.36 0.42 0.46 1" />
+            <geom name="structure_right_middle_kingpin" size="0.014999999999999999 0.027499999999999997" pos="0 0 0.16250000000000001" quat="6.123233995736766e-17 1 0 0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
+            <geom name="structure_right_middle_axle" size="0.012 0.074999999999999997" pos="-0.044999999999999998 0 0" quat="0.70710678118654757 0.70710678118654746 0 -0" type="capsule" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" />
             <body name="wheel_mid_right" pos="-0.044999999999999998 0 0" quat="1 0 0 0">
               <inertial pos="0 0 0" quat="1 0 0 0" mass="2.5" diaginertia="0.0093333333333333341 0.017999999999999999 0.0093333333333333341" />
               <joint name="wheel_mid_right_joint" pos="0 0 0" axis="0 1 0" limited="false" damping="0.15" />
@@ -280,16 +339,21 @@
                         <geom name="end_link_collision_0" size="0.01" group="3" rgba="1 0.5 0.1 0" pos="0 0 0" quat="1 0 0 0" />
                         <geom name="end_link_gripper_palm_visual" size="0.025000000000000001 0.028000000000000001 0.017999999999999999" pos="0.014999999999999999 0 0" type="box" contype="0" conaffinity="0" group="1" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
                         <geom name="end_link_collision_gripper_palm" size="0.025000000000000001 0.028000000000000001 0.017999999999999999" pos="0.014999999999999999 0 0" type="box" group="3" rgba="0.25 0.25 0.27 0" quat="1 0 0 0" />
+                        <geom name="grasp_guide_rail" size="0.0080000000000000002 0.059999999999999998 0.0080000000000000002" pos="0.014999999999999999 0 0" type="box" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
                         <site name="end_effector" pos="0 0 0" size="0.012" rgba="1 0.1 0.1 1" />
                         <site name="grasp_center" pos="0.075 0 0" size="0.006" rgba="0 1 0 1" />
                         <body name="grasp_left_jaw" pos="0 0.050000000000000003 0" quat="1 0 0 0">
                           <joint name="grasp_left_slide" pos="0 0 0" axis="0 -1 0" type="slide" range="0 0.035" armature="0.001" damping="1" />
                           <geom name="grasp_left_pad" size="0.040000000000000001 0.0050000000000000001 0.025000000000000001" pos="0.074999999999999997 0 0" type="box" condim="4" friction="1 0.002 0.0001" solref="0.006" solimp="0.99 0.999" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+                          <geom name="grasp_left_carriage" size="0.012 0.0089999999999999993 0.012" pos="0.014999999999999999 0 0" type="box" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+                          <geom name="grasp_left_finger_support" size="0.012499999999999997 0.0050000000000000001 0.01" pos="0.027499999999999997 0 0" type="box" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
                           <inertial pos="0.074999999999999997 0 0" quat="1 0 0 0" mass="0.040000000000000001" diaginertia="8.6666666666666678e-06 2.9666666666666675e-05 2.166666666666667e-05" />
                         </body>
                         <body name="grasp_right_jaw" pos="0 -0.050000000000000003 0" quat="1 0 0 0">
                           <joint name="grasp_right_slide" pos="0 0 0" axis="0 1 0" type="slide" range="0 0.035" armature="0.001" damping="1" />
                           <geom name="grasp_right_pad" size="0.040000000000000001 0.0050000000000000001 0.025000000000000001" pos="0.074999999999999997 0 0" type="box" condim="4" friction="1 0.002 0.0001" solref="0.006" solimp="0.99 0.999" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+                          <geom name="grasp_right_carriage" size="0.012 0.0089999999999999993 0.012" pos="0.014999999999999999 0 0" type="box" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+                          <geom name="grasp_right_finger_support" size="0.012499999999999997 0.0050000000000000001 0.01" pos="0.027499999999999997 0 0" type="box" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
                           <inertial pos="0.074999999999999997 0 0" quat="1 0 0 0" mass="0.040000000000000001" diaginertia="8.6666666666666678e-06 2.9666666666666675e-05 2.166666666666667e-05" />
                         </body>
                       </body>
@@ -326,16 +390,21 @@
                 <inertial pos="0.035000000000000003 0 0" quat="1 0 0 0" mass="0.17999999999999999" diaginertia="0.00020000000000000001 0.00029999999999999997 0.00029999999999999997" />
                 <geom name="secondary_gripper_palm_visual" size="0.02 0.025000000000000001 0.012500000000000001" pos="0.014999999999999999 0 0" type="box" contype="0" conaffinity="0" group="1" rgba="0.84 0.87 0.89 1" quat="1 0 0 0" />
                 <geom name="secondary_gripper_palm_collision" size="0.02 0.025000000000000001 0.012500000000000001" pos="0.014999999999999999 0 0" type="box" group="3" rgba="0.25 0.25 0.27 0" quat="1 0 0 0" />
+                <geom name="aux_guide_rail" size="0.0080000000000000002 0.059999999999999998 0.0080000000000000002" pos="0.014999999999999999 0 0" type="box" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
                 <site name="secondary_end_effector" pos="0.075 0 0" size="0.01" rgba="0.2 0.8 0.9 1" />
                 <site name="aux_grasp_center" pos="0.095 0 0" size="0.006" rgba="1 0.6 0 1" />
                 <body name="aux_left_jaw" pos="0 0.050000000000000003 0" quat="1 0 0 0">
                   <joint name="aux_left_slide" pos="0 0 0" axis="0 -1 0" type="slide" range="0 0.035" armature="0.001" damping="1" />
                   <geom name="aux_left_pad" size="0.040000000000000001 0.0050000000000000001 0.02" pos="0.095000000000000001 0 0" type="box" condim="4" priority="1" friction="1 0.002 0.0001" solref="0.006" solimp="0.99 0.999" mass="0.04" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+                  <geom name="aux_left_carriage" size="0.012 0.0089999999999999993 0.012" pos="0.014999999999999999 0 0" type="box" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+                  <geom name="aux_left_finger_support" size="0.022499999999999999 0.0050000000000000001 0.01" pos="0.037499999999999999 0 0" type="box" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
                   <inertial pos="0.095000000000000001 0 0" quat="1 0 0 0" mass="0.040000000000000001" diaginertia="5.6666666666666678e-06 2.666666666666667e-05 2.166666666666667e-05" />
                 </body>
                 <body name="aux_right_jaw" pos="0 -0.050000000000000003 0" quat="1 0 0 0">
                   <joint name="aux_right_slide" pos="0 0 0" axis="0 1 0" type="slide" range="0 0.035" armature="0.001" damping="1" />
                   <geom name="aux_right_pad" size="0.040000000000000001 0.0050000000000000001 0.02" pos="0.095000000000000001 0 0" type="box" condim="4" priority="1" friction="1 0.002 0.0001" solref="0.006" solimp="0.99 0.999" mass="0.04" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+                  <geom name="aux_right_carriage" size="0.012 0.0089999999999999993 0.012" pos="0.014999999999999999 0 0" type="box" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
+                  <geom name="aux_right_finger_support" size="0.022499999999999999 0.0050000000000000001 0.01" pos="0.037499999999999999 0 0" type="box" contype="0" conaffinity="0" group="3" mass="0" rgba="0.36 0.42 0.46 1" quat="1 0 0 0" />
                   <inertial pos="0.095000000000000001 0 0" quat="1 0 0 0" mass="0.040000000000000001" diaginertia="5.6666666666666678e-06 2.666666666666667e-05 2.166666666666667e-05" />
                 </body>
               </body>

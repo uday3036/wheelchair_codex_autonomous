@@ -9,6 +9,7 @@ from pathlib import Path
 import mujoco
 from .runtime import step as physics_tick
 import numpy as np
+from .bottle_command import resting_distractor
 from .model import ROOT, initialize
 from .grasp_scene import bottle_scene
 from .navigation import (MobileController, camera_observation, detect_bottle,
@@ -22,12 +23,17 @@ from .simulation import contacts, vehicle_measurement
 
 
 def navigate(bottle_present=True, blocked_route=False, start=None, bottle_xy=(.62, .215),
-             caster_angles=(0., 0.),sensor_noise=None,dynamic_obstacle_at=None,precision_docking=True,mass=.3,grip_friction=1.,obstacles=None):
-    start = ((-5.4,0.,0.) if obstacles else (-1.2,0.,0.)) if start is None else start
-    sensor_range=6.5 if obstacles else 5.
+             caster_angles=(0., 0.),sensor_noise=None,dynamic_obstacle_at=None,precision_docking=True,mass=.3,grip_friction=1.,obstacles=None,arm_design='reference',pick=None,bottles=None):
+    start = ((-5.4,0.,0.) if obstacles else (-5.5,0.,0.) if bottles is not None else (-1.2,0.,0.)) if start is None else start
+    sensor_range=6.5 if (obstacles or bottles is not None) else 5.
+    if bottles is not None and pick not in bottles:
+        bottle_present=False  # commanded colour not on the table: no task bottle, the chair must not drive
     model = bottle_scene(auxiliary_clamp=True, opening_fixture=True, mobile=True,
                          bottle_present=bottle_present, blocked_route=blocked_route, bottle_xy=bottle_xy,
-                         dynamic_obstacle=dynamic_obstacle_at is not None,mass=mass,friction=grip_friction,obstacles=obstacles)
+                         dynamic_obstacle=dynamic_obstacle_at is not None,mass=mass,friction=grip_friction,obstacles=obstacles,
+                         arm_design=arm_design,bottles=bottles,pick=pick)
+    # The colour to look for: the commanded one on a three-bottle table, blue for the single-bottle task.
+    colour = pick if bottles is not None else 'blue'
     state, refs = initialize(model)
     state.qpos[:3] = [start[0], start[1], .4]
     state.qpos[3:7] = [np.cos(start[2]/2), 0., 0., np.sin(start[2]/2)]
@@ -42,16 +48,24 @@ def navigate(bottle_present=True, blocked_route=False, start=None, bottle_xy=(.6
     controller.thread = thread
     frames, times, mocaps, rows, events = [], [], [], [], []
     failure, detected, path, goal = None, None, None, None
-    grid = OccupancyGrid(bounds=(-6.5,1.5,-3.,3.)) if obstacles else OccupancyGrid()
+    grid = (OccupancyGrid(bounds=(-6.5,1.5,-3.,3.)) if obstacles else
+            OccupancyGrid(bounds=(min(-2.5,start[0]-.5),1.5,-2.,2.)) if bottles is not None else OccupancyGrid())
     # All motion requires fresh observed bottle AND a free-space path.
     noise=SensorNoise(**sensor_noise) if sensor_noise is not None else None
     controller.sensor_noise=noise
-    observation,detected=observe_bottle(model,state,refs,noise=noise,
-                                      resolution=(320,200) if obstacles else (160,100),max_range=sensor_range)
+    controller.pick_colour=colour
+    if colour is None:  # a table of bottles but no colour commanded: never pick one by default
+        observation,detected=None,None
+    else:
+        observation,detected=observe_bottle(model,state,refs,noise=noise,color=colour,
+                                      resolution=(320,200) if (obstacles or bottles is not None) else (160,100),max_range=sensor_range)
     corridor=None
     final_alignment=None
-    if detected is None:
-        failure = 'No supported bottle detected; driving and grasping inhibited'
+    if colour is None:
+        failure = 'No bottle colour commanded; driving and grasping inhibited'
+    elif detected is None:
+        failure = ('No supported bottle detected; driving and grasping inhibited' if bottles is None else
+                   f'No {colour} bottle detected; driving and grasping inhibited')
     else:
         goal = detected['position'][:2]-[.62, .215]
         origin, dirs, ranges, _ = lidar_observation(model, state, refs,max_range=sensor_range,rays=1440 if obstacles else 720)
@@ -72,7 +86,7 @@ def navigate(bottle_present=True, blocked_route=False, start=None, bottle_xy=(.6
                 except ValueError as exc:
                     failure=f'Obstacle approach rejected: {exc}'
             elif precision_docking:
-                try: corridor=DockingCorridor(state.xpos[refs['body'],:2],goal,start[2],grid)
+                try: corridor=DockingCorridor(state.xpos[refs['body'],:2],goal,start[2],grid,max_lateral=.60 if bottles is not None else .08)
                 except ValueError as exc:
                     failure=f'Precision docking rejected: {exc}'
     speed, steering, stable, travelled = 0., 0., 0, 0.
@@ -93,7 +107,8 @@ def navigate(bottle_present=True, blocked_route=False, start=None, bottle_xy=(.6
     # Footprint conservative disk only for planning; contacts and actual
     # environment distances are independently audited during physics execution.
     robot_geoms = [i for i in range(model.ngeom) if model.geom_contype[i] and model.geom_group[i] != 4
-                   and model.geom_bodyid[i] != 0 and (model.body(model.geom_bodyid[i]).name or '') not in ('bottle', 'cap')]
+                   and model.geom_bodyid[i] != 0 and (model.body(model.geom_bodyid[i]).name or '') not in ('bottle', 'cap')
+                   and not (model.body(model.geom_bodyid[i]).name or '').startswith('bottle_')]  # distractor bottles are not robot parts
     environment = [i for i in range(model.ngeom) if model.geom_group[i] == 4]
     for step in range(int((100 if obstacles else 55)/model.opt.timestep)):
         t = float(state.time)
@@ -195,7 +210,7 @@ def navigate(bottle_present=True, blocked_route=False, start=None, bottle_xy=(.6
         for i, c in enumerate(state.contact):
             names = (model.geom(c.geom1).name or '', model.geom(c.geom2).name or '')
             permitted = ('ground' in names and any(n.startswith('wheel_') for n in names)) or (
-                'bottle_collision' in names and 'grasp_table' in names) or (set(names) == {'bottle_neck', 'cap_collision'})
+                'bottle_collision' in names and 'grasp_table' in names) or resting_distractor(names) or (set(names) == {'bottle_neck', 'cap_collision'})
             f = np.zeros(6)
             mujoco.mj_contactForce(model, state, i, f)
             if not permitted and (f[0] > 1. or c.dist < -.001):
@@ -243,7 +258,7 @@ def navigate(bottle_present=True, blocked_route=False, start=None, bottle_xy=(.6
         failure = 'Navigation/docking timeout'
     # A new close-range sensor estimate is passed into the grasp planner.
     if failure is None:
-        observation,detected=observe_bottle(model,state,refs,pitch=.7,noise=noise)
+        observation,detected=observe_bottle(model,state,refs,pitch=.7,noise=noise,color=colour)
         if detected is None:
             failure = 'Bottle could not be reobserved at arrival'
         elif np.linalg.norm(state.xpos[refs['body'], :2]-goal) > .02 or abs(yaw(state, refs)) > np.deg2rad(3.):
@@ -410,6 +425,11 @@ def main(argv=None):
     parser.add_argument('--navigation-only', action='store_true')
     parser.add_argument('--obstacles', choices=('detour','mirrored','blocked'), help='Sensor-planned obstacle approach from a longer starting distance')
     parser.add_argument('--compare', action='store_true')
+    parser.add_argument('--pick', choices=('red','green','blue'), help='Three-bottle table: the colour to pick')
+    parser.add_argument('--command', help='Typed command, e.g. "bring me the green bottle" (refused unless it names exactly one colour)')
+    parser.add_argument('--ask', action='store_true', help='Ask for the command in the terminal')
+    parser.add_argument('--on-table', help='Comma-separated colours actually on the table (default: red,green,blue)')
+    parser.add_argument('--realistic-arm', action='store_true', help='Mount the buildable 6-DOF arm with its gripper palm instead of the reference arm')
     parser.add_argument('--robustness',action='store_true',help='Additional complete-task variations and a moving-obstacle stop')
     parser.add_argument('--render', action='store_true')
     parser.add_argument('--live',action='store_true',help='Run controller and physics in a live MuJoCo window (macOS: mjpython)')
@@ -445,10 +465,32 @@ def main(argv=None):
         if live is not None: live.close()
 
 
+def resolve_pick(args):
+    """Task options for the three-bottle table from --pick / --command / --ask (empty: single-bottle task).
+
+    A refused command stops here, before any simulation, with the reason.
+    """
+    from .bottle_command import parse_command, table_layout
+    text, pick = getattr(args,'command',None), getattr(args,'pick',None)
+    if getattr(args,'ask',False) and not text and not pick:
+        text = input('Which bottle should I pick? (red, green or blue) > ')
+    if text:
+        command = parse_command(text)
+        print(command.reason, flush=True)
+        if not command.accepted:
+            raise SystemExit(2)
+        pick = command.colour
+    on_table = getattr(args,'on_table',None)
+    if pick is None and not on_table:
+        return {}
+    return {'pick': pick, 'bottles': table_layout(on_table.split(',') if on_table else None)}
+
+
 def _execute(args):
     report = {'source_sha256': source_fingerprint(), 'trials': {}}
     options = {} if args.start is None else {'start':tuple(args.start)}
     if getattr(args,'obstacles',None): options['obstacles']=args.obstacles
+    pick_options = resolve_pick(args)
     cases = [('nominal', options)]
     if args.compare:
         cases += [('bottle_absent', {'bottle_present': False}), ('blocked_route', {'blocked_route': True}),
@@ -464,6 +506,9 @@ def _execute(args):
                   ('bottle_farther_full',{'bottle_xy':(.635,.215)}),
                   ('noisy_full',{'sensor_noise':{'range_std':.001,'rgb_std':.015,'dropout':.05,'seed':12}}),
                   ('moving_obstacle',{'dynamic_obstacle_at':2.,'navigation_only':True})]
+    if getattr(args,'realistic_arm',False):  # buildable arm + real gripper palm (src/realistic_arm.py)
+        for _, case_options in cases: case_options['arm_design']='realistic'
+    for _, case_options in cases: case_options.update(pick_options)  # three-bottle table, commanded colour
     for label, options in cases:
         case_options = dict(options)
         navigation_only = case_options.pop('navigation_only', args.navigation_only)
@@ -484,7 +529,8 @@ def _execute(args):
                 times=times+deployment.times
                 mocaps=np.concatenate([mocaps,np.asarray(deployment.mocaps)])
                 # Close-range bottle estimate is refreshed after deployment.
-                _,detected=observe_bottle(m,s,controller.refs,pitch=.7,noise=controller.sensor_noise)
+                _,detected=observe_bottle(m,s,controller.refs,pitch=.7,noise=controller.sensor_noise,
+                                          color=getattr(controller,'pick_colour','blue'))
                 if detected is None: raise RuntimeError('Bottle not reobserved after deployment')
                 service = AssistiveTask(acknowledge=acknowledge, recipient_support=recipient_support, prepared=(m,s),
                     observed_bottle=detected['position'], physics_step=controller.park, thread_state=controller.thread)

@@ -14,6 +14,11 @@ from src.run_autonomous import source_fingerprint, main
 from src.stowage import case_indices, LID_OPEN, MAIN_FOLD, AUX_FOLD, storage_status
 
 
+SENSOR_PARTS = ('rgbd_camera_foot', 'rgbd_camera_mast', 'rgbd_camera_clamp_low',
+                'rgbd_camera_clamp_high', 'rgbd_camera_mount', 'rgbd_camera_housing',
+                'rgbd_camera_lens', 'lidar_mount', 'lidar_housing', 'lidar_scan_head')
+
+
 def scene(**options):
     m = bottle_scene(auxiliary_clamp=True, opening_fixture=True, mobile=True, **options)
     s,r = initialize(m)
@@ -25,6 +30,66 @@ def scene(**options):
 
 
 class SensorAndPlanningTests(unittest.TestCase):
+    def test_visible_sensor_housings_match_online_ray_origins(self):
+        m,s,r=scene()
+        base=s.xpos[r['body']]
+        R=s.xmat[r['body']].reshape(3,3)
+        # Camera behind the head on a rear mast; LiDAR under the footplate front edge.
+        expected={'rgbd_sensor_origin':np.array([-.15,0,1.06]),
+                  'lidar_sensor_origin':np.array([.455,0,-.30])}
+        for site,offset in expected.items():
+            np.testing.assert_allclose(s.site_xpos[m.site(site).id],base+R@offset,atol=1e-12)
+        for name in SENSOR_PARTS:
+            g=m.geom(name).id
+            self.assertGreater(m.geom_rgba[g,3],0.)
+            self.assertEqual((m.geom_contype[g],m.geom_conaffinity[g],m.geom_group[g]),(0,0,3))
+        observation=camera_observation(m,s,r)
+        np.testing.assert_allclose(observation['origin'],s.site_xpos[m.site('rgbd_sensor_origin').id])
+        origin,_,_,_=lidar_observation(m,s,r)
+        np.testing.assert_allclose(origin,s.site_xpos[m.site('lidar_sensor_origin').id,:2])
+
+    def test_sensors_leave_the_passenger_envelope_free(self):
+        """Every sensor part clears both passenger keep-out boxes (the seated
+        passenger's torso/thighs and head) by at least 3 mm; AABB separation is
+        conservative for the tilted housing."""
+        m,s,r=scene()
+        base=s.xpos[r['body']]
+        def aabb(name):
+            g=m.geom(name).id
+            R=s.geom_xmat[g].reshape(3,3)
+            centre=s.geom_xpos[g]+R@m.geom_aabb[g][:3]
+            half=np.abs(R)@m.geom_aabb[g][3:]
+            return centre-half-base,centre+half-base
+        boxes=[aabb('passenger_keepout'),aabb('passenger_head_keepout')]
+        for name in SENSOR_PARTS:
+            lo,hi=aabb(name)
+            for klo,khi in boxes:
+                gap=np.maximum(klo-hi,lo-khi).max()  # >0: separated along some axis
+                self.assertGreaterEqual(gap,.003,(name,gap))
+        for site in ('rgbd_sensor_origin','lidar_sensor_origin'):
+            p=s.site_xpos[m.site(site).id]-base
+            for klo,khi in boxes:
+                self.assertFalse(np.all((klo<=p)&(p<=khi)),site)
+
+    def test_lower_forward_lidar_maps_the_same_obstacles_as_the_old_mount(self):
+        """Group-4 scene objects are vertical prisms from the floor, so moving the
+        scan plane from 0.60 m to 0.10 m (and the origin 0.155 m forward) must not
+        change the map: occupied cells agree within two 40 mm cells."""
+        for options in ({}, {'obstacles':'detour'}, {'blocked_route':True}):
+            m,s,r=scene(**options)
+            site=m.site('lidar_sensor_origin').id
+            maps={}
+            for tag,offset in (('new',m.site_pos[site].copy()),('old',np.array([.30,0,.20]))):
+                m.site_pos[site]=offset
+                mujoco.mj_forward(m,s)
+                origin,dirs,ranges,_=lidar_observation(m,s,r,rays=1440 if options.get('obstacles') else 720)
+                grid=OccupancyGrid();grid.update(origin,dirs,ranges)
+                maps[tag]=grid.low+(np.argwhere(grid.cells==1)+.5)*grid.resolution
+            self.assertGreater(len(maps['new']),0,options)
+            distance=np.linalg.norm(maps['new'][:,None]-maps['old'][None],axis=2)
+            self.assertLessEqual(distance.min(1).max(),.0801,options)
+            self.assertLessEqual(distance.min(0).max(),.0801,options)
+
     def test_rgb_depth_estimate_matches_three_independent_bottle_poses(self):
         for xy in ((.605,.215),(.62,.225),(.635,.205)):
             m,s,r = scene(bottle_xy=xy)

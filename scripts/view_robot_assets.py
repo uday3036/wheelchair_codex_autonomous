@@ -29,7 +29,7 @@ def load_design(urdf=False, scene=False):
     camera.lookat[:] = state.xpos[model.body("base_link").id]+[0.,0.,.2]
     camera.distance, camera.azimuth, camera.elevation = 2.4, 130., -20.
     option = mujoco.MjvOption()
-    option.geomgroup[4:6] = 1
+    option.geomgroup[3:6] = 1
     option.geomgroup[2] = 0
     if urdf:
         option.geomgroup[0] = 0  # URDF collision skins; show its visual group.

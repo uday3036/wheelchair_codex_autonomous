@@ -1,6 +1,6 @@
 {
   "scope": "Stationary 0.3 kg bottle; illustrative short thread and prescribed passenger-hand surrogate",
-  "source_sha256": "e2e9dc71cba48b0c43e217919a55ded750b82e4b9c4b1d0418ef35b6be53b5af",
+  "source_sha256": "f9a75adcefd6e4089ffd37508c6c7eadbc4513cd975f374ffe9533f347de3fd7",
   "trials": {
     "nominal": {
       "passed": true,
@@ -85,7 +85,7 @@
         {
           "event": "recipient_support_verified",
           "time_s": 164.24200000005612,
-          "support_N": 2.89880803484538,
+          "support_N": 2.9293450757728996,
           "stable_s": 0.25
         },
         {
@@ -671,7 +671,7 @@
       "acknowledged_simulated_input": true,
       "cap_detached": true,
       "cap_detach_time_s": 104.05599999993889,
-      "cap_angle_rad": -1.447794741382744,
+      "cap_angle_rad": -1.4896562902638248,
       "cap_detach_angle_rad": 1.4000640808863516,
       "cap_detach_axial_rise_m": 0.001705499648231662,
       "peak_regrasp_preclose_contact_N": 0.0,
@@ -690,18 +690,18 @@
         1.0103979108902281
       ],
       "maximum_joint_reference_speed_rad_s": 0.5999999901223783,
-      "maximum_jaw_reference_speed_m_s": 0.030682349189417715,
+      "maximum_jaw_reference_speed_m_s": 0.030690698608495142,
       "max_jaw_force_N": 7.574500332901623,
       "unexpected_contacts": {},
       "max_joint_excess_rad": 0.0,
       "max_jaw_excess_m": 0.00047900398150837884,
-      "peak_recipient_normal_N": 5.27131780932526,
+      "peak_recipient_normal_N": 5.082925732219174,
       "recipient_target_xyz": [
         0.32,
         0.18,
         1.15
       ],
-      "final_position_error_m": 0.003750292405073655,
+      "final_position_error_m": 0.0034796166150969235,
       "duration_s": 175.2520000001087,
       "model_equalities": 1
     },

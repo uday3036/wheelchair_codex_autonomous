@@ -103,14 +103,17 @@ def add_task_fixture(root, bottle, xy):
     ET.SubElement(hand, "geom", name="recipient_pad", type="box", size=".065 .065 .01",
                   rgba=".3 .75 .4 .8", friction="1 .002 .01", condim="6",
                   contype="0", conaffinity="0")
-    # A shallow bin on the existing table. The floor top is z=.80 m.
-    ET.SubElement(world, "geom", name="cap_bin_floor", type="box", pos=".68 .40 .79", size=".065 .045 .01",
+    # A shallow bin on the table, always at the same place relative to the task bottle (it moves with
+    # the bottle's position, which is (0.62, 0.215) in the single-bottle task). The floor top is z=.80 m.
+    dx, dy = xy[0]-.62, xy[1]-.215
+    ET.SubElement(world, "geom", name="cap_bin_floor", type="box", pos=f"{.68+dx} {.40+dy} .79", size=".065 .045 .01",
                   rgba=".4 .5 .35 1")
-    for name, pos, size in (("back", ".68 .448 .82", ".068 .003 .03"),
-                            ("front", ".68 .352 .82", ".068 .003 .03"),
-                            ("left", ".612 .40 .82", ".003 .045 .03"),
-                            ("right", ".748 .40 .82", ".003 .045 .03")):
-        ET.SubElement(world, "geom", name="cap_bin_"+name, type="box", pos=pos, size=size, rgba=".4 .5 .35 1")
+    for name, (px, py, pz), size in (("back", (.68, .448, .82), ".068 .003 .03"),
+                                     ("front", (.68, .352, .82), ".068 .003 .03"),
+                                     ("left", (.612, .40, .82), ".003 .045 .03"),
+                                     ("right", (.748, .40, .82), ".003 .045 .03")):
+        ET.SubElement(world, "geom", name="cap_bin_"+name, type="box", pos=f"{px+dx} {py+dy} {pz}", size=size,
+                      rgba=".4 .5 .35 1")
 
 
 class CapThread:

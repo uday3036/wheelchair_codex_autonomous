@@ -16,6 +16,46 @@ import numpy as np
 from .model import MODEL, initialize, load_model
 
 
+def assembly_components(model, data, tol=1e-4):
+    """Connected components of the chair's visible geometry (verification only).
+
+    Two geoms are joined when their signed distance is at most ``tol`` (touching
+    or overlapping).  ``mj_geomDistance`` is called with distmax=1 mm: at larger
+    distmax MuJoCo 3.3.7's convex solver returned a false 0.0 for about 3% of
+    random rotated box pairs (see docs/CONNECTOR_GEOMETRY.md), which would make
+    distant parts look connected.  Returns lists of geom names, largest first.
+    Invisible (alpha 0) geoms and passenger keep-out volumes do not count as
+    hardware.  Call ``mujoco.mj_forward`` first.
+    """
+    def root(body):
+        while model.body_parentid[body] != 0:
+            body = model.body_parentid[body]
+        return body
+    chair = root(model.body("base_link").id)
+    geoms = [g for g in range(model.ngeom)
+             if model.geom_bodyid[g] and root(model.geom_bodyid[g]) == chair
+             and model.geom_rgba[g][3] > 0 and "keepout" not in model.geom(g).name]
+    parent = list(range(len(geoms)))
+
+    def find(i):
+        while parent[i] != i:
+            parent[i] = parent[parent[i]]
+            i = parent[i]
+        return i
+    for i, a in enumerate(geoms):
+        for j in range(i + 1, len(geoms)):
+            b = geoms[j]
+            reach = model.geom_rbound[a] + model.geom_rbound[b] + 5e-3
+            if np.linalg.norm(data.geom_xpos[a] - data.geom_xpos[b]) > reach:
+                continue
+            if mujoco.mj_geomDistance(model, data, a, b, 1e-3, None) <= tol:
+                parent[find(i)] = find(j)
+    groups = {}
+    for i, g in enumerate(geoms):
+        groups.setdefault(find(i), []).append(model.geom(g).name or f"geom{g}")
+    return sorted(groups.values(), key=len, reverse=True)
+
+
 def sweep_clearance(clearance_geometry=False, swivel_step_deg=5., steering_samples=9,
                     suspension_samples=5, caster_tire_half_width=None):
     if not 0 < swivel_step_deg <= 90 or steering_samples < 2 or suspension_samples < 2:

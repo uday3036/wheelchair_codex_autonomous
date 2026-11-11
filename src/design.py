@@ -13,6 +13,12 @@ def apply_simple_design(root):
             continue
         if name.startswith("wheel_"):
             rgba = ".08 .09 .10 1" if name.endswith("visual_0") else ".48 .52 .55 1"
+        elif name.startswith("rgbd_camera_lens"):
+            rgba = ".08 .55 .82 1"
+        elif name.startswith("lidar_scan_head"):
+            rgba = ".10 .72 .70 1"
+        elif name.startswith(("rgbd_camera_","lidar_")):
+            rgba = ".10 .14 .18 1"
         elif "case_" in name or name.startswith(("reference_","secondary_","link","wrist","flange","arm_base")):
             rgba = ".84 .87 .89 1"
         elif name in ("base_visual_2","base_visual_3","base_visual_5","base_visual_7"):

@@ -238,6 +238,303 @@
         <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
       </material>
     </visual>
+    <visual name="rgbd_camera_foot_visual">
+      <origin xyz="-0.16999999999999998 0 0.044999999999999998" rpy="0 -1.5707963267948963 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/rgbd_camera_foot.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_rgbd_camera_foot">
+        <color rgba="0.10000000149011612 0.14000000059604645 0.18000000715255737 1" />
+      </material>
+    </visual>
+    <visual name="rgbd_camera_mast_visual">
+      <origin xyz="-0.23499999999999999 0 0.55599999999999994" rpy="3.1415926535897931 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/rgbd_camera_mast.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_rgbd_camera_mast">
+        <color rgba="0.10000000149011612 0.14000000059604645 0.18000000715255737 1" />
+      </material>
+    </visual>
+    <visual name="rgbd_camera_clamp_low_visual">
+      <origin xyz="-0.20349999999999999 0 0.40000000000000002" rpy="0 1.5707963267948963 -0" />
+      <geometry>
+        <mesh filename="../meshes/obj/rgbd_camera_clamp_low.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_rgbd_camera_clamp_low">
+        <color rgba="0.10000000149011612 0.14000000059604645 0.18000000715255737 1" />
+      </material>
+    </visual>
+    <visual name="rgbd_camera_clamp_high_visual">
+      <origin xyz="-0.20949999999999999 0 0.47999999999999998" rpy="0 1.5707963267948963 -0" />
+      <geometry>
+        <mesh filename="../meshes/obj/rgbd_camera_clamp_high.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_rgbd_camera_clamp_high">
+        <color rgba="0.10000000149011612 0.14000000059604645 0.18000000715255737 1" />
+      </material>
+    </visual>
+    <visual name="rgbd_camera_mount_visual">
+      <origin xyz="-0.21249999999999999 0 1.0669999999999999" rpy="0 -1.5707963267948963 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/rgbd_camera_mount.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_rgbd_camera_mount">
+        <color rgba="0.10000000149011612 0.14000000059604645 0.18000000715255737 1" />
+      </material>
+    </visual>
+    <visual name="rgbd_camera_housing_visual">
+      <origin xyz="-0.184 0 1.0669999999999999" rpy="0 0.20999999999999999 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/rgbd_camera_housing.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_rgbd_camera_housing">
+        <color rgba="0.10000000149011612 0.14000000059604645 0.18000000715255737 1" />
+      </material>
+    </visual>
+    <visual name="rgbd_camera_lens_visual">
+      <origin xyz="-0.14450000000000002 0 1.0590000000000002" rpy="0 -1.3825748214901359 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/rgbd_camera_lens.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_rgbd_camera_lens">
+        <color rgba="0.079999998211860657 0.55000001192092896 0.81999999284744263 1" />
+      </material>
+    </visual>
+    <visual name="lidar_mount_visual">
+      <origin xyz="0.45500000000000002 0 -0.25600000000000001" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/lidar_mount.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_lidar_mount">
+        <color rgba="0.10000000149011612 0.14000000059604645 0.18000000715255737 1" />
+      </material>
+    </visual>
+    <visual name="lidar_housing_visual">
+      <origin xyz="0.45500000000000002 0 -0.29999999999999999" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/lidar_housing.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_lidar_housing">
+        <color rgba="0.10000000149011612 0.14000000059604645 0.18000000715255737 1" />
+      </material>
+    </visual>
+    <visual name="lidar_scan_head_visual">
+      <origin xyz="0.45500000000000002 0 -0.27199999999999996" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/lidar_scan_head.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_lidar_scan_head">
+        <color rgba="0.10000000149011612 0.72000002861022949 0.69999998807907104 1" />
+      </material>
+    </visual>
+    <visual name="electronics_bracket_-0.09_visual">
+      <origin xyz="-0.089999999999999997 -0.23999999999999999 0.065000000000000002" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/electronics_bracket_-0.09.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_electronics_bracket_-0.09">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="electronics_bracket_0.05_visual">
+      <origin xyz="0.050000000000000003 -0.23999999999999999 0.065000000000000002" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/electronics_bracket_0.05.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_electronics_bracket_0.05">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="armrest_frame_bridge_right_visual">
+      <origin xyz="0.070000000000000007 -0.20000000000000001 0.12" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/armrest_frame_bridge_right.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_armrest_frame_bridge_right">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="armrest_front_post_right_visual">
+      <origin xyz="0.070000000000000007 -0.215 0.215" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/armrest_front_post_right.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_armrest_front_post_right">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="armrest_frame_bridge_left_visual">
+      <origin xyz="0.070000000000000007 0.20000000000000001 0.12" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/armrest_frame_bridge_left.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_armrest_frame_bridge_left">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="armrest_front_post_left_visual">
+      <origin xyz="0.070000000000000007 0.215 0.215" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/armrest_front_post_left.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_armrest_front_post_left">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_core_standoff_0_visual">
+      <origin xyz="-0.059999999999999998 -0.14000000000000001 -0.0050000000000000001" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_core_standoff_0.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_core_standoff_0">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_core_standoff_1_visual">
+      <origin xyz="-0.059999999999999998 0.14000000000000001 -0.0050000000000000001" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_core_standoff_1.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_core_standoff_1">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_core_standoff_2_visual">
+      <origin xyz="0.10000000000000001 -0.14000000000000001 -0.0050000000000000001" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_core_standoff_2.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_core_standoff_2">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_core_standoff_3_visual">
+      <origin xyz="0.10000000000000001 0.14000000000000001 -0.0050000000000000001" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_core_standoff_3.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_core_standoff_3">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_left_footrest_hanger_visual">
+      <origin xyz="0.13500000000000001 0.17000000000000001 0.0060000000000000001" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_left_footrest_hanger.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_left_footrest_hanger">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_right_footrest_hanger_visual">
+      <origin xyz="0.13500000000000001 -0.17000000000000001 0.0060000000000000001" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_right_footrest_hanger.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_right_footrest_hanger">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_left_side_plate_bracket_0_visual">
+      <origin xyz="-0.070000000000000007 0.20250000000000001 -0.12" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_left_side_plate_bracket_0.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_left_side_plate_bracket_0">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_left_side_plate_bracket_1_visual">
+      <origin xyz="-0.070000000000000007 0.20250000000000001 -0.040000000000000001" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_left_side_plate_bracket_1.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_left_side_plate_bracket_1">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_left_rocker_spindle_visual">
+      <origin xyz="0.02 0.22999999999999998 0" rpy="1.5707963267948963 0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_left_rocker_spindle.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_left_rocker_spindle">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_left_backrest_anchor_visual">
+      <origin xyz="-0.13 0.17749999999999999 0.08249999999999999" rpy="2.7049654937762515 0.23710343314606866 0.98545546317552102" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_left_backrest_anchor.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_left_backrest_anchor">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_right_rocker_spindle_visual">
+      <origin xyz="0.02 -0.22999999999999998 0" rpy="-1.5707963267948963 0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_right_rocker_spindle.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_right_rocker_spindle">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_right_backrest_anchor_visual">
+      <origin xyz="-0.13 -0.17749999999999999 0.08249999999999999" rpy="-2.7049654937762515 0.23710343314606866 -0.98545546317552102" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_right_backrest_anchor.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_right_backrest_anchor">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_aux_mount_visual">
+      <origin xyz="0.14000000000000001 0.21500000000000002 0.10000000000000001" rpy="1.5707963267948966 -0.41822432957922911 -0.41822432957922911" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_aux_mount.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_aux_mount">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_main_cover_rail_visual">
+      <origin xyz="-0.065000000000000002 0.45000000000000001 0.14000000000000001" rpy="0 -1.5707963267948963 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_main_cover_rail.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_main_cover_rail">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_main_rail_bracket_visual">
+      <origin xyz="0.02 0.32000000000000001 0.12000000000000001" rpy="1.7234456551901618 0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_main_rail_bracket.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_main_rail_bracket">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_aux_cover_rail_visual">
+      <origin xyz="0.085000000000000006 0.32300000000000001 0.26000000000000001" rpy="0 -1.5707963267948963 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_aux_cover_rail.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_aux_cover_rail">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_aux_rail_bracket_visual">
+      <origin xyz="0.02 0.25650000000000001 0.17999999999999999" rpy="2.4480851460024065 0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_aux_rail_bracket.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_aux_rail_bracket">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
   </link>
   <link name="rocker_left">
     <inertial>
@@ -290,6 +587,24 @@
         <mesh filename="../meshes/obj/rocker_left_collision_2.obj" scale="1 1 1" />
       </geometry>
     </collision>
+    <visual name="structure_left_rear_axle_visual">
+      <origin xyz="-0.40999999999999998 0.070000000000000007 -0.28000000000000003" rpy="1.5707963267948963 0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_left_rear_axle.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_left_rear_axle">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_left_rear_motor_bracket_visual">
+      <origin xyz="-0.40999999999999998 0.025000000000000001 -0.28000000000000003" rpy="1.5707963267948963 0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_left_rear_motor_bracket.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_left_rear_motor_bracket">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
   </link>
   <joint name="rocker_pivot_left" type="revolute">
     <parent link="base_link" />
@@ -335,6 +650,60 @@
         <mesh filename="../meshes/obj/bogie_left_collision_1.obj" scale="1 1 1" />
       </geometry>
     </collision>
+    <visual name="structure_left_front_riser_visual">
+      <origin xyz="0.20000000000000001 0 -0.097499999999999989" rpy="3.1415926535897931 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_left_front_riser.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_left_front_riser">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_left_front_bridge_visual">
+      <origin xyz="0.20000000000000001 0.085000000000000006 -0.02" rpy="1.5707963267948963 0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_left_front_bridge.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_left_front_bridge">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_left_middle_riser_visual">
+      <origin xyz="-0.185 0 -0.084999999999999992" rpy="3.1415926535897931 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_left_middle_riser.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_left_middle_riser">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_left_middle_bridge_visual">
+      <origin xyz="-0.185 0.105 -0.02" rpy="1.5707963267948963 0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_left_middle_bridge.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_left_middle_bridge">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_left_front_motor_bracket_visual">
+      <origin xyz="0.20000000000000001 0.025000000000000001 -0.19" rpy="1.5707963267948963 0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_left_front_motor_bracket.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_left_front_motor_bracket">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_left_mid_motor_bracket_visual">
+      <origin xyz="-0.23000000000000001 0.025000000000000001 -0.19" rpy="1.5707963267948963 0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_left_mid_motor_bracket.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_left_mid_motor_bracket">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
   </link>
   <joint name="bogie_pivot_left" type="revolute">
     <parent link="rocker_left" />
@@ -425,6 +794,24 @@
         <mesh filename="../meshes/obj/front_left_fork_top.obj" scale="1 1 1" />
       </geometry>
     </collision>
+    <visual name="structure_left_front_kingpin_visual">
+      <origin xyz="0 0 0.16250000000000001" rpy="3.1415926535897931 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_left_front_kingpin.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_left_front_kingpin">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_left_front_axle_visual">
+      <origin xyz="0 0 0" rpy="1.5707963267948963 0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_left_front_axle.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_left_front_axle">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
   </link>
   <joint name="front_left_steer_joint" type="revolute">
     <parent link="bogie_left" />
@@ -554,6 +941,24 @@
         <mesh filename="../meshes/obj/middle_left_fork_top.obj" scale="1 1 1" />
       </geometry>
     </collision>
+    <visual name="structure_left_middle_kingpin_visual">
+      <origin xyz="0 0 0.16250000000000001" rpy="3.1415926535897931 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_left_middle_kingpin.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_left_middle_kingpin">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_left_middle_axle_visual">
+      <origin xyz="-0.044999999999999998 0 0" rpy="1.5707963267948963 0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_left_middle_axle.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_left_middle_axle">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
   </link>
   <joint name="mid_left_caster_yaw" type="continuous">
     <parent link="bogie_left" />
@@ -767,6 +1172,24 @@
         <mesh filename="../meshes/obj/rocker_right_collision_2.obj" scale="1 1 1" />
       </geometry>
     </collision>
+    <visual name="structure_right_rear_axle_visual">
+      <origin xyz="-0.40999999999999998 -0.070000000000000007 -0.28000000000000003" rpy="-1.5707963267948963 0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_right_rear_axle.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_right_rear_axle">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_right_rear_motor_bracket_visual">
+      <origin xyz="-0.40999999999999998 -0.025000000000000001 -0.28000000000000003" rpy="-1.5707963267948963 0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_right_rear_motor_bracket.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_right_rear_motor_bracket">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
   </link>
   <joint name="rocker_pivot_right" type="revolute">
     <parent link="base_link" />
@@ -812,6 +1235,60 @@
         <mesh filename="../meshes/obj/bogie_right_collision_1.obj" scale="1 1 1" />
       </geometry>
     </collision>
+    <visual name="structure_right_front_riser_visual">
+      <origin xyz="0.20000000000000001 0 -0.097499999999999989" rpy="3.1415926535897931 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_right_front_riser.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_right_front_riser">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_right_front_bridge_visual">
+      <origin xyz="0.20000000000000001 -0.085000000000000006 -0.02" rpy="-1.5707963267948963 0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_right_front_bridge.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_right_front_bridge">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_right_middle_riser_visual">
+      <origin xyz="-0.185 0 -0.084999999999999992" rpy="3.1415926535897931 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_right_middle_riser.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_right_middle_riser">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_right_middle_bridge_visual">
+      <origin xyz="-0.185 -0.105 -0.02" rpy="-1.5707963267948963 0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_right_middle_bridge.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_right_middle_bridge">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_right_front_motor_bracket_visual">
+      <origin xyz="0.20000000000000001 -0.025000000000000001 -0.19" rpy="-1.5707963267948963 0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_right_front_motor_bracket.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_right_front_motor_bracket">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_right_mid_motor_bracket_visual">
+      <origin xyz="-0.23000000000000001 -0.025000000000000001 -0.19" rpy="-1.5707963267948963 0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_right_mid_motor_bracket.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_right_mid_motor_bracket">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
   </link>
   <joint name="bogie_pivot_right" type="revolute">
     <parent link="rocker_right" />
@@ -902,6 +1379,24 @@
         <mesh filename="../meshes/obj/front_right_fork_top.obj" scale="1 1 1" />
       </geometry>
     </collision>
+    <visual name="structure_right_front_kingpin_visual">
+      <origin xyz="0 0 0.16250000000000001" rpy="3.1415926535897931 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_right_front_kingpin.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_right_front_kingpin">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_right_front_axle_visual">
+      <origin xyz="0 0 0" rpy="1.5707963267948963 0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_right_front_axle.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_right_front_axle">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
   </link>
   <joint name="front_right_steer_joint" type="revolute">
     <parent link="bogie_right" />
@@ -1031,6 +1526,24 @@
         <mesh filename="../meshes/obj/middle_right_fork_top.obj" scale="1 1 1" />
       </geometry>
     </collision>
+    <visual name="structure_right_middle_kingpin_visual">
+      <origin xyz="0 0 0.16250000000000001" rpy="3.1415926535897931 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_right_middle_kingpin.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_right_middle_kingpin">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="structure_right_middle_axle_visual">
+      <origin xyz="-0.044999999999999998 0 0" rpy="1.5707963267948963 0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/structure_right_middle_axle.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_structure_right_middle_axle">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
   </link>
   <joint name="mid_right_caster_yaw" type="continuous">
     <parent link="bogie_right" />
@@ -1517,6 +2030,15 @@
         <mesh filename="../meshes/obj/end_link_collision_gripper_palm.obj" scale="1 1 1" />
       </geometry>
     </collision>
+    <visual name="grasp_guide_rail_visual">
+      <origin xyz="0.014999999999999999 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/grasp_guide_rail.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_grasp_guide_rail">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
   </link>
   <joint name="end_link_fixed" type="fixed">
     <parent link="flange_link" />
@@ -1544,6 +2066,24 @@
         <mesh filename="../meshes/obj/grasp_left_pad.obj" scale="1 1 1" />
       </geometry>
     </collision>
+    <visual name="grasp_left_carriage_visual">
+      <origin xyz="0.014999999999999999 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/grasp_left_carriage.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_grasp_left_carriage">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="grasp_left_finger_support_visual">
+      <origin xyz="0.027499999999999997 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/grasp_left_finger_support.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_grasp_left_finger_support">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
   </link>
   <joint name="grasp_left_slide" type="prismatic">
     <parent link="end_link" />
@@ -1574,6 +2114,24 @@
         <mesh filename="../meshes/obj/grasp_right_pad.obj" scale="1 1 1" />
       </geometry>
     </collision>
+    <visual name="grasp_right_carriage_visual">
+      <origin xyz="0.014999999999999999 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/grasp_right_carriage.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_grasp_right_carriage">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="grasp_right_finger_support_visual">
+      <origin xyz="0.027499999999999997 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/grasp_right_finger_support.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_grasp_right_finger_support">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
   </link>
   <joint name="grasp_right_slide" type="prismatic">
     <parent link="end_link" />
@@ -1739,6 +2297,15 @@
         <mesh filename="../meshes/obj/secondary_gripper_palm_collision.obj" scale="1 1 1" />
       </geometry>
     </collision>
+    <visual name="aux_guide_rail_visual">
+      <origin xyz="0.014999999999999999 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/aux_guide_rail.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_aux_guide_rail">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
   </link>
   <joint name="secondary_gripper_fixed" type="fixed">
     <parent link="secondary_link3" />
@@ -1766,6 +2333,24 @@
         <mesh filename="../meshes/obj/aux_left_pad.obj" scale="1 1 1" />
       </geometry>
     </collision>
+    <visual name="aux_left_carriage_visual">
+      <origin xyz="0.014999999999999999 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/aux_left_carriage.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_aux_left_carriage">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="aux_left_finger_support_visual">
+      <origin xyz="0.037499999999999999 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/aux_left_finger_support.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_aux_left_finger_support">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
   </link>
   <joint name="aux_left_slide" type="prismatic">
     <parent link="secondary_gripper" />
@@ -1796,6 +2381,24 @@
         <mesh filename="../meshes/obj/aux_right_pad.obj" scale="1 1 1" />
       </geometry>
     </collision>
+    <visual name="aux_right_carriage_visual">
+      <origin xyz="0.014999999999999999 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/aux_right_carriage.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_aux_right_carriage">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
+    <visual name="aux_right_finger_support_visual">
+      <origin xyz="0.037499999999999999 0 0" rpy="0 -0 0" />
+      <geometry>
+        <mesh filename="../meshes/obj/aux_right_finger_support.obj" scale="1 1 1" />
+      </geometry>
+      <material name="color_aux_right_finger_support">
+        <color rgba="0.36000001430511475 0.41999998688697815 0.46000000834465027 1" />
+      </material>
+    </visual>
   </link>
   <joint name="aux_right_slide" type="prismatic">
     <parent link="secondary_gripper" />

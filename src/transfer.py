@@ -3,6 +3,7 @@
 No bottle welds, pose resets or extra arm axes. Mobility remains deferred.
 """
 import numpy as np
+from .bottle_command import resting_distractor
 import mujoco
 from .runtime import step as physics_tick
 
@@ -39,7 +40,7 @@ def contact_loads(model, state):
 def clear_configuration(model, state):
     for contact in state.contact:
         names = (model.geom(contact.geom1).name, model.geom(contact.geom2).name)
-        legal_bottle = "bottle_collision" in names and any(n.endswith("_pad") or n == "grasp_table" for n in names)
+        legal_bottle = ("bottle_collision" in names and any(n.endswith("_pad") or n == "grasp_table" for n in names)) or resting_distractor(names)
         if contact.dist < (-.003 if legal_bottle else -.0005):
             return False, names
     proxy = model.geom("passenger_keepout").id
@@ -406,7 +407,7 @@ def simulate_transfer(mass=.3, auxiliary_enabled=True, auxiliary_friction=1., ta
         for j, c in enumerate(state.contact):
             names = (model.geom(c.geom1).name, model.geom(c.geom2).name)
             allowed = ("ground" in names and any(n.startswith("wheel_") for n in names)) or (
-                "bottle_collision" in names and any(n.endswith("_pad") or n == "grasp_table" for n in names)) or (
+                "bottle_collision" in names and any(n.endswith("_pad") or n == "grasp_table" for n in names)) or resting_distractor(names) or (
                 set(names) == {"bottle_neck", "cap_collision"})
             force = np.zeros(6)
             mujoco.mj_contactForce(model, state, j, force)

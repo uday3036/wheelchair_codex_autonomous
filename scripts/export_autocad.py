@@ -2,6 +2,7 @@
 from pathlib import Path
 import hashlib
 import json
+from collections import Counter
 import numpy as np
 import ezdxf
 
@@ -28,6 +29,7 @@ def main():
     doc.header['$MEASUREMENT'] = 1
     space = doc.modelspace()
     vertices, expected = [], []
+    expected_components = Counter()
     layer, color = '0', 0xAAAAAA
     for line in source.read_text().splitlines():
         fields = line.split()
@@ -49,6 +51,7 @@ def main():
                 triangle = [polygon[0], polygon[i], polygon[i+1]]
                 space.add_3dface(triangle, dxfattribs={'layer': layer, 'true_color': color})
                 expected.append(triangle)
+                expected_components[layer] += 1
     destination = output / 'wheelchair_folded_mm.dxf'
     doc.set_modelspace_vport(height=2200, center=(0, 0))
     doc.saveas(destination)
@@ -61,6 +64,12 @@ def main():
     assert actual.shape == np.asarray(expected).shape
     assert np.allclose(actual, expected, rtol=0, atol=1e-9)
     assert restored.units == ezdxf.units.MM
+    actual_components = Counter(f.dxf.layer for f in faces)
+    assert actual_components == expected_components, 'Missing component geometry'
+    manifest = json.loads((ROOT / 'assets/manifest.json').read_text())
+    visible_components = {entry['name'] for entry in manifest['meshes'] if entry['visual']}
+    assert set(actual_components) == visible_components, 'CAD does not contain every visible model component'
+    assert not list(restored.modelspace().query('INSERT')), 'Unexpected external/block dependency'
     points = actual.reshape(-1, 3)
     report = {
         'source': str(source.relative_to(ROOT)),
@@ -72,6 +81,10 @@ def main():
         'extent_mm': np.ptp(points, axis=0).tolist(),
         'roundtrip_coordinates_passed': True, 'dxf_audit_errors': len(audit.errors),
         'autocad_application_tested': False,
+        'all_visible_components_present': True,
+        'component_triangle_counts': dict(sorted(actual_components.items())),
+        'geometry': 'Explicit world-assembled triangular 3DFACE surfaces; no joints, constraints or external references required',
+        'editable_parametric_solids': False,
     }
     (output / 'export_validation.json').write_text(json.dumps(report, indent=2) + '\n')
     print(json.dumps(report, indent=2))

@@ -2,6 +2,7 @@
 import mujoco
 from .runtime import step as physics_tick
 import numpy as np
+from .bottle_command import resting_distractor
 
 from .control import ARM_NAMES, SEC_NAMES, ARM_KP, ARM_KD, ARM_MAX, SEC_KP, SEC_KD, SEC_MAX
 from .manipulation import SerialArm, transform, axis_rotation, quintic_segment, rotation_vector
@@ -31,6 +32,10 @@ class AssistiveTask:
             self.service_origin=s.xpos[b].copy()
             R=s.xmat[b].reshape(3,3);heading=float(np.arctan2(R[1,0],R[0,0]))
             self.service_rotation=axis_rotation([0,0,1],heading)
+        # The cap bin sits at a fixed offset from the task bottle (canonical bottle: 0.62, 0.215), so every
+        # bin coordinate below moves with the observed bottle on a three-bottle table.
+        self.bin_offset = (np.r_[np.asarray(observed_bottle[:2], float)-[.62, .215], 0.] if observed_bottle is not None
+                           else np.zeros(3))
         self.recipient_target=self.service_point([.32,.18,1.15])
         result = simulate_transfer(hold_duration=3., scene_options={"opening_fixture": True},
                                    physics_step=self.thread, return_state=True, target=self.service_point([.56,.26,.93]), prepared=prepared, observed_bottle=observed_bottle,frame_rotation=self.service_rotation)
@@ -127,6 +132,7 @@ class AssistiveTask:
     def legal(names):
         return (("ground" in names and any(n.startswith("wheel_") for n in names)) or
             ("bottle_collision" in names and any(n.endswith("_pad") or n == "grasp_table" for n in names)) or
+            resting_distractor(names) or
             (any(n.startswith(("cap_collision", "cap_rib_")) for n in names) and any(n.startswith(("grasp_left", "grasp_right", "cap_bin_")) or n == "bottle_neck" for n in names)))
 
     def label(self, name):
@@ -365,20 +371,23 @@ class AssistiveTask:
             self.require_contact("cap_collision", ("grasp_left_pad", "grasp_right_pad"), .15)
             if np.linalg.norm(self.state.xpos[self.model.body("cap").id]-self.state.xpos[self.model.body("bottle").id]) < .20:
                 raise TaskBlocked("Cap failed to separate spatially")
-            self.move("cap_bin_above", transform([.66, .4, 1.06], cap_pitch), carry="cap")
-            self.move("cap_bin_drop", transform([.66, .4, .89], cap_pitch), carry="cap")
+            self.move("cap_bin_above", transform(self.bin_offset+[.66, .4, 1.06], cap_pitch), carry="cap")
+            # The buildable arm's wrist actuator housing is far bulkier than the old thin link and
+            # touched the table at the original release height: release 4 cm higher with that arm.
+            bin_raise = .04 if mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_GEOM, "flange_link_palm") >= 0 else 0.
+            self.move("cap_bin_drop", transform(self.bin_offset+[.66, .4, .89+bin_raise], cap_pitch), carry="cap")
             self.jaws("cap_release", "main", False)
             self.main_mass = 0.
             self.hold("cap_bin_settle", 1.5)
             cap_pos = self.state.xpos[self.model.body("cap").id]
             cn, _ = self.contact("cap_collision", ("cap_bin_floor",))
-            if not (abs(cap_pos[0]-.68) < .06 and abs(cap_pos[1]-.4) < .04 and .80 < cap_pos[2] < .84 and cn[0] > .02):
+            if not (abs(cap_pos[0]-.68-self.bin_offset[0]) < .06 and abs(cap_pos[1]-.4-self.bin_offset[1]) < .04 and .80 < cap_pos[2] < .84 and cn[0] > .02):
                 raise TaskBlocked("Cap disposal not physically confirmed")
             self.checks["cap_disposed_in_bin"] = True
             self.event("cap_bin_support_confirmed", support_N=float(cn[0]))
             if self.model.neq==0:
-                self.move("leave_bin_vertical",transform([.66,.4,.99],cap_pitch))
-            self.move("leave_bin", transform([.59 if self.model.neq==0 else .66, .4, 1.10]))
+                self.move("leave_bin_vertical",transform(self.bin_offset+[.66,.4,.99],cap_pitch))
+            self.move("leave_bin", transform(self.bin_offset+[.59 if self.model.neq==0 else .66, .4, 1.10]))
             bottle = self.state.xpos[self.model.body("bottle").id].copy()
             R = axis_rotation([0, 0, 1], -np.pi/4)
             grip = bottle+[0., 0., .04]

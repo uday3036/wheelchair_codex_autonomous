@@ -22,7 +22,7 @@ def main():
          int(np.argmin(abs(recording.times-nav_end))),len(recording.times)-1]
     captions=['Bottle detected; arms stored','Measured detour around obstacles',
               'Docking gates passed','Final recorded state']
-    option=mujoco.MjvOption();option.geomgroup[2]=0;option.geomgroup[4:6]=1
+    option=mujoco.MjvOption();option.geomgroup[2]=0;option.geomgroup[3:6]=1
     snapshots=[]
     with mujoco.Renderer(recording.model,height=480,width=640) as renderer:
         for index in ids:

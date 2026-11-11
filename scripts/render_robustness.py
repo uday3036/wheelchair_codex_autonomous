@@ -13,7 +13,7 @@ from src.run_experiments import plt
 
 def render(model,poses,filename,mocaps=None,closeup=False):
     state=mujoco.MjData(model)
-    option=mujoco.MjvOption();option.geomgroup[2]=0;option.geomgroup[4:6]=1
+    option=mujoco.MjvOption();option.geomgroup[2]=0;option.geomgroup[3:6]=1
     camera=mujoco.MjvCamera();camera.lookat[:]=[-.25,0,.65]
     camera.distance,camera.azimuth,camera.elevation=3.2,125.,-20.
     with mujoco.Renderer(model,height=480,width=640) as renderer:

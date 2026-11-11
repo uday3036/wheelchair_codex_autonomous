@@ -51,6 +51,11 @@ def main(argv=None):
     p.add_argument('--timing-log',action='store_true',help='Save display timing diagnostics in output/display_timing.json')
     p.add_argument('--navigation-only',action='store_true')
     p.add_argument('--obstacles',choices=('detour','mirrored','blocked'))
+    p.add_argument('--realistic-arm',action='store_true',help='Use the buildable 6-DOF arm with its gripper')
+    p.add_argument('--pick',choices=('red','green','blue'),help='Three-bottle table: the colour to pick')
+    p.add_argument('--command',help='Typed command, e.g. "bring me the green bottle"')
+    p.add_argument('--ask',action='store_true',help='Ask which bottle to pick in the terminal')
+    p.add_argument('--on-table',help='Colours actually on the table, e.g. red,blue')
     p.add_argument('--exit-after',type=float,help='Display cancellation smoke-test timeout')
     args=p.parse_args(argv)
     # Physics runs without Cocoa; LiveDisplay starts its own mjpython renderer.
@@ -62,6 +67,16 @@ def main(argv=None):
     if args.acknowledge_passenger:command.append('--acknowledge-passenger')
     if args.navigation_only:command.append('--navigation-only')
     if args.obstacles:command+=['--obstacles',args.obstacles]
+    if args.realistic_arm:command.append('--realistic-arm')
+    if args.ask and not args.command and not args.pick:
+        args.command=input('Which bottle should I pick? (red, green or blue) > ')
+    if args.command:  # validate here so a refused command never opens a window
+        sys.path.insert(0,str(ROOT));from src.bottle_command import parse_command
+        parsed=parse_command(args.command);print(parsed.reason,flush=True)
+        if not parsed.accepted:return 2
+        command+=['--command',args.command]
+    if args.pick:command+=['--pick',args.pick]
+    if args.on_table:command+=['--on-table',args.on_table]
     if args.exit_after is not None:command+=['--exit-after',str(args.exit_after)]
     if args.timing_log:command.append('--timing-log')
     print('Starting fresh controller-driven MuJoCo physics. Close the window to cancel.',flush=True)

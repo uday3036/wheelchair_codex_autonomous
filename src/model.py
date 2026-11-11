@@ -22,17 +22,18 @@ CASTER_RESISTANCE = {
 
 def load_model(original_contacts=False, rocker_stiffness=None, caster_outboard_offset=0.,
                clearance_geometry=False, caster_resistance="baseline", caster_tire_half_width=None,
-               arm_appearance="baseline"):
+               arm_appearance="baseline", simple_frame=False):
     """Load canonical geometry, with explicit reversible diagnostic variants."""
     root = ET.parse(MODEL).getroot()
     configure_model(root, original_contacts, rocker_stiffness, caster_outboard_offset,
-                    clearance_geometry, caster_resistance, caster_tire_half_width, arm_appearance)
+                    clearance_geometry, caster_resistance, caster_tire_half_width, arm_appearance,
+                    simple_frame)
     return mujoco.MjModel.from_xml_string(ET.tostring(root, encoding="unicode"))
 
 
 def configure_model(root, original_contacts=False, rocker_stiffness=None, caster_outboard_offset=0.,
                     clearance_geometry=False, caster_resistance="baseline", caster_tire_half_width=None,
-                    arm_appearance="baseline"):
+                    arm_appearance="baseline", simple_frame=False):
     """Apply the same explicit model variants to mobile and task scenes."""
     from .arm_appearance import apply_arm_appearance
     apply_arm_appearance(root, arm_appearance)
@@ -112,6 +113,10 @@ def configure_model(root, original_contacts=False, rocker_stiffness=None, caster
             position = np.fromstring(body.get("pos"), sep=" ")
             position[1] += sign*caster_outboard_offset
             body.set("pos", " ".join(map(str, position)))
+    if simple_frame:
+        # Rigid side-rail frame instead of the rocker-bogie linkage (see frame_design.py).
+        from .frame_design import apply_simple_frame
+        apply_simple_frame(root)
 
 
 def initialize(model):
